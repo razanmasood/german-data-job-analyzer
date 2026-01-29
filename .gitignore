@@ -1,0 +1,15 @@
+# Data
+data/
+models/
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+# IDE
+.vscode/
+*.code-workspace
+
+# Mac
+.DS_Store

@@ -1,0 +1,8 @@
+transformers
+datasets
+torch
+streamlit
+label-studio-sdk
+pandas
+scikit-learn
+seaborn
