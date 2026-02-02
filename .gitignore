@@ -1,15 +1,44 @@
-# Data
-data/
-models/
+# Data files
+data/raw/*.csv
+data/raw/*.json
 
 # Python
 __pycache__/
 *.pyc
-.env
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
 
 # IDE
 .vscode/
+.idea/
+*.swp
+*.swo
+*~
 *.code-workspace
 
-# Mac
+# OS
 .DS_Store
+Thumbs.db
+
+# Environment
+.env
+.venv
+venv/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+#Tracking
+Project_Summary_German_Data_Jobs.md
+German_Data_Jobs_Schedule.md
+
+# Model files (optional - uncomment if models are large)
+# models/*.bin
+# models/*.pt

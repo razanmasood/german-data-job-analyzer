@@ -1,5 +1,51 @@
 # German Data Jobs Analyzer
 
+## Project Overview
+
+### What This Is
+An end-to-end NLP pipeline that analyzes 1,240 real German data science job postings to extract in-demand skills, classify seniority levels, and visualize market trends. The project demonstrates modern ML engineering practices by combining LLM-assisted annotation with fine-tuned multilingual transformers.
+
+### Why This Matters
+
+**For the German job market:**
+- Provides data-driven insights into what skills employers actually want
+- Identifies skill combinations that appear together (e.g., "Python + AWS + Docker")
+- Reveals seniority expectations and requirements
+- Helps job seekers prioritize which skills to develop
+
+**For portfolio demonstration:**
+- Shows end-to-end ML engineering: data collection → annotation → model training → deployment
+- Demonstrates practical use of transformers (not just API calls)
+- Highlights multilingual NLP capability (German + English)
+- Shows modern workflow: LLM pre-annotation + human review (hybrid approach)
+- Proves ability to work with messy real-world data
+
+### How It Works
+
+**Input:** Raw job posting text
+```
+"Wir suchen einen Data Scientist mit Python, SQL und Machine Learning Erfahrung..."
+```
+
+**Processing Pipeline:**
+1. **LLM Pre-annotation**: Llama 3.1 8B extracts candidate skills/tools
+2. **Human Review**: Manual correction in Label Studio
+3. **NER Training**: Fine-tune xlm-roberta-large on corrected annotations
+4. **Seniority Classification**: Use existing experience level data
+5. **Analysis**: Extract skills from all 1,240 postings
+
+**Output:** Interactive Streamlit dashboard showing:
+- Top 20 most requested skills and tools
+- Skill co-occurrence patterns (what skills appear together)
+- Seniority distribution across roles
+- Trends in the German DS/ML job market
+
+### Tech Highlights
+- **Multilingual**: Handles both German and English postings (reflects real market)
+- **Hybrid annotation**: LLM does 80% of work, human ensures quality
+- **Production-grade**: Containerized, version-controlled, reproducible
+- **Local-first**: Fine-tuning runs on MacBook (no cloud costs)
+
 ## 🎯 Current Step
 
 **Next action:** Review this scope with Claude, then set up repo
@@ -15,26 +61,30 @@
 - [x] Verify environment works
 
 ### Phase 1: Data Collection (3 days)
-- [ ] Research job posting sources (StepStone, Indeed.de, LinkedIn)
-- [ ] Build scraper OR find existing dataset
-- [ ] Collect 500+ German DS/ML job postings
-- [ ] Store raw data in structured format
-- [ ] Verify: have enough data to proceed
+- [x] Research job posting sources (StepStone, Indeed.de, LinkedIn)
+- [x] Build scraper OR find existing dataset
+- [x] Collect 500+ German DS/ML job postings (1,240 collected via Octoparse)
+- [x] Store raw data in structured format
+- [x] Verify: have enough data to proceed
 
 ### Phase 2: Annotation + NER Fine-tuning (5 days)
-- [ ] Define entity types (SKILL, TOOL, EXPERIENCE, EDUCATION, SALARY_HINT)
-- [ ] Set up Label Studio or simple annotation tool
-- [ ] Annotate 200-300 job postings (this takes time!)
+- [ ] Define entity types (SKILL, TOOL)
+- [ ] Install Ollama + Llama 3.1 8B locally
+- [ ] Sample 150 job postings for annotation
+- [ ] Create annotation prompt for LLM
+- [ ] Run LLM pre-annotation on 150 postings
+- [ ] Set up Label Studio for review/correction
+- [ ] Review and correct LLM annotations (150 postings)
 - [ ] Prepare data in NER format (IOB tagging)
-- [ ] Fine-tune `deepset/gbert-large` for NER
+- [ ] Fine-tune xlm-roberta-large for NER
 - [ ] Evaluate: F1 score on held-out test set
-- [ ] Verify: model extracts entities reasonably well
 
 ### Phase 3: Seniority Classifier (3 days)
-- [ ] Label job postings by seniority (Junior/Mid/Senior)
 - [ ] Fine-tune classifier (or train from extracted features)
 - [ ] Evaluate accuracy
 - [ ] Verify: classifier works on new postings
+
+**Note:** Use existing experienceLevel field from dataset instead of manual labeling
 
 ### Phase 4: Analysis + Dashboard (3 days)
 - [ ] Run NER on all job postings
@@ -102,7 +152,7 @@ Dashboard showing:
 ### Models
 | Component | Choice | Reason |
 |-----------|--------|--------|
-| Base model | `deepset/gbert-large` | Best German BERT, proven for NER |
+| Base model | `xlm-roberta-large` | Multilingual BERT, handles both German & English |
 | NER framework | Hugging Face Transformers | You know it, industry standard |
 | Seniority classifier | Same base model, classification head | Reuse fine-tuned representations |
 
@@ -140,6 +190,51 @@ Dashboard showing:
 
 ---
 
+## Data Description
+
+### Dataset Overview
+- **Source**: LinkedIn job postings collected via Octoparse web scraping tool
+- **Collection period**: January 2026
+- **Total unique jobs**: 1,240 (after deduplication by job ID)
+- **Original sources**:
+  - ds_jobs.csv: 400 Data Scientist positions
+  - ml_jobs.csv: 1,000 Machine Learning positions
+  - Combined with significant overlap removed
+
+### Language Distribution
+- **English descriptions**: 690 jobs (55.6%)
+- **German descriptions**: 550 jobs (44.4%)
+- **Note**: High percentage of English reflects international tech job market in Germany
+
+### Data Fields
+Each job posting contains:
+- `title`: Job title
+- `description`: Full job description text (primary field for NER)
+- `descriptionHtml`: HTML version of description
+- `experienceLevel`: Entry level, Associate, Mid-Senior, Executive
+- `location`: Job location
+- `companyName`, `companyUrl`: Company information
+- `salary`, `benefits`, `contractType`: Compensation details (often sparse)
+- `publishedAt`: Posting date
+- `jobUrl`, `applyUrl`: Application links
+- `sector`, `jobCategory`: Job classification
+- Other metadata fields
+
+### Data Quality
+- **Description field**: 100% filled (1,240/1,240)
+- **Experience level**: 100% filled (1,240/1,240)
+- **Company information**: Nearly complete
+- **Salary information**: Sparse (typical for German market)
+
+### Privacy & Ethics
+- Data is publicly posted job listings
+- No personal candidate information collected
+- Data stored locally, not shared publicly
+- Only aggregated insights (skills, trends) will be shared in final output
+- Complies with LinkedIn's publicly accessible data policy
+
+---
+
 ## Entity Types for NER
 
 | Entity | Example | Notes |
@@ -158,7 +253,7 @@ Start with SKILL and TOOL only. Add others if time permits.
 ## Scope Boundaries
 
 ### In scope
-- German job postings only
+- Multilingual job postings (German & English)
 - Data Scientist / ML Engineer / AI roles
 - NER for skill/tool extraction
 - Seniority classification
@@ -166,7 +261,6 @@ Start with SKILL and TOOL only. Add others if time permits.
 - ~500 job postings
 
 ### Out of scope (do NOT add)
-- English postings
 - Salary prediction model (too complex)
 - Job recommendation system
 - Real-time scraping
@@ -182,7 +276,7 @@ Start with SKILL and TOOL only. Add others if time permits.
 | Can't find German job posting dataset | Manual collection (50-100 postings), or use English dataset to prove concept |
 | Annotation takes too long | Start with 150 postings, increase only if needed |
 | NER performance is poor | Acceptable for portfolio — document challenges in README |
-| Fine-tuning too slow on laptop | Use smaller model (`gbert-base`), reduce batch size |
+| Fine-tuning too slow on laptop | Use smaller model (`xlm-roberta-base`), reduce batch size |
 
 ---
 

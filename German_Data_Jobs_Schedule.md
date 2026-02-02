@@ -41,13 +41,13 @@
 
 | Task | Time | Done |
 |------|------|------|
-| Search Kaggle for German job posting datasets | 30 min | [ ] |
-| Search HuggingFace datasets | 30 min | [ ] |
-| Search for academic datasets (papers with data) | 30 min | [ ] |
-| Check Indeed/StepStone terms of service | 15 min | [ ] |
-| **Decision:** Which data source to use | 15 min | [ ] |
-| Document decision in project README | 15 min | [ ] |
-| If no dataset found: plan manual collection strategy | 30 min | [ ] |
+| Search Kaggle for German job posting datasets | 30 min | [x] |
+| Search HuggingFace datasets | 30 min | [x] |
+| Search for academic datasets (papers with data) | 30 min | [x] |
+| Check Indeed/StepStone terms of service | 15 min | [x] |
+| **Decision:** Which data source to use | 15 min | [x] |
+| Document decision in project README | 15 min | [x] |
+| If no dataset found: plan manual collection strategy | 30 min | [x] |
 
 **End of day checkpoint:** Do you know where your data will come from? Yes → Day 2 done.
 
@@ -60,77 +60,80 @@
 
 | Task | Time | Done |
 |------|------|------|
-| If dataset found: download and explore | 60 min | [ ] |
-| If manual: collect 50 job postings from job sites | 3 hrs | [ ] |
-| Create `data/raw/` folder structure | 15 min | [ ] |
-| Store postings in JSON format | 30 min | [ ] |
-| Write script to load and preview data | 30 min | [ ] |
-| Verify: can load at least 50 postings | 15 min | [ ] |
+| If dataset found: download and explore | 60 min | [x] |
+| If manual: collect 50 job postings from job sites | 3 hrs | [x] |
+| Create `data/raw/` folder structure | 15 min | [x] |
+| Store postings in JSON format | 30 min | [x] |
+| Write script to load and preview data | 30 min | [x] |
+| Verify: can load at least 50 postings | 15 min | [x] |
+| Install Ollama via brew | 15 min | [ ] |
+| Pull llama3.1:8b model | 15 min | [ ] |
+| Test LLM on sample job description | 15 min | [ ] |
 | Git commit + push | 10 min | [ ] |
 
 **End of day checkpoint:** Do you have 50+ job postings loadable in Python? Yes → Day 3 done.
 
 ---
 
-### Day 4 (Tuesday, Feb 4) — Annotation Setup
-**Goal:** Annotation tool ready, schema defined
+### Day 4 (Tuesday, Feb 4) — LLM Annotation Setup
+**Goal:** Annotation prompt ready, LLM tested
 
 | Task | Time | Done |
 |------|------|------|
-| Install Label Studio locally (Docker) | 45 min | [ ] |
-| Create new project for NER annotation | 30 min | [ ] |
-| Define entity labels: SKILL, TOOL (start simple) | 30 min | [ ] |
-| Import 10 job postings as test | 30 min | [ ] |
-| Annotate 5 postings to test workflow | 45 min | [ ] |
-| Refine labels if needed | 30 min | [ ] |
-| Document annotation guidelines (what counts as SKILL vs TOOL) | 30 min | [ ] |
+| Sample 150 random job postings from dataset | 30 min | [ ] |
+| Define entity labels clearly: SKILL vs TOOL | 30 min | [ ] |
+| Create annotation prompt template for LLM | 45 min | [ ] |
+| Test prompt on 5 job postings (German & English) | 45 min | [ ] |
+| Refine prompt based on test results | 30 min | [ ] |
+| Document annotation guidelines | 30 min | [ ] |
+| Save sampled jobs to `data/annotation/sample_150.json` | 15 min | [ ] |
 
-**End of day checkpoint:** Can you annotate job postings in Label Studio? Yes → Day 4 done.
+**End of day checkpoint:** Does LLM annotation prompt work on test jobs? Yes → Day 4 done.
 
 ---
 
-### Day 5 (Wednesday, Feb 5) — Annotation Day 1
-**Goal:** 50 postings annotated
+### Day 5 (Wednesday, Feb 5) — LLM Pre-annotation
+**Goal:** 150 job postings pre-annotated by LLM
 
 | Task | Time | Done |
 |------|------|------|
-| Import remaining postings to Label Studio | 30 min | [ ] |
-| Annotate 50 job postings | 4-5 hrs | [ ] |
-| Take breaks every 45 min (annotation is tedious!) | — | [ ] |
-| Export annotations, verify format | 30 min | [ ] |
-
-**End of day checkpoint:** Do you have 50 annotated postings? Yes → Day 5 done.
-
-**Tip:** Annotation is boring but essential. Put on music/podcast. This IS the work.
-
----
-
-### Day 6 (Thursday, Feb 6) — Annotation Day 2
-**Goal:** 100 postings annotated
-
-| Task | Time | Done |
-|------|------|------|
-| Annotate 50 more job postings | 4-5 hrs | [ ] |
-| Review annotations for consistency | 30 min | [ ] |
-| Fix any inconsistent labels | 30 min | [ ] |
-| Export full dataset | 15 min | [ ] |
+| Create script `scripts/04_llm_annotate.py` | 30 min | [ ] |
+| Run LLM annotation on all 150 jobs | 2-3 hrs | [ ] |
+| Save annotations in JSON format | 30 min | [ ] |
+| Spot-check 10 annotations for quality | 30 min | [ ] |
+| Install Label Studio (Docker) for review | 45 min | [ ] |
 | Git commit + push | 10 min | [ ] |
 
-**End of day checkpoint:** Do you have 100 annotated postings? Yes → Day 6 done.
+**End of day checkpoint:** Do you have 150 LLM-annotated postings? Yes → Day 5 done.
 
 ---
 
-### Day 7 (Friday, Feb 7) — Annotation Day 3 + Buffer
-**Goal:** 150 postings annotated, data ready for training
+### Day 6 (Thursday, Feb 6) — Annotation Review Day 1
+**Goal:** 75 postings reviewed and corrected
 
 | Task | Time | Done |
 |------|------|------|
-| Annotate 50 more job postings | 4-5 hrs | [ ] |
-| Export final annotation dataset | 30 min | [ ] |
+| Import pre-annotated jobs to Label Studio | 30 min | [ ] |
+| Review and correct 75 LLM annotations | 4-5 hrs | [ ] |
+| Take breaks every 45 min | — | [ ] |
+| Document common LLM errors | 30 min | [ ] |
+
+**End of day checkpoint:** Have you reviewed 75 postings? Yes → Day 6 done.
+
+---
+
+### Day 7 (Friday, Feb 7) — Annotation Review Day 2
+**Goal:** 150 postings reviewed, ready for training
+
+| Task | Time | Done |
+|------|------|------|
+| Review and correct remaining 75 annotations | 3-4 hrs | [ ] |
+| Export all corrected annotations | 30 min | [ ] |
 | Convert to IOB format for NER training | 60 min | [ ] |
 | Create train/val/test split (70/15/15) | 30 min | [ ] |
 | Save splits to `data/processed/` | 15 min | [ ] |
 | Update Progress Tracker | 15 min | [ ] |
+| Git commit + push | 10 min | [ ] |
 
 **End of week checkpoint:** Do you have 150 annotated postings in training format? Yes → Week 1 done! 🎉
 
@@ -144,7 +147,7 @@
 | Task | Time | Done |
 |------|------|------|
 | Create `src/ner/train.py` | 15 min | [ ] |
-| Load `deepset/gbert-large` with AutoModelForTokenClassification | 45 min | [ ] |
+| Load `xlm-roberta-large` with AutoModelForTokenClassification | 45 min | [ ] |
 | Write data loading function (IOB format → HF Dataset) | 60 min | [ ] |
 | Configure training arguments (small batch, few epochs first) | 30 min | [ ] |
 | Run first training (just 1 epoch to test) | 30 min | [ ] |
@@ -173,24 +176,22 @@
 
 ---
 
-### Day 10 (Wednesday, Feb 12) — NER Inference + Seniority Labels
-**Goal:** NER works on new text, seniority labels ready
+### Day 10 (Wednesday, Feb 12) — NER Inference + Seniority Prep
+**Goal:** NER works on new text, seniority data ready
 
 | Task | Time | Done |
 |------|------|------|
 | Create `src/ner/predict.py` | 15 min | [ ] |
 | Write function: text → extracted entities | 45 min | [ ] |
 | Test on 10 new job postings | 30 min | [ ] |
-| Label 100 postings for seniority (Junior/Mid/Senior) | 2 hrs | [ ] |
-| Store seniority labels in data file | 30 min | [ ] |
+| Extract experienceLevel field from dataset | 30 min | [ ] |
+| Map experienceLevel to Junior/Mid/Senior categories | 45 min | [ ] |
+| Store seniority mappings in data file | 30 min | [ ] |
 | Git commit + push | 10 min | [ ] |
 
 **End of day checkpoint:** Can NER extract entities from new text? Yes → Day 10 done.
 
-**Seniority labeling guide:**
-- Junior: 0-2 years, entry-level, "Berufseinsteiger"
-- Mid: 2-5 years, some experience required
-- Senior: 5+ years, lead roles, "erfahren"
+**Note:** Seniority classification will use existing experienceLevel field from dataset, no manual labeling needed.
 
 ---
 
@@ -200,7 +201,7 @@
 | Task | Time | Done |
 |------|------|------|
 | Create `src/classifier/train.py` | 15 min | [ ] |
-| Load `deepset/gbert-base` for sequence classification | 30 min | [ ] |
+| Load `xlm-roberta-large` for sequence classification | 30 min | [ ] |
 | Prepare data (text → label) | 45 min | [ ] |
 | Train classifier (3 epochs) | 1-2 hrs | [ ] |
 | Evaluate accuracy on test set | 30 min | [ ] |
