@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python scripts/01_combine_data.py:*)",
+      "Bash(python:*)"
+    ]
+  }
+}

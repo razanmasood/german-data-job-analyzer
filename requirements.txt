@@ -6,3 +6,4 @@ label-studio-sdk
 pandas
 scikit-learn
 seaborn
+requests

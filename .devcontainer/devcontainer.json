@@ -4,6 +4,7 @@
     "dockerfile": "Dockerfile"
   },
   "workspaceFolder": "/workspaces/german-data-job-analyzer",
+  "forwardPorts": [11434],
   "customizations": {
     "vscode": {
       "settings": {
