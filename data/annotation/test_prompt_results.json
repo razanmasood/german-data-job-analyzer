@@ -1,0 +1,164 @@
+[
+  {
+    "job_title": "Senior Data Scientist (m/w/d)",
+    "company": "SSI SCHÄFER",
+    "language": "German",
+    "experienceLevel": "Mid-Senior level",
+    "description_length": 3827,
+    "description_preview": "Werden auch Sie Teil unserer Erfolgsgeschichte!Ein weltweit führender Lösungsanbieter für alle Bereiche der Intralogistik, das sind wir: SSI SCHÄFER. Was wir auch sind: Ein Familienunternehmen, das in das Know-how, die Leidenschaft und die Talente seiner Mitarbeitenden investiert.Als einer der größt...",
+    "extracted_skills": [
+      "Data Science",
+      "LLMs",
+      "NLP",
+      "Agentic AI",
+      "Statistik",
+      "Python",
+      "Pandas",
+      "NumPy",
+      "SciPy",
+      "SQL",
+      "MLOps",
+      "Deployment",
+      "Docker",
+      "Kubernetes",
+      "CI/CD"
+    ],
+    "extracted_tools": [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "SciPy",
+      "Hugging Face",
+      "LangChain",
+      "scikit-learn",
+      "Docker",
+      "Kubernetes",
+      "Azure"
+    ],
+    "generation_time_seconds": 20.89
+  },
+  {
+    "job_title": "Medizinischer Dokumentar (m/w/d) / Data Scientist (m/w/d) Umweltmedizin und Integrative Gesundheit",
+    "company": "Universitätsklinikum Augsburg",
+    "language": "German",
+    "experienceLevel": "Entry level",
+    "description_length": 2534,
+    "description_preview": "Für das Institut für Umweltmedizin und Integrative Gesundheit suchen wir zum nächstmöglichen Zeitpunkt in Vollzeit, zunächst befristet, einen Medizinischen Dokumentar (m/w/d) / Data Scientist (m/w/d).Ihre AufgabenMitarbeit bei der Durchführung diverser ForschungsvorhabenProgrammierung von Datenbanke...",
+    "extracted_skills": [
+      "Datenmanagement",
+      "Qualitätssicherung",
+      "Statistiksoftware"
+    ],
+    "extracted_tools": [
+      "RedCap",
+      "Qualtrics"
+    ],
+    "generation_time_seconds": 6.22
+  },
+  {
+    "job_title": "Senior AI Engineer (m/f/nb)",
+    "company": "Conrad Electronic Group",
+    "language": "English",
+    "experienceLevel": "Associate",
+    "description_length": 4451,
+    "description_preview": "Join the AI & Data Platform part of AI & Automation team to work on the most cutting-edge applied AI challenges, utilizing modern orchestration frameworks. You'll be instrumental in designing, owning, and deploying production-grade AI and LLM services, accelerating their integration into critical bu...",
+    "extracted_skills": [
+      "MLOps",
+      "LLMOps",
+      "Statistik",
+      "prompt engineering",
+      "advanced prompt engineering techniques",
+      "LangChain",
+      "LlamaIndex",
+      "Retrieval-Augmented Generation (RAG)",
+      "vector databases",
+      "document loaders",
+      "embeddings",
+      "retrieval evaluation techniques",
+      "MLOps foundation"
+    ],
+    "extracted_tools": [
+      "LangChain",
+      "LlamaIndex",
+      "FastAPI",
+      "Flask",
+      "Docker",
+      "Kubernetes",
+      "Pinecone",
+      "Weaviate",
+      "n8n",
+      "Langflow",
+      "AWS",
+      "GCP",
+      "Azure"
+    ],
+    "generation_time_seconds": 14.22
+  },
+  {
+    "job_title": "Bell Labs AI Systems Research Intern",
+    "company": "Nokia",
+    "language": "English",
+    "experienceLevel": "Not Applicable",
+    "description_length": 2019,
+    "description_preview": "Job DescriptionYou will be joining the System Architecture and Solution Design (SASD) lab in Bell Labs, which is creating innovative AI and software systems research, high-impact prototype solutions, and advanced architectures and designs. The SASD team has a global footprint with members in the US,...",
+    "extracted_skills": [
+      "AI",
+      "machine learning",
+      "deep learning",
+      "Gen AI",
+      "Distributed processing",
+      "storage solutions",
+      "edge systems",
+      "performance analysis",
+      "workload orchestration"
+    ],
+    "extracted_tools": [
+      "Python",
+      "PyTorch",
+      "TensorFlow",
+      "AutoGen",
+      "LangChain",
+      "R",
+      "Go"
+    ],
+    "generation_time_seconds": 7.76
+  },
+  {
+    "job_title": "Senior Machine Learning Engineer (d/f/m)",
+    "company": "Aignostics",
+    "language": "English",
+    "experienceLevel": "Mid-Senior level",
+    "description_length": 5695,
+    "description_preview": "Why us?We believe that AI has the potential to revolutionize how cancer and other complex diseases are diagnosed and treated. We also believe that AI is a tool, not an identity – without access to high quality data and a scientifically rigorous, transparent approach to model development, AI is just ...",
+    "extracted_skills": [
+      "Machine Learning",
+      "Deep Learning",
+      "MLOps",
+      "DevOps",
+      "Agile Development",
+      "Distributed Systems",
+      "Parallel Computing",
+      "Scalability",
+      "Data Engineering",
+      "High Coding Standards",
+      "Best Practices in Development Workflow",
+      "Problem-Solving Skills",
+      "Communication Skills"
+    ],
+    "extracted_tools": [
+      "Python",
+      "TensorFlow",
+      "PyTorch",
+      "scikit-learn",
+      "GCP",
+      "AWS",
+      "Azure",
+      "Docker",
+      "Kubernetes",
+      "Linux",
+      "Version Control",
+      "Container Technologies"
+    ],
+    "generation_time_seconds": 14.37
+  }
+]
