@@ -68,8 +68,8 @@ An end-to-end NLP pipeline that analyzes 1,240 real German data science job post
 - [x] Verify: have enough data to proceed
 
 ### Phase 2: Annotation + NER Fine-tuning (5 days)
-- [ ] Define entity types (SKILL, TOOL)
-- [ ] Install Ollama + Llama 3.1 8B locally
+- [x] Define entity types (SKILL, TOOL)
+- [x] Install Ollama + Llama 3.1 8B locally
 - [ ] Sample 150 job postings for annotation
 - [ ] Create annotation prompt for LLM
 - [ ] Run LLM pre-annotation on 150 postings

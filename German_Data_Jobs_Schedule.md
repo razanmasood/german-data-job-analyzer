@@ -66,10 +66,10 @@
 | Store postings in JSON format | 30 min | [x] |
 | Write script to load and preview data | 30 min | [x] |
 | Verify: can load at least 50 postings | 15 min | [x] |
-| Install Ollama via brew | 15 min | [ ] |
-| Pull llama3.1:8b model | 15 min | [ ] |
-| Test LLM on sample job description | 15 min | [ ] |
-| Git commit + push | 10 min | [ ] |
+| Install Ollama via brew | 15 min | [x] |
+| Pull llama3.1:8b model | 15 min | [x] |
+| Test LLM on sample job description | 15 min | [x] |
+| Git commit + push | 10 min | [x] |
 
 **End of day checkpoint:** Do you have 50+ job postings loadable in Python? Yes → Day 3 done.
 
