@@ -1,0 +1,55 @@
+Analyze the following job description and extract all SKILLS and TOOLS mentioned.
+The description may be in German, English, or a mix of both languages.
+
+Definitions:
+- SKILL: Any technical competency, methodology, or domain of knowledge requiring specialized training.
+  Examples (English): "machine learning", "deep learning", "NLP", "natural language processing", "computer vision", "time series analysis", "statistical analysis", "data analysis", "feature engineering", "A/B testing", "data visualization", "agile methodology", "DevOps", "CI/CD", "software engineering", "data engineering", "ETL", "MLOps"
+  Examples (German): "Maschinelles Lernen", "Deep Learning", "Statistik", "Datenanalyse", "Datenvisualisierung", "Zeitreihenanalyse", "statistische Analyse", "Feature Engineering", "Agile Methodik", "Datenpipelines"
+  
+- TOOL: A specific technology, programming language, framework, platform, library, or software product.
+  Examples: "Python", "R", "Java", "PyTorch", "TensorFlow", "scikit-learn", "Docker", "Kubernetes", "AWS", "Azure", "GCP", "SQL", "PostgreSQL", "Spark", "Hadoop", "Tableau", "Power BI", "Git", "Jenkins", "Pandas", "NumPy"
+  Note: Tool names are typically the same in German and English (e.g., "Python", "Docker", "AWS")
+  
+Rules:
+1. Keep terms in their original language as written in the description (e.g., use "Statistik" not "Statistics" if the German term appears).
+2. Keep the original casing as written in the job description.
+3. Do not duplicate entries. If the same concept appears multiple times, include it only once.
+4. Only extract items explicitly mentioned in the text. Do not infer or guess.
+5. Exclude soft skills (communication, teamwork, leadership, problem-solving).
+
+Examples:
+Example 1 (German):
+Job Description: "Wir suchen einen Data Scientist mit Erfahrung in Python, Statistik und AWS. Kenntnisse in Datenanalyse, TensorFlow und Docker sind von Vorteil. Agile Arbeitsweise erforderlich."
+
+Output:
+{
+  "skills": ["Statistik", "Datenanalyse", "Agile"],
+  "tools": ["Python", "AWS", "TensorFlow", "Docker"]
+}
+
+Example 2 (English):
+Job Description: "Looking for ML Engineer with strong background in deep learning and NLP. Must know PyTorch, SQL, and have experience with cloud platforms like Azure. DevOps knowledge is a plus."
+
+Output:
+{
+  "skills": ["deep learning", "NLP", "DevOps"],
+  "tools": ["PyTorch", "SQL", "Azure"]
+}
+
+Example 3 (Mixed German/English):
+Job Description: "Data Engineer (m/w/d) mit Kenntnissen in data pipelines, ETL processes und Big Data. Erfahrung mit Spark, Kafka und Kubernetes erforderlich. Statistische Grundkenntnisse und feature engineering von Vorteil."
+
+Output:
+{
+  "skills": ["data pipelines", "ETL", "Big Data", "Statistik", "feature engineering"],
+  "tools": ["Spark", "Kafka", "Kubernetes"]
+}
+
+Job Description:
+{description}
+
+Return ONLY valid JSON in this exact format:
+{
+  "skills": ["skill1", "skill2"],
+  "tools": ["Tool1", "Tool2"]
+}
