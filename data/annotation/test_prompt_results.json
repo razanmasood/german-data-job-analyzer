@@ -7,35 +7,32 @@
     "description_length": 3827,
     "description_preview": "Werden auch Sie Teil unserer Erfolgsgeschichte!Ein weltweit führender Lösungsanbieter für alle Bereiche der Intralogistik, das sind wir: SSI SCHÄFER. Was wir auch sind: Ein Familienunternehmen, das in das Know-how, die Leidenschaft und die Talente seiner Mitarbeitenden investiert.Als einer der größt...",
     "extracted_skills": [
-      "Data Science",
-      "LLMs",
-      "NLP",
-      "Agentic AI",
+      "Informatik",
+      "Mathematik",
       "Statistik",
-      "Python",
-      "Pandas",
-      "NumPy",
-      "SciPy",
-      "SQL",
+      "NLP",
+      "LLMs",
+      "Agentic AI",
+      "feature engineering",
       "MLOps",
       "Deployment",
-      "Docker",
-      "Kubernetes",
-      "CI/CD"
+      "Analytisches Denken"
     ],
     "extracted_tools": [
       "Python",
       "Pandas",
       "NumPy",
       "SciPy",
+      "SQL",
       "Hugging Face",
       "LangChain",
       "scikit-learn",
       "Docker",
       "Kubernetes",
+      "CI/CD",
       "Azure"
     ],
-    "generation_time_seconds": 20.89
+    "generation_time_seconds": 15.16
   },
   {
     "job_title": "Medizinischer Dokumentar (m/w/d) / Data Scientist (m/w/d) Umweltmedizin und Integrative Gesundheit",
@@ -47,13 +44,14 @@
     "extracted_skills": [
       "Datenmanagement",
       "Qualitätssicherung",
-      "Statistiksoftware"
+      "Statistik",
+      "Data Scientist"
     ],
     "extracted_tools": [
       "RedCap",
       "Qualtrics"
     ],
-    "generation_time_seconds": 6.22
+    "generation_time_seconds": 5.66
   },
   {
     "job_title": "Senior AI Engineer (m/f/nb)",
@@ -63,36 +61,47 @@
     "description_length": 4451,
     "description_preview": "Join the AI & Data Platform part of AI & Automation team to work on the most cutting-edge applied AI challenges, utilizing modern orchestration frameworks. You'll be instrumental in designing, owning, and deploying production-grade AI and LLM services, accelerating their integration into critical bu...",
     "extracted_skills": [
+      "AI",
       "MLOps",
       "LLMOps",
-      "Statistik",
-      "prompt engineering",
-      "advanced prompt engineering techniques",
+      "Intelligent Architecture",
+      "Production-ready AI services",
+      "AI orchestration frameworks",
       "LangChain",
       "LlamaIndex",
-      "Retrieval-Augmented Generation (RAG)",
-      "vector databases",
-      "document loaders",
-      "embeddings",
-      "retrieval evaluation techniques",
-      "MLOps foundation"
+      "Rapid Automation Delivery",
+      "Low-code automation platforms",
+      "Prompt engineering techniques",
+      "Advanced",
+      "Large Language Model (LLM) performance",
+      "Consistency",
+      "Bias mitigation",
+      "Utility maximization",
+      "Reliability",
+      "Automated tests",
+      "Version control",
+      "Reproducible builds",
+      "CI/CD",
+      "End-to-end observability",
+      "Process automation",
+      "AI delivering operational efficiency gains"
     ],
     "extracted_tools": [
       "LangChain",
       "LlamaIndex",
+      "Pinecone",
+      "Weaviate",
       "FastAPI",
       "Flask",
       "Docker",
       "Kubernetes",
-      "Pinecone",
-      "Weaviate",
-      "n8n",
-      "Langflow",
       "AWS",
       "GCP",
-      "Azure"
+      "Azure",
+      "n8n",
+      "Langflow"
     ],
-    "generation_time_seconds": 14.22
+    "generation_time_seconds": 18.12
   },
   {
     "job_title": "Bell Labs AI Systems Research Intern",
@@ -103,25 +112,26 @@
     "description_preview": "Job DescriptionYou will be joining the System Architecture and Solution Design (SASD) lab in Bell Labs, which is creating innovative AI and software systems research, high-impact prototype solutions, and advanced architectures and designs. The SASD team has a global footprint with members in the US,...",
     "extracted_skills": [
       "AI",
-      "machine learning",
-      "deep learning",
+      "Machine Learning",
+      "Deep Learning",
       "Gen AI",
       "Distributed processing",
       "storage solutions",
       "edge systems",
       "performance analysis",
-      "workload orchestration"
+      "workload orchestration",
+      "Agentic AI"
     ],
     "extracted_tools": [
       "Python",
+      "R",
+      "Go",
       "PyTorch",
       "TensorFlow",
       "AutoGen",
-      "LangChain",
-      "R",
-      "Go"
+      "LangChain"
     ],
-    "generation_time_seconds": 7.76
+    "generation_time_seconds": 7.98
   },
   {
     "job_title": "Senior Machine Learning Engineer (d/f/m)",
@@ -132,33 +142,28 @@
     "description_preview": "Why us?We believe that AI has the potential to revolutionize how cancer and other complex diseases are diagnosed and treated. We also believe that AI is a tool, not an identity – without access to high quality data and a scientifically rigorous, transparent approach to model development, AI is just ...",
     "extracted_skills": [
       "Machine Learning",
-      "Deep Learning",
-      "MLOps",
-      "DevOps",
-      "Agile Development",
-      "Distributed Systems",
-      "Parallel Computing",
+      "Distributed systems",
+      "Parallel computing",
       "Scalability",
-      "Data Engineering",
-      "High Coding Standards",
-      "Best Practices in Development Workflow",
-      "Problem-Solving Skills",
-      "Communication Skills"
+      "Data engineering",
+      "High coding standards",
+      "Problem-solving skills",
+      "Agile development environment"
     ],
     "extracted_tools": [
       "Python",
-      "TensorFlow",
-      "PyTorch",
-      "scikit-learn",
       "GCP",
       "AWS",
       "Azure",
       "Docker",
       "Kubernetes",
+      "TensorFlow",
+      "PyTorch",
+      "scikit-learn",
       "Linux",
-      "Version Control",
-      "Container Technologies"
+      "Git",
+      "Container technologies"
     ],
-    "generation_time_seconds": 14.37
+    "generation_time_seconds": 12.22
   }
 ]
