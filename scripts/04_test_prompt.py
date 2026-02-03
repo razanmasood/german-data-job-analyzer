@@ -107,7 +107,9 @@ def call_ollama(prompt_text, model="llama3.1:8b"):
         "model": model,
         "prompt": prompt_text,
         "stream": False,
-        "format": "json"
+        "format": "json",
+        "temperature": 0.0,      # Deterministic for consistent extraction
+        "num_predict": 512,      # Allow longer responses for skill-heavy jobs
     }
 
     try:
