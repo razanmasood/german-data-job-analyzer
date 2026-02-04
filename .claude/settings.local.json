@@ -5,7 +5,8 @@
       "Bash(python:*)",
       "Bash(tree:*)",
       "Bash(python3:*)",
-      "Bash(OLLAMA_HOST=http://host.docker.internal:11434 python:*)"
+      "Bash(OLLAMA_HOST=http://host.docker.internal:11434 python:*)",
+      "Bash(echo:*)"
     ]
   }
 }
