@@ -4,6 +4,8 @@
 **Hard deadline:** Wednesday, February 19, 2026  
 **Daily focused hours:** 6-7 hours (childcare 8:00-15:30)
 
+**🎯 SCOPE CHANGE:** Removed seniority classifier (using existing experienceLevel data instead). This saves ~1 day of work.
+
 ---
 
 ## How to Use This Schedule
@@ -75,18 +77,19 @@
 
 ---
 
-### Day 4 (Tuesday, Feb 4) — LLM Annotation Setup
-**Goal:** Annotation prompt ready, LLM tested
+### Day 4 (Tuesday, Feb 4) — LLM Annotation Setup + Data Analysis
+**Goal:** Annotation prompt ready, experienceLevel field verified
 
 | Task | Time | Done |
 |------|------|------|
-| Sample 150 random job postings from dataset | 30 min | [ ] |
-| Define entity labels clearly: SKILL vs TOOL | 30 min | [ ] |
-| Create annotation prompt template for LLM | 45 min | [ ] |
-| Test prompt on 5 job postings (German & English) | 45 min | [ ] |
-| Refine prompt based on test results | 30 min | [ ] |
-| Document annotation guidelines | 30 min | [ ] |
-| Save sampled jobs to `data/annotation/sample_150.json` | 15 min | [ ] |
+| Sample 150 random job postings from dataset | 30 min | [x] |
+| Define entity labels clearly: SKILL vs TOOL | 30 min | [x] |
+| Create annotation prompt template for LLM | 45 min | [x] |
+| Test prompt on 5 job postings (German & English) | 45 min | [x] |
+| Refine prompt based on test results | 30 min | [x] |
+| Document annotation guidelines | 30 min | [x] |
+| **Analyze experienceLevel column distribution** | 15 min | [x] |
+| Save sampled jobs to `data/annotation/sample_150.json` | 15 min | [x] |
 
 **End of day checkpoint:** Does LLM annotation prompt work on test jobs? Yes → Day 4 done.
 
@@ -176,56 +179,55 @@
 
 ---
 
-### Day 10 (Wednesday, Feb 12) — NER Inference + Seniority Prep
-**Goal:** NER works on new text, seniority data ready
+### Day 10 (Wednesday, Feb 12) — NER Inference Pipeline
+**Goal:** End-to-end NER extraction works on new text
 
 | Task | Time | Done |
 |------|------|------|
 | Create `src/ner/predict.py` | 15 min | [ ] |
 | Write function: text → extracted entities | 45 min | [ ] |
 | Test on 10 new job postings | 30 min | [ ] |
-| Extract experienceLevel field from dataset | 30 min | [ ] |
-| Map experienceLevel to Junior/Mid/Senior categories | 45 min | [ ] |
-| Store seniority mappings in data file | 30 min | [ ] |
+| Create `src/pipeline.py` for full processing | 30 min | [ ] |
+| Add function to load experienceLevel from data | 30 min | [ ] |
+| Test pipeline: text → entities + seniority (from data) | 45 min | [ ] |
 | Git commit + push | 10 min | [ ] |
 
 **End of day checkpoint:** Can NER extract entities from new text? Yes → Day 10 done.
 
-**Note:** Seniority classification will use existing experienceLevel field from dataset, no manual labeling needed.
+**Note:** Seniority comes directly from experienceLevel field, no classification needed.
 
 ---
 
-### Day 11 (Thursday, Feb 13) — Seniority Classifier
-**Goal:** Trained seniority classifier
+### Day 11 (Thursday, Feb 13) — Data Processing + Analysis
+**Goal:** All job postings analyzed and results ready
 
 | Task | Time | Done |
 |------|------|------|
-| Create `src/classifier/train.py` | 15 min | [ ] |
-| Load `xlm-roberta-large` for sequence classification | 30 min | [ ] |
-| Prepare data (text → label) | 45 min | [ ] |
-| Train classifier (3 epochs) | 1-2 hrs | [ ] |
-| Evaluate accuracy on test set | 30 min | [ ] |
-| Document results | 30 min | [ ] |
-| Save model to `models/classifier/` | 15 min | [ ] |
-
-**End of day checkpoint:** Does classifier predict seniority? Yes → Day 11 done.
-
----
-
-### Day 12 (Friday, Feb 14) — Pipeline Integration + Buffer
-**Goal:** End-to-end pipeline works
-
-| Task | Time | Done |
-|------|------|------|
-| Create `src/pipeline.py` | 30 min | [ ] |
-| Function: raw text → NER entities + seniority prediction | 60 min | [ ] |
-| Run pipeline on all collected job postings | 60 min | [ ] |
+| Run NER pipeline on all 1,240 job postings | 90 min | [ ] |
+| Extract and standardize experienceLevel data | 30 min | [ ] |
+| Create aggregated statistics (skill counts, etc.) | 60 min | [ ] |
+| Analyze skill co-occurrence patterns | 60 min | [ ] |
 | Save results to `data/analyzed/results.json` | 30 min | [ ] |
-| Catch up on any missed tasks | varies | [ ] |
+| Document interesting findings | 45 min | [ ] |
 | Git commit + push | 10 min | [ ] |
-| Update Progress Tracker | 15 min | [ ] |
 
-**End of week checkpoint:** Can you analyze a job posting end-to-end? Yes → Week 2 done! 🎉
+**End of day checkpoint:** Do you have analyzed results for all postings? Yes → Day 11 done.
+
+---
+
+### Day 12 (Friday, Feb 14) — Polish + Buffer
+**Goal:** Clean code, catch up on missed tasks
+
+| Task | Time | Done |
+|------|------|------|
+| Code cleanup: remove debug prints, add docstrings | 60 min | [ ] |
+| Add error handling to pipeline | 45 min | [ ] |
+| Write unit tests for key functions (optional) | 60 min | [ ] |
+| Catch up on any missed tasks from Week 1-2 | varies | [ ] |
+| Update Progress Tracker | 15 min | [ ] |
+| Git commit + push | 10 min | [ ] |
+
+**End of week checkpoint:** Is your code clean and pipeline robust? Yes → Week 2 done! 🎉
 
 ---
 
@@ -241,6 +243,7 @@
 | Display basic stats: total postings, date range | 30 min | [ ] |
 | Add bar chart: top 10 skills | 60 min | [ ] |
 | Add bar chart: top 10 tools | 60 min | [ ] |
+| Add seniority distribution chart (from experienceLevel) | 45 min | [ ] |
 | Run with `streamlit run app/dashboard.py` | 15 min | [ ] |
 | Git commit + push | 10 min | [ ] |
 
@@ -248,16 +251,17 @@
 
 ---
 
-### Day 14 (Tuesday, Feb 18) — Dashboard Features
-**Goal:** Dashboard tells a story
+### Day 14 (Tuesday, Feb 18) — Dashboard Features + Polish
+**Goal:** Dashboard tells a story and looks professional
 
 | Task | Time | Done |
 |------|------|------|
-| Add seniority distribution pie chart | 45 min | [ ] |
-| Add skill co-occurrence heatmap (what skills appear together) | 90 min | [ ] |
-| Add filter: by seniority level | 45 min | [ ] |
+| Add skill co-occurrence heatmap | 90 min | [ ] |
+| Add filter: by experience level | 45 min | [ ] |
 | Add "analyze your own posting" text input | 60 min | [ ] |
-| Make it visually decent (titles, layout) | 45 min | [ ] |
+| Improve visual design (colors, layout, titles) | 60 min | [ ] |
+| Add explanatory text and insights | 45 min | [ ] |
+| Test dashboard thoroughly | 30 min | [ ] |
 | Git commit + push | 10 min | [ ] |
 
 **End of day checkpoint:** Is the dashboard useful and presentable? Yes → Day 14 done.
@@ -270,8 +274,9 @@
 | Task | Time | Done |
 |------|------|------|
 | Write `README.md` (methodology, results, how to run) | 90 min | [ ] |
-| Add screenshot of dashboard | 15 min | [ ] |
-| Document model performance (F1, accuracy) | 30 min | [ ] |
+| Add screenshots of dashboard | 15 min | [ ] |
+| Document model performance (F1 score) | 30 min | [ ] |
+| Document key findings about German job market | 30 min | [ ] |
 | Write `README_DE.md` | 45 min | [ ] |
 | Final code cleanup | 30 min | [ ] |
 | Make GitHub repo public | 5 min | [ ] |
@@ -295,8 +300,8 @@
 - "With more data, performance would improve" is a valid conclusion
 
 **If behind by more than 2 days:**
-- Skip seniority classifier
-- NER + simple dashboard is still a valid portfolio piece
+- Just keep going with NER + dashboard
+- A working NER model is still a strong portfolio piece
 
 **If overwhelmed:**
 - Close this schedule
@@ -305,17 +310,39 @@
 
 ---
 
+## What Changed (Feb 4 Update)
+
+**REMOVED:** 
+- Day 11 (Seniority Classifier training) — using existing experienceLevel data instead
+- Seniority annotation tasks
+- Classifier training and evaluation
+
+**GAINED:**
+- More time for NER polish (Day 12)
+- More time for dashboard features (Day 13)
+- Earlier finish = earlier job applications
+
+**Why this is better:**
+- LinkedIn already provides clean experienceLevel data (0% missing)
+- Saves ~1 day of work
+- Still demonstrates NLP skills (NER is the core value)
+- Gets you to job applications faster
+
+---
+
 ## After Completion
 
 **What to do next:**
 1. Start interview prep
 2. Apply to jobs using your market insights
-3. Consider Project 3 (optional)
+3. Consider Project 3 (optional, but NOT required)
 
 **What NOT to do:**
 - Add more features
 - "Improve" the model
 - Build a web scraper
+- Add salary prediction
+- Perfect the dashboard
 
 ---
 
