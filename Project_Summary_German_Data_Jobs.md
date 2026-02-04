@@ -331,6 +331,46 @@ The project is **complete** when:
 
 ---
 
+## Project Structure
+
+```
+german-data-job-analyzer/
+├── data/
+│   ├── raw/                        # Original scraped data
+│   │   ├── ds_jobs.csv             # 400 Data Scientist postings (Octoparse)
+│   │   ├── ml_jobs.csv             # 1,000 ML Engineer postings (Octoparse)
+│   │   └── jobs_combined.json      # Deduplicated combined dataset (1,240 jobs)
+│   ├── annotation/                 # LLM pre-annotation data
+│   │   ├── sample_150.json         # 150 sampled postings for annotation
+│   │   └── test_prompt_results.json# Prompt testing output
+│   └── processed/                  # Analysis outputs
+│       └── experience_level_analysis.json  # experienceLevel field analysis
+├── scripts/                        # Numbered pipeline scripts
+│   ├── 01_combine_data.py          # Combine & deduplicate raw CSVs
+│   ├── 02_analyze_experience_level.py  # experienceLevel analysis & recommendation
+│   ├── 03_check_languages.py       # Detect language of job descriptions
+│   ├── 03_sample_data.py           # Sample 150 postings for annotation
+│   ├── 04_test_prompt.py           # Test LLM annotation prompt
+│   └── test_ollama.py              # Verify Ollama/Llama setup
+├── src/
+│   ├── ner/                        # NER model code (planned)
+│   └── classifier/                 # Reserved (unused — seniority classifier removed from scope)
+├── prompts/
+│   └── annotation.txt              # LLM prompt for SKILL/TOOL extraction
+├── models/                         # Trained model artifacts (planned)
+├── app/                            # Streamlit dashboard (planned)
+├── docs/
+│   └── annotation_guidelines.md    # Entity annotation rules for SKILL and TOOL
+├── Project_Summary_German_Data_Jobs.md   # This file — project overview & progress
+├── German_Data_Jobs_Schedule.md          # Detailed daily schedule
+├── requirements.txt                # Python dependencies
+├── mylearning.md                   # Personal learning notes
+├── README.md                       # Public-facing README
+└── LICENSE
+```
+
+---
+
 ## Notes
 
 - Annotation is the bottleneck — don't skip it, don't over-engineer it

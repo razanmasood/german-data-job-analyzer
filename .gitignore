@@ -38,7 +38,9 @@ ENV/
 #Tracking
 Project_Summary_German_Data_Jobs.md
 German_Data_Jobs_Schedule.md
+mylearning.md
 
 # Model files (optional - uncomment if models are large)
 # models/*.bin
 # models/*.pt
+

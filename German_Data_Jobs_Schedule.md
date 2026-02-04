@@ -266,6 +266,13 @@
 
 **End of day checkpoint:** Is the dashboard useful and presentable? Yes → Day 14 done.
 
+
+**💡 Optional Enhancement Idea:**
+If you finish Day 14 with time/energy remaining, consider adding:
+- Skill comparison by seniority level (shows skill progression Junior → Senior)
+- Estimated time: 30 minutes
+- Decision point: Assess at end of Day 14 whether this adds value or is just nice-to-have
+
 ---
 
 ### Day 15 (Wednesday, Feb 19) — Documentation + Ship
