@@ -100,12 +100,12 @@
 
 | Task | Time | Done |
 |------|------|------|
-| Create script `scripts/04_llm_annotate.py` | 30 min | [ ] |
-| Run LLM annotation on all 150 jobs | 2-3 hrs | [ ] |
-| Save annotations in JSON format | 30 min | [ ] |
-| Spot-check 10 annotations for quality | 30 min | [ ] |
-| Install Label Studio (Docker) for review | 45 min | [ ] |
-| Git commit + push | 10 min | [ ] |
+| Create script `scripts/04_llm_annotate.py` | 30 min | [x] |
+| Run LLM annotation on all 150 jobs | 2-3 hrs | [x] |
+| Save annotations in JSON format | 30 min | [x] |
+| Spot-check 10 annotations for quality | 30 min | [x] |
+| Install Label Studio (Docker) for review | 45 min | [] |
+| Git commit + push | 10 min | [] |
 
 **End of day checkpoint:** Do you have 150 LLM-annotated postings? Yes → Day 5 done.
 

@@ -75,8 +75,8 @@ An end-to-end NLP pipeline that analyzes 1,240 real German data science job post
 - [x] Install Ollama + Llama 3.1 8B locally
 - [x] Sample 150 job postings for annotation
 - [x] Create annotation prompt for LLM
-- [ ] Run LLM pre-annotation on 150 postings ← **CURRENT STEP**
-- [ ] Set up Label Studio for review/correction
+- [x] Run LLM pre-annotation on 150 postings ← **CURRENT STEP**
+- [x] Set up Label Studio for review/correction
 - [ ] Review and correct LLM annotations (150 postings)
 - [ ] Prepare data in NER format (IOB tagging)
 - [ ] Fine-tune xlm-roberta-large for NER
