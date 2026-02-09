@@ -1,55 +1,33 @@
-Analyze the following job description and extract all SKILLS and TOOLS mentioned.
-The description may be in German, English, or a mix of both languages.
+Extract SKILLS and TOOLS from this job description.
 
-Definitions:
-- SKILL: Any technical competency, methodology, or domain of knowledge requiring specialized training.
-  Examples (English): "machine learning", "deep learning", "NLP", "natural language processing", "computer vision", "time series analysis", "statistical analysis", "data analysis", "feature engineering", "A/B testing", "data visualization", "agile methodology", "DevOps", "CI/CD", "software engineering", "data engineering", "ETL", "MLOps"
-  Examples (German): "Maschinelles Lernen", "Deep Learning", "Statistik", "Datenanalyse", "Datenvisualisierung", "Zeitreihenanalyse", "statistische Analyse", "Feature Engineering", "Agile Methodik", "Datenpipelines"
-  
-- TOOL: A specific technology, programming language, framework, platform, library, or software product.
-  Examples: "Python", "R", "Java", "PyTorch", "TensorFlow", "scikit-learn", "Docker", "Kubernetes", "AWS", "Azure", "GCP", "SQL", "PostgreSQL", "Spark", "Hadoop", "Tableau", "Power BI", "Git", "Jenkins", "Pandas", "NumPy"
-  Note: Tool names are typically the same in German and English (e.g., "Python", "Docker", "AWS")
-  
-Rules:
-1. Keep terms in their original language as written in the description (e.g., use "Statistik" not "Statistics" if the German term appears).
-2. Keep the original casing as written in the job description.
-3. Do not duplicate entries. If the same concept appears multiple times, include it only once.
-4. Only extract items explicitly mentioned in the text. Do not infer or guess.
-5. Exclude soft skills (communication, teamwork, leadership, problem-solving).
+PURPOSE: These annotations will be used to train a Named Entity Recognition (NER) model. The model needs to learn from exact text patterns, so extracted entities MUST be verbatim text spans that appear in the description.
 
-Examples:
-Example 1 (German):
-Job Description: "Wir suchen einen Data Scientist mit Erfahrung in Python, Statistik und AWS. Kenntnisse in Datenanalyse, TensorFlow und Docker sind von Vorteil. Agile Arbeitsweise erforderlich."
+CRITICAL RULES:
+1. EXACT TEXT ONLY: Extract terms EXACTLY as written. If text says "statistics", output "statistics" - NOT "Statistik".
+2. LANGUAGE MATCH: Output language MUST match the source text. German text → German terms. English text → English terms.
+3. NO INFERENCE: Only extract terms explicitly stated. Do not add related concepts.
+4. NO DUPLICATES: Each term appears once.
+5. EXCLUDE: Soft skills (communication, teamwork, leadership).
 
-Output:
-{
-  "skills": ["Statistik", "Datenanalyse", "Agile"],
-  "tools": ["Python", "AWS", "TensorFlow", "Docker"]
-}
+DEFINITIONS:
+- SKILL: Technical competency, methodology, or knowledge domain (e.g., machine learning, data analysis, DevOps, CI/CD, MLOps)
+- TOOL: Specific technology, language, framework, or platform (e.g., Python, PyTorch, AWS, Docker, SQL)
 
-Example 2 (English):
-Job Description: "Looking for ML Engineer with strong background in deep learning and NLP. Must know PyTorch, SQL, and have experience with cloud platforms like Azure. DevOps knowledge is a plus."
+EXAMPLES:
 
-Output:
-{
-  "skills": ["deep learning", "NLP", "DevOps"],
-  "tools": ["PyTorch", "SQL", "Azure"]
-}
+Input (English): "Strong background in deep learning and statistical analysis. Experience with PyTorch and AWS required."
+Output: {"skills": ["deep learning", "statistical analysis"], "tools": ["PyTorch", "AWS"]}
 
-Example 3 (Mixed German/English):
-Job Description: "Data Engineer (m/w/d) mit Kenntnissen in data pipelines, ETL processes und Big Data. Erfahrung mit Spark, Kafka und Kubernetes erforderlich. Statistische Grundkenntnisse und feature engineering von Vorteil."
+Input (German): "Kenntnisse in maschinellem Lernen und Statistik. Python und TensorFlow erforderlich."
+Output: {"skills": ["maschinellem Lernen", "Statistik"], "tools": ["Python", "TensorFlow"]}
 
-Output:
-{
-  "skills": ["data pipelines", "ETL", "Big Data", "Statistik", "feature engineering"],
-  "tools": ["Spark", "Kafka", "Kubernetes"]
-}
+WRONG (do not do this):
+- Text says "statistics" → Output "Statistik" ❌ (language mismatch)
+- Text says "data pipelines" → Output "ETL" ❌ (inference, not exact)
+- Text says "cloud platforms" → Output "AWS, Azure, GCP" ❌ (inference)
 
 Job Description:
 {description}
 
-Return ONLY valid JSON in this exact format:
-{
-  "skills": ["skill1", "skill2"],
-  "tools": ["Tool1", "Tool2"]
-}
+Return ONLY valid JSON:
+{"skills": [], "tools": []}

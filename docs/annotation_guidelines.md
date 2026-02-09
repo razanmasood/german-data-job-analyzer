@@ -59,11 +59,23 @@ Tool names are almost always the same in German and English.
 
 ## Annotation Rules
 
-1. **Preserve original language.** Use "Statistik" if the description says "Statistik", not "Statistics".
-2. **Preserve original casing.** Write it as it appears in the text.
-3. **No duplicates.** If "Python" appears 5 times, list it once.
-4. **Explicit mentions only.** Do not infer skills that aren't written in the text.
-5. **One entity per item.** Use "machine learning" not "machine learning and deep learning".
+1. **EXACT TEXT ONLY.** Extract terms exactly as written in the text. Do not translate or paraphrase.
+2. **LANGUAGE MATCH.** If the text is in English, output English terms. If German, output German terms.
+   - Text says "statistics" → output "statistics" (NOT "Statistik")
+   - Text says "Statistik" → output "Statistik" (NOT "statistics")
+3. **Preserve original casing.** Write it as it appears in the text.
+4. **No duplicates.** If "Python" appears 5 times, list it once.
+5. **Explicit mentions only.** Do not infer skills that aren't written in the text.
+6. **One entity per item.** Use "machine learning" not "machine learning and deep learning".
+
+### Common Mistakes to Avoid
+
+| Wrong | Why | Correct |
+|-------|-----|---------|
+| Text: "statistics" → "Statistik" | Language mismatch | "statistics" |
+| Text: "data pipelines" → "ETL" | Inference, not exact | "data pipelines" |
+| Text: "cloud platforms" → "AWS, Azure, GCP" | Inference | "cloud platforms" or nothing |
+| Text: "ML frameworks" → "PyTorch, TensorFlow" | Inference | Only if explicitly named |
 
 ## Edge Cases
 
@@ -76,11 +88,42 @@ Tool names are almost always the same in German and English.
 
 ## LLM Pre-Annotation Accuracy
 
-The Llama 3.1 8B pre-annotations are approximately 80% accurate. Common errors to watch for during human review:
+The Llama 3.1 8B pre-annotations achieve ~83% **entity match rate**.
 
-- **Skills appearing in the tools list** (e.g., "machine learning" listed as a tool)
-- **Tools appearing in the skills list** (e.g., "Python" listed as a skill)
-- **Soft skills leaking in** despite the exclusion rule
-- **Vague phrases** like "best practices" or "high coding standards" being extracted
-- **Missed entities** in longer descriptions — the LLM occasionally skips items
-- **Duplicates across categories** — the same item in both skills and tools
+### How This Metric is Calculated
+
+```
+Match Rate = Entities Found in Text / Total Entities Extracted
+           = 1898 / 2278 = 83.3%
+```
+
+For each entity the LLM extracts, we search for that exact string (case-insensitive) in the source text. If found, it counts as "matched".
+
+### What This Measures
+- Whether the LLM extracted **verbatim text spans** vs inferred concepts
+
+### What This Does NOT Measure
+- **Recall**: Entities the LLM missed that ARE in the text
+- **Category accuracy**: Whether SKILL vs TOOL classification is correct
+- **Usefulness**: Whether extractions are valuable for downstream tasks
+
+### For Proper NER Evaluation
+A complete evaluation requires human-annotated ground truth to calculate precision, recall, and F1 scores.
+
+### Common Errors to Watch For
+
+### Category Errors
+- **Skills in tools list** (e.g., "machine learning" listed as a tool)
+- **Tools in skills list** (e.g., "Python" listed as a skill)
+- **Duplicates across categories** — same item in both skills and tools
+
+### Extraction Errors
+- **Language mismatch** — German terms for English text (e.g., "Statistik" when text says "statistics")
+- **Inferred concepts** — adding related terms not explicitly in text (e.g., "ETL" when text says "data pipelines")
+- **Soft skills leaking in** — despite exclusion rule
+- **Vague phrases** — "best practices", "high coding standards"
+- **Missed entities** — especially in longer descriptions
+
+### Text Quality Issues
+- **Concatenated words** — HTML conversion artifacts like "DatenanalyseErfahrung" (should be "Datenanalyse Erfahrung")
+- Entity positions may be incorrect if text wasn't cleaned before annotation
