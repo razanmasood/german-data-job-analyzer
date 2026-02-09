@@ -116,12 +116,12 @@
 
 | Task | Time | Done |
 |------|------|------|
-| Import pre-annotated jobs to Label Studio | 30 min | [ ] |
-| Review and correct 75 LLM annotations | 4-5 hrs | [ ] |
+| Import pre-annotated jobs to Label Studio | 30 min | [x] |
+| Review and correct 150 LLM annotations | 4-5 hrs | [ ] |
 | Take breaks every 45 min | — | [ ] |
 | Document common LLM errors | 30 min | [ ] |
 
-**End of day checkpoint:** Have you reviewed 75 postings? Yes → Day 6 done.
+**End of day checkpoint:** Have you reviewed 150 postings? Yes → Day 6 done.
 
 ---
 

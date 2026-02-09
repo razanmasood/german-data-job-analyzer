@@ -1,0 +1,2060 @@
+{
+  "summary": {
+    "total_not_found": 380,
+    "skills_not_found": 295,
+    "tools_not_found": 85,
+    "unique_skills": 110,
+    "unique_tools": 29
+  },
+  "skills": {
+    "by_frequency": {
+      "Statistik": 38,
+      "feature engineering": 36,
+      "Big Data": 17,
+      "Datenanalyse": 16,
+      "Maschinelles Lernen": 14,
+      "Agile": 11,
+      "data pipelines": 11,
+      "Agile Methodik": 10,
+      "ETL": 8,
+      "statistische Analyse": 6,
+      "DevOps": 6,
+      "Deep Learning": 4,
+      "Agile Arbeitsweise": 4,
+      "logische Datenmodellierung": 3,
+      "statistische Grundkenntnisse": 3,
+      "NLP": 3,
+      "statistical analysis": 3,
+      "ETL processes": 3,
+      "Deep learning": 2,
+      "Data Science": 2,
+      "Data Engineering": 2,
+      "agile methodology": 2,
+      "data engineering": 2,
+      "Künstliche Intelligenz": 2,
+      "deep learning": 2,
+      "Feature Engineering": 1,
+      "Data-Driven Experiences": 1,
+      "Kreativprozesse": 1,
+      "kreative Pipelines": 1,
+      "Agentenbasierte Setups": 1,
+      "LLM-basierte Systeme": 1,
+      "agile project management": 1,
+      "agile Kooperationsformen": 1,
+      "strategisch ausgerichtete Projekte": 1,
+      "deep neural models": 1,
+      "probabilistic and hybrid symbolic-learning models": 1,
+      "Datenwissenschaft": 1,
+      "Agile Project Management": 1,
+      "statistical processing": 1,
+      "data analysis": 1,
+      "data interpretation": 1,
+      "agile development": 1,
+      "hybride Superclassifiers": 1,
+      "Statistische Analyse": 1,
+      "noSQL": 1,
+      "agile Methoden": 1,
+      "multimodal models": 1,
+      "Strategisch ausgerichtete Projekte": 1,
+      "statistische Verfahren": 1,
+      "methodische Datenaufbereitung": 1,
+      "strukturiertes Anforderungsmanagement": 1,
+      "Neuronale Netze": 1,
+      "Use Case-Identifikation": 1,
+      "cultural of accountability": 1,
+      "curiosity and continuous learning": 1,
+      "DevOps knowledge": 1,
+      "Infrastruktur als Code (IaC)": 1,
+      "Agile Kooperationsformen": 1,
+      "Analytisches Denken": 1,
+      "pragmatisches Vorgehen": 1,
+      "Data Analysis": 1,
+      "drug pipeline or trial CI databases (e.g. Clarivate's Cortellis Competitive Intelligence, Citeline's Trialtrove or Pharmaprojects)": 1,
+      "agile Umsetzung": 1,
+      "modernen Plattform-Architekturen (z. B. Cloud, Next-Generation AI-Plattformen)": 1,
+      "Bioinformatik": 1,
+      "statistische Genetik": 1,
+      "Präzisionsmedizin": 1,
+      "unstrukturierte Daten (Text und Bild)": 1,
+      "Azure-basierte Backend-Dienste": 1,
+      "Classical Control": 1,
+      "designing and running end-to-end experiments": 1,
+      "agile problem-solving": 1,
+      "high-performance networking technologies": 1,
+      "maschinelles Lernen": 1,
+      "moderne Datenarchitekturen": 1,
+      "strategische Architekturplanung": 1,
+      "natural language generation": 1,
+      "Zeitreihenanalyse": 1,
+      "software interfacing with hardware": 1,
+      "statistische Methoden und Algorithmen der Künstlichen Intelligenz": 1,
+      "Problem- und Lösungsorientierung": 1,
+      "Statistical Analysis": 1,
+      "Robotic & Physical AI": 1,
+      "statistische Methoden": 1,
+      "agalisches Denken": 1,
+      "Baumbasierte Verfahren": 1,
+      "Bayes'sche Verfahren": 1,
+      "Machine-Learning": 1,
+      "ML-Modelle": 1,
+      "CI/CD-Pipelines": 1,
+      "ML-Lifecycle": 1,
+      "GenAI-Architekturen": 1,
+      "agentische AI": 1,
+      "digitales Marketing": 1,
+      "Data Scientist": 1,
+      ".NET Framework": 1,
+      "digitale Signalverarbeitung": 1,
+      "datengetriebene Insights": 1,
+      "maschinelle Lernen": 1,
+      "tiefe maschinelle Lernens": 1,
+      "Machine Learning Modellentwicklung": 1,
+      "strukturierte, sequenziellen Daten": 1,
+      "Data Analytics-Methoden": 1,
+      "Agile Entwicklungsmethoden": 1,
+      "data accessibility": 1,
+      "agile": 1,
+      "machine learning models": 1,
+      "scikit-learn": 1,
+      "datengetriebene Projekte": 1,
+      "Projektmanagement": 1
+    },
+    "details": [
+      {
+        "entity": "ETL",
+        "job_id": 4313067104,
+        "title": "Senior Machine Learning Engineer (d/f/m)"
+      },
+      {
+        "entity": "Big Data",
+        "job_id": 4313067104,
+        "title": "Senior Machine Learning Engineer (d/f/m)"
+      },
+      {
+        "entity": "Feature Engineering",
+        "job_id": 4313067104,
+        "title": "Senior Machine Learning Engineer (d/f/m)"
+      },
+      {
+        "entity": "Deep Learning",
+        "job_id": 4354265273,
+        "title": "Creative AI Technologist / AI Engineer (all genders)"
+      },
+      {
+        "entity": "Data-Driven Experiences",
+        "job_id": 4354265273,
+        "title": "Creative AI Technologist / AI Engineer (all genders)"
+      },
+      {
+        "entity": "Kreativprozesse",
+        "job_id": 4354265273,
+        "title": "Creative AI Technologist / AI Engineer (all genders)"
+      },
+      {
+        "entity": "kreative Pipelines",
+        "job_id": 4354265273,
+        "title": "Creative AI Technologist / AI Engineer (all genders)"
+      },
+      {
+        "entity": "Agile Methodik",
+        "job_id": 4354265273,
+        "title": "Creative AI Technologist / AI Engineer (all genders)"
+      },
+      {
+        "entity": "Agentenbasierte Setups",
+        "job_id": 4354265273,
+        "title": "Creative AI Technologist / AI Engineer (all genders)"
+      },
+      {
+        "entity": "LLM-basierte Systeme",
+        "job_id": 4354265273,
+        "title": "Creative AI Technologist / AI Engineer (all genders)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4358368129,
+        "title": "Machine Learning Consultant (m/w/d)"
+      },
+      {
+        "entity": "Datenanalyse",
+        "job_id": 4358368129,
+        "title": "Machine Learning Consultant (m/w/d)"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4358368129,
+        "title": "Machine Learning Consultant (m/w/d)"
+      },
+      {
+        "entity": "agile project management",
+        "job_id": 4358368129,
+        "title": "Machine Learning Consultant (m/w/d)"
+      },
+      {
+        "entity": "Agile",
+        "job_id": 4327734906,
+        "title": "Senior AI Engineer (m/f/nb)"
+      },
+      {
+        "entity": "agile Kooperationsformen",
+        "job_id": 4364246405,
+        "title": "Lead Data Scientist (m/w/d)"
+      },
+      {
+        "entity": "strategisch ausgerichtete Projekte",
+        "job_id": 4364246405,
+        "title": "Lead Data Scientist (m/w/d)"
+      },
+      {
+        "entity": "statistische Analyse",
+        "job_id": 4364246405,
+        "title": "Lead Data Scientist (m/w/d)"
+      },
+      {
+        "entity": "logische Datenmodellierung",
+        "job_id": 4364246405,
+        "title": "Lead Data Scientist (m/w/d)"
+      },
+      {
+        "entity": "deep neural models",
+        "job_id": 4367127493,
+        "title": "Research Assistants (Postdocs) (m/f/d) - AI"
+      },
+      {
+        "entity": "probabilistic and hybrid symbolic-learning models",
+        "job_id": 4367127493,
+        "title": "Research Assistants (Postdocs) (m/f/d) - AI"
+      },
+      {
+        "entity": "Deep learning",
+        "job_id": 4352652950,
+        "title": "Lead Machine Learning Engineer"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4350333485,
+        "title": "Bell Labs AI Systems Research Intern"
+      },
+      {
+        "entity": "Maschinelles Lernen",
+        "job_id": 4355683136,
+        "title": "AI Team Lead"
+      },
+      {
+        "entity": "Datenwissenschaft",
+        "job_id": 4355683136,
+        "title": "AI Team Lead"
+      },
+      {
+        "entity": "Agile Methodik",
+        "job_id": 4355683136,
+        "title": "AI Team Lead"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4355683136,
+        "title": "AI Team Lead"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4355683136,
+        "title": "AI Team Lead"
+      },
+      {
+        "entity": "Agile",
+        "job_id": 4365868539,
+        "title": "Senior Data Scientist"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4365868539,
+        "title": "Senior Data Scientist"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4365868539,
+        "title": "Senior Data Scientist"
+      },
+      {
+        "entity": "statistische Grundkenntnisse",
+        "job_id": 4343221362,
+        "title": "Data Scientist mit AI Fokus (w/m/x)"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4343221362,
+        "title": "Data Scientist mit AI Fokus (w/m/x)"
+      },
+      {
+        "entity": "Agile Project Management",
+        "job_id": 4358580378,
+        "title": "Machine Learning Consultant (m/w/d)"
+      },
+      {
+        "entity": "statistical processing",
+        "job_id": 4214417271,
+        "title": "Full Stack Developer (all genders welcome)"
+      },
+      {
+        "entity": "data analysis",
+        "job_id": 4214417271,
+        "title": "Full Stack Developer (all genders welcome)"
+      },
+      {
+        "entity": "data interpretation",
+        "job_id": 4214417271,
+        "title": "Full Stack Developer (all genders welcome)"
+      },
+      {
+        "entity": "agile development",
+        "job_id": 4214417271,
+        "title": "Full Stack Developer (all genders welcome)"
+      },
+      {
+        "entity": "Deep Learning",
+        "job_id": 4359616804,
+        "title": "Oliver Wyman - Data & Analytics Consulting - Analyst (m/f/d) - Berlin"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4353500213,
+        "title": "Data Scientist"
+      },
+      {
+        "entity": "Datenanalyse",
+        "job_id": 4353500213,
+        "title": "Data Scientist"
+      },
+      {
+        "entity": "Agile",
+        "job_id": 4353500213,
+        "title": "Data Scientist"
+      },
+      {
+        "entity": "Deep learning",
+        "job_id": 4353500213,
+        "title": "Data Scientist"
+      },
+      {
+        "entity": "NLP",
+        "job_id": 4353500213,
+        "title": "Data Scientist"
+      },
+      {
+        "entity": "DevOps",
+        "job_id": 4353500213,
+        "title": "Data Scientist"
+      },
+      {
+        "entity": "data pipelines",
+        "job_id": 4353500213,
+        "title": "Data Scientist"
+      },
+      {
+        "entity": "ETL",
+        "job_id": 4353500213,
+        "title": "Data Scientist"
+      },
+      {
+        "entity": "Big Data",
+        "job_id": 4353500213,
+        "title": "Data Scientist"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4353500213,
+        "title": "Data Scientist"
+      },
+      {
+        "entity": "hybride Superclassifiers",
+        "job_id": 4351649166,
+        "title": "Abschlussarbeit/Pflichtpraktikum im A-LAB im Bereich: Entwicklung eines intelligenten Superclassifiers für KI-gestützte Systeme (m/w/d)"
+      },
+      {
+        "entity": "Maschinelles Lernen",
+        "job_id": 4354859676,
+        "title": "AI Developer"
+      },
+      {
+        "entity": "Statistische Analyse",
+        "job_id": 4354859676,
+        "title": "AI Developer"
+      },
+      {
+        "entity": "Datenanalyse",
+        "job_id": 4354859676,
+        "title": "AI Developer"
+      },
+      {
+        "entity": "Agile",
+        "job_id": 4354859676,
+        "title": "AI Developer"
+      },
+      {
+        "entity": "data pipelines",
+        "job_id": 4345956792,
+        "title": "Project Manager"
+      },
+      {
+        "entity": "ETL",
+        "job_id": 4345956792,
+        "title": "Project Manager"
+      },
+      {
+        "entity": "Big Data",
+        "job_id": 4345956792,
+        "title": "Project Manager"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4345956792,
+        "title": "Project Manager"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4345956792,
+        "title": "Project Manager"
+      },
+      {
+        "entity": "Big Data",
+        "job_id": 4358932783,
+        "title": "AI & Full-Stack Software Engineer (w/m/d)"
+      },
+      {
+        "entity": "Agile Arbeitsweise",
+        "job_id": 4358932783,
+        "title": "AI & Full-Stack Software Engineer (w/m/d)"
+      },
+      {
+        "entity": "statistische Grundkenntnisse",
+        "job_id": 4358932783,
+        "title": "AI & Full-Stack Software Engineer (w/m/d)"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4358932783,
+        "title": "AI & Full-Stack Software Engineer (w/m/d)"
+      },
+      {
+        "entity": "Data Science",
+        "job_id": 4318199030,
+        "title": "Machine Learning Ops Engineer (m/w/d) in Hannover"
+      },
+      {
+        "entity": "noSQL",
+        "job_id": 4365953616,
+        "title": "Associate Machine Learning Engineer l (2026 Tech Grad Program)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4365964784,
+        "title": "Data Scientist - Quick Commerce"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4365964784,
+        "title": "Data Scientist - Quick Commerce"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4365083520,
+        "title": "Vocational Partner / Ausbilder IT (m/w/d)"
+      },
+      {
+        "entity": "Maschinelles Lernen",
+        "job_id": 4355769374,
+        "title": "Intern AI SOLUTIONS - Project Management & Business Development"
+      },
+      {
+        "entity": "agile Methoden",
+        "job_id": 4351940171,
+        "title": "Data Science & Machine Learning for Life-Science"
+      },
+      {
+        "entity": "multimodal models",
+        "job_id": 4341982995,
+        "title": "Senior Robotics AI Engineer (f/m/x)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4064920259,
+        "title": "Senior AI Engineer (m/w/d)"
+      },
+      {
+        "entity": "Strategisch ausgerichtete Projekte",
+        "job_id": 4364326234,
+        "title": "Lead Data Scientist (m/w/d)"
+      },
+      {
+        "entity": "statistische Analyse",
+        "job_id": 4364326234,
+        "title": "Lead Data Scientist (m/w/d)"
+      },
+      {
+        "entity": "logische Datenmodellierung",
+        "job_id": 4364326234,
+        "title": "Lead Data Scientist (m/w/d)"
+      },
+      {
+        "entity": "statistische Verfahren",
+        "job_id": 4352395894,
+        "title": "Data Analytics / Data Science Consultant (w/m/d)"
+      },
+      {
+        "entity": "methodische Datenaufbereitung",
+        "job_id": 4352395894,
+        "title": "Data Analytics / Data Science Consultant (w/m/d)"
+      },
+      {
+        "entity": "strukturiertes Anforderungsmanagement",
+        "job_id": 4352395894,
+        "title": "Data Analytics / Data Science Consultant (w/m/d)"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4358406234,
+        "title": "Software Engineer with a focus on AI (m/w/d)"
+      },
+      {
+        "entity": "statistical analysis",
+        "job_id": 4358406234,
+        "title": "Software Engineer with a focus on AI (m/w/d)"
+      },
+      {
+        "entity": "data pipelines",
+        "job_id": 4358406234,
+        "title": "Software Engineer with a focus on AI (m/w/d)"
+      },
+      {
+        "entity": "ETL",
+        "job_id": 4358406234,
+        "title": "Software Engineer with a focus on AI (m/w/d)"
+      },
+      {
+        "entity": "Big Data",
+        "job_id": 4358406234,
+        "title": "Software Engineer with a focus on AI (m/w/d)"
+      },
+      {
+        "entity": "Neuronale Netze",
+        "job_id": 4351273757,
+        "title": "Senior Machine Learning Engineer - Medizinische KI-Entwicklung - Arbeitsgruppe Machine Learning"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4351273757,
+        "title": "Senior Machine Learning Engineer - Medizinische KI-Entwicklung - Arbeitsgruppe Machine Learning"
+      },
+      {
+        "entity": "Maschinelles Lernen",
+        "job_id": 4351273757,
+        "title": "Senior Machine Learning Engineer - Medizinische KI-Entwicklung - Arbeitsgruppe Machine Learning"
+      },
+      {
+        "entity": "DevOps",
+        "job_id": 4323652288,
+        "title": "Senior AI/ML Engineer (m/f/nb)"
+      },
+      {
+        "entity": "Data Engineering",
+        "job_id": 4349499228,
+        "title": "Staff Machine Learning Scientist"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4349499228,
+        "title": "Staff Machine Learning Scientist"
+      },
+      {
+        "entity": "Agile Methodik",
+        "job_id": 4349499228,
+        "title": "Staff Machine Learning Scientist"
+      },
+      {
+        "entity": "data pipelines",
+        "job_id": 4344120713,
+        "title": "(Senior) Data Scientist AI & Generative AI (all genders)"
+      },
+      {
+        "entity": "Use Case-Identifikation",
+        "job_id": 4344120713,
+        "title": "(Senior) Data Scientist AI & Generative AI (all genders)"
+      },
+      {
+        "entity": "agile methodology",
+        "job_id": 4359333639,
+        "title": "Product Analytics Manager | Paid relocation to Barcelona, Spain 🇪🇸"
+      },
+      {
+        "entity": "cultural of accountability",
+        "job_id": 4359333639,
+        "title": "Product Analytics Manager | Paid relocation to Barcelona, Spain 🇪🇸"
+      },
+      {
+        "entity": "curiosity and continuous learning",
+        "job_id": 4359333639,
+        "title": "Product Analytics Manager | Paid relocation to Barcelona, Spain 🇪🇸"
+      },
+      {
+        "entity": "data engineering",
+        "job_id": 4359333639,
+        "title": "Product Analytics Manager | Paid relocation to Barcelona, Spain 🇪🇸"
+      },
+      {
+        "entity": "DevOps knowledge",
+        "job_id": 4359333639,
+        "title": "Product Analytics Manager | Paid relocation to Barcelona, Spain 🇪🇸"
+      },
+      {
+        "entity": "ETL processes",
+        "job_id": 4359333639,
+        "title": "Product Analytics Manager | Paid relocation to Barcelona, Spain 🇪🇸"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4359333639,
+        "title": "Product Analytics Manager | Paid relocation to Barcelona, Spain 🇪🇸"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4353563396,
+        "title": "Data Scientist (m/w/d)"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4353563396,
+        "title": "Data Scientist (m/w/d)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4353902308,
+        "title": "AI Engineer"
+      },
+      {
+        "entity": "data pipelines",
+        "job_id": 4353902308,
+        "title": "AI Engineer"
+      },
+      {
+        "entity": "ETL processes",
+        "job_id": 4353902308,
+        "title": "AI Engineer"
+      },
+      {
+        "entity": "Big Data",
+        "job_id": 4353902308,
+        "title": "AI Engineer"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4353902308,
+        "title": "AI Engineer"
+      },
+      {
+        "entity": "Infrastruktur als Code (IaC)",
+        "job_id": 4359485541,
+        "title": "AI Solution Architect"
+      },
+      {
+        "entity": "Agile",
+        "job_id": 4359485541,
+        "title": "AI Solution Architect"
+      },
+      {
+        "entity": "Datenanalyse",
+        "job_id": 4280443047,
+        "title": "Senior Data Scientist (m/w/d) - Eviden"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4280443047,
+        "title": "Senior Data Scientist (m/w/d) - Eviden"
+      },
+      {
+        "entity": "Agile Kooperationsformen",
+        "job_id": 4364266438,
+        "title": "Lead Data Scientist (m/w/d)"
+      },
+      {
+        "entity": "statistische Analyse",
+        "job_id": 4364266438,
+        "title": "Lead Data Scientist (m/w/d)"
+      },
+      {
+        "entity": "logische Datenmodellierung",
+        "job_id": 4364266438,
+        "title": "Lead Data Scientist (m/w/d)"
+      },
+      {
+        "entity": "data pipelines",
+        "job_id": 4344080774,
+        "title": "(Senior) Manager Snowflake (all genders)"
+      },
+      {
+        "entity": "ETL",
+        "job_id": 4344080774,
+        "title": "(Senior) Manager Snowflake (all genders)"
+      },
+      {
+        "entity": "Big Data",
+        "job_id": 4344080774,
+        "title": "(Senior) Manager Snowflake (all genders)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4344080774,
+        "title": "(Senior) Manager Snowflake (all genders)"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4344080774,
+        "title": "(Senior) Manager Snowflake (all genders)"
+      },
+      {
+        "entity": "Analytisches Denken",
+        "job_id": 4344080774,
+        "title": "(Senior) Manager Snowflake (all genders)"
+      },
+      {
+        "entity": "pragmatisches Vorgehen",
+        "job_id": 4344080774,
+        "title": "(Senior) Manager Snowflake (all genders)"
+      },
+      {
+        "entity": "DevOps",
+        "job_id": 4361562595,
+        "title": "Machine Learning Engineer (all genders)"
+      },
+      {
+        "entity": "Data Analysis",
+        "job_id": 4354436796,
+        "title": "Machine Learning Engineer"
+      },
+      {
+        "entity": "drug pipeline or trial CI databases (e.g. Clarivate's Cortellis Competitive Intelligence, Citeline's Trialtrove or Pharmaprojects)",
+        "job_id": 4346100636,
+        "title": "Data Scientist for Published Clinical Evidence & Competitive Intelligence Insights (all genders)"
+      },
+      {
+        "entity": "statistical analysis",
+        "job_id": 4346100636,
+        "title": "Data Scientist for Published Clinical Evidence & Competitive Intelligence Insights (all genders)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 3925557577,
+        "title": "Senior Consultant Data & Analytics - Projektmanagement (all genders)"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 3925557577,
+        "title": "Senior Consultant Data & Analytics - Projektmanagement (all genders)"
+      },
+      {
+        "entity": "data engineering",
+        "job_id": 4360442298,
+        "title": "Senior Specialist, Product Operations  (Consumer Search & Discovery)"
+      },
+      {
+        "entity": "Agile Methodik",
+        "job_id": 4365115095,
+        "title": "Machine Learning Engineering Manager (m/f/d)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4365115095,
+        "title": "Machine Learning Engineering Manager (m/f/d)"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4365115095,
+        "title": "Machine Learning Engineering Manager (m/f/d)"
+      },
+      {
+        "entity": "ETL processes",
+        "job_id": 4343983608,
+        "title": "Director, Data Science - Deep Learning & AI"
+      },
+      {
+        "entity": "Big Data",
+        "job_id": 4343983608,
+        "title": "Director, Data Science - Deep Learning & AI"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4343983608,
+        "title": "Director, Data Science - Deep Learning & AI"
+      },
+      {
+        "entity": "agile Umsetzung",
+        "job_id": 4344009895,
+        "title": "(Senior) Consultant Data & AI Technology (all genders)"
+      },
+      {
+        "entity": "modernen Plattform-Architekturen (z. B. Cloud, Next-Generation AI-Plattformen)",
+        "job_id": 4344009895,
+        "title": "(Senior) Consultant Data & AI Technology (all genders)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4344009895,
+        "title": "(Senior) Consultant Data & AI Technology (all genders)"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4344009895,
+        "title": "(Senior) Consultant Data & AI Technology (all genders)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4351084804,
+        "title": "PhD (m/f/d) Statistical Genetics / Machine Learning"
+      },
+      {
+        "entity": "Maschinelles Lernen",
+        "job_id": 4351084804,
+        "title": "PhD (m/f/d) Statistical Genetics / Machine Learning"
+      },
+      {
+        "entity": "Künstliche Intelligenz",
+        "job_id": 4351084804,
+        "title": "PhD (m/f/d) Statistical Genetics / Machine Learning"
+      },
+      {
+        "entity": "Bioinformatik",
+        "job_id": 4351084804,
+        "title": "PhD (m/f/d) Statistical Genetics / Machine Learning"
+      },
+      {
+        "entity": "statistische Genetik",
+        "job_id": 4351084804,
+        "title": "PhD (m/f/d) Statistical Genetics / Machine Learning"
+      },
+      {
+        "entity": "Präzisionsmedizin",
+        "job_id": 4351084804,
+        "title": "PhD (m/f/d) Statistical Genetics / Machine Learning"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4348722450,
+        "title": "Data Scientist / AI Consultant (m/w/d)"
+      },
+      {
+        "entity": "unstrukturierte Daten (Text und Bild)",
+        "job_id": 4356261336,
+        "title": "AI Engineer - NLP, Gen AI (m/w/d)"
+      },
+      {
+        "entity": "Maschinelles Lernen",
+        "job_id": 4344686043,
+        "title": "Senior Machine Learning / Big Data Engineer (m/f/d) for the Internal IT Department of a Market Leader (No consulting, 3–4 days home office per week)"
+      },
+      {
+        "entity": "Datenanalyse",
+        "job_id": 4344686043,
+        "title": "Senior Machine Learning / Big Data Engineer (m/f/d) for the Internal IT Department of a Market Leader (No consulting, 3–4 days home office per week)"
+      },
+      {
+        "entity": "Agile",
+        "job_id": 4344686043,
+        "title": "Senior Machine Learning / Big Data Engineer (m/f/d) for the Internal IT Department of a Market Leader (No consulting, 3–4 days home office per week)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4344686043,
+        "title": "Senior Machine Learning / Big Data Engineer (m/f/d) for the Internal IT Department of a Market Leader (No consulting, 3–4 days home office per week)"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4344686043,
+        "title": "Senior Machine Learning / Big Data Engineer (m/f/d) for the Internal IT Department of a Market Leader (No consulting, 3–4 days home office per week)"
+      },
+      {
+        "entity": "data pipelines",
+        "job_id": 4344686043,
+        "title": "Senior Machine Learning / Big Data Engineer (m/f/d) for the Internal IT Department of a Market Leader (No consulting, 3–4 days home office per week)"
+      },
+      {
+        "entity": "ETL",
+        "job_id": 4344686043,
+        "title": "Senior Machine Learning / Big Data Engineer (m/f/d) for the Internal IT Department of a Market Leader (No consulting, 3–4 days home office per week)"
+      },
+      {
+        "entity": "Azure-basierte Backend-Dienste",
+        "job_id": 4344993303,
+        "title": "Werkstudent im Bereich künstliche Intelligenz (AI & ML) Full-Stack-Entwicklung und Data Engineering"
+      },
+      {
+        "entity": "Classical Control",
+        "job_id": 4330795533,
+        "title": "Machine learning & robotics scientist"
+      },
+      {
+        "entity": "designing and running end-to-end experiments",
+        "job_id": 4347729184,
+        "title": "Senior Machine Learning Engineer (IntelliJ AI)"
+      },
+      {
+        "entity": "agile problem-solving",
+        "job_id": 4355413497,
+        "title": "AI Architect / Machine Learning Engineer (m,f,d)"
+      },
+      {
+        "entity": "Maschinelles Lernen",
+        "job_id": 4326624902,
+        "title": "AI Test Architect"
+      },
+      {
+        "entity": "Künstliche Intelligenz",
+        "job_id": 4326624902,
+        "title": "AI Test Architect"
+      },
+      {
+        "entity": "Big Data",
+        "job_id": 4326624902,
+        "title": "AI Test Architect"
+      },
+      {
+        "entity": "high-performance networking technologies",
+        "job_id": 4326624902,
+        "title": "AI Test Architect"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4326624902,
+        "title": "AI Test Architect"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4326624902,
+        "title": "AI Test Architect"
+      },
+      {
+        "entity": "Maschinelles Lernen",
+        "job_id": 3733042152,
+        "title": "Senior Machine Learning / AI Engineer (all genders)"
+      },
+      {
+        "entity": "Data Engineering",
+        "job_id": 3733042152,
+        "title": "Senior Machine Learning / AI Engineer (all genders)"
+      },
+      {
+        "entity": "maschinelles Lernen",
+        "job_id": 4355306025,
+        "title": "Praktikum im Bereich Data Engineering für Machine Learning/Computer Vision (Automotive Unit)"
+      },
+      {
+        "entity": "Datenanalyse",
+        "job_id": 4343989999,
+        "title": "Advanced Analytics & Databricks Expert (all genders)"
+      },
+      {
+        "entity": "Agile",
+        "job_id": 4343989999,
+        "title": "Advanced Analytics & Databricks Expert (all genders)"
+      },
+      {
+        "entity": "statistische Grundkenntnisse",
+        "job_id": 4343989999,
+        "title": "Advanced Analytics & Databricks Expert (all genders)"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4343989999,
+        "title": "Advanced Analytics & Databricks Expert (all genders)"
+      },
+      {
+        "entity": "Big Data",
+        "job_id": 4343989999,
+        "title": "Advanced Analytics & Databricks Expert (all genders)"
+      },
+      {
+        "entity": "data pipelines",
+        "job_id": 4343989999,
+        "title": "Advanced Analytics & Databricks Expert (all genders)"
+      },
+      {
+        "entity": "moderne Datenarchitekturen",
+        "job_id": 4343989999,
+        "title": "Advanced Analytics & Databricks Expert (all genders)"
+      },
+      {
+        "entity": "strategische Architekturplanung",
+        "job_id": 4343989999,
+        "title": "Advanced Analytics & Databricks Expert (all genders)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4360063929,
+        "title": "Machine Learning Research Engineer, Siri Speech"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4360063929,
+        "title": "Machine Learning Research Engineer, Siri Speech"
+      },
+      {
+        "entity": "natural language generation",
+        "job_id": 4360063929,
+        "title": "Machine Learning Research Engineer, Siri Speech"
+      },
+      {
+        "entity": "Maschinelles Lernen",
+        "job_id": 4353471886,
+        "title": "Head of Data Science"
+      },
+      {
+        "entity": "Datenanalyse",
+        "job_id": 4353471886,
+        "title": "Head of Data Science"
+      },
+      {
+        "entity": "Agile Methodik",
+        "job_id": 4353471886,
+        "title": "Head of Data Science"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4353471886,
+        "title": "Head of Data Science"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4353471886,
+        "title": "Head of Data Science"
+      },
+      {
+        "entity": "data pipelines",
+        "job_id": 4353471886,
+        "title": "Head of Data Science"
+      },
+      {
+        "entity": "ETL",
+        "job_id": 4353471886,
+        "title": "Head of Data Science"
+      },
+      {
+        "entity": "Big Data",
+        "job_id": 4353471886,
+        "title": "Head of Data Science"
+      },
+      {
+        "entity": "Zeitreihenanalyse",
+        "job_id": 4353471886,
+        "title": "Head of Data Science"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4352170870,
+        "title": "(Senior) AI Engineer / MLOps Engineer (m/f/d)"
+      },
+      {
+        "entity": "software interfacing with hardware",
+        "job_id": 4360101374,
+        "title": "System Software Engineer (Neural Engine) - m/f/d"
+      },
+      {
+        "entity": "Big Data",
+        "job_id": 4366858641,
+        "title": "Junior Data Engineer (m/f/d)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4366858641,
+        "title": "Junior Data Engineer (m/f/d)"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4366858641,
+        "title": "Junior Data Engineer (m/f/d)"
+      },
+      {
+        "entity": "Maschinelles Lernen",
+        "job_id": 4351844145,
+        "title": "Duales Studium Data Science und Künstliche Intelligenz B.Sc. 2026 (m/w/d)"
+      },
+      {
+        "entity": "statistische Methoden und Algorithmen der Künstlichen Intelligenz",
+        "job_id": 4351844145,
+        "title": "Duales Studium Data Science und Künstliche Intelligenz B.Sc. 2026 (m/w/d)"
+      },
+      {
+        "entity": "Problem- und Lösungsorientierung",
+        "job_id": 4351844145,
+        "title": "Duales Studium Data Science und Künstliche Intelligenz B.Sc. 2026 (m/w/d)"
+      },
+      {
+        "entity": "Statistical Analysis",
+        "job_id": 4353550385,
+        "title": "Senior Data Analyst (Berlin)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4344180497,
+        "title": "(Senior) Manager Data & AI Technology (all genders)"
+      },
+      {
+        "entity": "Robotic & Physical AI",
+        "job_id": 4344180497,
+        "title": "(Senior) Manager Data & AI Technology (all genders)"
+      },
+      {
+        "entity": "statistische Methoden",
+        "job_id": 4221532668,
+        "title": "Senior Consultant Data Science (m/w/d)"
+      },
+      {
+        "entity": "agalisches Denken",
+        "job_id": 4221532668,
+        "title": "Senior Consultant Data Science (m/w/d)"
+      },
+      {
+        "entity": "Baumbasierte Verfahren",
+        "job_id": 4221532668,
+        "title": "Senior Consultant Data Science (m/w/d)"
+      },
+      {
+        "entity": "Bayes'sche Verfahren",
+        "job_id": 4221532668,
+        "title": "Senior Consultant Data Science (m/w/d)"
+      },
+      {
+        "entity": "Agile",
+        "job_id": 4365473837,
+        "title": "Data Scientist Process Mining (m/w/d)"
+      },
+      {
+        "entity": "Datenanalyse",
+        "job_id": 4358394610,
+        "title": "Senior Data Scientist (m/w/d)"
+      },
+      {
+        "entity": "Agile",
+        "job_id": 4358394610,
+        "title": "Senior Data Scientist (m/w/d)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4358394610,
+        "title": "Senior Data Scientist (m/w/d)"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4358394610,
+        "title": "Senior Data Scientist (m/w/d)"
+      },
+      {
+        "entity": "Machine-Learning",
+        "job_id": 4351636445,
+        "title": "Data Scientist - Public Sektor / Defense (m/w/d)"
+      },
+      {
+        "entity": "Deep Learning",
+        "job_id": 4351636445,
+        "title": "Data Scientist - Public Sektor / Defense (m/w/d)"
+      },
+      {
+        "entity": "ML-Modelle",
+        "job_id": 4351636445,
+        "title": "Data Scientist - Public Sektor / Defense (m/w/d)"
+      },
+      {
+        "entity": "Big Data",
+        "job_id": 4351636445,
+        "title": "Data Scientist - Public Sektor / Defense (m/w/d)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4351636445,
+        "title": "Data Scientist - Public Sektor / Defense (m/w/d)"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4351636445,
+        "title": "Data Scientist - Public Sektor / Defense (m/w/d)"
+      },
+      {
+        "entity": "CI/CD-Pipelines",
+        "job_id": 4351636445,
+        "title": "Data Scientist - Public Sektor / Defense (m/w/d)"
+      },
+      {
+        "entity": "ML-Lifecycle",
+        "job_id": 4351636445,
+        "title": "Data Scientist - Public Sektor / Defense (m/w/d)"
+      },
+      {
+        "entity": "GenAI-Architekturen",
+        "job_id": 4351636445,
+        "title": "Data Scientist - Public Sektor / Defense (m/w/d)"
+      },
+      {
+        "entity": "agentische AI",
+        "job_id": 4351636445,
+        "title": "Data Scientist - Public Sektor / Defense (m/w/d)"
+      },
+      {
+        "entity": "Deep Learning",
+        "job_id": 4330921211,
+        "title": "Senior Microsoft Azure AI Engineer (m/w/d)"
+      },
+      {
+        "entity": "digitales Marketing",
+        "job_id": 4336882356,
+        "title": "Data Scientist Marketing"
+      },
+      {
+        "entity": "Agile Methodik",
+        "job_id": 4336882356,
+        "title": "Data Scientist Marketing"
+      },
+      {
+        "entity": "Maschinelles Lernen",
+        "job_id": 3733044016,
+        "title": "Senior Machine Learning / AI Engineer (all genders)"
+      },
+      {
+        "entity": "Data Scientist",
+        "job_id": 3733044016,
+        "title": "Senior Machine Learning / AI Engineer (all genders)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 3733044016,
+        "title": "Senior Machine Learning / AI Engineer (all genders)"
+      },
+      {
+        "entity": "Datenanalyse",
+        "job_id": 3733044016,
+        "title": "Senior Machine Learning / AI Engineer (all genders)"
+      },
+      {
+        "entity": "Agile Methodik",
+        "job_id": 3733044016,
+        "title": "Senior Machine Learning / AI Engineer (all genders)"
+      },
+      {
+        "entity": "data pipelines",
+        "job_id": 3733044016,
+        "title": "Senior Machine Learning / AI Engineer (all genders)"
+      },
+      {
+        "entity": "Big Data",
+        "job_id": 3733044016,
+        "title": "Senior Machine Learning / AI Engineer (all genders)"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 3733044016,
+        "title": "Senior Machine Learning / AI Engineer (all genders)"
+      },
+      {
+        "entity": "Agile Arbeitsweise",
+        "job_id": 4352061892,
+        "title": "Managing Consultant"
+      },
+      {
+        "entity": ".NET Framework",
+        "job_id": 4356429086,
+        "title": "Technical Product Manager, AI/Analytics (d/f/m)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4219276189,
+        "title": "Praktikum Associate Consultant Data Science (m/w/d)"
+      },
+      {
+        "entity": "statistische Analyse",
+        "job_id": 4219276189,
+        "title": "Praktikum Associate Consultant Data Science (m/w/d)"
+      },
+      {
+        "entity": "Datenanalyse",
+        "job_id": 4219276189,
+        "title": "Praktikum Associate Consultant Data Science (m/w/d)"
+      },
+      {
+        "entity": "Agile Arbeitsweise",
+        "job_id": 4219276189,
+        "title": "Praktikum Associate Consultant Data Science (m/w/d)"
+      },
+      {
+        "entity": "Big Data",
+        "job_id": 4219276189,
+        "title": "Praktikum Associate Consultant Data Science (m/w/d)"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4219276189,
+        "title": "Praktikum Associate Consultant Data Science (m/w/d)"
+      },
+      {
+        "entity": "Data Science",
+        "job_id": 4291488038,
+        "title": "Praktikum Data Engineer im Bereich Advanced Analytics (m/w/d)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4291488038,
+        "title": "Praktikum Data Engineer im Bereich Advanced Analytics (m/w/d)"
+      },
+      {
+        "entity": "Datenanalyse",
+        "job_id": 4291488038,
+        "title": "Praktikum Data Engineer im Bereich Advanced Analytics (m/w/d)"
+      },
+      {
+        "entity": "Agile Methodik",
+        "job_id": 4291488038,
+        "title": "Praktikum Data Engineer im Bereich Advanced Analytics (m/w/d)"
+      },
+      {
+        "entity": "digitale Signalverarbeitung",
+        "job_id": 4356630252,
+        "title": "Praktikanten (m/w/d) – Machine Learning"
+      },
+      {
+        "entity": "datengetriebene Insights",
+        "job_id": 4300496384,
+        "title": "Business Analyst (m/w/d) Sales, Service & Operations"
+      },
+      {
+        "entity": "Datenanalyse",
+        "job_id": 4367157072,
+        "title": "Lead / Senior Data Scientist – Pricing & Revenue Optimization (m/f/d)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4367157072,
+        "title": "Lead / Senior Data Scientist – Pricing & Revenue Optimization (m/f/d)"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4367157072,
+        "title": "Lead / Senior Data Scientist – Pricing & Revenue Optimization (m/f/d)"
+      },
+      {
+        "entity": "Agile",
+        "job_id": 4367157072,
+        "title": "Lead / Senior Data Scientist – Pricing & Revenue Optimization (m/f/d)"
+      },
+      {
+        "entity": "deep learning",
+        "job_id": 4367157072,
+        "title": "Lead / Senior Data Scientist – Pricing & Revenue Optimization (m/f/d)"
+      },
+      {
+        "entity": "NLP",
+        "job_id": 4367157072,
+        "title": "Lead / Senior Data Scientist – Pricing & Revenue Optimization (m/f/d)"
+      },
+      {
+        "entity": "DevOps",
+        "job_id": 4367157072,
+        "title": "Lead / Senior Data Scientist – Pricing & Revenue Optimization (m/f/d)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4354008202,
+        "title": "Senior Data Scientist with focus SAS programming (f/m/d - part/full-time)"
+      },
+      {
+        "entity": "maschinelle Lernen",
+        "job_id": 4363504382,
+        "title": "Masterarbeit (all genders) – Rohstoffpreis-Prognose mit Künstlicher Intelligenz / Machine Learning"
+      },
+      {
+        "entity": "Datenanalyse",
+        "job_id": 4363504382,
+        "title": "Masterarbeit (all genders) – Rohstoffpreis-Prognose mit Künstlicher Intelligenz / Machine Learning"
+      },
+      {
+        "entity": "Agile",
+        "job_id": 4363504382,
+        "title": "Masterarbeit (all genders) – Rohstoffpreis-Prognose mit Künstlicher Intelligenz / Machine Learning"
+      },
+      {
+        "entity": "tiefe maschinelle Lernens",
+        "job_id": 4366472251,
+        "title": "CLAAS Inside Machine Learning/Artificial Intelligence"
+      },
+      {
+        "entity": "Machine Learning Modellentwicklung",
+        "job_id": 4366472251,
+        "title": "CLAAS Inside Machine Learning/Artificial Intelligence"
+      },
+      {
+        "entity": "strukturierte, sequenziellen Daten",
+        "job_id": 4366472251,
+        "title": "CLAAS Inside Machine Learning/Artificial Intelligence"
+      },
+      {
+        "entity": "Maschinelles Lernen",
+        "job_id": 4366472251,
+        "title": "CLAAS Inside Machine Learning/Artificial Intelligence"
+      },
+      {
+        "entity": "deep learning",
+        "job_id": 4361698212,
+        "title": "Staff Machine Learning Engineer"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4361698212,
+        "title": "Staff Machine Learning Engineer"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 3733044564,
+        "title": "Senior Consultant Data & Analytics - Projektmanagement (all genders)"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 3733044564,
+        "title": "Senior Consultant Data & Analytics - Projektmanagement (all genders)"
+      },
+      {
+        "entity": "Agile Arbeitsweise",
+        "job_id": 4356476398,
+        "title": "Softwareentwickler (m/w/d) RPA & KI"
+      },
+      {
+        "entity": "Maschinelles Lernen",
+        "job_id": 4360477565,
+        "title": "(Senior) Data Scientist"
+      },
+      {
+        "entity": "statistische Analyse",
+        "job_id": 4360477565,
+        "title": "(Senior) Data Scientist"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4360477565,
+        "title": "(Senior) Data Scientist"
+      },
+      {
+        "entity": "statistische Analyse",
+        "job_id": 4331718188,
+        "title": "Senior Software Engineer / Algorithmenentwickler (Tracking & Fusion, AI/ML-Integration)"
+      },
+      {
+        "entity": "Data Analytics-Methoden",
+        "job_id": 4331718188,
+        "title": "Senior Software Engineer / Algorithmenentwickler (Tracking & Fusion, AI/ML-Integration)"
+      },
+      {
+        "entity": "Agile Entwicklungsmethoden",
+        "job_id": 4331718188,
+        "title": "Senior Software Engineer / Algorithmenentwickler (Tracking & Fusion, AI/ML-Integration)"
+      },
+      {
+        "entity": "agile methodology",
+        "job_id": 4341062938,
+        "title": "Machine Learning Engineer III, Routing Cost"
+      },
+      {
+        "entity": "data accessibility",
+        "job_id": 4356605236,
+        "title": "Data Scientist in Biotech R&D and Process Development (m/f/d)"
+      },
+      {
+        "entity": "Datenanalyse",
+        "job_id": 4353545042,
+        "title": "Data Scientist (w/m/d)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4353545042,
+        "title": "Data Scientist (w/m/d)"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4353545042,
+        "title": "Data Scientist (w/m/d)"
+      },
+      {
+        "entity": "Big Data",
+        "job_id": 4353545042,
+        "title": "Data Scientist (w/m/d)"
+      },
+      {
+        "entity": "statistical analysis",
+        "job_id": 4343734338,
+        "title": "Senior Data Scientist II – Therapeutic Modality Insights & Competitor Intelligence (all genders)"
+      },
+      {
+        "entity": "NLP",
+        "job_id": 4353717216,
+        "title": "AI Research Engineer - 3D Computer Vision"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4353717216,
+        "title": "AI Research Engineer - 3D Computer Vision"
+      },
+      {
+        "entity": "DevOps",
+        "job_id": 4353717216,
+        "title": "AI Research Engineer - 3D Computer Vision"
+      },
+      {
+        "entity": "data pipelines",
+        "job_id": 4353717216,
+        "title": "AI Research Engineer - 3D Computer Vision"
+      },
+      {
+        "entity": "ETL",
+        "job_id": 4353717216,
+        "title": "AI Research Engineer - 3D Computer Vision"
+      },
+      {
+        "entity": "Big Data",
+        "job_id": 4353717216,
+        "title": "AI Research Engineer - 3D Computer Vision"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4353717216,
+        "title": "AI Research Engineer - 3D Computer Vision"
+      },
+      {
+        "entity": "agile",
+        "job_id": 4353717216,
+        "title": "AI Research Engineer - 3D Computer Vision"
+      },
+      {
+        "entity": "Maschinelles Lernen",
+        "job_id": 4364225370,
+        "title": "PhD student - Machine Learning (m/f/d)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4364225370,
+        "title": "PhD student - Machine Learning (m/f/d)"
+      },
+      {
+        "entity": "machine learning models",
+        "job_id": 4343755267,
+        "title": "Senior Data Scientist / Data Engineer"
+      },
+      {
+        "entity": "scikit-learn",
+        "job_id": 4343755267,
+        "title": "Senior Data Scientist / Data Engineer"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4343755267,
+        "title": "Senior Data Scientist / Data Engineer"
+      },
+      {
+        "entity": "Datenanalyse",
+        "job_id": 4343755267,
+        "title": "Senior Data Scientist / Data Engineer"
+      },
+      {
+        "entity": "Agile Methodik",
+        "job_id": 4343755267,
+        "title": "Senior Data Scientist / Data Engineer"
+      },
+      {
+        "entity": "datengetriebene Projekte",
+        "job_id": 4367163653,
+        "title": "Senior AI Software Engineer in Frankfurt"
+      },
+      {
+        "entity": "Projektmanagement",
+        "job_id": 4344009889,
+        "title": "(Senior) Data Scientist AI & Generative AI (all genders)"
+      },
+      {
+        "entity": "Datenanalyse",
+        "job_id": 4366719844,
+        "title": "Full-Stack Tech Lead (Remote, Contract)"
+      },
+      {
+        "entity": "Agile Methodik",
+        "job_id": 4366719844,
+        "title": "Full-Stack Tech Lead (Remote, Contract)"
+      },
+      {
+        "entity": "Statistik",
+        "job_id": 4366719844,
+        "title": "Full-Stack Tech Lead (Remote, Contract)"
+      },
+      {
+        "entity": "feature engineering",
+        "job_id": 4366719844,
+        "title": "Full-Stack Tech Lead (Remote, Contract)"
+      },
+      {
+        "entity": "DevOps",
+        "job_id": 4366719844,
+        "title": "Full-Stack Tech Lead (Remote, Contract)"
+      }
+    ]
+  },
+  "tools": {
+    "by_frequency": {
+      "PyTorch": 9,
+      "AWS": 8,
+      "Kubernetes": 8,
+      "Kafka": 7,
+      "SQL": 6,
+      "Azure": 6,
+      "Spark": 6,
+      "Python": 5,
+      "Docker": 5,
+      "TensorFlow": 3,
+      ".NET": 2,
+      "PostgreSQL": 2,
+      "GCP": 2,
+      "LLMs (Agents, RAG, VectorDBs...)": 1,
+      "Git": 1,
+      "gängige Datenbank-Software": 1,
+      "keine spezifischen Tools genannt": 1,
+      "AWS (not explicitly mentioned, but 'cloud platforms' is)": 1,
+      "Jenkins": 1,
+      "Clarivate's Cortellis Competitive Intelligence": 1,
+      "Citeline's Trialtrove": 1,
+      "mpmX": 1,
+      "keine expliziten Nennungen von Tools": 1,
+      "Tableau": 1,
+      "Power BI": 1,
+      "Java": 1,
+      "scikit-learn": 1,
+      "ELN (Electronic Laboratory Notebook)": 1,
+      "LIMS (Laboratory Information Management System)": 1
+    },
+    "details": [
+      {
+        "entity": "LLMs (Agents, RAG, VectorDBs...)",
+        "job_id": 4358368129,
+        "title": "Machine Learning Consultant (m/w/d)"
+      },
+      {
+        "entity": "Python",
+        "job_id": 4367127493,
+        "title": "Research Assistants (Postdocs) (m/f/d) - AI"
+      },
+      {
+        "entity": "AWS",
+        "job_id": 4367127493,
+        "title": "Research Assistants (Postdocs) (m/f/d) - AI"
+      },
+      {
+        "entity": "TensorFlow",
+        "job_id": 4367127493,
+        "title": "Research Assistants (Postdocs) (m/f/d) - AI"
+      },
+      {
+        "entity": "Git",
+        "job_id": 4365868539,
+        "title": "Senior Data Scientist"
+      },
+      {
+        "entity": "gängige Datenbank-Software",
+        "job_id": 4356042371,
+        "title": "Medizinischer Dokumentar (m/w/d) / Data Scientist (m/w/d) Umweltmedizin und Integrative Gesundheit"
+      },
+      {
+        "entity": "SQL",
+        "job_id": 4353500213,
+        "title": "Data Scientist"
+      },
+      {
+        "entity": "Kafka",
+        "job_id": 4353500213,
+        "title": "Data Scientist"
+      },
+      {
+        "entity": "Kubernetes",
+        "job_id": 4353500213,
+        "title": "Data Scientist"
+      },
+      {
+        "entity": ".NET",
+        "job_id": 4358932783,
+        "title": "AI & Full-Stack Software Engineer (w/m/d)"
+      },
+      {
+        "entity": "AWS",
+        "job_id": 4365964784,
+        "title": "Data Scientist - Quick Commerce"
+      },
+      {
+        "entity": "keine spezifischen Tools genannt",
+        "job_id": 4364326234,
+        "title": "Lead Data Scientist (m/w/d)"
+      },
+      {
+        "entity": "PyTorch",
+        "job_id": 4349499228,
+        "title": "Staff Machine Learning Scientist"
+      },
+      {
+        "entity": "SQL",
+        "job_id": 4349499228,
+        "title": "Staff Machine Learning Scientist"
+      },
+      {
+        "entity": "Azure",
+        "job_id": 4349499228,
+        "title": "Staff Machine Learning Scientist"
+      },
+      {
+        "entity": "AWS (not explicitly mentioned, but 'cloud platforms' is)",
+        "job_id": 4359333639,
+        "title": "Product Analytics Manager | Paid relocation to Barcelona, Spain 🇪🇸"
+      },
+      {
+        "entity": "Jenkins",
+        "job_id": 4359333639,
+        "title": "Product Analytics Manager | Paid relocation to Barcelona, Spain 🇪🇸"
+      },
+      {
+        "entity": "Kafka",
+        "job_id": 4359333639,
+        "title": "Product Analytics Manager | Paid relocation to Barcelona, Spain 🇪🇸"
+      },
+      {
+        "entity": "Kubernetes",
+        "job_id": 4359333639,
+        "title": "Product Analytics Manager | Paid relocation to Barcelona, Spain 🇪🇸"
+      },
+      {
+        "entity": "PyTorch",
+        "job_id": 4359333639,
+        "title": "Product Analytics Manager | Paid relocation to Barcelona, Spain 🇪🇸"
+      },
+      {
+        "entity": "AWS",
+        "job_id": 4351064616,
+        "title": "Product Owner (m/w/d) AI Language Solutions (Vollzeit/unbefristet)"
+      },
+      {
+        "entity": "Clarivate's Cortellis Competitive Intelligence",
+        "job_id": 4346100636,
+        "title": "Data Scientist for Published Clinical Evidence & Competitive Intelligence Insights (all genders)"
+      },
+      {
+        "entity": "Citeline's Trialtrove",
+        "job_id": 4346100636,
+        "title": "Data Scientist for Published Clinical Evidence & Competitive Intelligence Insights (all genders)"
+      },
+      {
+        "entity": "PostgreSQL",
+        "job_id": 4353882367,
+        "title": "Quantitative Venture Research Intern (m/f/d) - Munich"
+      },
+      {
+        "entity": "PyTorch",
+        "job_id": 4365115095,
+        "title": "Machine Learning Engineering Manager (m/f/d)"
+      },
+      {
+        "entity": "Kubernetes",
+        "job_id": 4365115095,
+        "title": "Machine Learning Engineering Manager (m/f/d)"
+      },
+      {
+        "entity": "Python",
+        "job_id": 4344009895,
+        "title": "(Senior) Consultant Data & AI Technology (all genders)"
+      },
+      {
+        "entity": "Python",
+        "job_id": 4353471886,
+        "title": "Head of Data Science"
+      },
+      {
+        "entity": "AWS",
+        "job_id": 4353471886,
+        "title": "Head of Data Science"
+      },
+      {
+        "entity": "Spark",
+        "job_id": 4353471886,
+        "title": "Head of Data Science"
+      },
+      {
+        "entity": "Kafka",
+        "job_id": 4353471886,
+        "title": "Head of Data Science"
+      },
+      {
+        "entity": "Kubernetes",
+        "job_id": 4353471886,
+        "title": "Head of Data Science"
+      },
+      {
+        "entity": "Python",
+        "job_id": 4351844145,
+        "title": "Duales Studium Data Science und Künstliche Intelligenz B.Sc. 2026 (m/w/d)"
+      },
+      {
+        "entity": "PyTorch",
+        "job_id": 4351844145,
+        "title": "Duales Studium Data Science und Künstliche Intelligenz B.Sc. 2026 (m/w/d)"
+      },
+      {
+        "entity": "TensorFlow",
+        "job_id": 4351844145,
+        "title": "Duales Studium Data Science und Künstliche Intelligenz B.Sc. 2026 (m/w/d)"
+      },
+      {
+        "entity": "Docker",
+        "job_id": 4351844145,
+        "title": "Duales Studium Data Science und Künstliche Intelligenz B.Sc. 2026 (m/w/d)"
+      },
+      {
+        "entity": "Spark",
+        "job_id": 4351844145,
+        "title": "Duales Studium Data Science und Künstliche Intelligenz B.Sc. 2026 (m/w/d)"
+      },
+      {
+        "entity": "Kafka",
+        "job_id": 4351844145,
+        "title": "Duales Studium Data Science und Künstliche Intelligenz B.Sc. 2026 (m/w/d)"
+      },
+      {
+        "entity": "Kubernetes",
+        "job_id": 4351844145,
+        "title": "Duales Studium Data Science und Künstliche Intelligenz B.Sc. 2026 (m/w/d)"
+      },
+      {
+        "entity": "AWS",
+        "job_id": 4351844145,
+        "title": "Duales Studium Data Science und Künstliche Intelligenz B.Sc. 2026 (m/w/d)"
+      },
+      {
+        "entity": "AWS",
+        "job_id": 4344180497,
+        "title": "(Senior) Manager Data & AI Technology (all genders)"
+      },
+      {
+        "entity": "Docker",
+        "job_id": 4344180497,
+        "title": "(Senior) Manager Data & AI Technology (all genders)"
+      },
+      {
+        "entity": "mpmX",
+        "job_id": 4365473837,
+        "title": "Data Scientist Process Mining (m/w/d)"
+      },
+      {
+        "entity": "Docker",
+        "job_id": 4351636445,
+        "title": "Data Scientist - Public Sektor / Defense (m/w/d)"
+      },
+      {
+        "entity": "Spark",
+        "job_id": 4351024239,
+        "title": "IT und Softwareentwickler (all gender)"
+      },
+      {
+        "entity": "Kafka",
+        "job_id": 4351024239,
+        "title": "IT und Softwareentwickler (all gender)"
+      },
+      {
+        "entity": "Kubernetes",
+        "job_id": 4351024239,
+        "title": "IT und Softwareentwickler (all gender)"
+      },
+      {
+        "entity": "AWS",
+        "job_id": 4351024239,
+        "title": "IT und Softwareentwickler (all gender)"
+      },
+      {
+        "entity": "Azure",
+        "job_id": 4351024239,
+        "title": "IT und Softwareentwickler (all gender)"
+      },
+      {
+        "entity": "GCP",
+        "job_id": 4351024239,
+        "title": "IT und Softwareentwickler (all gender)"
+      },
+      {
+        "entity": "SQL",
+        "job_id": 4351024239,
+        "title": "IT und Softwareentwickler (all gender)"
+      },
+      {
+        "entity": "PostgreSQL",
+        "job_id": 4351024239,
+        "title": "IT und Softwareentwickler (all gender)"
+      },
+      {
+        "entity": "PyTorch",
+        "job_id": 3733044016,
+        "title": "Senior Machine Learning / AI Engineer (all genders)"
+      },
+      {
+        "entity": "Spark",
+        "job_id": 4367157072,
+        "title": "Lead / Senior Data Scientist – Pricing & Revenue Optimization (m/f/d)"
+      },
+      {
+        "entity": "Kafka",
+        "job_id": 4367157072,
+        "title": "Lead / Senior Data Scientist – Pricing & Revenue Optimization (m/f/d)"
+      },
+      {
+        "entity": "Kubernetes",
+        "job_id": 4367157072,
+        "title": "Lead / Senior Data Scientist – Pricing & Revenue Optimization (m/f/d)"
+      },
+      {
+        "entity": "PyTorch",
+        "job_id": 4367157072,
+        "title": "Lead / Senior Data Scientist – Pricing & Revenue Optimization (m/f/d)"
+      },
+      {
+        "entity": "SQL",
+        "job_id": 4367157072,
+        "title": "Lead / Senior Data Scientist – Pricing & Revenue Optimization (m/f/d)"
+      },
+      {
+        "entity": "Azure",
+        "job_id": 4367157072,
+        "title": "Lead / Senior Data Scientist – Pricing & Revenue Optimization (m/f/d)"
+      },
+      {
+        "entity": "keine expliziten Nennungen von Tools",
+        "job_id": 4366362451,
+        "title": "Fraud Manager (m/w/d) Payment"
+      },
+      {
+        "entity": "PyTorch",
+        "job_id": 4361698212,
+        "title": "Staff Machine Learning Engineer"
+      },
+      {
+        "entity": "Spark",
+        "job_id": 3733044564,
+        "title": "Senior Consultant Data & Analytics - Projektmanagement (all genders)"
+      },
+      {
+        "entity": "Kafka",
+        "job_id": 3733044564,
+        "title": "Senior Consultant Data & Analytics - Projektmanagement (all genders)"
+      },
+      {
+        "entity": "Docker",
+        "job_id": 3733044564,
+        "title": "Senior Consultant Data & Analytics - Projektmanagement (all genders)"
+      },
+      {
+        "entity": "Kubernetes",
+        "job_id": 3733044564,
+        "title": "Senior Consultant Data & Analytics - Projektmanagement (all genders)"
+      },
+      {
+        "entity": "AWS",
+        "job_id": 3733044564,
+        "title": "Senior Consultant Data & Analytics - Projektmanagement (all genders)"
+      },
+      {
+        "entity": "Azure",
+        "job_id": 3733044564,
+        "title": "Senior Consultant Data & Analytics - Projektmanagement (all genders)"
+      },
+      {
+        "entity": "GCP",
+        "job_id": 3733044564,
+        "title": "Senior Consultant Data & Analytics - Projektmanagement (all genders)"
+      },
+      {
+        "entity": "SQL",
+        "job_id": 3733044564,
+        "title": "Senior Consultant Data & Analytics - Projektmanagement (all genders)"
+      },
+      {
+        "entity": "Tableau",
+        "job_id": 3733044564,
+        "title": "Senior Consultant Data & Analytics - Projektmanagement (all genders)"
+      },
+      {
+        "entity": "Power BI",
+        "job_id": 3733044564,
+        "title": "Senior Consultant Data & Analytics - Projektmanagement (all genders)"
+      },
+      {
+        "entity": "Python",
+        "job_id": 3733044564,
+        "title": "Senior Consultant Data & Analytics - Projektmanagement (all genders)"
+      },
+      {
+        "entity": "Java",
+        "job_id": 3733044564,
+        "title": "Senior Consultant Data & Analytics - Projektmanagement (all genders)"
+      },
+      {
+        "entity": "PyTorch",
+        "job_id": 3733044564,
+        "title": "Senior Consultant Data & Analytics - Projektmanagement (all genders)"
+      },
+      {
+        "entity": "TensorFlow",
+        "job_id": 3733044564,
+        "title": "Senior Consultant Data & Analytics - Projektmanagement (all genders)"
+      },
+      {
+        "entity": "scikit-learn",
+        "job_id": 3733044564,
+        "title": "Senior Consultant Data & Analytics - Projektmanagement (all genders)"
+      },
+      {
+        "entity": "Docker",
+        "job_id": 3733044564,
+        "title": "Senior Consultant Data & Analytics - Projektmanagement (all genders)"
+      },
+      {
+        "entity": "ELN (Electronic Laboratory Notebook)",
+        "job_id": 4356605236,
+        "title": "Data Scientist in Biotech R&D and Process Development (m/f/d)"
+      },
+      {
+        "entity": "LIMS (Laboratory Information Management System)",
+        "job_id": 4356605236,
+        "title": "Data Scientist in Biotech R&D and Process Development (m/f/d)"
+      },
+      {
+        "entity": "Azure",
+        "job_id": 4353545042,
+        "title": "Data Scientist (w/m/d)"
+      },
+      {
+        "entity": "PyTorch",
+        "job_id": 4353717216,
+        "title": "AI Research Engineer - 3D Computer Vision"
+      },
+      {
+        "entity": "SQL",
+        "job_id": 4353717216,
+        "title": "AI Research Engineer - 3D Computer Vision"
+      },
+      {
+        "entity": "Azure",
+        "job_id": 4355937114,
+        "title": "Senior Data Scientist – Quantitative Finance (w/m/d)"
+      },
+      {
+        "entity": "Spark",
+        "job_id": 4355937114,
+        "title": "Senior Data Scientist – Quantitative Finance (w/m/d)"
+      },
+      {
+        "entity": ".NET",
+        "job_id": 4366719844,
+        "title": "Full-Stack Tech Lead (Remote, Contract)"
+      }
+    ]
+  }
+}
