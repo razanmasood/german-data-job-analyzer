@@ -1,33 +1,37 @@
 Extract SKILLS and TOOLS from this job description.
 
-PURPOSE: These annotations will be used to train a Named Entity Recognition (NER) model. The model needs to learn from exact text patterns, so extracted entities MUST be verbatim text spans that appear in the description.
+PURPOSE: Train a NER model. You MUST extract EXACT TEXT SPANS that appear verbatim in the description.
 
-CRITICAL RULES:
-1. EXACT TEXT ONLY: Extract terms EXACTLY as written. If text says "statistics", output "statistics" - NOT "Statistik".
-2. LANGUAGE MATCH: Output language MUST match the source text. German text → German terms. English text → English terms.
-3. NO INFERENCE: Only extract terms explicitly stated. Do not add related concepts.
-4. NO DUPLICATES: Each term appears once.
-5. EXCLUDE: Soft skills (communication, teamwork, leadership).
+ABSOLUTE RULES (violation = wrong answer):
+1. VERBATIM ONLY: If text says "ML", output "ML" - NOT "machine learning". Copy exact characters.
+2. LANGUAGE MATCH: If text is German, output German. If English, output English.
+3. ZERO INFERENCE: If "PyTorch" is not written, do not output "PyTorch". Period.
+4. SINGLE TERMS: One term per item. "Python and R" → ["Python", "R"]
 
-DEFINITIONS:
-- SKILL: Technical competency, methodology, or knowledge domain (e.g., machine learning, data analysis, DevOps, CI/CD, MLOps)
-- TOOL: Specific technology, language, framework, or platform (e.g., Python, PyTorch, AWS, Docker, SQL)
+CATEGORIES:
+SKILL = methodology/technique (machine learning, NLP, DevOps, CI/CD, MLOps, data analysis)
+TOOL = software/language/platform (Python, PyTorch, AWS, Docker, SQL, Git)
 
-EXAMPLES:
+EXCLUDE: soft skills, job titles, vague phrases
 
-Input (English): "Strong background in deep learning and statistical analysis. Experience with PyTorch and AWS required."
-Output: {"skills": ["deep learning", "statistical analysis"], "tools": ["PyTorch", "AWS"]}
+CRITICAL EXAMPLES:
 
-Input (German): "Kenntnisse in maschinellem Lernen und Statistik. Python und TensorFlow erforderlich."
-Output: {"skills": ["maschinellem Lernen", "Statistik"], "tools": ["Python", "TensorFlow"]}
+Text: "Erfahrung mit KI/ML-Modellen. Python und Docker erforderlich."
+Correct: {"skills": ["KI", "ML"], "tools": ["Python", "Docker"]}
+WRONG: {"skills": ["machine learning"], "tools": ["Python"]} ← "machine learning" is NOT in the text!
 
-WRONG (do not do this):
-- Text says "statistics" → Output "Statistik" ❌ (language mismatch)
-- Text says "data pipelines" → Output "ETL" ❌ (inference, not exact)
-- Text says "cloud platforms" → Output "AWS, Azure, GCP" ❌ (inference)
+Text: "Experience in NLP and computer vision. Proficiency in TensorFlow."
+Correct: {"skills": ["NLP", "computer vision"], "tools": ["TensorFlow"]}
+WRONG: {"skills": ["NLP"], "tools": ["TensorFlow", "PyTorch"]} ← "PyTorch" is NOT in the text!
+
+WRONG PATTERNS:
+- Text has "ML" → Output "machine learning" ❌ (must output "ML")
+- Text has "KI" → Output "AI" ❌ (must output "KI")
+- Text has no "AWS" → Output "AWS" ❌ (cannot invent terms)
+- Text has "Datenanalyse" → Output "data analysis" ❌ (wrong language)
 
 Job Description:
 {description}
 
-Return ONLY valid JSON:
+Return ONLY valid JSON with exact text spans:
 {"skills": [], "tools": []}

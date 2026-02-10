@@ -120,7 +120,7 @@ def main():
     print(f"\nProcessing {len(jobs)} jobs ({len(completed_ids)} already completed)...\n")
 
     for i, job in enumerate(tqdm(jobs, desc="Annotating")):
-        job_id = f"job_{i + 1:04d}"
+        job_id = job.get('id')  # Use original LinkedIn job ID
 
         # Skip already processed jobs
         if job_id in completed_ids:
