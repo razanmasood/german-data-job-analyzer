@@ -16,6 +16,26 @@ import re
 import requests
 
 
+def preprocess_description(text):
+    """
+    Remove parentheses and brackets but keep their content.
+    Helps LLM extract terms often hidden in parenthetical examples.
+
+    Examples:
+    - "languages (e.g. Python, Java)" -> "languages , e.g. Python, Java"
+    - "platforms (AWS, Azure)" -> "platforms , AWS, Azure"
+    """
+    # Replace (content) with , content
+    text = re.sub(r'\(([^)]+)\)', r', \1', text)
+    text = re.sub(r'\[([^\]]+)\]', r', \1', text)
+
+    # Clean up multiple commas/spaces
+    text = re.sub(r',\s*,', ',', text)
+    text = re.sub(r'\s+', ' ', text)
+
+    return text.strip()
+
+
 def classify_language(text):
     """Classify text as German, English, or Mixed using word heuristics."""
     if not text or not isinstance(text, str):
@@ -168,8 +188,11 @@ def main():
         print(f"  Desc length: {len(desc)} chars")
         print("-" * 80)
 
+        # Preprocess description to expose parenthetical content
+        processed_desc = preprocess_description(desc)
+
         # Fill prompt template
-        filled_prompt = prompt_template.replace('{description}', desc)
+        filled_prompt = prompt_template.replace('{description}', processed_desc)
 
         # Call Ollama
         print("  Sending to Ollama...")
@@ -207,6 +230,7 @@ def main():
             "experienceLevel": exp,
             "description_length": len(desc),
             "description": desc,
+            "processed_desc":processed_desc,
             "extracted_skills": skills,
             "extracted_tools": tools,
             "generation_time_seconds": round(duration, 2)

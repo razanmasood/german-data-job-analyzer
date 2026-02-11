@@ -23,6 +23,13 @@ ABSOLUTE RULES:
 3. ZERO INFERENCE: Not written = not extracted.
 4. SINGLE TERMS: Split compounds. "Python and R" → ["Python", "R"]
 
+EXTRACT FROM PARENTHESES:
+Parentheses often contain specific technical requirements:
+✅ "languages (e.g. C/C++, CUDA, Java, Rust)" → Extract all these tools
+✅ "cloud platforms (AWS, Azure, GCP)" → Extract all these tools
+✅ "best practices (incl. CI/CD, Docker)" → Extract these skills/tools
+DO NOT skip content after: "e.g.", "incl.", "such as", "including"
+
 ---
 
 SKIP THESE:
