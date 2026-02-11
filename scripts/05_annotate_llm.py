@@ -19,6 +19,26 @@ import requests
 from tqdm import tqdm
 
 
+def preprocess_description(text):
+    """
+    Remove parentheses and brackets but keep their content.
+    Helps LLM extract terms often hidden in parenthetical examples.
+
+    Examples:
+    - "languages (e.g. Python, Java)" -> "languages , e.g. Python, Java"
+    - "platforms (AWS, Azure)" -> "platforms , AWS, Azure"
+    """
+    # Replace (content) with , content
+    text = re.sub(r'\(([^)]+)\)', r', \1', text)
+    text = re.sub(r'\[([^\]]+)\]', r', \1', text)
+
+    # Clean up multiple commas/spaces
+    text = re.sub(r',\s*,', ',', text)
+    text = re.sub(r'\s+', ' ', text)
+
+    return text.strip()
+
+
 def classify_language(text):
     """Classify text as German, English, or Mixed using word heuristics."""
     if not text or not isinstance(text, str):
@@ -55,8 +75,10 @@ def call_ollama(prompt_text, model="llama3.1:8b", retries=1):
         "prompt": prompt_text,
         "stream": False,
         "format": "json",
-        "temperature": 0.0,
-        "num_predict": 512,
+        "temperature": 0.0,      # Deterministic for consistent extraction
+        "num_predict": 2048,     # Allow up to 2048 tokens for output
+        "num_ctx": 8192,         # Context window - handle long job descriptions
+        "top_p": 0.9,            # Slight randomness for better extraction
     }
 
     for attempt in range(1 + retries):
@@ -130,8 +152,11 @@ def main():
         desc = job.get('description', '')
         language = classify_language(desc)
 
+        # Preprocess description to expose parenthetical content
+        processed_desc = preprocess_description(desc)
+
         # Fill prompt template
-        filled_prompt = prompt_template.replace('{description}', desc)
+        filled_prompt = prompt_template.replace('{description}', processed_desc)
 
         # Call Ollama
         try:
@@ -157,6 +182,7 @@ def main():
             "id": job_id,
             "jobTitle": title,
             "description": desc,
+            "processed_description": processed_desc,
             "language": language,
             "entities": {
                 "skills": skills,
