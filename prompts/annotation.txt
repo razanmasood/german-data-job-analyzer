@@ -1,37 +1,85 @@
-Extract SKILLS and TOOLS from this job description.
+You are extracting SKILLS and TOOLS from job descriptions to train a Named Entity Recognition model.
 
-PURPOSE: Train a NER model. You MUST extract EXACT TEXT SPANS that appear verbatim in the description.
+CRITICAL RULE: Extract ONLY text that appears EXACTLY as written. No translation, no inference, no paraphrasing.
 
-ABSOLUTE RULES (violation = wrong answer):
-1. VERBATIM ONLY: If text says "ML", output "ML" - NOT "machine learning". Copy exact characters.
-2. LANGUAGE MATCH: If text is German, output German. If English, output English.
-3. ZERO INFERENCE: If "PyTorch" is not written, do not output "PyTorch". Period.
-4. SINGLE TERMS: One term per item. "Python and R" → ["Python", "R"]
+---
+
+EXTRACTION STRATEGY:
+1. Identify technical terms you recognize in the description
+2. For each term: copy the EXACT words/abbreviations as they appear
+3. If you're unsure about exact wording → DO NOT include it
+4. When in doubt → SKIP IT (human review will catch it)
+
+---
 
 CATEGORIES:
-SKILL = methodology/technique (machine learning, NLP, DevOps, CI/CD, MLOps, data analysis)
-TOOL = software/language/platform (Python, PyTorch, AWS, Docker, SQL, Git)
+SKILL = methodologies/techniques (machine learning, NLP, DevOps, CI/CD, MLOps, data analysis)
+TOOL = concrete technologies (Python, PyTorch, AWS, Docker, SQL, Git, TensorFlow)
 
-EXCLUDE: soft skills, job titles, vague phrases
+EXCLUDE: soft skills, job titles, vague terms, company names
 
-CRITICAL EXAMPLES:
+---
+
+ABSOLUTE RULES:
+1. VERBATIM ONLY: Copy exact text. "ML" ≠ "machine learning". "KI" ≠ "AI".
+2. LANGUAGE MATCH: German text → German output. English text → English output.
+3. ZERO INFERENCE: Not written = not extracted. No "related" terms.
+4. SINGLE TERMS: Split compound mentions. "Python and R" → ["Python", "R"]
+5. WHEN UNCERTAIN: Skip it. Missing a term is better than inventing one.
+
+---
+
+WRONG PATTERNS (DO NOT DO THIS):
+
+❌ Text: "Erfahrung mit ML" → Output: "machine learning"
+   ✅ Correct: "ML"
+
+❌ Text: "statistische Methoden" → Output: "Statistik"  
+   ✅ Correct: SKIP (paraphrased - not exact match)
+
+❌ Text: "data pipelines" → Output: "ETL"
+   ✅ Correct: SKIP (ETL not mentioned)
+
+❌ Text: "Experience in NLP" → Output: "NLP", "natural language processing"
+   ✅ Correct: "NLP" only
+
+❌ Text: "Datenanalyse und Python" → Output: "data analysis", "Python"
+   ✅ Correct: "Datenanalyse", "Python" (keep original language!)
+
+❌ Text: "We use cloud platforms" → Output: "AWS", "Azure"
+   ✅ Correct: SKIP (no specific platforms named)
+
+SKIP DESCRIPTIVE PHRASES:
+
+These are activities/descriptions, NOT standard terms:
+❌ "Programmierung von Datenbanken" (activity description)
+❌ "Entwicklung von Software" (activity description)
+❌ "Arbeit mit Cloud-Technologien" (activity description)
+❌ "Erfahrung mit Daten" (too vague)
+
+Only extract if it's a STANDARD TERM:
+✅ "SQL", "PostgreSQL" (concrete database)
+✅ "Python", "Java" (concrete language)
+✅ "machine learning" (standard methodology name)
+✅ "AWS", "Azure" (concrete platform)
+
+---
+
+EXAMPLES:
 
 Text: "Erfahrung mit KI/ML-Modellen. Python und Docker erforderlich."
-Correct: {"skills": ["KI", "ML"], "tools": ["Python", "Docker"]}
-WRONG: {"skills": ["machine learning"], "tools": ["Python"]} ← "machine learning" is NOT in the text!
+Output: {"skills": ["KI", "ML"], "tools": ["Python", "Docker"]}
 
 Text: "Experience in NLP and computer vision. Proficiency in TensorFlow."
-Correct: {"skills": ["NLP", "computer vision"], "tools": ["TensorFlow"]}
-WRONG: {"skills": ["NLP"], "tools": ["TensorFlow", "PyTorch"]} ← "PyTorch" is NOT in the text!
+Output: {"skills": ["NLP", "computer vision"], "tools": ["TensorFlow"]}
 
-WRONG PATTERNS:
-- Text has "ML" → Output "machine learning" ❌ (must output "ML")
-- Text has "KI" → Output "AI" ❌ (must output "KI")
-- Text has no "AWS" → Output "AWS" ❌ (cannot invent terms)
-- Text has "Datenanalyse" → Output "data analysis" ❌ (wrong language)
+Text: "Kenntnisse in Datenanalyse, maschinellem Lernen. SQL und Git erforderlich."
+Output: {"skills": ["Datenanalyse", "maschinellem Lernen"], "tools": ["SQL", "Git"]}
+
+---
 
 Job Description:
 {description}
 
-Return ONLY valid JSON with exact text spans:
+Return ONLY valid JSON:
 {"skills": [], "tools": []}
