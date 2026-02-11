@@ -9,13 +9,22 @@
     "description": "Werden auch Sie Teil unserer Erfolgsgeschichte! Ein weltweit führender Lösungsanbieter für alle Bereiche der Intralogistik, das sind wir: SSI SCHÄFER. Was wir auch sind: Ein Familienunternehmen, das in das Know-how, die Leidenschaft und die Talente seiner Mitarbeitenden investiert. Als einer der größten Anbieter helfen wir unseren Kunden mit innovativen Technologien und Software die Effizienz und Nachhaltigkeit der Lager-, Kommissionier- und Transportprozesse zu steigern. Von vollautomatischen Lagern mit individuellen Service- und Wartungsangeboten bis hin zu manuellen und teilautomatisierten Systemen bieten wir wirtschaftliche Intralogistiklösungen aus einer Hand. Daneben haben wir uns zu einem der größten Anbieter für Software für den innerbetrieblichen Materialfluss entwickelt. SSI SCHÄFER, das sind mehr als 8.800 Menschen, die weltweit in rund 80 Gesellschaften und 7 Produktionsstätten arbeiten und Kunden aus allen Branchen mit maßgeschneiderten Intralogistiklösungen überzeugen. Wenn auch Sie einen attraktiven Arbeitgeber für eine langfristige Zusammenarbeit suchen, dann lernen Sie uns einfach kennen! Standort: Giebelstadt, DE, 97232Stellenbeschreibung Aufgaben Als Senior Data Scientist treibst Du innovative Projekte in der Intralogistik voran – im interdisziplinären, internationalen Umfeld der SSI SCHAEFER Gruppe mit klassischen und neuen Technologien Du übernimmst die Verantwortung für innovative Data Science-Projekte und sorgst neben der Konzeption auch für die Evaluierung der Projekte hinsichtlich der Geschäftsziele Du entwickelst eigenständig komplexe Algorithmen und KI/ML-Modelle Du informierst dich aktiv über den neuesten Stand der Forschung Du schlägst Best Practices Steigerung der Effizienz von datenwissenschaftlichen Projekten vor Du bist Ansprechpartner für interne Kollegen und teilst Dein Know-how, um gemeinsam erfolgreich zu sein Du vertrittst SSI SCHÄFER auf relevanten Fachveranstaltungen und Konferenzen Qualifikationen Abgeschlossenes Studium in Informatik, Mathematik, Statistik Mind. 5 Jahre Erfahrung in Data Science mit Fokus auf LLMs Reisebereitschaft Expertenwissen in NLP, LLMs und Agentic AISehr gute Kenntnisse in Python und verwandten Bibliotheken (Pandas, NumPy, SciPy) sowie in SQLPraxis mit Frameworks wie Hugging Face, LangChain, scikit-learn Grundlagen in MLOps, Deployment (Docker, Kubernetes, CI/CD)Kenntnisse in Intralogistik und deren Herausforderungen Kenntnisse in Cloud-Plattformen (Azure) und Software-Engineering Selbstständige, kundenorientierte und flexible Arbeitsweise Freude an neuen Themen Analytisches Denken und „Thinking outside the box“Can Do Mentalität Sprachen Deutsch (mindestens C1), Englisch (mindestens C1)Benefits Geförderte Weiterbildung Flexible Arbeitszeiten Mitarbeiterevents Umfassendes Gesundheitsmanagement Paten Programm Essenszuschuss Kostenloser Parkplatz Business Bike Leasing Mobile Work Betriebliche Altersversorgung Benefits können standortabhängig bzw. stellenbezogen variieren. Wir freuen uns auf deine Bewerbung! Anna Bennech SSI Schäfer Automation Gmb HI_Park Klingholz 18-1997232 Giebelstadt Bewerbung Die SSI SCHÄFER Automation Gmb H bietet verantwortungsvolle und herausfordernde Aufgaben mit Gestaltungs- und Handlungsspielraum sowie flache Hierarchien, kurze Entscheidungswege und den Anspruch an hohe Professionalität. Als familiengeführtes Unternehmen werden bei uns Teamarbeit und Kollegialität groß geschrieben. Teile mit uns die Leidenschaft und Begeisterung für Menschen, Systeme und Technik und sende uns deine vollständigen Bewerbungsunterlagen. Wir freuen uns auf deine Bewerbung! Wir fördern Chancengleichheit und richten unsere Stellenausschreibung an alle Interessierten. Datenschutzerklärung Für SSI SCHÄFER ist der Schutz und die Vertraulichkeit deiner Daten von besonderer Bedeutung. Erfahre mehr dazu unter folgendem Link. Jetzt bewerben »",
     "extracted_skills": [
       "KI",
-      "ML"
+      "ML",
+      "NLP",
+      "LLMs",
+      "Agentic AI"
     ],
     "extracted_tools": [
       "Python",
-      "Docker"
+      "Pandas",
+      "NumPy",
+      "SciPy",
+      "SQL",
+      "Docker",
+      "Kubernetes",
+      "CI/CD"
     ],
-    "generation_time_seconds": 9.24
+    "generation_time_seconds": 8.09
   },
   {
     "id": 4356042371,
@@ -32,7 +41,7 @@
       "Python",
       "Docker"
     ],
-    "generation_time_seconds": 4.54
+    "generation_time_seconds": 4.43
   },
   {
     "id": 4327734906,
@@ -43,18 +52,25 @@
     "description_length": 4479,
     "description": "Join the AI & Data Platform part of AI & Automation team to work on the most cutting-edge applied AI challenges, utilizing modern orchestration frameworks. You'll be instrumental in designing, owning, and deploying production-grade AI and LLM services, accelerating their integration into critical business workflows for massive impact. This role offers the unique opportunity to drive MLOps and LLMOps maturity and set the standard for reliable, scalable, and trusted AI products across the company. We offer a hybrid working set-up either in Hirschau, Munich, (Berlin) or Krakau. Your contribution to success Intelligent Architecture: Design and deploy production-ready AI services using frameworks like LangChain and LlamaIndex. Rapid Automation Delivery: Accelerate time-to-value by connecting AI services to business workflows. LLMOPS, MLOps & Quality: Take full ownership of the lifecycle—from concept to monitoring—ensuring all AI products are reliable, scalable, and fully tested. What You Will Actually Be Doing:Engineer with the Latest Stack: Design and build AI-powered applications using modern AI orchestration frameworks such as LangChain and LlamaIndex. Deliver the best tech stack, ensuring the team stays at the forefront of applied AI innovation Be a Workflow Disruptor: Leverage your hands-on experience with low-code automation platforms to rapidly prototype and deploy AI connectors that automate critical business processes. Proactively apply advanced prompt engineering techniques to iteratively optimize large language model (LLM) performance, ensuring output consistency, mitigating biases, and maximizing utility across diverse and complex use cases. Drive Reliability: Apply engineering rigor—automated tests (unit, integration, data validation), version control with reproducible builds, CI/CD, and end-to-end observability—so models graduate from experimental notebooks to trusted, production-grade services. Demonstrate Value: Showcase a track record of process automation—demonstrating successfully applied AI delivering tangible operational efficiency gains. Your success factors3+ Years in a role focused on productionizing AI/ML solutions (e.g., AI/ML Engineer, Applied Data Scientist). Deep practical experience with LangChain, LlamaIndex, LangGraph, or similar AI frameworks. Proven ability to design and implement robust Retrieval-Augmented Generation (RAG) systems—combining vector databases (e.g., Pinecone, Weaviate) with document loaders, embeddings, and retrieval evaluation techniques. Strong Python expertise with production experience in frameworks such as FastAPI, Flask, and deployment of containerized services (Docker, Kubernetes). Solid MLOps foundation and treating AI pipelines as scalable software. Experience with cloud environments (AWS, GCP, or Azure) and associated data services. A proven ability to leverage low-code tools like n8n, Langflow to accelerate deployment and integration. Proven ability to mentor engineers, make architectural trade-offs, and drive AI product strategy through strong technical and business alignment. German language is a plus, Fluent English is neccessary Your benefits We Are a Great Place to Work Our tolerant and empathic work environment enables you to help shape our company’s future, thereby giving you lots of room for personal development. Our unique company culture was officially recognised by the Great Place to Work institute. We Improve Your Work-Life Balance Flexitime and hybrid working arrangements as well as a special leave allowance enable you to organise your workday around your needs. And we care about your children. Our head office in Hirschau operates a child day-care centre that looks after your little ones. We Communicate at a Peer Level We are a family-run business. Means friendly interaction is paramount to us. And when it comes to being a trust-based horizontal organisation, around here, we practise what we preach. We Promote Health Which is why we offer a variety of services and activities centred around health and fitness. Regular medical checkups are top of the agenda. Moreover, for all those who like to keep fit, there is Conrad Sports Club based at our Hirschau office that provides a range of activities, coaching sessions and even an in-house tennis court. Being healthy isn’t just about exercising, it’s also about a balanced diet. This is why food served in our cafeterias at Hirschau and Wernberg uses local produce and is freshly prepared.",
     "extracted_skills": [
-      "MLOps",
-      "LLMOps"
-    ],
-    "extracted_tools": [
       "LangChain",
       "LlamaIndex",
+      "RAG",
+      "vector databases",
+      "document loaders",
+      "embeddings",
+      "retrieval evaluation techniques"
+    ],
+    "extracted_tools": [
+      "Python",
       "FastAPI",
       "Flask",
       "Docker",
-      "Kubernetes"
+      "Kubernetes",
+      "AWS",
+      "GCP",
+      "Azure"
     ],
-    "generation_time_seconds": 6.78
+    "generation_time_seconds": 8.23
   },
   {
     "id": 4350333485,
@@ -72,7 +88,7 @@
     "extracted_tools": [
       "Python"
     ],
-    "generation_time_seconds": 3.04
+    "generation_time_seconds": 3.21
   },
   {
     "id": 4313067104,
@@ -84,14 +100,22 @@
     "description": "Why us? We believe that AI has the potential to revolutionize how cancer and other complex diseases are diagnosed and treated. We also believe that AI is a tool, not an identity – without access to high quality data and a scientifically rigorous, transparent approach to model development, AI is just a buzzword. That’s where we come in. Aignostics is a spin-off from one of Europe's largest and most prestigious university hospitals (Charité), with employees in Berlin and New York. We have received over $50M in funding from leading investors and are a growing team of over 100 interdisciplinary professionals. We work with academic partners as well as leading global life sciences companies. As a Senior Machine Learning Engineer at Aignostics, you work hand in hand with our collaborators in academia and industry to push the state of the art of machine learning for digital pathology. You will develop distributed software systems for machine learning applications that will help to improve cancer research and diagnostics. Together with your colleagues you will take care of the machine learning software stack and thereby enable our teams to build medical grade quality and scalable machine learning models. At Aignostics, we believe that fighting cancer is a job for people of all identities, backgrounds, and cultures. We value and celebrate diversity and inclusion and are committed to offering equal employment and promotion opportunities for all applicants and employees. Applicants will be considered regardless of their age, disability, ethnicity, race, gender identity or expression, sexual orientation, religion, etc. We thrive through collaboration and believe the more inclusive we are, the better our work will be. Please note that this position is intended for software engineers. For a data scientist / machine learning / deep learning position please check out our Data Scientist opening. Where your expertise is needed Design, develop, deploy and maintain robust ML pipelines to make them usable, efficient and scalable. Optimize and fine-tune data pipelines for production. Engage in code reviews, upholding high standards for clean, reliable code. Collaborate with cross-functional teams to understand business requirements and translate them into ML solutions. Embrace learning new technologies, fostering innovation, and tackling diverse challenges. Contribute to the development of our ML infrastructure, pipelines, services, monitoring systems and codebase in general. Work in an agile development environment and clearly communicate your results to the team. Mentor and guide junior engineers, providing technical leadership and insights. What we are looking for Bachelor’s or Master’s degree in Computer Science, Engineering, Mathematics, or a related field. Ph D is a plus.4+ years of work experience in software development, machine learning or a related field. Advanced programming skills in Python, with experience with other languages (e.g. C/C++, CUDA, Java, Rust) being a plus Good understanding of distributed systems and frameworks, parallel computing and scalability. Experience with cloud platforms (GCP, AWS or Azure), familiarity with MLOps / DevOps best practices (incl. CI/CD, Docker, Kubernetes and observability). Dedicated to high coding standards and knowledgeable about best practices in development workflow. Experience with Linux, version control and container technologies. Data engineering skills, experience with working with large datasets. Excellent problem-solving skills and the ability to work independently and as part of a team. Strong communication skills, with the ability to convey complex technical concepts to non-technical stakeholders. Nice to have Experience with deploying models into production. Experience with Google Kubernetes Engine, Ray distributed computing framework and Prefect. Hands-on experience with machine learning and data science. Proven experience with ML framework, such as Tensorflow, PyTorch or scikit-learn. Experience with working on biomedical data (especially working with image data). Experience with software development in regulated environments, specifically considering Information Security criteria under ISO 27001We are still keen to hear from you if you don't match all the above points! Our needs are diverse and growing and you are encouraged to apply if you have any combination of these skills. The recruitment process is a comparative exercise and decisions will be made based on the applications we review at each time. Our offer Join a purpose-driven startup: We are working collectively to fight cancer and improve patient outcomes. Come help us make a difference! Cutting-edge AI research and development, with involvement of Charité, TU Berlin and our other partners Work with a welcoming, diverse and highly international team of colleagues Opportunity to take responsibility and grow your role within the startup Expand your skills by benefitting from our Learning & Development yearly budget of 1,000€ (plus 2 L&D days), language classes and internal development programs Mentoring program, you’ll learn from great experts Flexible working hours and teleworking policy Enjoy your well-deserved time off within our 30 paid vacations days per year We are family & pet friendly and support flexible parental leave options Pick a subsidized membership of your choice among public transport sports and well-being Enjoy our social gatherings, lunches, and off-site events for a fun and inclusive work environment Optional company pension scheme Join us to make a difference! We are an international, interdisciplinary team that is powering the next generation of precision medicine and advancing the fields of AI and pathology.",
     "extracted_skills": [
       "machine learning",
-      "deep learning",
-      "MLOps"
+      "distributed software systems",
+      "machine learning applications",
+      "machine learning software stack",
+      "ML pipelines"
     ],
     "extracted_tools": [
       "Python",
+      "Docker",
+      "Kubernetes",
       "TensorFlow",
-      "Kubernetes"
+      "PyTorch",
+      "scikit-learn",
+      "GCP",
+      "AWS",
+      "Azure"
     ],
-    "generation_time_seconds": 6.68
+    "generation_time_seconds": 10.21
   }
 ]
