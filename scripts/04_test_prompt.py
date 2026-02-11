@@ -199,12 +199,13 @@ def main():
 
         # Store result
         results.append({
+            "id": job.get('id'),
             "job_title": title,
             "company": company,
             "language": lang,
             "experienceLevel": exp,
             "description_length": len(desc),
-            "description_preview": desc[:300] + "..." if len(desc) > 300 else desc,
+            "description": desc,
             "extracted_skills": skills,
             "extracted_tools": tools,
             "generation_time_seconds": round(duration, 2)
