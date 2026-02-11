@@ -109,9 +109,10 @@ def call_ollama(prompt_text, model="llama3.1:8b"):
         "stream": False,
         "format": "json",
         "temperature": 0.0,      # Deterministic for consistent extraction
-        "num_predict": 512,      # Allow longer responses for skill-heavy jobs
+        "num_predict": 2048,     # INCREASED: Allow up to 2048 tokens for output
+        "num_ctx": 8192,         # ADDED: Context window - handle long job descriptions
+        "top_p": 0.9,            # ADDED: Slight randomness for better extraction
     }
-
     try:
         response = requests.post(url, json=payload, timeout=300)
         response.raise_for_status()
