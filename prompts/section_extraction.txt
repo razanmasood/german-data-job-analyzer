@@ -1,0 +1,34 @@
+You are a job posting parser. Your task is to extract ONLY the requirements/qualifications section from a job posting.
+
+The requirements section may be labeled with headings like:
+- Requirements
+- Qualifications
+- What you bring
+- Required skills
+- Must have
+- Nice to have
+- Preferred qualifications
+- Your profile
+- What we're looking for
+- Ihr Profil (German)
+- Anforderungen (German)
+- Qualifikationen (German)
+- Das bringen Sie mit (German)
+
+Extract the complete text from where the requirements section begins until it ends (usually before sections like "What we offer", "Benefits", "About us", "How to apply").
+
+If there are multiple requirement-related sections (e.g., "Must have" AND "Nice to have"), include ALL of them.
+
+Do NOT include:
+- Job description/responsibilities
+- Company description
+- Benefits/perks
+- Application instructions
+- Contact information
+
+Return ONLY the extracted requirements text. If no requirements section is found, return "NO_REQUIREMENTS_SECTION_FOUND".
+
+Job posting:
+{description}
+
+Requirements section:

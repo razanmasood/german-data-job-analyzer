@@ -1,11 +1,16 @@
 """
 Pre-annotate 150 sampled job postings using Ollama (llama3.1:8b).
 
-For each job, sends the description to the LLM with the annotation prompt,
-extracts SKILL and TOOL entities, and saves structured results.
+TWO-STEP PROCESS:
+1. Extract requirements section from full job posting
+2. Extract SKILL and TOOL entities from requirements section only
+
+For each job, sends the description to the LLM with the section extraction prompt,
+then sends the extracted requirements to the entity extraction prompt.
 Includes checkpointing every 50 jobs and retry logic for failed requests.
 
 Input:  data/annotation/sample_150.json
+        prompts/section_extraction.txt (NEW)
         prompts/annotation.txt
 Output: data/annotation/annotations_llm_150.json
 """
@@ -65,7 +70,7 @@ def classify_language(text):
         return "mixed"
 
 
-def call_ollama(prompt_text, model="llama3.1:8b", retries=1):
+def call_ollama(prompt_text, model="llama3.1:8b", retries=1, expect_json=True):
     """Send prompt to Ollama and return parsed result. Retries once on failure."""
     ollama_host = os.getenv('OLLAMA_HOST', 'http://localhost:11434')
     url = f"{ollama_host}/api/generate"
@@ -74,12 +79,15 @@ def call_ollama(prompt_text, model="llama3.1:8b", retries=1):
         "model": model,
         "prompt": prompt_text,
         "stream": False,
-        "format": "json",
         "temperature": 0.0,      # Deterministic for consistent extraction
         "num_predict": 2048,     # Allow up to 2048 tokens for output
         "num_ctx": 8192,         # Context window - handle long job descriptions
         "top_p": 0.9,            # Slight randomness for better extraction
     }
+    
+    # Only add format constraint for entity extraction, not section extraction
+    if expect_json:
+        payload["format"] = "json"
 
     for attempt in range(1 + retries):
         try:
@@ -94,6 +102,35 @@ def call_ollama(prompt_text, model="llama3.1:8b", retries=1):
                 time.sleep(5)
             else:
                 raise
+
+
+# NEW FUNCTION
+def extract_requirements_section(description, section_prompt_template):
+    """
+    Extract only the requirements/qualifications section from full job posting.
+    
+    Args:
+        description: Full job posting text
+        section_prompt_template: Prompt template for section extraction
+        
+    Returns:
+        Extracted requirements section text, or None if not found
+    """
+    filled_prompt = section_prompt_template.replace('{description}', description)
+    
+    try:
+        ollama_result = call_ollama(filled_prompt, expect_json=False)
+        extracted_section = ollama_result.get('response', '').strip()
+        
+        # Check if section was found
+        if "NO_REQUIREMENTS_SECTION_FOUND" in extracted_section:
+            return None
+            
+        return extracted_section
+        
+    except Exception as e:
+        print(f"  Section extraction failed: {e}")
+        return None
 
 
 def load_checkpoint(checkpoint_path):
@@ -114,18 +151,23 @@ def save_checkpoint(results, checkpoint_path):
 
 def main():
     sample_path = "data/annotation/sample_150.json"
-    prompt_path = "prompts/annotation.txt"
+    section_prompt_path = "prompts/section_extraction.txt"  # NEW
+    entity_prompt_path = "prompts/annotation.txt"
     output_path = "data/annotation/annotations_llm_150.json"
     checkpoint_path = "data/annotation/annotations_llm_checkpoint.json"
 
     print("=" * 80)
-    print("LLM Pre-Annotation: 150 Job Postings")
+    print("LLM Pre-Annotation: 150 Job Postings (2-Step Process)")
     print("=" * 80)
 
-    # Load prompt template
-    with open(prompt_path, 'r', encoding='utf-8') as f:
-        prompt_template = f.read()
-    print(f"\nLoaded prompt template from: {prompt_path}")
+    # Load prompts
+    with open(section_prompt_path, 'r', encoding='utf-8') as f:
+        section_prompt_template = f.read()
+    print(f"\nLoaded section extraction prompt from: {section_prompt_path}")
+    
+    with open(entity_prompt_path, 'r', encoding='utf-8') as f:
+        entity_prompt_template = f.read()
+    print(f"Loaded entity extraction prompt from: {entity_prompt_path}")
 
     # Load sample data
     with open(sample_path, 'r', encoding='utf-8') as f:
@@ -137,6 +179,7 @@ def main():
     completed_ids = {r['id'] for r in results}
 
     failed = []
+    no_requirements_section = []  # Track jobs with no detectable requirements
     start_time = time.time()
 
     print(f"\nProcessing {len(jobs)} jobs ({len(completed_ids)} already completed)...\n")
@@ -152,15 +195,34 @@ def main():
         desc = job.get('description', '')
         language = classify_language(desc)
 
-        # Preprocess description to expose parenthetical content
-        processed_desc = preprocess_description(desc)
+        # STEP 1: Extract requirements section
+        requirements_section = extract_requirements_section(desc, section_prompt_template)
+        
+        if not requirements_section:
+            print(f"\n  WARNING: No requirements section found for job {job_id} ({title})")
+            no_requirements_section.append({"id": job_id, "title": title})
+            # Store with empty entities but keep full description
+            results.append({
+                "id": job_id,
+                "jobTitle": title,
+                "description": desc,  # Keep full description
+                "requirements_section": None,
+                "language": language,
+                "entities": {
+                    "skills": [],
+                    "tools": [],
+                },
+                "warning": "NO_REQUIREMENTS_SECTION_FOUND"
+            })
+            continue
 
-        # Fill prompt template
-        filled_prompt = prompt_template.replace('{description}', processed_desc)
+        # STEP 2: Preprocess requirements section and extract entities
+        processed_requirements = preprocess_description(requirements_section)
+        filled_prompt = entity_prompt_template.replace('{description}', processed_requirements)
 
-        # Call Ollama
+        # Call Ollama for entity extraction
         try:
-            ollama_result = call_ollama(filled_prompt)
+            ollama_result = call_ollama(filled_prompt, expect_json=True)
             response_text = ollama_result.get('response', '{}')
         except Exception as e:
             print(f"\n  FAILED job {job_id} ({title}): {e}")
@@ -181,8 +243,9 @@ def main():
         results.append({
             "id": job_id,
             "jobTitle": title,
-            "description": desc,
-            "processed_description": processed_desc,
+            "description": desc,  # Keep full original description
+            "requirements_section": requirements_section,  # Store extracted section
+            "processed_requirements": processed_requirements,  # Store preprocessed version
             "language": language,
             "entities": {
                 "skills": skills,
@@ -211,15 +274,23 @@ def main():
     print("=" * 80)
     total_skills = sum(len(r['entities']['skills']) for r in results)
     total_tools = sum(len(r['entities']['tools']) for r in results)
-    print(f"  Total processed: {len(results)}")
-    print(f"  Failed:          {len(failed)}")
+    print(f"  Total processed:      {len(results)}")
+    print(f"  Failed:               {len(failed)}")
+    print(f"  No requirements sect: {len(no_requirements_section)}")
     if results:
-        print(f"  Avg skills/job:  {total_skills / len(results):.1f}")
-        print(f"  Avg tools/job:   {total_tools / len(results):.1f}")
-    print(f"  Total time:      {elapsed:.1f}s")
+        print(f"  Avg skills/job:       {total_skills / len(results):.1f}")
+        print(f"  Avg tools/job:        {total_tools / len(results):.1f}")
+    print(f"  Total time:           {elapsed:.1f}s")
     if results:
-        print(f"  Avg time/job:    {elapsed / len(results):.1f}s")
+        print(f"  Avg time/job:         {elapsed / len(results):.1f}s")
     print(f"\nResults saved to: {output_path}")
+
+    if no_requirements_section:
+        print(f"\nJobs with no requirements section ({len(no_requirements_section)}):")
+        for job in no_requirements_section[:5]:  # Show first 5
+            print(f"  - {job['id']}: {job['title']}")
+        if len(no_requirements_section) > 5:
+            print(f"  ... and {len(no_requirements_section) - 5} more")
 
     if failed:
         print(f"\nFailed jobs ({len(failed)}):")
