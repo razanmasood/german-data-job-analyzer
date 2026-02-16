@@ -1,0 +1,85 @@
+You are extracting SKILLS and TOOLS from job requirements sections to train a Named Entity Recognition model.
+
+CRITICAL RULE: Extract ONLY text that appears EXACTLY as written. No translation, no inference, no paraphrasing.
+
+---
+
+CATEGORIES:
+
+SKILL = methodologies/techniques that require specialized training
+Examples: "machine learning", "deep learning", "NLP", "computer vision", "data analysis", 
+"statistical analysis", "DevOps", "CI/CD", "MLOps", "data engineering", "ETL"
+German: "Maschinelles Lernen", "Datenanalyse", "Statistik"
+
+TOOL = specific technologies, languages, frameworks, platforms
+Examples: "Python", "R", "PyTorch", "TensorFlow", "Docker", "Kubernetes", 
+"AWS", "Azure", "GCP", "SQL", "PostgreSQL", "Git", "Spark"
+
+---
+
+ABSOLUTE RULES:
+1. VERBATIM ONLY: Copy exact text. "ML" ≠ "machine learning". "KI" ≠ "AI".
+2. LANGUAGE MATCH: German text → German output. English text → English output.
+3. ZERO INFERENCE: Not written = not extracted.
+4. SINGLE TERMS: Split compounds. "Python and R" → ["Python", "R"]
+
+CRITICAL: EXTRACT FROM PARENTHESES
+Parentheses often contain the most important technical specifications:
+✅ "languages (e.g. C/C++, CUDA, Java, Rust)" → Extract: C/C++, CUDA, Java, Rust
+✅ "cloud platforms (AWS, Azure, GCP)" → Extract: AWS, Azure, GCP
+✅ "Frameworks (PyTorch, TensorFlow, scikit-learn)" → Extract: PyTorch, TensorFlow, scikit-learn
+✅ "Erfahrung mit Cloud (AWS, GCP)" → Extract: AWS, GCP
+❌ DO NOT skip content after: "e.g.", "incl.", "such as", "including", "z.B.", "wie"
+
+---
+
+SKIP THESE:
+
+❌ Descriptive phrases with verbs:
+   "Programmierung von Datenbanken", "Entwicklung von Software", "Arbeit mit Cloud"
+   
+❌ Soft skills:
+   "communication", "teamwork", "problem-solving", "Kommunikationsfähigkeit"
+
+❌ Vague terms without specifics:
+   "cloud platforms" (unless AWS/Azure/GCP named), "databases" (unless SQL/PostgreSQL named)
+
+---
+
+EXTRACT THESE:
+
+✅ Standard methodologies (even if multi-word):
+   "machine learning", "computer vision", "data engineering", "statistical analysis"
+
+✅ Concrete technologies:
+   "Python", "Docker", "AWS", "TensorFlow", "Kubernetes", "SQL"
+
+✅ Technical terms in original language:
+   "Datenanalyse", "Statistik", "Maschinelles Lernen"
+
+---
+
+EXAMPLES:
+
+Input: "Erfahrung mit KI/ML-Modellen. Python und Docker erforderlich."
+Output: {"skills": ["KI", "ML"], "tools": ["Python", "Docker"]}
+
+Input: "Experience in NLP and computer vision. Proficiency in TensorFlow and PyTorch."
+Output: {"skills": ["NLP", "computer vision"], "tools": ["TensorFlow", "PyTorch"]}
+
+Input: "Data Engineer mit Kenntnissen in data pipelines, ETL. Erfahrung mit Spark und Kafka."
+Output: {"skills": ["data pipelines", "ETL"], "tools": ["Spark", "Kafka"]}
+
+Input: "Strong knowledge of cloud platforms (AWS, Azure, GCP) and containerization (Docker, Kubernetes)."
+Output: {"skills": ["cloud platforms", "containerization"], "tools": ["AWS", "Azure", "GCP", "Docker", "Kubernetes"]}
+
+Input: "Programmiersprachen (Python, Java, Scala) und Frameworks (scikit-learn, PyTorch)."
+Output: {"tools": ["Python", "Java", "Scala", "scikit-learn", "PyTorch"]}
+
+---
+
+Job Requirements Section:
+{description}
+
+Return ONLY valid JSON:
+{"skills": [], "tools": []}

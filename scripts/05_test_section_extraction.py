@@ -9,7 +9,7 @@ different experience levels. Shows both the extracted section and final entities
 
 Input:  data/annotation/sample_150.json
         prompts/section_extraction.txt
-        prompts/annotation.txt
+        prompts/annotation_jobRequirements.txt
 Output: data/annotation/test_section_extraction_results.json
 """
 
@@ -68,7 +68,7 @@ def classify_language(text):
 def select_diverse_jobs(jobs):
     """Select 5 diverse jobs: 2 German, 2 English, 1 Mixed."""
     for job in jobs:
-        job['_language'] = classify_language(job.get('description', ''))
+        job['_language'] = classify_language(job.get('description_clean', ''))
 
     german = [j for j in jobs if j['_language'] == 'German']
     english = [j for j in jobs if j['_language'] == 'English']
@@ -181,7 +181,7 @@ def extract_requirements_section(description, section_prompt_template):
 def main():
     sample_path = "data/annotation/sample_150.json"
     section_prompt_path = "prompts/section_extraction.txt"
-    entity_prompt_path = "prompts/annotation.txt"
+    entity_prompt_path = "prompts/annotation_jobRequirements.txt"
     output_path = "data/annotation/test_section_extraction_results.json"
 
     print("=" * 80)
@@ -217,7 +217,7 @@ def main():
         exp = job.get('experienceLevel', 'N/A')
         title = job.get('title', 'N/A')
         company = job.get('companyName', 'N/A')
-        desc = job.get('description', '')
+        desc = job.get('description_clean', '')
 
         print("=" * 80)
         print(f"JOB {i}/{len(selected)}")
@@ -242,7 +242,7 @@ def main():
                 "language": lang,
                 "experienceLevel": exp,
                 "description_length": len(desc),
-                "description": desc,
+                "description_clean": desc,
                 "requirements_section": None,
                 "section_extraction_time": round(section_time, 2),
                 "extracted_skills": [],
@@ -262,8 +262,8 @@ def main():
 
         # STEP 2: Extract entities from requirements section
         print(f"\n  STEP 2: Extracting entities from requirements...")
-        processed_requirements = preprocess_description(requirements_section)
-        filled_prompt = entity_prompt_template.replace('{description}', processed_requirements)
+        # processed_requirements = preprocess_description(requirements_section)
+        filled_prompt = entity_prompt_template.replace('{description}', requirements_section)
 
         ollama_result = call_ollama(filled_prompt, expect_json=True)
         entity_time = ollama_result.get('total_duration', 0) / 1e9

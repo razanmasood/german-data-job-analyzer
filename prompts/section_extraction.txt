@@ -1,32 +1,26 @@
 You are a job posting parser. Your task is to extract ONLY the requirements/qualifications section from a job posting.
 
-The requirements section may be labeled with headings like:
-- Requirements
-- Qualifications
-- What you bring
-- Required skills
-- Must have
-- Nice to have
-- Preferred qualifications
-- Your profile
-- What we're looking for
-- Ihr Profil (German)
-- Anforderungen (German)
-- Qualifikationen (German)
-- Das bringen Sie mit (German)
+The requirements section contains information about what candidates must have, should have, or are expected to bring to the role. This includes:
+- Required skills, experience, education, or certifications
+- Preferred or "nice to have" qualifications
+- Language requirements
+- Technical proficiencies
+- Soft skills or personal attributes
 
-Extract the complete text from where the requirements section begins until it ends (usually before sections like "What we offer", "Benefits", "About us", "How to apply").
+This section may appear under various headings in English or German, such as "Requirements", "Qualifications", "What you bring", "Your profile", "Ihr Profil", "Anforderungen", or similar phrasing. Focus on the semantic meaning rather than exact wording.
+
+Extract the complete text from where the requirements section begins until it ends (usually before sections describing what the company offers, benefits, application instructions, or company background).
 
 If there are multiple requirement-related sections (e.g., "Must have" AND "Nice to have"), include ALL of them.
 
 Do NOT include:
-- Job description/responsibilities
-- Company description
-- Benefits/perks
+- Job description/responsibilities (what you will do in the role)
+- Company description (about the organization)
+- Benefits/perks (what the company offers)
 - Application instructions
 - Contact information
 
-Return ONLY the extracted requirements text. If no requirements section is found, return "NO_REQUIREMENTS_SECTION_FOUND".
+Return ONLY the extracted requirements text. If no requirements section can be identified, return "NO_REQUIREMENTS_SECTION_FOUND".
 
 Job posting:
 {description}

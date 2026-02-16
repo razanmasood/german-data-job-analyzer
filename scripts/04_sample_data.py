@@ -12,7 +12,7 @@ from collections import Counter
 
 
 def main():
-    input_path = "data/raw/jobs_combined.json"
+    input_path = "data/processed/jobs_combined_clean.json"
     output_dir = "data/annotation"
     output_path = os.path.join(output_dir, "sample_150.json")
     sample_size = 150

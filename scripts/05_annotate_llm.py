@@ -10,8 +10,8 @@ then sends the extracted requirements to the entity extraction prompt.
 Includes checkpointing every 50 jobs and retry logic for failed requests.
 
 Input:  data/annotation/sample_150.json
-        prompts/section_extraction.txt (NEW)
-        prompts/annotation.txt
+        prompts/section_extraction.txt
+        prompts/annotation_jobRequirements.txt
 Output: data/annotation/annotations_llm_150.json
 """
 
@@ -22,26 +22,6 @@ import time
 
 import requests
 from tqdm import tqdm
-
-
-def preprocess_description(text):
-    """
-    Remove parentheses and brackets but keep their content.
-    Helps LLM extract terms often hidden in parenthetical examples.
-
-    Examples:
-    - "languages (e.g. Python, Java)" -> "languages , e.g. Python, Java"
-    - "platforms (AWS, Azure)" -> "platforms , AWS, Azure"
-    """
-    # Replace (content) with , content
-    text = re.sub(r'\(([^)]+)\)', r', \1', text)
-    text = re.sub(r'\[([^\]]+)\]', r', \1', text)
-
-    # Clean up multiple commas/spaces
-    text = re.sub(r',\s*,', ',', text)
-    text = re.sub(r'\s+', ' ', text)
-
-    return text.strip()
 
 
 def classify_language(text):
@@ -152,7 +132,7 @@ def save_checkpoint(results, checkpoint_path):
 def main():
     sample_path = "data/annotation/sample_150.json"
     section_prompt_path = "prompts/section_extraction.txt"  # NEW
-    entity_prompt_path = "prompts/annotation.txt"
+    entity_prompt_path = "prompts/annotation_jobRequirements.txt"
     output_path = "data/annotation/annotations_llm_150.json"
     checkpoint_path = "data/annotation/annotations_llm_checkpoint.json"
 
@@ -192,7 +172,7 @@ def main():
             continue
 
         title = job.get('title', 'N/A')
-        desc = job.get('description', '')
+        desc = job.get('description_clean', '')
         language = classify_language(desc)
 
         # STEP 1: Extract requirements section
@@ -217,8 +197,8 @@ def main():
             continue
 
         # STEP 2: Preprocess requirements section and extract entities
-        processed_requirements = preprocess_description(requirements_section)
-        filled_prompt = entity_prompt_template.replace('{description}', processed_requirements)
+        # processed_requirements = preprocess_description(requirements_section)
+        filled_prompt = entity_prompt_template.replace('{description}', requirements_section)
 
         # Call Ollama for entity extraction
         try:
@@ -245,7 +225,6 @@ def main():
             "jobTitle": title,
             "description": desc,  # Keep full original description
             "requirements_section": requirements_section,  # Store extracted section
-            "processed_requirements": processed_requirements,  # Store preprocessed version
             "language": language,
             "entities": {
                 "skills": skills,
