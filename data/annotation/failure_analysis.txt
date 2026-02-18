@@ -1,0 +1,69 @@
+================================================================================
+FAILURE ANALYSIS: Jobs with no requirements section detected
+Total failed: 7
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+[1] Job ID:             4365083520
+    Title:              Vocational Partner / Ausbilder IT (m/w/d)
+    Description length: 5420 chars
+    Paragraphs:         1
+    Section headers:    ['skills', 'qualifikationen', 'das bringst du mit']
+    First 200 chars:    Die Rolle | Vocational Partner / Ausbilder (m/w/d) IT In dieser Rolle agierst Du als "Vocational Partner"und nutzt Deine Leidenschaft für IT und Digitalisierung, um Wissen weiterzugeben und junge Mens
+
+────────────────────────────────────────────────────────────────────────────────
+[2] Job ID:             4341982995
+    Title:              Senior Robotics AI Engineer (f/m/x)
+    Description length: 3677 chars
+    Paragraphs:         1
+    Section headers:    ['skills', 'what you bring']
+    First 200 chars:    ARE YOU PREPARED FOR THE FUTURE? AI, AI SIR! Artificial Intelligence and machine learning are at the cutting edge when it comes to shaping next-gen mobility in areas like automated driving. But it tak
+
+────────────────────────────────────────────────────────────────────────────────
+[3] Job ID:             3925557577
+    Title:              Senior Consultant Data & Analytics - Projektmanagement (all genders)
+    Description length: 3114 chars
+    Paragraphs:         1
+    Section headers:    ['dein profil']
+    First 200 chars:    Wir gehören zu den Top-Adressen in der IT-Welt und fokussieren uns auf die Optimierung der Kerngeschäfts­prozesse unserer Kunden. Durch den smarten Einsatz maßgeschneiderter IT-Lösungen unterstützen w
+
+────────────────────────────────────────────────────────────────────────────────
+[4] Job ID:             4300496384
+    Title:              Business Analyst (m/w/d) Sales, Service & Operations
+    Description length: 4604 chars
+    Paragraphs:         1
+    Section headers:    ['skills', 'dein profil']
+    First 200 chars:    Verstärke unser Operations Analytics-Team ab sofort in Vollzeit - vor Ort in Berlin, München, Hamburg, Bad Reichenhall oder deutschlandweit remote. Deine Mission als Business Analyst (m/w/d) : Mit dat
+
+────────────────────────────────────────────────────────────────────────────────
+[5] Job ID:             4354825882
+    Title:              AI & Machine Learning Architect (all genders)
+    Description length: 2777 chars
+    Paragraphs:         1
+    Section headers:    ['das bringst du mit']
+    First 200 chars:    Erinnerst du dich an deinen Kindheitstraum, die Welt zu verändern? Diese Neugier steckt immer noch in dir! Bei msg kannst du den digitalen Wandel der Versicherungsbranche mitgestalten – mit innovative
+
+────────────────────────────────────────────────────────────────────────────────
+[6] Job ID:             3733044564
+    Title:              Senior Consultant Data & Analytics - Projektmanagement (all genders)
+    Description length: 3114 chars
+    Paragraphs:         1
+    Section headers:    ['dein profil']
+    First 200 chars:    Wir gehören zu den Top-Adressen in der IT-Welt und fokussieren uns auf die Optimierung der Kerngeschäfts­prozesse unserer Kunden. Durch den smarten Einsatz maßgeschneiderter IT-Lösungen unterstützen w
+
+────────────────────────────────────────────────────────────────────────────────
+[7] Job ID:             4343755267
+    Title:              Senior Data Scientist / Data Engineer
+    Description length: 2536 chars
+    Paragraphs:         1
+    Section headers:    ['requirements', 'skills', 'your profile']
+    First 200 chars:    Your Tasks Foster scalable data and analytics infrastructure to support the development and deployment of GenAI solutions Construct and refine (Gen)AI models, prompts, and related analytical component
+
+================================================================================
+SUMMARY
+================================================================================
+  Jobs with recognizable headers:    7/7
+  Jobs without any headers:          0/7
+  Avg description length:            3606 chars
+  Min / Max length:                  2536 / 5420 chars
+================================================================================

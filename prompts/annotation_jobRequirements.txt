@@ -6,14 +6,24 @@ CRITICAL RULE: Extract ONLY text that appears EXACTLY as written. No translation
 
 CATEGORIES:
 
-SKILL = methodologies/techniques that require specialized training
-Examples: "machine learning", "deep learning", "NLP", "computer vision", "data analysis", 
-"statistical analysis", "DevOps", "CI/CD", "MLOps", "data engineering", "ETL"
-German: "Maschinelles Lernen", "Datenanalyse", "Statistik"
+SKILL = a methodology, technique, or domain of knowledge a person learns to DO or KNOW
+        It describes a practice or approach, not a specific product.
+        Ask yourself: "Is this something someone studies or practices?"
+        If yes → SKILL
 
-TOOL = specific technologies, languages, frameworks, platforms
-Examples: "Python", "R", "PyTorch", "TensorFlow", "Docker", "Kubernetes", 
-"AWS", "Azure", "GCP", "SQL", "PostgreSQL", "Git", "Spark"
+TOOL = a specific named technology, product, programming language, or platform
+       It describes something a person installs, writes in, or directly uses.
+       Ask yourself: "Can I download, install, or write code in this?"
+       If yes → TOOL
+
+FAST CHECK — when uncertain:
+"Can I pip install / apt install / download this?" → TOOL
+"Is this a practice, methodology, or domain?" → SKILL
+When still unsure → extract it as SKILL. Better to over-extract than miss.
+
+
+ALL programming languages are TOOL without exception:
+Python, R, Java, Scala, Go, Rust, C++, CUDA, Julia → always TOOL
 
 ---
 
@@ -23,13 +33,38 @@ ABSOLUTE RULES:
 3. ZERO INFERENCE: Not written = not extracted.
 4. SINGLE TERMS: Split compounds. "Python and R" → ["Python", "R"]
 
-CRITICAL: EXTRACT FROM PARENTHESES
-Parentheses often contain the most important technical specifications:
-✅ "languages (e.g. C/C++, CUDA, Java, Rust)" → Extract: C/C++, CUDA, Java, Rust
-✅ "cloud platforms (AWS, Azure, GCP)" → Extract: AWS, Azure, GCP
-✅ "Frameworks (PyTorch, TensorFlow, scikit-learn)" → Extract: PyTorch, TensorFlow, scikit-learn
-✅ "Erfahrung mit Cloud (AWS, GCP)" → Extract: AWS, GCP
-❌ DO NOT skip content after: "e.g.", "incl.", "such as", "including", "z.B.", "wie"
+---
+
+PARENTHESES RULE:
+Parentheses often contain the most important technical specifications.
+Never skip content after: "e.g.", "incl.", "such as", "including", "z.B.", "wie"
+
+Extract BOTH the term before the parentheses AND all specific items inside,
+BUT only if the term before the parentheses passes the SKILL/TOOL test independently.
+
+✅ "cloud platforms (AWS, Azure, GCP)"
+   → Skills: cloud platforms | Tools: AWS, Azure, GCP
+
+✅ "containerization (Docker, Kubernetes)"
+   → Skills: containerization | Tools: Docker, Kubernetes
+
+✅ "Deployment (Docker, Kubernetes, CI/CD)"
+   → Skills: Deployment, CI/CD | Tools: Docker, Kubernetes
+
+✅ "best practices (incl. CI/CD, Docker, Kubernetes)"
+   → Skills: CI/CD | Tools: Docker, Kubernetes
+   ("best practices" is too vague → skip it, extract contents only)
+
+✅ "languages (e.g. C/C++, CUDA, Java, Rust)"
+   → Tools: C/C++, CUDA, Java, Rust
+   ("languages" is too vague → skip it, extract contents only)
+
+✅ "frameworks (PyTorch, TensorFlow, scikit-learn)"
+   → Tools: PyTorch, TensorFlow, scikit-learn
+   ("frameworks" is too vague → skip it, extract contents only)
+
+✅ "Kenntnisse in Cloud-Plattformen (Azure)"
+   → Skills: Cloud-Plattformen | Tools: Azure
 
 ---
 
@@ -37,25 +72,14 @@ SKIP THESE:
 
 ❌ Descriptive phrases with verbs:
    "Programmierung von Datenbanken", "Entwicklung von Software", "Arbeit mit Cloud"
-   
+
 ❌ Soft skills:
-   "communication", "teamwork", "problem-solving", "Kommunikationsfähigkeit"
+   "communication", "teamwork", "problem-solving", "Kommunikationsfähigkeit",
+   "analytical thinking", "self-motivation", "Selbstständige Arbeitsweise"
 
-❌ Vague terms without specifics:
-   "cloud platforms" (unless AWS/Azure/GCP named), "databases" (unless SQL/PostgreSQL named)
-
----
-
-EXTRACT THESE:
-
-✅ Standard methodologies (even if multi-word):
-   "machine learning", "computer vision", "data engineering", "statistical analysis"
-
-✅ Concrete technologies:
-   "Python", "Docker", "AWS", "TensorFlow", "Kubernetes", "SQL"
-
-✅ Technical terms in original language:
-   "Datenanalyse", "Statistik", "Maschinelles Lernen"
+❌ Purely grammatical container words with no independent technical meaning:
+   "languages", "frameworks", "tools", "platforms", "technologies"
+   → Skip these ONLY when specific items are listed inside parentheses
 
 ---
 
@@ -76,6 +100,14 @@ Output: {"skills": ["cloud platforms", "containerization"], "tools": ["AWS", "Az
 Input: "Programmiersprachen (Python, Java, Scala) und Frameworks (scikit-learn, PyTorch)."
 Output: {"tools": ["Python", "Java", "Scala", "scikit-learn", "PyTorch"]}
 
+Input: "Solid MLOps foundation. Experience with RAG systems and prompt engineering. Familiarity with AI/ML frameworks (PyTorch, TensorFlow)."
+Output: {"skills": ["MLOps", "RAG", "prompt engineering"], "tools": ["PyTorch", "TensorFlow"]}
+
+Input: "Grundlagen in MLOps, Deployment (Docker, Kubernetes, CI/CD). Kenntnisse in Cloud-Plattformen (Azure)."
+Output: {"skills": ["MLOps", "Deployment", "CI/CD", "Cloud-Plattformen"], "tools": ["Docker", "Kubernetes", "Azure"]}
+
+Input: "Advanced skills in Python, with experience in other languages (e.g. C/C++, CUDA, Java, Rust). Experience with cloud platforms (GCP, AWS or Azure), familiarity with MLOps / DevOps best practices (incl. CI/CD, Docker, Kubernetes). Data engineering skills."
+Output: {"skills": ["MLOps", "DevOps", "data engineering", "cloud platforms"], "tools": ["Python", "C/C++", "CUDA", "Java", "Rust", "GCP", "AWS", "Azure", "CI/CD", "Docker", "Kubernetes"]}
 ---
 
 Job Requirements Section:

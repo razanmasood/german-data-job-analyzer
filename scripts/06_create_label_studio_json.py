@@ -32,14 +32,18 @@ def create_label_studio_task(job_data: Dict) -> Dict:
     Convert a job posting with LLM extractions to Label Studio format.
     
     Args:
-        job_data: Job dict with entities.skills, entities.tools, processed_description
+        job_data: Job dict with entities.skills, entities.tools, requirements_sectionß
     
     Returns:
         Label Studio task dict with data and predictions
     """
+    # Use requirements_section if available, otherwise fall back to full description
+    req = job_data.get("requirements_section")
+    text = req if req else job_data.get("description", "")
+
     task = {
         "data": {
-            "text": job_data["processed_description"],
+            "text": text,
             "meta": {
                 "id": job_data["id"],
                 "title": job_data["jobTitle"],
@@ -52,8 +56,6 @@ def create_label_studio_task(job_data: Dict) -> Dict:
             }
         ]
     }
-    
-    text = job_data["processed_description"]
     result = task["predictions"][0]["result"]
     
     # Track which positions we've already annotated to avoid duplicates
@@ -121,24 +123,20 @@ def main():
     not_found = 0
     
     for job in job_data:
-        # Get entities
+        # Create task (includes all 150 jobs)
+        task = create_label_studio_task(job)
+
+        # Check if any entities were actually found in text
         entities = job.get("entities", {})
         skills = entities.get("skills", [])
         tools = entities.get("tools", [])
-        
-        # Skip if no entities extracted
+
         if not skills and not tools:
             skipped += 1
-            continue
-        
-        # Create task
-        task = create_label_studio_task(job)
-        
-        # Check if any entities were actually found in text
-        if not task["predictions"][0]["result"]:
+        elif not task["predictions"][0]["result"]:
             not_found += 1
             print(f"Warning: No entities found in text for job {job['id']}")
-        
+
         label_studio_tasks.append(task)
     
     # Save
@@ -146,10 +144,10 @@ def main():
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(label_studio_tasks, f, ensure_ascii=False, indent=2)
     
-    print(f"\n✅ Done!")
-    print(f"   Created: {len(label_studio_tasks)} tasks with predictions")
-    if skipped > 0:
-        print(f"   Skipped: {skipped} jobs with no entities")
+    print(f"\nDone!")
+    print(f"   Total tasks:           {len(label_studio_tasks)}")
+    print(f"   With pre-annotations:  {len(label_studio_tasks) - skipped}")
+    print(f"   No entities (fallback): {skipped}")
     if not_found > 0:
         print(f"   Warning: {not_found} jobs where entities weren't found in text")
 

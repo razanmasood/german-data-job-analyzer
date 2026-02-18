@@ -19,26 +19,6 @@ import re
 import requests
 
 
-def preprocess_description(text):
-    """
-    Remove parentheses and brackets but keep their content.
-    Helps LLM extract terms often hidden in parenthetical examples.
-
-    Examples:
-    - "languages (e.g. Python, Java)" -> "languages , e.g. Python, Java"
-    - "platforms (AWS, Azure)" -> "platforms , AWS, Azure"
-    """
-    # Replace (content) with , content
-    text = re.sub(r'\(([^)]+)\)', r', \1', text)
-    text = re.sub(r'\[([^\]]+)\]', r', \1', text)
-
-    # Clean up multiple commas/spaces
-    text = re.sub(r',\s*,', ',', text)
-    text = re.sub(r'\s+', ' ', text)
-
-    return text.strip()
-
-
 def classify_language(text):
     """Classify text as German, English, or Mixed using word heuristics."""
     if not text or not isinstance(text, str):
