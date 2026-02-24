@@ -130,12 +130,12 @@
 
 | Task | Time | Done |
 |------|------|------|
-| Export all corrected annotations | 30 min | [ ] |
-| Convert to IOB format for NER training | 60 min | [ ] |
-| Create train/val/test split (70/15/15) | 30 min | [ ] |
-| Save splits to `data/processed/` | 15 min | [ ] |
-| Update Progress Tracker | 15 min | [ ] |
-| Git commit + push | 10 min | [ ] |
+| Export all corrected annotations | 30 min | [x] |
+| Convert to IOB format for NER training | 60 min | [x] |
+| Create train/val/test split (70/15/15) | 30 min | [x] |
+| Save splits to `data/processed/` | 15 min | [x] |
+| Update Progress Tracker | 15 min | [x] |
+| Git commit + push | 10 min | [x] |
 
 **End of week checkpoint:** Do you have 150 annotated postings in training format? Yes → Week 1 done! 🎉
 

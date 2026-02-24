@@ -1,0 +1,16 @@
+{
+  "label_list": [
+    "O",
+    "B-SKILL",
+    "I-SKILL",
+    "B-TOOL",
+    "I-TOOL"
+  ],
+  "label2id": {
+    "O": 0,
+    "B-SKILL": 1,
+    "I-SKILL": 2,
+    "B-TOOL": 3,
+    "I-TOOL": 4
+  }
+}
