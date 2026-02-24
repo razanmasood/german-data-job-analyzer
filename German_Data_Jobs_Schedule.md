@@ -117,9 +117,9 @@
 | Task | Time | Done |
 |------|------|------|
 | Import pre-annotated jobs to Label Studio | 30 min | [x] |
-| Review and correct 150 LLM annotations | 4-5 hrs | [ ] |
-| Take breaks every 45 min | — | [ ] |
-| Document common LLM errors | 30 min | [ ] |
+| Review and correct 150 LLM annotations | 4-5 hrs | [x] |
+| Take breaks every 45 min | — | [x] |
+| Document common LLM errors | 30 min | [x] |
 
 **End of day checkpoint:** Have you reviewed 150 postings? Yes → Day 6 done.
 
@@ -130,7 +130,6 @@
 
 | Task | Time | Done |
 |------|------|------|
-| Review and correct remaining 75 annotations | 3-4 hrs | [ ] |
 | Export all corrected annotations | 30 min | [ ] |
 | Convert to IOB format for NER training | 60 min | [ ] |
 | Create train/val/test split (70/15/15) | 30 min | [ ] |
