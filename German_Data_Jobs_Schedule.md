@@ -148,13 +148,13 @@
 
 | Task | Time | Done |
 |------|------|------|
-| Create `src/ner/train.py` | 15 min | [ ] |
-| Load `xlm-roberta-large` with AutoModelForTokenClassification | 45 min | [ ] |
-| Write data loading function (IOB format → HF Dataset) | 60 min | [ ] |
-| Configure training arguments (small batch, few epochs first) | 30 min | [ ] |
-| Run first training (just 1 epoch to test) | 30 min | [ ] |
-| Verify: training runs without errors | 15 min | [ ] |
-| Git commit + push | 10 min | [ ] |
+| Create `src/ner/train.py` | 15 min | [x] |
+| Load `xlm-roberta-large` with AutoModelForTokenClassification | 45 min | [x] |
+| Write data loading function (IOB format → HF Dataset) | 60 min | [x] |
+| Configure training arguments (small batch, few epochs first) | 30 min | [x] |
+| Run first training (just 1 epoch to test) | 30 min | [x] |
+| Verify: training runs without errors | 15 min | [x] |
+| Git commit + push | 10 min | [x] |
 
 **End of day checkpoint:** Does training run without crashing? Yes → Day 8 done.
 
@@ -165,12 +165,12 @@
 
 | Task | Time | Done |
 |------|------|------|
-| Run full training (3-5 epochs) | 2-3 hrs | [ ] |
-| Write evaluation script | 45 min | [ ] |
-| Calculate F1 score on test set | 30 min | [ ] |
-| Analyze errors: what does the model get wrong? | 45 min | [ ] |
-| Document results in `results/ner_evaluation.md` | 30 min | [ ] |
-| Save best model to `models/ner/` | 15 min | [ ] |
+| Run full training (3-5 epochs) | 2-3 hrs | [x] |
+| Write evaluation script | 45 min | [x] |
+| Calculate F1 score on test set | 30 min | [x] |
+| Analyze errors: what does the model get wrong? | 45 min | [x] |
+| Document results in `results/ner_evaluation.md` | 30 min | [x] |
+| Save best model to `models/ner/` | 15 min | [x] |
 
 **End of day checkpoint:** Do you have F1 score documented? Yes → Day 9 done.
 
@@ -183,13 +183,13 @@
 
 | Task | Time | Done |
 |------|------|------|
-| Create `src/ner/predict.py` | 15 min | [ ] |
-| Write function: text → extracted entities | 45 min | [ ] |
-| Test on 10 new job postings | 30 min | [ ] |
-| Create `src/pipeline.py` for full processing | 30 min | [ ] |
-| Add function to load experienceLevel from data | 30 min | [ ] |
-| Test pipeline: text → entities + seniority (from data) | 45 min | [ ] |
-| Git commit + push | 10 min | [ ] |
+| Create `src/ner/predict.py` | 15 min | [x] |
+| Write function: text → extracted entities | 45 min | [x] |
+| Test on 10 new job postings | 30 min | [x] |
+| Create `src/pipeline.py` for full processing | 30 min | [x] |
+| Add function to load experienceLevel from data | 30 min | [x] |
+| Test pipeline: text → entities + seniority (from data) | 45 min | [x] |
+| Git commit + push | 10 min | [x] |
 
 **End of day checkpoint:** Can NER extract entities from new text? Yes → Day 10 done.
 
@@ -202,13 +202,13 @@
 
 | Task | Time | Done |
 |------|------|------|
-| Run NER pipeline on all 1,240 job postings | 90 min | [ ] |
-| Extract and standardize experienceLevel data | 30 min | [ ] |
-| Create aggregated statistics (skill counts, etc.) | 60 min | [ ] |
-| Analyze skill co-occurrence patterns | 60 min | [ ] |
-| Save results to `data/analyzed/results.json` | 30 min | [ ] |
-| Document interesting findings | 45 min | [ ] |
-| Git commit + push | 10 min | [ ] |
+| Run NER pipeline on all 1,240 job postings | 90 min | [x] |
+| Extract and standardize experienceLevel data | 30 min | [x] |
+| Create aggregated statistics (skill counts, etc.) | 60 min | [x] |
+| Analyze skill co-occurrence patterns | 60 min | [] |
+| Save results to `data/analyzed/results.json` | 30 min | [] |
+| Document interesting findings | 45 min | [] |
+| Git commit + push | 10 min | [] |
 
 **End of day checkpoint:** Do you have analyzed results for all postings? Yes → Day 11 done.
 
@@ -219,8 +219,8 @@
 
 | Task | Time | Done |
 |------|------|------|
-| Code cleanup: remove debug prints, add docstrings | 60 min | [ ] |
-| Add error handling to pipeline | 45 min | [ ] |
+| Code cleanup: remove debug prints, add docstrings | 60 min | [] |
+| Add error handling to pipeline | 45 min | [] |
 | Write unit tests for key functions (optional) | 60 min | [ ] |
 | Catch up on any missed tasks from Week 1-2 | varies | [ ] |
 | Update Progress Tracker | 15 min | [ ] |
