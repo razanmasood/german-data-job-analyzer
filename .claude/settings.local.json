@@ -7,7 +7,12 @@
       "Bash(python3:*)",
       "Bash(OLLAMA_HOST=http://host.docker.internal:11434 python:*)",
       "Bash(echo:*)",
-      "Bash(pip install:*)"
+      "Bash(pip install:*)",
+      "Bash(git -C /Users/rezzeh/Projects/german-data-job-analyzer log --oneline -10)",
+      "Bash(git -C /Users/rezzeh/Projects/german-data-job-analyzer status --short)",
+      "Bash(git -C /Users/rezzeh/Projects/german-data-job-analyzer diff --cached)",
+      "Bash(git -C /Users/rezzeh/Projects/german-data-job-analyzer add src/ner/train.py)",
+      "Bash(git -C /Users/rezzeh/Projects/german-data-job-analyzer commit -m \"$\\(cat <<''EOF''\nAdd NER training script for xlm-roberta-large fine-tuning\n\nToken classification on IOB-tagged job posting data to extract\nSKILL and TOOL entities, with MPS/CUDA/CPU auto-detection.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")"
     ]
   }
 }
