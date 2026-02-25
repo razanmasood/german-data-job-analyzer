@@ -117,6 +117,10 @@ def main():
     )
     print(f"  Parameters: {model.num_parameters():,}")
 
+    # Enable gradient checkpointing to reduce memory on MPS
+    if device == "mps":
+        model.gradient_checkpointing_enable()
+
     # Data collator — pads input_ids, attention_mask, and labels (ner_tags)
     # to the longest sequence in each batch
     data_collator = DataCollatorForTokenClassification(
@@ -136,11 +140,12 @@ def main():
         eval_strategy="epoch",
         save_strategy="epoch",
         learning_rate=2e-5,
-        per_device_train_batch_size=8,
-        per_device_eval_batch_size=16,
+        per_device_train_batch_size=2,
+        gradient_accumulation_steps=4,
+        per_device_eval_batch_size=4,
         num_train_epochs=10,
         weight_decay=0.01,
-        warmup_steps=13,  # ~10% of 105 samples / batch 8 = 14 steps per epoch
+        warmup_steps=5,  # ~10% of 105 samples / batch 2 * accum 4
         load_best_model_at_end=True,
         metric_for_best_model="f1",
         greater_is_better=True,
