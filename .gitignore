@@ -46,3 +46,5 @@ Update_150226.txt
 # models/*.bin
 # models/*.pt
 
+models/
+session_notes.md
