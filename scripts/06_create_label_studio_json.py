@@ -104,6 +104,12 @@ def create_label_studio_task(job_data: Dict) -> Dict:
     return task
 
 def main():
+    """Convert LLM annotations to Label Studio pre-annotation format.
+
+    Reads the LLM-annotated JSON, maps entity strings back to character offsets
+    in the original text, and writes Label Studio tasks with pre-annotations
+    for human review.
+    """
     # Paths
     data_dir = Path("data")
     annotation_dir = data_dir / "annotation"

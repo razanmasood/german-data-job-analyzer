@@ -20,6 +20,7 @@ REPORT_PATH = PROJECT_ROOT / "docs" / "error_analysis.md"
 
 
 def load_label_map():
+    """Load label list and ID mappings from the NER dataset label_map.json."""
     with open(DATASET_PATH / "label_map.json") as f:
         return json.load(f)
 
@@ -267,6 +268,12 @@ def generate_report(results, label_list):
 
 
 def main():
+    """Run NER inference on the test set and write a detailed error analysis report.
+
+    Loads the fine-tuned model, runs predictions on the held-out test split,
+    categorizes span-level errors (missed, wrong type, boundary), and saves
+    a full report to data/analyzed/ner_error_report.txt.
+    """
     print("NER Error Analysis")
     print("=" * 50)
 

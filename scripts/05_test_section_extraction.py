@@ -159,6 +159,12 @@ def extract_requirements_section(description, section_prompt_template):
 
 
 def main():
+    """Test the two-step annotation pipeline on 5 diverse job postings.
+
+    Selects a balanced sample across languages and experience levels,
+    runs section extraction followed by entity extraction via Ollama,
+    and saves results to data/annotation/test_section_extraction_results.json.
+    """
     sample_path = "data/annotation/sample_150.json"
     section_prompt_path = "prompts/section_extraction.txt"
     entity_prompt_path = "prompts/annotation_jobRequirements.txt"

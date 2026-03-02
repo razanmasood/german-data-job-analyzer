@@ -130,6 +130,12 @@ def save_checkpoint(results, checkpoint_path):
 
 
 def main():
+    """Run two-step LLM pre-annotation on 150 job postings.
+
+    Step 1 extracts the requirements section from each description.
+    Step 2 extracts SKILL and TOOL entities from that section.
+    Saves results to JSON with checkpoint support for resuming interrupted runs.
+    """
     sample_path = "data/annotation/sample_150.json"
     section_prompt_path = "prompts/section_extraction.txt"  # NEW
     entity_prompt_path = "prompts/annotation_jobRequirements.txt"

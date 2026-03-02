@@ -104,8 +104,8 @@
 | Run LLM annotation on all 150 jobs | 2-3 hrs | [x] |
 | Save annotations in JSON format | 30 min | [x] |
 | Spot-check 10 annotations for quality | 30 min | [x] |
-| Install Label Studio (Docker) for review | 45 min | [] |
-| Git commit + push | 10 min | [] |
+| Install Label Studio (Docker) for review | 45 min | [x] |
+| Git commit + push | 10 min | [x] |
 
 **End of day checkpoint:** Do you have 150 LLM-annotated postings? Yes → Day 5 done.
 
@@ -205,10 +205,10 @@
 | Run NER pipeline on all 1,240 job postings | 90 min | [x] |
 | Extract and standardize experienceLevel data | 30 min | [x] |
 | Create aggregated statistics (skill counts, etc.) | 60 min | [x] |
-| Analyze skill co-occurrence patterns | 60 min | [] |
-| Save results to `data/analyzed/results.json` | 30 min | [] |
-| Document interesting findings | 45 min | [] |
-| Git commit + push | 10 min | [] |
+| Analyze skill co-occurrence patterns | 60 min | [x] |
+| Save results to `data/analyzed/results.json` | 30 min | [x] |
+| Document interesting findings | 45 min | [x] |
+| Git commit + push | 10 min | [x] |
 
 **End of day checkpoint:** Do you have analyzed results for all postings? Yes → Day 11 done.
 
@@ -219,8 +219,8 @@
 
 | Task | Time | Done |
 |------|------|------|
-| Code cleanup: remove debug prints, add docstrings | 60 min | [] |
-| Add error handling to pipeline | 45 min | [] |
+| Code cleanup: remove debug prints, add docstrings | 60 min | [ ] |
+| Add error handling to pipeline | 45 min | [ ] |
 | Write unit tests for key functions (optional) | 60 min | [ ] |
 | Catch up on any missed tasks from Week 1-2 | varies | [ ] |
 | Update Progress Tracker | 15 min | [ ] |

@@ -186,6 +186,12 @@ def compute_aggregated_stats(results):
 
 
 def main():
+    """Run NER inference on all job postings using the fine-tuned model.
+
+    Loads xlm-roberta from models/ner/best/, processes each job's
+    description_clean field, and saves per-job entity results and
+    aggregated statistics (top skills/tools, co-occurrence, by experience level).
+    """
     print("=" * 60)
     print("NER Inference on Full Dataset")
     print("=" * 60)
@@ -199,18 +205,21 @@ def main():
     # Run inference
     results = []
     for job in tqdm(jobs, desc="Running inference"):
-        text = job.get("description_clean", "")
-        if not text:
-            skills, tools = [], []
-        else:
-            skills, tools = extract_entities(text, model, tokenizer, label_list, device)
+        try:
+            text = job.get("description_clean", "")
+            if not text:
+                skills, tools = [], []
+            else:
+                skills, tools = extract_entities(text, model, tokenizer, label_list, device)
 
-        results.append({
-            "id": job["id"],
-            "experience_level": job.get("experienceLevel", ""),
-            "skills": skills,
-            "tools": tools,
-        })
+            results.append({
+                "id": job["id"],
+                "experience_level": job.get("experienceLevel", ""),
+                "skills": skills,
+                "tools": tools,
+            })
+        except Exception as e:
+            print(f"\n  ERROR on job {job.get('id', '?')} — {e} (skipping)")
 
     # Save per-job results
     INFERENCE_OUTPUT.parent.mkdir(parents=True, exist_ok=True)

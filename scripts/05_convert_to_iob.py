@@ -136,6 +136,12 @@ def print_alignment_sample(example, n=3):
 
 
 def main():
+    """Convert Label Studio annotations to an IOB-tagged HuggingFace DatasetDict.
+
+    Reads human-corrected annotations from Label Studio export, tokenizes with
+    xlm-roberta-large, aligns entity spans to token offsets, and saves
+    train/val/test splits to data/processed/ner_dataset/.
+    """
     print("=" * 60)
     print("Label Studio → IOB Conversion")
     print("=" * 60)

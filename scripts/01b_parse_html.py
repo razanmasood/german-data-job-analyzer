@@ -54,18 +54,6 @@ def main():
         json.dump(jobs, indent=2, ensure_ascii=False, fp=f)
     
     print(f"✓ Saved {len(jobs)} jobs with clean descriptions")
-    
-    # Show example
-    print("\n" + "="*60)
-    print("EXAMPLE: Before vs After")
-    print("="*60)
-    example = jobs[0]
-    print(f"\nJob: {example['title']}")
-    print(f"\nOriginal description (first 200 chars):")
-    print(example['description'][:200] + "...")
-    print(f"\nCleaned description (first 200 chars):")
-    print(example['description_clean'][:200] + "...")
-    print("\n✓ Check for concatenated words in original vs clean version")
 
 
 if __name__ == "__main__":
