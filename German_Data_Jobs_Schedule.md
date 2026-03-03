@@ -219,12 +219,12 @@
 
 | Task | Time | Done |
 |------|------|------|
-| Code cleanup: remove debug prints, add docstrings | 60 min | [ ] |
-| Add error handling to pipeline | 45 min | [ ] |
-| Write unit tests for key functions (optional) | 60 min | [ ] |
-| Catch up on any missed tasks from Week 1-2 | varies | [ ] |
-| Update Progress Tracker | 15 min | [ ] |
-| Git commit + push | 10 min | [ ] |
+| Code cleanup: remove debug prints, add docstrings | 60 min | [x] |
+| Add error handling to pipeline | 45 min | [x] |
+| Write unit tests for key functions (optional) | 60 min | [x] |
+| Catch up on any missed tasks from Week 1-2 | varies | [x] |
+| Update Progress Tracker | 15 min | [x] |
+| Git commit + push | 10 min | [x] |
 
 **End of week checkpoint:** Is your code clean and pipeline robust? Yes → Week 2 done! 🎉
 
@@ -237,14 +237,14 @@
 
 | Task | Time | Done |
 |------|------|------|
-| Create `app/dashboard.py` | 15 min | [ ] |
-| Load analyzed results | 30 min | [ ] |
-| Display basic stats: total postings, date range | 30 min | [ ] |
-| Add bar chart: top 10 skills | 60 min | [ ] |
-| Add bar chart: top 10 tools | 60 min | [ ] |
-| Add seniority distribution chart (from experienceLevel) | 45 min | [ ] |
-| Run with `streamlit run app/dashboard.py` | 15 min | [ ] |
-| Git commit + push | 10 min | [ ] |
+| Create `app/dashboard.py` | 15 min | [x] |
+| Load analyzed results | 30 min | [x] |
+| Display basic stats: total postings, date range | 30 min | [x] |
+| Add bar chart: top 10 skills | 60 min | [x] |
+| Add bar chart: top 10 tools | 60 min | [x] |
+| Add seniority distribution chart (from experienceLevel) | 45 min | [x] |
+| Run with `streamlit run app/dashboard.py` | 15 min | [x] |
+| Git commit + push | 10 min | [x] |
 
 **End of day checkpoint:** Does Streamlit show skill charts? Yes → Day 13 done.
 
