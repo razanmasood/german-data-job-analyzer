@@ -1,37 +1,37 @@
 {
-  "total_rows": 1392,
+  "total_rows": 1240,
   "missing_count": 0,
   "missing_pct": 0.0,
   "recommendation": "USE THE EXISTING DATA",
   "reason": "Only 0.0% missing with 7 clean, consistent categories.",
   "value_distribution": {
     "Mid-Senior level": {
-      "count": 708,
-      "pct": 50.86
+      "count": 624,
+      "pct": 50.32
     },
     "Entry level": {
-      "count": 293,
-      "pct": 21.05
+      "count": 263,
+      "pct": 21.21
     },
     "Associate": {
-      "count": 169,
-      "pct": 12.14
+      "count": 144,
+      "pct": 11.61
     },
     "Internship": {
-      "count": 109,
-      "pct": 7.83
+      "count": 106,
+      "pct": 8.55
     },
     "Not Applicable": {
-      "count": 81,
-      "pct": 5.82
+      "count": 72,
+      "pct": 5.81
     },
     "Director": {
-      "count": 25,
-      "pct": 1.8
+      "count": 24,
+      "pct": 1.94
     },
     "Executive": {
       "count": 7,
-      "pct": 0.5
+      "pct": 0.56
     }
   },
   "seniority_map": {

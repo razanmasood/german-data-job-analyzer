@@ -258,7 +258,7 @@
 | Add skill co-occurrence heatmap | 90 min | [x] |
 | Add filter: by experience level | 45 min | [x] |
 | Add "analyze your own posting" text input | 60 min | [x] |
-| Improve visual design (colors, layout, titles) | 60 min | [ ] |
+| Improve visual design (colors, layout, titles) | 60 min | [x] |
 | Add explanatory text and insights | 45 min | [ ] |
 | Test dashboard thoroughly | 30 min | [ ] |
 | Git commit + push | 10 min | [ ] |

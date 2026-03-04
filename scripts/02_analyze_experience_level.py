@@ -1,11 +1,21 @@
-import pandas as pd
+"""
+NOTE: This script reads from data/raw/jobs_combined.json, which is the deduplicated
+dataset produced by 01_combine_data.py (1,240 jobs after removing duplicates by 'id').
+It must be run after 01_combine_data.py.
+
+The original version of this script loaded the two raw CSVs directly and concatenated
+them without deduplication (1,392 rows), causing inflated counts. The counts saved here
+now match the rest of the pipeline.
+"""
+
 import json
 import os
 
-# Load both CSV files
-ds_jobs = pd.read_csv('data/raw/ds_jobs.csv')
-ml_jobs = pd.read_csv('data/raw/ml_jobs.csv')
-combined = pd.concat([ds_jobs, ml_jobs], ignore_index=True)
+import pandas as pd
+
+# Load deduplicated combined dataset (output of 01_combine_data.py)
+input_path = 'data/raw/jobs_combined.json'
+combined = pd.read_json(input_path)
 
 # --- Analysis ---
 col = 'experienceLevel'
@@ -18,6 +28,8 @@ value_counts = combined[col].value_counts(dropna=False)
 # --- Print results ---
 print(f"\n{'='*60}")
 print(f"  Experience Level Analysis")
+print(f"{'='*60}")
+print(f"  Source: {input_path} ({total:,} deduplicated jobs)")
 print(f"{'='*60}")
 print(f"Total rows:        {total:,}")
 print(f"Missing/empty:     {missing_count:,}  ({missing_pct:.1f}%)")

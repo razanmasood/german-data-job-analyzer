@@ -79,22 +79,22 @@ An end-to-end NLP pipeline that analyzes 1,240 real German data science job post
 - [x] Set up Label Studio for review/correction
 - [x] Review and correct LLM annotations (150 postings)
 - [x] Prepare data in NER format (IOB tagging)
-- [ ] Fine-tune xlm-roberta-large for NER
-- [ ] Evaluate: F1 score on held-out test set
+- [x] Fine-tune xlm-roberta-large for NER
+- [x] Evaluate: F1 score on held-out test set
 
 ### Phase 3: Data Processing (2 days)
-- [ ] Build inference pipeline for NER
-- [ ] Process all 1,240 job postings with NER model
-- [ ] Extract experienceLevel data and standardize categories
-- [ ] Analyze skill co-occurrence patterns
-- [ ] Save processed results
+- [x] Build inference pipeline for NER
+- [x] Process all 1,240 job postings with NER model
+- [x] Extract experienceLevel data and standardize categories
+- [x] Analyze skill co-occurrence patterns
+- [x] Save processed results
 
 **Note:** Using existing experienceLevel field from dataset — no seniority classifier training needed
 
 ### Phase 4: Analysis + Dashboard (3 days)
-- [ ] Build Streamlit dashboard
-- [ ] Show: top skills, skill co-occurrence, seniority distribution
-- [ ] Add interactive features (filters, text input)
+- [x] Build Streamlit dashboard
+- [x] Show: top skills, skill co-occurrence, seniority distribution
+- [x] Add interactive features (filters, text input)
 - [ ] Verify: dashboard tells a story
 
 ### Phase 5: Finish (2 days)
