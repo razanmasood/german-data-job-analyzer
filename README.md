@@ -2,7 +2,7 @@
 
 > A multilingual NLP pipeline that extracts skills and tools from 1,240 German and English data science job postings using a fine-tuned Named Entity Recognition model — with an interactive Streamlit dashboard to explore the German AI/ML job market.
 
-![Dashboard Screenshot](assets/screenshots/screenshot_dashboard_complete.png)
+![Dashboard Screenshot](dashboard_screenshots/screenshot_dashboard_complete.png)
 
 ---
 
@@ -200,18 +200,3 @@ The field was 100% populated with clean data. Building a classifier to reproduce
 44% of postings are in English. A multilingual model handles both without requiring separate pipelines or language detection logic.
 
 ---
-
-## 🔗 Related Project
-
-→ [German AWS Documentation RAG](https://github.com/razanmasood/german-aws-rag) — A RAG system that answers AWS questions in German using multilingual embeddings and AWS Bedrock.
-
----
-
-## 👤 Author
-
-**Razan Masood**  
-MSc Computer Science, University of Duisburg-Essen  
-NLP researcher with 7+ years of experience in text classification, argument mining, and multilingual NLP.
-
-- GitHub: [@razanmasood](https://github.com/razanmasood)
-- Languages: German 🇩🇪 | English 🇬🇧 | Arabic 🇸🇦

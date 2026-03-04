@@ -2,7 +2,7 @@
 
 > Eine mehrsprachige NLP-Pipeline, die Skills und Tools aus 1.240 deutschen und englischen Data-Science-Stellenanzeigen extrahiert – mithilfe eines feinabgestimmten Named-Entity-Recognition-Modells und einem interaktiven Streamlit-Dashboard zur Visualisierung des deutschen KI/ML-Arbeitsmarkts.
 
-![Dashboard Screenshot](assets/screenshots/screenshot_dashboard_complete.png)
+![Dashboard Screenshot](dashboard_screenshots/screenshot_dashboard_complete.png)
 
 ---
 
@@ -206,12 +206,3 @@ Das Feld war zu 100 % befüllt und enthielt saubere Daten. Einen Klassifikator z
 → [German AWS Documentation RAG](https://github.com/razanmasood/german-aws-rag) – Ein RAG-System, das AWS-Fragen auf Deutsch beantwortet, mithilfe mehrsprachiger Embeddings und AWS Bedrock.
 
 ---
-
-## 👤 Autorin
-
-**Razan Masood**  
-MSc Informatik, Universität Duisburg-Essen  
-NLP-Forscherin mit 7+ Jahren Erfahrung in Textklassifikation, Argument Mining und mehrsprachigem NLP.
-
-- GitHub: [@razanmasood](https://github.com/razanmasood)
-- Sprachen: Deutsch 🇩🇪 | Englisch 🇬🇧 | Arabisch 🇸🇦
