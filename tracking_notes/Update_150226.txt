@@ -1,0 +1,162 @@
+## What We Discovered Today 15.02.2026
+
+### 1. **Annotation Scope Issue**
+- **Problem:** We were annotating the entire job posting (description + responsibilities + benefits)
+- **Solution:** Should only annotate the **Requirements/Qualifications section**
+- **Impact:** This is critical - extracting from wrong sections gives misleading data
+
+### 2. **Concatenated Words Problem**
+- **Root cause:** HTML tag removal from `description` field creates issues like "AISehr gute" instead of "AI Sehr gute"
+- **Your insight:** The `descriptionHtml` field in `data/raw/jobs_combined.json` likely preserves proper spacing
+- **Solution:** Use `descriptionHtml` and properly parse HTML to preserve word boundaries
+
+### 3. **Two-Step Annotation Process**
+We designed a 2-step LLM annotation approach:
+- **Step 1:** Extract requirements section from full job posting
+- **Step 2:** Extract SKILL and TOOL entities from requirements section only
+
+---
+
+## What We Updated
+
+### 1. **Annotation Guidelines** (`annotation_guidelines.md`)
+Added section: "Where to Extract Entities From"
+- ✅ Extract from: Requirements, Qualifications, "What you bring"
+- ❌ Don't extract from: Responsibilities, Benefits, Company description
+
+### 2. **Created Section Extraction Prompt** (`prompts/section_extraction.txt`)
+- Identifies requirements sections in both English and German
+- Returns only that section, or "NO_REQUIREMENTS_SECTION_FOUND"
+
+### 3. **Created Test Script** (`05_test_section_extraction.py`)
+- Tests 2-step process on 5 diverse jobs
+- Shows extracted requirements section + final entities
+- Tracks timing for both steps
+
+### 4. **Updated Annotation Prompt** (needs to be finalized)
+- Clarifies we're annotating requirements section only
+- Changed header from "Job Description:" to "Job Requirements Section:"
+
+---
+
+## Current Data Processing Pipeline
+
+### **Phase 1: Data Collection (COMPLETE)**
+```
+LinkedIn scraping → data/raw/jobs_combined.json
+Fields: id, title, company, description, descriptionHtml, experienceLevel, etc.
+```
+
+### **Phase 2: Preprocessing (NEEDS UPDATE)**
+
+**Current (has issues):**
+```
+jobs_combined.json → use 'description' field → concatenated words
+```
+
+**Should be:**
+```
+jobs_combined.json 
+  → use 'descriptionHtml' field 
+  → properly parse HTML (Beautiful Soup)
+  → preserve word boundaries
+  → clean text
+  → sample 150 jobs
+  → save to sample_150.json
+```
+
+### **Phase 3: Annotation (IN PROGRESS)**
+
+**Two-step LLM process:**
+```
+Step 1: Section Extraction
+  Input: Full job posting (cleaned HTML)
+  LLM: Extract requirements section only
+  Output: Requirements text
+
+Step 2: Entity Extraction  
+  Input: Requirements section
+  LLM: Extract SKILL and TOOL entities
+  Output: {"skills": [...], "tools": [...]}
+```
+
+---
+
+## Files That Need Updates
+
+### 1. **Data preprocessing script** (probably `01_combine_data.py` or similar)
+- [ ] Use `descriptionHtml` instead of `description`
+- [ ] Parse HTML properly with Beautiful Soup
+- [ ] Preserve word boundaries when removing tags
+- [ ] Create updated `sample_150.json`
+
+### 2. **Annotation prompt** (`prompts/annotation.txt`)
+- [ ] Change "Job Description:" to "Job Requirements Section:"
+- [ ] Add clarification about requirements-only extraction
+
+### 3. **Main annotation script** (`05_annotate_llm.py`)
+- [ ] Implement 2-step process (section extraction → entity extraction)
+- [ ] Remove `preprocess_description()` that strips parentheses
+- [ ] Add `fix_concatenated_words()` as backup (if HTML parsing isn't perfect)
+
+---
+
+## Recommended Next Steps
+
+### **Step 1: Fix HTML Parsing** (PRIORITY)
+```python
+from bs4 import BeautifulSoup
+
+def clean_html_description(html_text):
+    """
+    Properly parse HTML to preserve word boundaries.
+    
+    Example:
+    Input:  "<p>Experience with</p><p>Python</p>"
+    Output: "Experience with Python" (not "Experience withPython")
+    """
+    soup = BeautifulSoup(html_text, 'html.parser')
+    
+    # Get text with proper spacing
+    text = soup.get_text(separator=' ', strip=True)
+    
+    # Clean up multiple spaces
+    text = re.sub(r'\s+', ' ', text)
+    
+    return text.strip()
+```
+
+### **Step 2: Regenerate Sample Data**
+- Reprocess `jobs_combined.json` using `descriptionHtml`
+- Create new `sample_150.json` with properly spaced text
+- Verify no concatenated words remain
+
+### **Step 3: Test Section Extraction**
+- Run `05_test_section_extraction.py` on new sample
+- Check if requirements sections are correctly identified
+- Verify entities are extracted accurately
+
+### **Step 4: Run Full Annotation**
+- Annotate all 150 jobs with 2-step process
+- Save results with both full description AND requirements section
+- Move to Label Studio for manual review
+
+---
+
+## Key Decisions Made
+
+1. ✅ **Use LLM for section extraction** (not regex/keyword-based)
+   - More robust for varied formatting
+   - Handles bilingual postings better
+
+2. ✅ **Keep practical LLM settings** 
+   - `temperature=0.0`, `top_p=0.9`
+   - Good enough for production, not over-engineered
+
+3. ✅ **Preserve punctuation in requirements section**
+   - Don't strip parentheses (entities often in parentheses)
+   - Only fix concatenated words
+
+4. ✅ **Store both full description AND requirements section**
+   - Allows later review/debugging
+   - Shows extraction quality

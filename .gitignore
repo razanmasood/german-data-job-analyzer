@@ -35,17 +35,7 @@ ENV/
 # Jupyter
 .ipynb_checkpoints/
 
-#Tracking
-Project_Summary_German_Data_Jobs.md
-German_Data_Jobs_Schedule.md
-mylearning.md
-compact_after_prompt_update_090226.txt
-Update_150226.txt
-session_notes.md
-
-# Model files (optional - uncomment if models are large)
-# models/*.bin
-# models/*.pt
+.tracking_notes/
 
 models/
 session_notes.
