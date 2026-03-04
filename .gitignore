@@ -41,10 +41,14 @@ German_Data_Jobs_Schedule.md
 mylearning.md
 compact_after_prompt_update_090226.txt
 Update_150226.txt
+session_notes.md
 
 # Model files (optional - uncomment if models are large)
 # models/*.bin
 # models/*.pt
 
 models/
-session_notes.md
+session_notes.
+
+data/raw/
+data/annotated/

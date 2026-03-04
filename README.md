@@ -186,6 +186,9 @@ german-data-job-analyzer/
 - **Experience levels**: Entry, Associate, Mid-Senior, Director, Executive (from LinkedIn metadata)
 - **Annotation subset**: 150 postings (manually reviewed in Label Studio)
 
+> **Data availability:** Raw job postings are not included in this repository due to LinkedIn's Terms of Service on data redistribution. The aggregated analysis results (`data/analyzed/results.json`) are published and sufficient to run the dashboard. To reproduce the full dataset, use Octoparse or a similar tool to collect Data Scientist / ML Engineer postings from LinkedIn (Germany, January 2026 collection window).
+
+
 ---
 
 ## 💡 Design Decisions

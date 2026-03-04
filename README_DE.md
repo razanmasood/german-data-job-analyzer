@@ -186,6 +186,7 @@ german-data-job-analyzer/
 - **Erfahrungslevel**: Entry, Associate, Mid-Senior, Director, Executive (aus LinkedIn-Metadaten)
 - **Annotiertes Subset**: 150 Anzeigen (manuell in Label Studio überprüft)
 
+> **Datenverfügbarkeit:** Die rohen Stellenanzeigen sind aufgrund von LinkedIns Nutzungsbedingungen zur Datenweiterverbreitung nicht in diesem Repository enthalten. Die aggregierten Analyseergebnisse (`data/analyzed/results.json`) sind veröffentlicht und reichen aus, um das Dashboard zu betreiben. Zur Reproduktion des vollständigen Datensatzes kann Octoparse oder ein ähnliches Tool verwendet werden, um Data Scientist / ML Engineer-Stellen auf LinkedIn zu sammeln (Deutschland, Erhebungszeitraum Januar 2026).
 ---
 
 ## 💡 Designentscheidungen
