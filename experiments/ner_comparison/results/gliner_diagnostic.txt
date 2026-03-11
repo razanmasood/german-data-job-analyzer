@@ -1,0 +1,411 @@
+=============================================================
+GLiNER diagnostic — first 3 test examples (default threshold)
+=============================================================
+
+────────────────────────────────────────────────────────────
+Example 1  (dataset id=33)
+────────────────────────────────────────────────────────────
+
+[1] Plain text passed to GLiNER:
+    What You Bring University degree (Master’s or PhD) in computer science,
+    robotics, electrical engineering, or related field. 5+ years in robotics or
+    applied ML with production deployments in manipulation or mobile robotics. Deep
+    expertise in foundation models, specifically, multimodal, reasoning and
+    vision-language-action models, diffusion models, and modern finetuning methods
+    (PEFT, DPO, RLHF). Strong programming skills in Python and C++ and experience
+    with deep learning frameworks (PyTorch or JAX, CUDA). Hands-on experience with
+    industrial or research robots and simulators (e.g., ROS 2, Isaac Sim, MuJoCo);
+    knowledge of kinematics, motion planning, and control. Publications, patents,
+    or open-source contributions are a plus.
+
+[2] Reconstructed words with gold IOB tags:
+    WORD                      GOLD TAG
+    ------------------------  --------
+    What                      O
+    You                       O
+    Bring                     O
+    University                O
+    degree                    O
+    (Master’s                 O
+    or                        O
+    PhD)                      O
+    in                        O
+    computer                  B-SKILL  <--
+    science,                  I-SKILL  <--
+    robotics,                 B-SKILL  <--
+    electrical                B-SKILL  <--
+    engineering,              I-SKILL  <--
+    or                        O
+    related                   O
+    field.                    O
+    5+                        O
+    years                     O
+    in                        O
+    robotics                  B-SKILL  <--
+    or                        O
+    applied                   O
+    ML                        B-SKILL  <--
+    with                      O
+    production                B-SKILL  <--
+    deployments               I-SKILL  <--
+    in                        O
+    manipulation              O
+    or                        O
+    mobile                    B-SKILL  <--
+    robotics.                 I-SKILL  <--
+    Deep                      O
+    expertise                 O
+    in                        O
+    foundation                B-SKILL  <--
+    models,                   I-SKILL  <--
+    specifically,             O
+    multimodal,               B-SKILL  <--
+    reasoning                 B-SKILL  <--
+    and                       I-SKILL  <--
+    vision-language-action    I-SKILL  <--
+    models,                   I-SKILL  <--
+    diffusion                 B-SKILL  <--
+    models,                   I-SKILL  <--
+    and                       O
+    modern                    O
+    finetuning                B-SKILL  <--
+    methods                   I-SKILL  <--
+    (PEFT,                    O
+    DPO,                      B-SKILL  <--
+    RLHF).                    B-SKILL  <--
+    Strong                    O
+    programming               O
+    skills                    O
+    in                        O
+    Python                    B-TOOL  <--
+    and                       O
+    C++                       B-TOOL  <--
+    and                       O
+    experience                O
+    with                      O
+    deep                      O
+    learning                  O
+    frameworks                O
+    (PyTorch                  O
+    or                        O
+    JAX,                      B-TOOL  <--
+    CUDA).                    B-TOOL  <--
+    Hands-on                  O
+    experience                O
+    with                      O
+    industrial                O
+    or                        O
+    research                  O
+    robots                    O
+    and                       O
+    simulators                O
+    (e.g.,                    O
+    ROS                       B-TOOL  <--
+    2,                        I-TOOL  <--
+    Isaac                     B-TOOL  <--
+    Sim,                      I-TOOL  <--
+    MuJoCo);                  B-TOOL  <--
+    knowledge                 O
+    of                        O
+    kinematics,               B-SKILL  <--
+    motion                    B-SKILL  <--
+    planning,                 I-SKILL  <--
+    and                       O
+    control.                  B-SKILL  <--
+    Publications,             O
+    patents,                  O
+    or                        O
+    open-source               O
+    contributions             O
+    are                       O
+    a                         O
+    plus.                     O
+
+[3] GLiNER predicted spans (default threshold):
+    SPAN TEXT                            LABEL     SCORE
+    -----------------------------------  --------  -----
+    Deep expertise                       SKILL     0.6456
+    Strong programming skills            SKILL     0.8690
+    PyTorch                              TOOL      0.5910
+    JAX                                  TOOL      0.5740
+    CUDA                                 TOOL      0.6110
+    Hands-on experience                  SKILL     0.5172
+    ROS 2                                TOOL      0.6036
+    Isaac Sim                            TOOL      0.6649
+    MuJoCo                               TOOL      0.5148
+
+────────────────────────────────────────────────────────────
+Example 2  (dataset id=146)
+────────────────────────────────────────────────────────────
+
+[1] Plain text passed to GLiNER:
+    Um für deinen Weg gewappnet zu sein, hast du folgende Qualifikationen im
+    Gepäck: Abgeschlossenes Studium in Informatik, Data Science, Mathematik,
+    Statistik oder einem vergleichbaren Bereich mit mindestens 4 Jahren
+    Berufserfahrung – idealerweise im Consulting oder in Projekten im Data Science,
+    ML- oder KI-Umfeld Leidenschaft für Daten, AI und Generative AI sowie
+    Begeisterung für deren strategischen Mehrwert für das Business Expertise in
+    Python, SQL, ETL-Prozessen, RAG, ML/DL, LLMs, Pandas und NumPy Deine
+    Arbeitsweise ist geprägt von Eigenverantwortung, Zielorientierung,
+    Teamfähigkeit und Hands-on-Mentalität
+
+[2] Reconstructed words with gold IOB tags:
+    WORD                   GOLD TAG
+    ---------------------  --------
+    Um                     O
+    für                    O
+    deinen                 O
+    Weg                    O
+    gewappnet              O
+    zu                     O
+    sein,                  O
+    hast                   O
+    du                     O
+    folgende               O
+    Qualifikationen        O
+    im                     O
+    Gepäck:                O
+    Abgeschlossenes        O
+    Studium                O
+    in                     O
+    Informatik,            B-SKILL  <--
+    Data                   B-SKILL  <--
+    Science,               I-SKILL  <--
+    Mathematik,            B-SKILL  <--
+    Statistik              B-SKILL  <--
+    oder                   O
+    einem                  O
+    vergleichbaren         O
+    Bereich                O
+    mit                    O
+    mindestens             O
+    4                      O
+    Jahren                 O
+    Berufserfahrung        O
+    –                      O
+    idealerweise           O
+    im                     O
+    Consulting             O
+    oder                   O
+    in                     O
+    Projekten              O
+    im                     O
+    Data                   B-SKILL  <--
+    Science,               I-SKILL  <--
+    ML-                    O
+    oder                   O
+    KI-Umfeld              B-SKILL  <--
+    Leidenschaft           O
+    für                    O
+    Daten,                 O
+    AI                     B-SKILL  <--
+    und                    O
+    Generative             B-SKILL  <--
+    AI                     I-SKILL  <--
+    sowie                  O
+    Begeisterung           O
+    für                    O
+    deren                  O
+    strategischen          O
+    Mehrwert               O
+    für                    O
+    das                    O
+    Business               O
+    Expertise              O
+    in                     O
+    Python,                B-TOOL  <--
+    SQL,                   B-TOOL  <--
+    ETL-Prozessen,         B-TOOL  <--
+    RAG,                   B-TOOL  <--
+    ML/DL,                 B-TOOL  <--
+    LLMs,                  B-TOOL  <--
+    Pandas                 B-TOOL  <--
+    und                    O
+    NumPy                  B-TOOL  <--
+    Deine                  O
+    Arbeitsweise           O
+    ist                    O
+    geprägt                O
+    von                    O
+    Eigenverantwortung,    O
+    Zielorientierung,      O
+    Teamfähigkeit          O
+    und                    O
+    Hands-on-Mentalität    O
+
+[3] GLiNER predicted spans (default threshold):
+    SPAN TEXT                            LABEL     SCORE
+    -----------------------------------  --------  -----
+    RAG                                  TOOL      0.5013
+    Eigenverantwortung                   SKILL     0.6016
+    Zielorientierung                     SKILL     0.6180
+    Teamfähigkeit                        SKILL     0.7915
+
+────────────────────────────────────────────────────────────
+Example 3  (dataset id=109)
+────────────────────────────────────────────────────────────
+
+[1] Plain text passed to GLiNER:
+    At least 7 years of professional experience in Data Science, NLP, Machine
+    Learning, or Generative AI, ideally in a consulting or project-based
+    environment Proven expertise in the design and production deployment of NLP-
+    and LLM-based systems Strong hands-on experience with tools and methods such
+    as: LLM APIs and agent frameworks Vector databases and retrieval-based
+    approaches Evaluation methods for GenAI systems Very good knowledge of modern
+    ML frameworks (e.g. PyTorch ) and experience with fine-tuning, post-training,
+    and inference optimisation Ability to develop clean, scalable, and performant
+    production code Experience with cloud-based architectures and MLOps /
+    deployment workflows on platforms such as AWS, Azure, or GCP Confident
+    client-facing presence and the ability to communicate complex technical topics
+    clearly Structured, proactive, and independent working style, even in complex
+    environments Very good German and English skills (C1 level or higher)
+
+[2] Reconstructed words with gold IOB tags:
+    WORD               GOLD TAG
+    -----------------  --------
+    At                 O
+    least              O
+    7                  O
+    years              O
+    of                 O
+    professional       O
+    experience         O
+    in                 O
+    Data               B-SKILL  <--
+    Science,           I-SKILL  <--
+    NLP,               B-SKILL  <--
+    Machine            B-SKILL  <--
+    Learning,          I-SKILL  <--
+    or                 O
+    Generative         B-SKILL  <--
+    AI,                I-SKILL  <--
+    ideally            O
+    in                 O
+    a                  O
+    consulting         O
+    or                 O
+    project-based      O
+    environment        O
+    Proven             O
+    expertise          O
+    in                 O
+    the                O
+    design             O
+    and                O
+    production         O
+    deployment         O
+    of                 O
+    NLP-               B-SKILL  <--
+    and                O
+    LLM-based          B-SKILL  <--
+    systems            O
+    Strong             O
+    hands-on           O
+    experience         O
+    with               O
+    tools              O
+    and                O
+    methods            O
+    such               O
+    as:                O
+    LLM                B-TOOL  <--
+    APIs               I-TOOL  <--
+    and                O
+    agent              B-TOOL  <--
+    frameworks         I-TOOL  <--
+    Vector             B-SKILL  <--
+    databases          I-SKILL  <--
+    and                O
+    retrieval-based    B-TOOL  <--
+    approaches         I-TOOL  <--
+    Evaluation         O
+    methods            O
+    for                O
+    GenAI              B-SKILL  <--
+    systems            I-SKILL  <--
+    Very               O
+    good               O
+    knowledge          O
+    of                 O
+    modern             O
+    ML                 B-SKILL  <--
+    frameworks         I-SKILL  <--
+    (e.g.              O
+    PyTorch            B-TOOL  <--
+    )                  O
+    and                O
+    experience         O
+    with               O
+    fine-tuning,       B-SKILL  <--
+    post-training,     B-SKILL  <--
+    and                O
+    inference          B-SKILL  <--
+    optimisation       I-SKILL  <--
+    Ability            O
+    to                 O
+    develop            O
+    clean,             O
+    scalable,          O
+    and                O
+    performant         O
+    production         O
+    code               O
+    Experience         O
+    with               O
+    cloud-based        B-SKILL  <--
+    architectures      I-SKILL  <--
+    and                O
+    MLOps              B-SKILL  <--
+    /                  O
+    deployment         O
+    workflows          O
+    on                 O
+    platforms          O
+    such               O
+    as                 O
+    AWS,               B-TOOL  <--
+    Azure,             B-TOOL  <--
+    or                 O
+    GCP                B-TOOL  <--
+    Confident          O
+    client-facing      O
+    presence           O
+    and                O
+    the                O
+    ability            O
+    to                 O
+    communicate        O
+    complex            O
+    technical          O
+    topics             O
+    clearly            O
+    Structured,        O
+    proactive,         O
+    and                O
+    independent        O
+    working            O
+    style,             O
+    even               O
+    in                 O
+    complex            O
+    environments       O
+    Very               O
+    good               O
+    German             O
+    and                O
+    English            O
+    skills             O
+    (C1                O
+    level              O
+    or                 O
+    higher)            O
+
+[3] GLiNER predicted spans (default threshold):
+    SPAN TEXT                            LABEL     SCORE
+    -----------------------------------  --------  -----
+    LLM APIs                             TOOL      0.5895
+    Very good German and English skills  SKILL     0.7127
+
+=============================================================
+End of diagnostic  (3 examples shown)
+=============================================================
