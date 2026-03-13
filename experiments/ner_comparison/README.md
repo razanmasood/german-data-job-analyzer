@@ -37,13 +37,13 @@ Evaluated at two confidence thresholds. Lowering the threshold raises recall at 
 Full per-example predictions and raw span scores are in `results/gliner_results.json`.
 Diagnostic output for the first 3 examples is in `results/gliner_diagnostic.txt`.
 
-### SpanMarker (TBD — see Day B)
+### SpanMarker — `xlm-roberta-large` (fine-tuned)
 
-| Threshold | Entity | Precision | Recall | F1 |
-|---|---|---|---|---|
-| — | SKILL | TBD | TBD | TBD |
-| — | TOOL | TBD | TBD | TBD |
-| — | **micro avg** | **TBD** | **TBD** | **TBD** |
+| Entity | Precision | Recall | F1 |
+|---|---|---|---|
+| SKILL | 0.53 | 0.71 | 0.61 |
+| TOOL | 0.79 | 0.84 | 0.82 |
+| **micro avg** | **0.611** | **0.754** | **0.675** |
 
 ---
 
@@ -77,6 +77,6 @@ experiments/ner_comparison/
 └── results/
     ├── gliner_results.json     ← GLiNER metrics + per-example predictions
     ├── gliner_diagnostic.txt   ← human-readable inspection of first 3 examples
-    ├── spanmarker_results.json ← (TBD)
-    └── comparison.json         ← (TBD)
+    ├── spanmarker_results.json ← SpanMarker metrics + per-example predictions
+    └── comparison_summary.json ← side-by-side comparison of all three models
 ```
