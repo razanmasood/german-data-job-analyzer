@@ -1,0 +1,83 @@
+{
+  "description": "NER model comparison: xlm-roberta-large baseline (HuggingFace Trainer) vs GLiNER zero-shot vs xlm-roberta-large fine-tuned with SpanMarker. Metrics evaluated on the held-out test split (23 sentences) of the annotated skill/tool dataset.",
+  "entity_labels": [
+    "SKILL",
+    "TOOL"
+  ],
+  "models": [
+    {
+      "model": "xlm-roberta-large (HuggingFace Trainer, baseline)",
+      "approach": "fine-tuned",
+      "num_test_examples": 23,
+      "overall": {
+        "precision": 0.644,
+        "recall": 0.69,
+        "f1": 0.666
+      },
+      "per_entity": {
+        "SKILL": null,
+        "TOOL": null
+      },
+      "inference_time_seconds": null,
+      "notes": "10 epochs, batch 2 + grad-accum 4, lr 2e-5, Apple M4 MPS; per-entity breakdown not recorded"
+    },
+    {
+      "model": "urchade/gliner_multi-v2.1",
+      "approach": "zero-shot",
+      "num_test_examples": 23,
+      "overall": {
+        "precision": 0.3788,
+        "recall": 0.1538,
+        "f1": 0.2188
+      },
+      "per_entity": {
+        "SKILL": {
+          "precision": 0.03,
+          "recall": 0.01,
+          "f1": 0.01
+        },
+        "TOOL": {
+          "precision": 0.73,
+          "recall": 0.42,
+          "f1": 0.54
+        }
+      },
+      "inference_time_seconds": 7.22,
+      "notes": "threshold=default (0.5)"
+    },
+    {
+      "model": "xlm-roberta-large (SpanMarker fine-tuned)",
+      "approach": "fine-tuned",
+      "num_test_examples": 23,
+      "overall": {
+        "precision": 0.611,
+        "recall": 0.7538,
+        "f1": 0.6749
+      },
+      "per_entity": {
+        "SKILL": {
+          "precision": 0.53,
+          "recall": 0.71,
+          "f1": 0.61
+        },
+        "TOOL": {
+          "precision": 0.79,
+          "recall": 0.84,
+          "f1": 0.82
+        }
+      },
+      "inference_time_seconds": 35.1,
+      "training": {
+        "backbone": "xlm-roberta-large",
+        "train_sentences": 105,
+        "val_sentences": 22,
+        "max_epochs": 5,
+        "early_stopping_patience": 2,
+        "learning_rate": 2e-05,
+        "batch_size": 4,
+        "train_time_seconds": 12163.0
+      },
+      "notes": "5 epochs completed (no early stopping), Apple M4 MPS"
+    }
+  ]
+}
