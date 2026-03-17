@@ -130,7 +130,7 @@ CRITICAL OUTPUT RULES:
 - Do not add any preamble like "Here is the extracted content..." or "Here are the requirements:"
 - Do not add any closing notes like "Note: requirements were scattered..." or explanations of what you did.
 - If requirements are scattered, silently combine them. Never explain that you combined them.
-- Your output must start directly with the extracted content or NO_REQUIREMENTS_SECTION_FOUND.
+- Your output must start directly with the extracted content.
 
 ---
 
@@ -139,5 +139,3 @@ Now extract ALL requirements-related content from this job posting:
 {description}
 
 If no requirements can be found, return: NO_REQUIREMENTS_SECTION_FOUND
-
-Requirements:

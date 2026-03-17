@@ -1,9 +1,13 @@
 """
 Run NER inference on all job postings to extract SKILL and TOOL entities.
 
+INPUT: requirements section (pre-extracted via 09b_extract_requirements_all.py),
+falls back to description_clean if requirements_section is None.
+
 Loads the fine-tuned xlm-roberta-large model and processes each job's
-description_clean text, extracting entities via offset mapping to avoid
-subword artifacts. Saves per-job results and aggregated statistics.
+requirements_section field from jobs_with_requirements.json, extracting
+entities via offset mapping to avoid subword artifacts. Saves per-job
+results and aggregated statistics.
 """
 
 import json
@@ -17,7 +21,7 @@ from transformers import AutoModelForTokenClassification, AutoTokenizer
 
 MODEL_PATH = Path("models/ner/best")
 LABEL_MAP_PATH = Path("data/processed/ner_dataset/label_map.json")
-JOBS_PATH = Path("data/processed/jobs_combined_clean.json")
+JOBS_PATH = Path("data/processed/jobs_with_requirements.json")
 INFERENCE_OUTPUT = Path("data/processed/inference_results.json")
 ANALYZED_OUTPUT = Path("data/analyzed/results.json")
 
@@ -188,9 +192,10 @@ def compute_aggregated_stats(results):
 def main():
     """Run NER inference on all job postings using the fine-tuned model.
 
-    Loads xlm-roberta from models/ner/best/, processes each job's
-    description_clean field, and saves per-job entity results and
-    aggregated statistics (top skills/tools, co-occurrence, by experience level).
+    Loads xlm-roberta from models/ner/best/ and jobs_with_requirements.json
+    (produced by 09b_extract_requirements_all.py). Uses requirements_section
+    as the inference text, falling back to description_clean if None.
+    Saves per-job entity results and aggregated statistics.
     """
     print("=" * 60)
     print("NER Inference on Full Dataset")
@@ -202,11 +207,17 @@ def main():
     print(f"  Model loaded on: {device}")
     print(f"  Jobs to process: {len(jobs)}")
 
+    req_available = sum(1 for j in jobs if j.get("requirements_section"))
+    print(f"  With requirements section: {req_available} / {len(jobs)}")
+
     # Run inference
     results = []
     for job in tqdm(jobs, desc="Running inference"):
         try:
-            text = job.get("description_clean", "")
+            requirements = job.get("requirements_section")
+            used_requirements_section = bool(requirements)
+            text = requirements if used_requirements_section else job.get("description_clean", "")
+
             if not text:
                 skills, tools = [], []
             else:
@@ -217,6 +228,7 @@ def main():
                 "experience_level": job.get("experienceLevel", ""),
                 "skills": skills,
                 "tools": tools,
+                "used_requirements_section": used_requirements_section,
             })
         except Exception as e:
             print(f"\n  ERROR on job {job.get('id', '?')} — {e} (skipping)")
@@ -236,14 +248,17 @@ def main():
 
     # Print summary
     s = stats["summary"]
+    used_req = sum(1 for r in results if r["used_requirements_section"])
     print(f"\n{'=' * 60}")
     print(f"Summary")
     print(f"{'=' * 60}")
-    print(f"  Total jobs processed:  {s['total_jobs']}")
-    print(f"  Total unique skills:   {s['total_unique_skills']}")
-    print(f"  Total unique tools:    {s['total_unique_tools']}")
-    print(f"  Avg skills per job:    {s['avg_skills_per_job']}")
-    print(f"  Avg tools per job:     {s['avg_tools_per_job']}")
+    print(f"  Total jobs processed:        {s['total_jobs']}")
+    print(f"  Used requirements section:   {used_req} ({100*used_req//s['total_jobs']}%)")
+    print(f"  Fell back to full desc:      {s['total_jobs'] - used_req}")
+    print(f"  Total unique skills:         {s['total_unique_skills']}")
+    print(f"  Total unique tools:          {s['total_unique_tools']}")
+    print(f"  Avg skills per job:          {s['avg_skills_per_job']}")
+    print(f"  Avg tools per job:           {s['avg_tools_per_job']}")
 
     print(f"\nTop 10 Skills:")
     for item in stats["top_skills"][:10]:
