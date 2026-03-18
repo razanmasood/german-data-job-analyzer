@@ -1,89 +1,97 @@
 """
-Extract requirements sections from all job postings using Ollama.
+Extract requirements sections from all 1,240 job postings using the Gemini API.
 
-TWO-STEP PREPROCESSING:
-1. Load all 1,240 jobs from jobs_combined_clean.json
-2. For each job, call Ollama to extract the requirements/qualifications section
+Pipeline position: runs after 09_prepare_ner_dataset.py, before 10_run_inference.py.
 
-Adds a requirements_section field to each job (None if extraction failed).
-Saves output to jobs_with_requirements.json — does NOT overwrite the source file.
-Includes checkpointing every 100 jobs for safe resumption.
+For each job in jobs_combined_clean.json, this script calls Gemini to extract
+only the requirements/qualifications section from the full job description.
+The extracted section is stored in a new requirements_section field. Jobs where
+extraction fails or no requirements section is found receive requirements_section=None.
+
+The output file jobs_with_requirements.json is a copy of the source data enriched
+with this field — the source file is never modified.
+
+Usage:
+    python 09b_extract_requirements_all.py               # full extraction run
+    python 09b_extract_requirements_all.py --retry-nulls # re-run only on None entries
 
 Input:  data/processed/jobs_combined_clean.json
         prompts/section_extraction.txt
 Output: data/processed/jobs_with_requirements.json
 """
 
+import argparse
 import json
 import os
 import time
 from pathlib import Path
 
-import requests
+from google import genai
 from tqdm import tqdm
+
+# --- Constants / configuration ---
 
 JOBS_PATH = Path("data/processed/jobs_combined_clean.json")
 SECTION_PROMPT_PATH = Path("prompts/section_extraction.txt")
 OUTPUT_PATH = Path("data/processed/jobs_with_requirements.json")
 CHECKPOINT_PATH = Path("data/processed/jobs_with_requirements_checkpoint.json")
 
+GEMINI_MODEL = "models/gemini-2.5-flash-lite"
+CHECKPOINT_INTERVAL = 100  # save progress every N jobs
 
-def call_ollama(prompt_text, model="llama3.1:8b", retries=1, expect_json=True):
-    """Send prompt to Ollama and return parsed result. Retries once on failure."""
-    ollama_host = os.getenv('OLLAMA_HOST', 'http://localhost:11434')
-    url = f"{ollama_host}/api/generate"
+# --- Gemini extraction ---
 
-    payload = {
-        "model": model,
-        "prompt": prompt_text,
-        "stream": False,
-        "temperature": 0.0,
-        "num_predict": 2048,
-        "num_ctx": 8192,
-        "top_p": 0.9,
-    }
+def extract_requirements_section(description, prompt_template, client):
+    """Extract the requirements/qualifications section from a job description.
 
-    if expect_json:
-        payload["format"] = "json"
+    Fills the prompt template with the description, calls Gemini, and returns
+    the extracted section as a string. Returns None if the model signals that
+    no requirements section exists (NO_REQUIREMENTS_SECTION_FOUND) or if all
+    retry attempts fail.
 
-    for attempt in range(1 + retries):
-        try:
-            response = requests.post(url, json=payload, timeout=300)
-            response.raise_for_status()
-            return response.json()
-        except (requests.exceptions.ConnectionError,
-                requests.exceptions.Timeout,
-                requests.exceptions.HTTPError) as e:
-            if attempt < retries:
-                print(f"  Attempt {attempt + 1} failed: {e}. Retrying in 5s...")
-                time.sleep(5)
-            else:
-                raise
+    Retries up to 3 times on 503 errors (service overload) with a 10-second
+    delay between attempts. Any other exception fails immediately.
 
+    Args:
+        description: Full job description text (description_clean field).
+        prompt_template: Contents of section_extraction.txt with {description} placeholder.
+        client: Authenticated google.genai.Client instance.
 
-def extract_requirements_section(description, section_prompt_template):
-    """Extract only the requirements/qualifications section from full job posting.
-
-    Returns extracted requirements section text, or None if not found.
+    Returns:
+        Extracted requirements section as a string, or None.
     """
-    filled_prompt = section_prompt_template.replace('{description}', description)
+    filled_prompt = prompt_template.replace("{description}", description)
 
-    try:
-        ollama_result = call_ollama(filled_prompt, expect_json=False)
-        extracted_section = ollama_result.get('response', '').strip()
+    for attempt in range(3):
+        try:
+            response = client.models.generate_content(
+                model=GEMINI_MODEL,
+                contents=filled_prompt,
+            )
+            extracted = response.text.strip()
 
-        if "NO_REQUIREMENTS_SECTION_FOUND" in extracted_section:
-            return None
+            if "NO_REQUIREMENTS_SECTION_FOUND" in extracted:
+                return None
 
-        return extracted_section
+            return extracted
 
-    except Exception as e:
-        print(f"  Section extraction failed: {e}")
-        return None
+        except Exception as e:
+            if "503" in str(e) and attempt < 2:
+                print(f"  503 error, retrying in 10s (attempt {attempt + 1}/3)...")
+                time.sleep(10)
+            else:
+                print(f"  Extraction failed: {e}")
+                return None
 
+# --- Checkpoint and I/O helpers ---
 
 def load_checkpoint():
-    """Load existing checkpoint if available. Returns dict keyed by job id."""
+    """Load a previously saved checkpoint if one exists.
+
+    Returns:
+        Dict mapping job id → enriched job dict for all already-processed jobs,
+        or an empty dict if no checkpoint file is found.
+    """
     if CHECKPOINT_PATH.exists():
         with open(CHECKPOINT_PATH, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -93,38 +101,49 @@ def load_checkpoint():
 
 
 def save_checkpoint(results_by_id):
-    """Save current results as a checkpoint."""
+    """Write current results to the checkpoint file.
+
+    Args:
+        results_by_id: Dict mapping job id → enriched job dict.
+    """
     CHECKPOINT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(CHECKPOINT_PATH, "w", encoding="utf-8") as f:
         json.dump(list(results_by_id.values()), f, ensure_ascii=False, indent=2)
 
+# --- Core extraction logic ---
 
-def main():
-    """Extract requirements sections for all jobs and save enriched dataset."""
+def main(client, prompt_template):
+    """Run requirements extraction on all jobs in JOBS_PATH.
+
+    Skips jobs already present in the checkpoint. Saves a checkpoint every
+    CHECKPOINT_INTERVAL jobs. On completion, writes the full enriched dataset
+    to OUTPUT_PATH in the original job order and removes the checkpoint file.
+
+    In test mode (test_mode=True), processes only the first test_limit jobs,
+    prints a preview of extracted sections, and exits without saving output.
+
+    Args:
+        client: Authenticated google.genai.Client instance.
+        prompt_template: Contents of section_extraction.txt.
+    """
     print("=" * 60)
     print("Requirements Section Extraction — All Jobs")
     print("=" * 60)
 
-    # Test mode: process only N jobs first
-    test_mode = False
-    test_limit = 5
+    test_mode = True
+    test_limit = 3
 
     with open(JOBS_PATH, "r", encoding="utf-8") as f:
         jobs = json.load(f)
     print(f"\nLoaded {len(jobs)} jobs from {JOBS_PATH}")
 
-    with open(SECTION_PROMPT_PATH, "r", encoding="utf-8") as f:
-        section_prompt_template = f.read()
-    print(f"Loaded section extraction prompt from {SECTION_PROMPT_PATH}")
-
-    # Load checkpoint
     results_by_id = load_checkpoint()
     already_done = len(results_by_id)
 
     jobs_to_process = jobs[:test_limit] if test_mode else jobs
     if test_mode:
         print(f"\n[TEST MODE] Processing first {test_limit} jobs only.")
-        print("Set test_mode = False in main() to run on all jobs.\n")
+        print("Set test_mode = False to run on all jobs.\n")
 
     start_time = time.time()
     succeeded = 0
@@ -137,11 +156,10 @@ def main():
             continue
 
         desc = job.get("description_clean", "")
-        requirements = extract_requirements_section(desc, section_prompt_template) if desc else None
+        requirements = extract_requirements_section(desc, prompt_template, client) if desc else None
 
         enriched = dict(job)
         enriched["requirements_section"] = requirements
-
         results_by_id[job_id] = enriched
 
         if requirements is not None:
@@ -149,8 +167,7 @@ def main():
         else:
             failed += 1
 
-        # Checkpoint every 100 jobs (only in full mode)
-        if not test_mode and len(results_by_id) % 100 == 0:
+        if not test_mode and len(results_by_id) % CHECKPOINT_INTERVAL == 0:
             save_checkpoint(results_by_id)
             print(f"\n  Checkpoint saved at {len(results_by_id)} jobs")
 
@@ -177,7 +194,7 @@ def main():
         print("\nInspect above. Set test_mode = False to run on all 1,240 jobs.")
         return
 
-    # Save final output (preserve original job order)
+    # Preserve original job order when writing output
     id_order = [job["id"] for job in jobs]
     ordered_results = [results_by_id[jid] for jid in id_order if jid in results_by_id]
 
@@ -186,7 +203,6 @@ def main():
         json.dump(ordered_results, f, ensure_ascii=False, indent=2)
     print(f"\nSaved {len(ordered_results)} enriched jobs to {OUTPUT_PATH}")
 
-    # Clean up checkpoint after successful full run
     if CHECKPOINT_PATH.exists():
         CHECKPOINT_PATH.unlink()
         print("Checkpoint file removed.")
@@ -196,5 +212,81 @@ def main():
     print(f"{'=' * 60}")
 
 
+def retry_nulls(client, prompt_template):
+    """Re-run extraction for jobs where requirements_section is None.
+
+    Reads OUTPUT_PATH, identifies jobs with a null requirements_section,
+    and attempts extraction again. Updates the jobs in place and saves
+    the file back to OUTPUT_PATH.
+
+    Useful after a run with transient API errors produced more nulls than expected.
+    Does not use checkpointing — intended for small retry batches.
+
+    Args:
+        client: Authenticated google.genai.Client instance.
+        prompt_template: Contents of section_extraction.txt.
+    """
+    print("=" * 60)
+    print("Retrying null requirements sections")
+    print("=" * 60)
+
+    if not OUTPUT_PATH.exists():
+        print(f"ERROR: {OUTPUT_PATH} not found. Run main extraction first.")
+        return
+
+    with open(OUTPUT_PATH, "r", encoding="utf-8") as f:
+        jobs = json.load(f)
+
+    nulls = [j for j in jobs if j.get("requirements_section") is None]
+    print(f"\nFound {len(nulls)} null entries out of {len(jobs)} jobs")
+
+    if not nulls:
+        print("Nothing to retry.")
+        return
+
+    recovered = 0
+    still_none = 0
+    start_time = time.time()
+
+    for job in tqdm(nulls, desc="Retrying nulls"):
+        desc = job.get("description_clean", "")
+        requirements = extract_requirements_section(desc, prompt_template, client) if desc else None
+        job["requirements_section"] = requirements
+        if requirements is not None:
+            recovered += 1
+        else:
+            still_none += 1
+
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(jobs, f, ensure_ascii=False, indent=2)
+
+    elapsed = time.time() - start_time
+    print(f"\n{'=' * 60}")
+    print("Retry Summary")
+    print(f"{'=' * 60}")
+    print(f"  Retried:    {len(nulls)}")
+    print(f"  Recovered:  {recovered}")
+    print(f"  Still None: {still_none}")
+    print(f"  Elapsed:    {elapsed:.1f}s")
+    print(f"\nUpdated {OUTPUT_PATH}")
+
+# --- Main pipeline ---
+
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--retry-nulls", action="store_true",
+                        help="Re-run extraction only for jobs where requirements_section is None")
+    args = parser.parse_args()
+
+    api_key = os.getenv("LANGEXTRACT_API_KEY")
+    if not api_key:
+        raise EnvironmentError("LANGEXTRACT_API_KEY environment variable not set.")
+    client = genai.Client(api_key=api_key)
+
+    with open(SECTION_PROMPT_PATH, "r", encoding="utf-8") as f:
+        prompt_template = f.read()
+
+    if args.retry_nulls:
+        retry_nulls(client, prompt_template)
+    else:
+        main(client, prompt_template)
