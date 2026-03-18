@@ -78,6 +78,34 @@
         "train_time_seconds": 12163.0
       },
       "notes": "5 epochs completed (no early stopping), Apple M4 MPS"
+    },
+    {
+      "model": "LangExtract (gemini-2.5-flash-lite)",
+      "approach": "LLM-based (few-shot)",
+      "num_test_examples": 23,
+      "overall": {
+        "precision": 0.5897,
+        "recall": 0.5969,
+        "f1": 0.5933
+      },
+      "per_entity": {
+        "SKILL": {
+          "precision": 0.52,
+          "recall": 0.48,
+          "f1": 0.50
+        },
+        "TOOL": {
+          "precision": 0.69,
+          "recall": 0.81,
+          "f1": 0.75
+        }
+      },
+      "inference_time_seconds": 77.68,
+      "training": {
+        "train_sentences": 0,
+        "few_shot_examples": 2
+      },
+      "notes": "No fine-tuning required. 2 few-shot examples in prompt. Source grounding unavailable with Gemini (all alignment via text search fallback). Solves span-mapping problem by design."
     }
   ]
 }
