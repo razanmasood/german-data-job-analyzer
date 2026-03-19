@@ -496,49 +496,64 @@ with tab_lang:
         "Entry level", "Internship", "Associate",
         "Mid-Senior level", "Director", "Executive", "Not Applicable",
     ]
-    GERMAN_LEVEL_ORDER = [
-        ("not_mentioned",        "Not mentioned"),
-        ("mentioned_unspecified","Mentioned, level unspecified"),
+    GERMAN_LEVEL_COLS = [
+        ("C1/C2",                "C1/C2 Fluent/Native"),
+        ("B2",                   "B2 Upper Intermediate"),
+        ("B1",                   "B1 Intermediate"),
         ("nice_to_have",         "Nice to have"),
-        ("B1",                   "B1 Intermediate required"),
-        ("B2",                   "B2 Upper intermediate required"),
-        ("C1/C2",                "C1/C2 Fluent/Native required"),
+        ("mentioned_unspecified","Mentioned unspecified"),
+        ("not_mentioned",        "Not mentioned"),
     ]
-    # Colors per segment — muted at top (not_mentioned), accent at bottom (C1/C2)
-    SEGMENT_COLORS = ["#b0b0c0", "#7c83fd", "#6c63ff", "#ffc97a", "#ff8c69", "#e94560"]
 
     matrix = load_german_level_by_seniority()
 
-    stacked_fig = go.Figure()
-    for (gl_key, gl_label), color in zip(GERMAN_LEVEL_ORDER, SEGMENT_COLORS):
-        totals = [sum(matrix.get(exp, {}).values()) or 1 for exp in SENIORITY_ORDER]
-        pcts   = [matrix.get(exp, {}).get(gl_key, 0) / total * 100
-                  for exp, total in zip(SENIORITY_ORDER, totals)]
-        stacked_fig.add_trace(go.Bar(
-            name=gl_label,
-            x=SENIORITY_ORDER,
-            y=pcts,
-            marker_color=color,
-        ))
+    col_keys   = [k for k, _ in GERMAN_LEVEL_COLS]
+    col_labels = [l for _, l in GERMAN_LEVEL_COLS]
 
-    stacked_fig.update_layout(
-        barmode="stack",
-        height=450,
+    GERMAN_KEYS = {"C1/C2", "B2", "B1", "nice_to_have", "mentioned_unspecified"}
+
+    # Build pct matrix: rows=seniority, cols=german_level + separator + summary
+    z_vals  = []
+    z_text  = []
+    for exp in SENIORITY_ORDER:
+        total = sum(matrix.get(exp, {}).values()) or 1
+        row_vals = [matrix.get(exp, {}).get(k, 0) / total * 100 for k in col_keys]
+        any_german = sum(matrix.get(exp, {}).get(k, 0) for k in GERMAN_KEYS) / total * 100
+        # Insert a NaN separator then the summary column
+        row_vals  = row_vals + [float("nan"), any_german]
+        z_vals.append(row_vals)
+        z_text.append([f"{v:.1f}%" if not (v != v) else "" for v in row_vals])
+
+    x_labels = col_labels + ["", "Any German Mentioned"]
+
+    heatmap_fig = go.Figure(go.Heatmap(
+        z=z_vals,
+        x=x_labels,
+        y=SENIORITY_ORDER,
+        text=z_text,
+        texttemplate="%{text}",
+        textfont={"size": 12},
+        colorscale="Blues",
+        showscale=True,
+        colorbar={"ticksuffix": "%", "tickfont": {"color": theme["text"]}},
+    ))
+    heatmap_fig.update_layout(
+        title={"text": "German Language Requirements by Seniority (%)", "font": {"color": theme["text"]}},
+        height=380,
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
         font={"color": theme["text"]},
-        yaxis={"title": "% of postings", "ticksuffix": "%", "tickfont": {"color": theme["text"]}},
-        xaxis={"tickfont": {"color": theme["text"]}},
-        legend={"font": {"color": theme["text"]}, "orientation": "h", "y": -0.25},
-        margin={"l": 10, "r": 10, "t": 10, "b": 10},
+        xaxis={"tickfont": {"color": theme["text"]}, "side": "bottom"},
+        yaxis={"tickfont": {"color": theme["text"]}, "autorange": "reversed"},
+        margin={"l": 10, "r": 10, "t": 40, "b": 10},
     )
-    st.plotly_chart(stacked_fig, use_container_width=True)
+    st.plotly_chart(heatmap_fig, use_container_width=True)
 
     # Insight callouts
     ins1, ins2, ins3 = st.columns(3)
     with ins1:
-        st.info("**27.4%** of all postings require C1/C2 German — consistent across seniority levels")
+        st.info("**Associate and Mid-Senior roles** have the highest German language exposure — 65% and 62% mention it in some form")
     with ins2:
-        st.info("**Director roles** are the exception: 56% do not mention German at all")
+        st.info("**Director roles** are the exception: only 42% mention German, the lowest of any level")
     with ins3:
-        st.info("**~50%** of the market is accessible without fluent German (not mentioned + nice to have)")
+        st.info("**Executive roles** show 71% German mention — but with only 7 postings, treat this with caution")
