@@ -3,15 +3,17 @@ import os
 import pathlib
 import sys
 import textwrap
+from collections import Counter
 
 import langextract as lx
 import plotly.graph_objects as go
 import streamlit as st
 from dotenv import load_dotenv
 
-DATA_DIR      = pathlib.Path(__file__).parent.parent / "data"
-RESULTS_PATH  = DATA_DIR / "analyzed" / "langextract_results.json"
-EXP_LEVEL_PATH = DATA_DIR / "processed" / "experience_level_analysis.json"
+DATA_DIR           = pathlib.Path(__file__).parent.parent / "data"
+RESULTS_PATH       = DATA_DIR / "analyzed" / "langextract_results.json"
+EXP_LEVEL_PATH     = DATA_DIR / "processed" / "experience_level_analysis.json"
+LANG_COMPARE_PATH  = DATA_DIR / "processed" / "language_comparison.json"
 
 # ---------------------------------------------------------------------------
 # LangExtract prompt + examples  (same as 10b_run_langextract_inference.py)
@@ -70,6 +72,27 @@ def load_data():
     return results, exp_analysis
 
 
+@st.cache_data
+def load_language_comparison():
+    with open(LANG_COMPARE_PATH) as f:
+        return json.load(f)
+
+
+@st.cache_data
+def load_german_level_by_seniority():
+    """Return a dict {experienceLevel: {german_level: count}} from jobs_combined_clean.json."""
+    with open(DATA_DIR / "processed" / "jobs_combined_clean.json", encoding="utf-8") as f:
+        jobs = json.load(f)
+    matrix: dict[str, dict[str, int]] = {}
+    for job in jobs:
+        exp = job.get("experienceLevel", "Unknown")
+        gl  = job.get("german_level", "not_mentioned")
+        if exp not in matrix:
+            matrix[exp] = {}
+        matrix[exp][gl] = matrix[exp].get(gl, 0) + 1
+    return matrix
+
+
 def _setup_api_key() -> bool:
     """Load LANGEXTRACT_API_KEY from .env and expose it as GOOGLE_API_KEY.
     Returns True if key is available, False otherwise.
@@ -108,6 +131,19 @@ def make_bar(names, values, bar_color, font_color, x_title="", height=420, horiz
 
 def filter_noise(items: list[dict], min_len: int = 3) -> list[dict]:
     return [item for item in items if len(item["name"]) >= min_len]
+
+
+def normalize_and_merge(items: list[dict], top_n: int = 20) -> list[dict]:
+    """Merge entity counts whose .lower().strip() form is identical, keeping
+    the most-common original casing as the display label."""
+    merged: Counter = Counter()
+    canonical: dict[str, str] = {}
+    for item in items:
+        key = item["entity"].lower().strip()
+        merged[key] += item["count"]
+        if key not in canonical:
+            canonical[key] = item["entity"]
+    return [{"entity": canonical[k], "count": v} for k, v in merged.most_common(top_n)]
 
 
 # ---------------------------------------------------------------------------
@@ -221,147 +257,288 @@ col4.metric("Avg Skills / Job", f"{summary['avg_skills_per_job']:.1f}")
 st.divider()
 
 # ---------------------------------------------------------------------------
-# Top 20 skills and tools
+# Tabs
 # ---------------------------------------------------------------------------
 
-level_label = f" — {selected_level}" if selected_level != "All" else ""
+tab_overview, tab_lang = st.tabs(["Overview", "Language Comparison"])
 
-col_skills, col_tools = st.columns(2)
+# ===========================================================================
+# Tab: Overview  (all original sections)
+# ===========================================================================
 
-raw_skills   = (
-    results["skills_by_experience_level"][selected_level]
-    if selected_level != "All"
-    else results["top_skills"]
-)
-skills_clean = filter_noise(raw_skills)[:20]
+with tab_overview:
 
-raw_tools    = (
-    results["tools_by_experience_level"][selected_level]
-    if selected_level != "All"
-    else results["top_tools"]
-)
-tools_clean  = filter_noise(raw_tools)[:20]
+    # -----------------------------------------------------------------------
+    # Top 20 skills and tools
+    # -----------------------------------------------------------------------
 
-with col_skills:
-    st.subheader(f"Top 20 Skills{level_label}")
+    level_label = f" — {selected_level}" if selected_level != "All" else ""
+
+    col_skills, col_tools = st.columns(2)
+
+    raw_skills   = (
+        results["skills_by_experience_level"][selected_level]
+        if selected_level != "All"
+        else results["top_skills"]
+    )
+    skills_clean = filter_noise(raw_skills)[:20]
+
+    raw_tools    = (
+        results["tools_by_experience_level"][selected_level]
+        if selected_level != "All"
+        else results["top_tools"]
+    )
+    tools_clean  = filter_noise(raw_tools)[:20]
+
+    with col_skills:
+        st.subheader(f"Top 20 Skills{level_label}")
+        st.plotly_chart(
+            make_bar([r["name"] for r in skills_clean], [r["count"] for r in skills_clean], theme["bar"], theme["text"]),
+            use_container_width=True,
+        )
+        st.caption("Extracted by LangExtract (gemini-2.5-flash-lite) with 2 few-shot examples")
+
+    with col_tools:
+        st.subheader(f"Top 20 Tools{level_label}")
+        st.plotly_chart(
+            make_bar([r["name"] for r in tools_clean], [r["count"] for r in tools_clean], theme["bar"], theme["text"]),
+            use_container_width=True,
+        )
+        st.caption("Extracted by LangExtract (gemini-2.5-flash-lite) with 2 few-shot examples")
+
+    st.divider()
+
+    # -----------------------------------------------------------------------
+    # Seniority distribution
+    # -----------------------------------------------------------------------
+
+    st.subheader("Jobs by Experience Level")
+
+    value_dist = exp_analysis["value_distribution"]
+    seniority  = sorted(value_dist.items(), key=lambda x: x[1]["count"], reverse=True)
     st.plotly_chart(
-        make_bar([r["name"] for r in skills_clean], [r["count"] for r in skills_clean], theme["bar"], theme["text"]),
+        make_bar([k for k, _ in seniority], [v["count"] for _, v in seniority], theme["bar"], theme["text"]),
         use_container_width=True,
     )
-    st.caption("Extracted by LangExtract (gemini-2.5-flash-lite) with 2 few-shot examples")
+    st.caption("Source: LinkedIn experienceLevel field (100% complete)")
 
-with col_tools:
-    st.subheader(f"Top 20 Tools{level_label}")
+    st.divider()
+
+    # -----------------------------------------------------------------------
+    # Skill co-occurrence
+    # -----------------------------------------------------------------------
+
+    st.subheader("Skill Co-occurrence (Top 15 Pairs)")
+    st.caption("Skills that most frequently appear together in the same job posting")
+
+
+    def _pair_is_valid(pair):
+        a, b = pair
+        return len(a) >= 3 and len(b) >= 3 and a not in b and b not in a
+
+
+    top_pairs = sorted(
+        [item for item in results["skill_cooccurrence"] if _pair_is_valid(item["pair"])],
+        key=lambda x: x["count"],
+        reverse=True,
+    )[:15]
+    co_labels = [f"{item['pair'][0]} + {item['pair'][1]}" for item in top_pairs]
+    co_counts = [item["count"] for item in top_pairs]
+
     st.plotly_chart(
-        make_bar([r["name"] for r in tools_clean], [r["count"] for r in tools_clean], theme["bar"], theme["text"]),
+        make_bar(co_labels, co_counts, theme["bar"], theme["text"], x_title="Co-occurrence count", height=500, horizontal=True),
         use_container_width=True,
     )
-    st.caption("Extracted by LangExtract (gemini-2.5-flash-lite) with 2 few-shot examples")
 
-st.divider()
+    st.divider()
 
-# ---------------------------------------------------------------------------
-# Seniority distribution
-# ---------------------------------------------------------------------------
+    # -----------------------------------------------------------------------
+    # Live: Analyze a Job Posting
+    # -----------------------------------------------------------------------
 
-st.subheader("Jobs by Experience Level")
+    st.subheader("Analyze a Job Posting")
 
-value_dist = exp_analysis["value_distribution"]
-seniority  = sorted(value_dist.items(), key=lambda x: x[1]["count"], reverse=True)
-st.plotly_chart(
-    make_bar([k for k, _ in seniority], [v["count"] for _, v in seniority], theme["bar"], theme["text"]),
-    use_container_width=True,
-)
-st.caption("Source: LinkedIn experienceLevel field (100% complete)")
+    api_key_ok = _setup_api_key()
+    if not api_key_ok:
+        st.warning("LANGEXTRACT_API_KEY not found in .env — live analysis unavailable.")
 
-st.divider()
+    job_text = st.text_area(
+        "Paste a job posting here",
+        height=250,
+        placeholder="Paste any German or English job posting text…",
+        disabled=not api_key_ok,
+    )
 
-# ---------------------------------------------------------------------------
-# Skill co-occurrence
-# ---------------------------------------------------------------------------
-
-st.subheader("Skill Co-occurrence (Top 15 Pairs)")
-st.caption("Skills that most frequently appear together in the same job posting")
-
-
-def _pair_is_valid(pair):
-    a, b = pair
-    return len(a) >= 3 and len(b) >= 3 and a not in b and b not in a
-
-
-top_pairs = sorted(
-    [item for item in results["skill_cooccurrence"] if _pair_is_valid(item["pair"])],
-    key=lambda x: x["count"],
-    reverse=True,
-)[:15]
-co_labels = [f"{item['pair'][0]} + {item['pair'][1]}" for item in top_pairs]
-co_counts = [item["count"] for item in top_pairs]
-
-st.plotly_chart(
-    make_bar(co_labels, co_counts, theme["bar"], theme["text"], x_title="Co-occurrence count", height=500, horizontal=True),
-    use_container_width=True,
-)
-
-st.divider()
-
-# ---------------------------------------------------------------------------
-# Live: Analyze a Job Posting
-# ---------------------------------------------------------------------------
-
-st.subheader("Analyze a Job Posting")
-
-api_key_ok = _setup_api_key()
-if not api_key_ok:
-    st.warning("LANGEXTRACT_API_KEY not found in .env — live analysis unavailable.")
-
-job_text = st.text_area(
-    "Paste a job posting here",
-    height=250,
-    placeholder="Paste any German or English job posting text…",
-    disabled=not api_key_ok,
-)
-
-if st.button("Extract Skills & Tools", disabled=not api_key_ok):
-    if not job_text.strip():
-        st.warning("Please paste some job posting text first.")
-    else:
-        with st.spinner("Calling LangExtract (gemini-2.5-flash-lite)…"):
-            try:
-                result = lx.extract(
-                    text_or_documents=job_text,
-                    prompt_description=_PROMPT,
-                    examples=_EXAMPLES,
-                    model_id=LANGEXTRACT_MODEL,
-                    fence_output=True,
-                    use_schema_constraints=True,
-                )
-                skills = sorted(
-                    {e.extraction_text for e in result.extractions if e.extraction_class == "SKILL"},
-                    key=str.lower,
-                )
-                tools = sorted(
-                    {e.extraction_text for e in result.extractions if e.extraction_class == "TOOL"},
-                    key=str.lower,
-                )
-                error = None
-            except Exception as exc:
-                skills, tools, error = [], [], str(exc)
-
-        if error:
-            st.error(f"LangExtract failed: {error}")
+    if st.button("Extract Skills & Tools", disabled=not api_key_ok):
+        if not job_text.strip():
+            st.warning("Please paste some job posting text first.")
         else:
-            col_s, col_t = st.columns(2)
-            with col_s:
-                st.markdown("**Skills**")
-                if skills:
-                    for s in skills:
-                        st.write(f"- {s}")
-                else:
-                    st.write("No skills found.")
-            with col_t:
-                st.markdown("**Tools**")
-                if tools:
-                    for t in tools:
-                        st.write(f"- {t}")
-                else:
-                    st.write("No tools found.")
+            with st.spinner("Calling LangExtract (gemini-2.5-flash-lite)…"):
+                try:
+                    result = lx.extract(
+                        text_or_documents=job_text,
+                        prompt_description=_PROMPT,
+                        examples=_EXAMPLES,
+                        model_id=LANGEXTRACT_MODEL,
+                        fence_output=True,
+                        use_schema_constraints=True,
+                    )
+                    skills = sorted(
+                        {e.extraction_text for e in result.extractions if e.extraction_class == "SKILL"},
+                        key=str.lower,
+                    )
+                    tools = sorted(
+                        {e.extraction_text for e in result.extractions if e.extraction_class == "TOOL"},
+                        key=str.lower,
+                    )
+                    error = None
+                except Exception as exc:
+                    skills, tools, error = [], [], str(exc)
+
+            if error:
+                st.error(f"LangExtract failed: {error}")
+            else:
+                col_s, col_t = st.columns(2)
+                with col_s:
+                    st.markdown("**Skills**")
+                    if skills:
+                        for s in skills:
+                            st.write(f"- {s}")
+                    else:
+                        st.write("No skills found.")
+                with col_t:
+                    st.markdown("**Tools**")
+                    if tools:
+                        for t in tools:
+                            st.write(f"- {t}")
+                    else:
+                        st.write("No tools found.")
+
+# ===========================================================================
+# Tab: Language Comparison
+# ===========================================================================
+
+with tab_lang:
+    st.subheader("Skills & Tools by Posting Language")
+    # Entities are normalized with .lower().strip() so variants like
+    # 'Machine Learning' and 'machine learning' merge into one bar.
+    if not LANG_COMPARE_PATH.exists():
+        st.error(
+            f"**Language comparison file not found:** `{LANG_COMPARE_PATH}`\n\n"
+            "Run the script first:\n"
+            "```\npython scripts/12_language_comparison.py\n```"
+        )
+    else:
+        lang_data = load_language_comparison()
+
+        german_skills  = normalize_and_merge(lang_data["german"]["skills"])
+        german_tools   = normalize_and_merge(lang_data["german"]["tools"])
+        english_skills = normalize_and_merge(lang_data["english"]["skills"])
+        english_tools  = normalize_and_merge(lang_data["english"]["tools"])
+
+        col_de, col_en = st.columns(2)
+
+        with col_de:
+            st.markdown("### 🇩🇪 German postings (550 jobs)")
+
+            st.subheader("Top 20 Skills")
+            st.plotly_chart(
+                make_bar(
+                    [r["entity"] for r in german_skills],
+                    [r["count"]  for r in german_skills],
+                    theme["bar"], theme["text"],
+                ),
+                use_container_width=True,
+            )
+
+            st.subheader("Top 20 Tools")
+            st.plotly_chart(
+                make_bar(
+                    [r["entity"] for r in german_tools],
+                    [r["count"]  for r in german_tools],
+                    theme["bar"], theme["text"],
+                ),
+                use_container_width=True,
+            )
+
+        with col_en:
+            st.markdown("### 🇬🇧 English postings (690 jobs)")
+
+            st.subheader("Top 20 Skills")
+            st.plotly_chart(
+                make_bar(
+                    [r["entity"] for r in english_skills],
+                    [r["count"]  for r in english_skills],
+                    theme["bar"], theme["text"],
+                ),
+                use_container_width=True,
+            )
+
+            st.subheader("Top 20 Tools")
+            st.plotly_chart(
+                make_bar(
+                    [r["entity"] for r in english_tools],
+                    [r["count"]  for r in english_tools],
+                    theme["bar"], theme["text"],
+                ),
+                use_container_width=True,
+            )
+
+    st.divider()
+
+    # -----------------------------------------------------------------------
+    # German Language Requirements by Seniority
+    # -----------------------------------------------------------------------
+
+    st.subheader("German Language Requirements by Seniority")
+
+    SENIORITY_ORDER = [
+        "Entry level", "Internship", "Associate",
+        "Mid-Senior level", "Director", "Executive", "Not Applicable",
+    ]
+    GERMAN_LEVEL_ORDER = [
+        ("not_mentioned",        "Not mentioned"),
+        ("mentioned_unspecified","Mentioned, level unspecified"),
+        ("nice_to_have",         "Nice to have"),
+        ("B1",                   "B1 Intermediate required"),
+        ("B2",                   "B2 Upper intermediate required"),
+        ("C1/C2",                "C1/C2 Fluent/Native required"),
+    ]
+    # Colors per segment — muted at top (not_mentioned), accent at bottom (C1/C2)
+    SEGMENT_COLORS = ["#b0b0c0", "#7c83fd", "#6c63ff", "#ffc97a", "#ff8c69", "#e94560"]
+
+    matrix = load_german_level_by_seniority()
+
+    stacked_fig = go.Figure()
+    for (gl_key, gl_label), color in zip(GERMAN_LEVEL_ORDER, SEGMENT_COLORS):
+        totals = [sum(matrix.get(exp, {}).values()) or 1 for exp in SENIORITY_ORDER]
+        pcts   = [matrix.get(exp, {}).get(gl_key, 0) / total * 100
+                  for exp, total in zip(SENIORITY_ORDER, totals)]
+        stacked_fig.add_trace(go.Bar(
+            name=gl_label,
+            x=SENIORITY_ORDER,
+            y=pcts,
+            marker_color=color,
+        ))
+
+    stacked_fig.update_layout(
+        barmode="stack",
+        height=450,
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        font={"color": theme["text"]},
+        yaxis={"title": "% of postings", "ticksuffix": "%", "tickfont": {"color": theme["text"]}},
+        xaxis={"tickfont": {"color": theme["text"]}},
+        legend={"font": {"color": theme["text"]}, "orientation": "h", "y": -0.25},
+        margin={"l": 10, "r": 10, "t": 10, "b": 10},
+    )
+    st.plotly_chart(stacked_fig, use_container_width=True)
+
+    # Insight callouts
+    ins1, ins2, ins3 = st.columns(3)
+    with ins1:
+        st.info("**27.4%** of all postings require C1/C2 German — consistent across seniority levels")
+    with ins2:
+        st.info("**Director roles** are the exception: 56% do not mention German at all")
+    with ins3:
+        st.info("**~50%** of the market is accessible without fluent German (not mentioned + nice to have)")

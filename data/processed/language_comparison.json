@@ -1,0 +1,334 @@
+{
+  "german": {
+    "skills": [
+      {
+        "entity": "Machine Learning",
+        "count": 264
+      },
+      {
+        "entity": "Data Science",
+        "count": 119
+      },
+      {
+        "entity": "Datenanalyse",
+        "count": 76
+      },
+      {
+        "entity": "Data Engineering",
+        "count": 69
+      },
+      {
+        "entity": "KI",
+        "count": 61
+      },
+      {
+        "entity": "LLMs",
+        "count": 57
+      },
+      {
+        "entity": "ML",
+        "count": 47
+      },
+      {
+        "entity": "RAG",
+        "count": 44
+      },
+      {
+        "entity": "MLOps",
+        "count": 41
+      },
+      {
+        "entity": "Data Analytics",
+        "count": 41
+      },
+      {
+        "entity": "Analytics",
+        "count": 39
+      },
+      {
+        "entity": "Künstliche Intelligenz",
+        "count": 39
+      },
+      {
+        "entity": "Deep Learning",
+        "count": 39
+      },
+      {
+        "entity": "CI/CD",
+        "count": 37
+      },
+      {
+        "entity": "Datenmodellierung",
+        "count": 37
+      },
+      {
+        "entity": "Prompt Engineering",
+        "count": 32
+      },
+      {
+        "entity": "NLP",
+        "count": 30
+      },
+      {
+        "entity": "Cloud-Plattformen",
+        "count": 30
+      },
+      {
+        "entity": "Softwareentwicklung",
+        "count": 30
+      },
+      {
+        "entity": "KI-Technologien",
+        "count": 30
+      }
+    ],
+    "tools": [
+      {
+        "entity": "Python",
+        "count": 370
+      },
+      {
+        "entity": "SQL",
+        "count": 194
+      },
+      {
+        "entity": "AWS",
+        "count": 108
+      },
+      {
+        "entity": "Azure",
+        "count": 103
+      },
+      {
+        "entity": "PyTorch",
+        "count": 89
+      },
+      {
+        "entity": "TensorFlow",
+        "count": 79
+      },
+      {
+        "entity": "GCP",
+        "count": 70
+      },
+      {
+        "entity": "R",
+        "count": 62
+      },
+      {
+        "entity": "MLflow",
+        "count": 49
+      },
+      {
+        "entity": "scikit-learn",
+        "count": 48
+      },
+      {
+        "entity": "Docker",
+        "count": 47
+      },
+      {
+        "entity": "Kubernetes",
+        "count": 45
+      },
+      {
+        "entity": "Power BI",
+        "count": 39
+      },
+      {
+        "entity": "Git",
+        "count": 38
+      },
+      {
+        "entity": "Databricks",
+        "count": 33
+      },
+      {
+        "entity": "Pandas",
+        "count": 32
+      },
+      {
+        "entity": "Spark",
+        "count": 31
+      },
+      {
+        "entity": "Tableau",
+        "count": 31
+      },
+      {
+        "entity": "NumPy",
+        "count": 30
+      },
+      {
+        "entity": "Java",
+        "count": 30
+      }
+    ]
+  },
+  "english": {
+    "skills": [
+      {
+        "entity": "machine learning",
+        "count": 292
+      },
+      {
+        "entity": "AI",
+        "count": 125
+      },
+      {
+        "entity": "Machine Learning",
+        "count": 113
+      },
+      {
+        "entity": "MLOps",
+        "count": 106
+      },
+      {
+        "entity": "deep learning",
+        "count": 100
+      },
+      {
+        "entity": "data science",
+        "count": 80
+      },
+      {
+        "entity": "ML",
+        "count": 73
+      },
+      {
+        "entity": "LLMs",
+        "count": 67
+      },
+      {
+        "entity": "CI/CD",
+        "count": 65
+      },
+      {
+        "entity": "data engineering",
+        "count": 58
+      },
+      {
+        "entity": "NLP",
+        "count": 54
+      },
+      {
+        "entity": "Data Science",
+        "count": 50
+      },
+      {
+        "entity": "monitoring",
+        "count": 46
+      },
+      {
+        "entity": "software engineering",
+        "count": 45
+      },
+      {
+        "entity": "data analysis",
+        "count": 44
+      },
+      {
+        "entity": "statistics",
+        "count": 44
+      },
+      {
+        "entity": "GenAI",
+        "count": 39
+      },
+      {
+        "entity": "computer vision",
+        "count": 38
+      },
+      {
+        "entity": "statistical modeling",
+        "count": 37
+      },
+      {
+        "entity": "reinforcement learning",
+        "count": 36
+      }
+    ],
+    "tools": [
+      {
+        "entity": "Python",
+        "count": 507
+      },
+      {
+        "entity": "PyTorch",
+        "count": 199
+      },
+      {
+        "entity": "AWS",
+        "count": 179
+      },
+      {
+        "entity": "SQL",
+        "count": 168
+      },
+      {
+        "entity": "Azure",
+        "count": 128
+      },
+      {
+        "entity": "TensorFlow",
+        "count": 128
+      },
+      {
+        "entity": "Docker",
+        "count": 106
+      },
+      {
+        "entity": "GCP",
+        "count": 92
+      },
+      {
+        "entity": "Kubernetes",
+        "count": 67
+      },
+      {
+        "entity": "R",
+        "count": 62
+      },
+      {
+        "entity": "scikit-learn",
+        "count": 60
+      },
+      {
+        "entity": "C++",
+        "count": 56
+      },
+      {
+        "entity": "Java",
+        "count": 55
+      },
+      {
+        "entity": "Spark",
+        "count": 51
+      },
+      {
+        "entity": "pandas",
+        "count": 44
+      },
+      {
+        "entity": "FastAPI",
+        "count": 43
+      },
+      {
+        "entity": "LangChain",
+        "count": 43
+      },
+      {
+        "entity": "Airflow",
+        "count": 41
+      },
+      {
+        "entity": "MLflow",
+        "count": 38
+      },
+      {
+        "entity": "Git",
+        "count": 36
+      }
+    ]
+  }
+}
