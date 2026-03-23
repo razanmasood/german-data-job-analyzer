@@ -9,6 +9,7 @@ STOPLIST = {
     "artificial intelligence", "data analysis", "data analytics",
     "data engineer", "data engineering",
     "ki", "künstliche intelligenz", "maschinelles lernen",
+    "computer science",
 }
 
 LEVEL_ORDER = [

@@ -69,17 +69,12 @@
           "pct": 3.8
         },
         {
-          "name": "devops",
-          "count": 3,
-          "pct": 2.8
-        },
-        {
           "name": "advanced analytics",
           "count": 3,
           "pct": 2.8
         },
         {
-          "name": "computer science",
+          "name": "devops",
           "count": 3,
           "pct": 2.8
         },
@@ -102,6 +97,11 @@
           "name": "datenverarbeitung",
           "count": 3,
           "pct": 2.8
+        },
+        {
+          "name": "event‑driven architecture",
+          "count": 2,
+          "pct": 1.9
         }
       ],
       "top_tools": [
@@ -513,7 +513,7 @@
           "pct": 2.8
         },
         {
-          "name": "observability",
+          "name": "data pipelines",
           "count": 4,
           "pct": 2.8
         }
@@ -660,12 +660,12 @@
           "pct": 7.7
         },
         {
-          "name": "nlp",
+          "name": "generative ai",
           "count": 45,
           "pct": 7.2
         },
         {
-          "name": "generative ai",
+          "name": "nlp",
           "count": 45,
           "pct": 7.2
         },
@@ -862,7 +862,17 @@
           "pct": 12.5
         },
         {
-          "name": "parallel computing",
+          "name": "cpu and gpu architecture fundamentals",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "algorithms",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "parallel programming",
           "count": 3,
           "pct": 12.5
         },
@@ -872,7 +882,22 @@
           "pct": 12.5
         },
         {
+          "name": "parallelization",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "performance optimization",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
           "name": "linear algebra",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "parallel computing",
           "count": 3,
           "pct": 12.5
         },
@@ -883,31 +908,6 @@
         },
         {
           "name": "natural language processing",
-          "count": 3,
-          "pct": 12.5
-        },
-        {
-          "name": "cpu and gpu architecture fundamentals",
-          "count": 3,
-          "pct": 12.5
-        },
-        {
-          "name": "parallelization",
-          "count": 3,
-          "pct": 12.5
-        },
-        {
-          "name": "algorithms",
-          "count": 3,
-          "pct": 12.5
-        },
-        {
-          "name": "performance optimization",
-          "count": 3,
-          "pct": 12.5
-        },
-        {
-          "name": "parallel programming",
           "count": 3,
           "pct": 12.5
         },
@@ -927,7 +927,7 @@
           "pct": 8.3
         },
         {
-          "name": "cloud platforms",
+          "name": "data governance frameworks",
           "count": 2,
           "pct": 8.3
         }
@@ -954,22 +954,12 @@
           "pct": 12.5
         },
         {
-          "name": "c/c++",
-          "count": 3,
-          "pct": 12.5
-        },
-        {
-          "name": "pthreads",
-          "count": 3,
-          "pct": 12.5
-        },
-        {
-          "name": "openmp",
-          "count": 3,
-          "pct": 12.5
-        },
-        {
           "name": "mpi",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "c/c++",
           "count": 3,
           "pct": 12.5
         },
@@ -979,12 +969,27 @@
           "pct": 12.5
         },
         {
+          "name": "pthreads",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
           "name": "cuda",
           "count": 3,
           "pct": 12.5
         },
         {
+          "name": "openmp",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
           "name": "c++",
+          "count": 2,
+          "pct": 8.3
+        },
+        {
+          "name": "sql",
           "count": 2,
           "pct": 8.3
         },
@@ -995,11 +1000,6 @@
         },
         {
           "name": "pandas",
-          "count": 2,
-          "pct": 8.3
-        },
-        {
-          "name": "sql",
           "count": 2,
           "pct": 8.3
         },
@@ -1019,12 +1019,12 @@
           "pct": 8.3
         },
         {
-          "name": "aws",
+          "name": "azure",
           "count": 2,
           "pct": 8.3
         },
         {
-          "name": "azure",
+          "name": "aws",
           "count": 2,
           "pct": 8.3
         },
@@ -1049,6 +1049,11 @@
           "pct": 28.6
         },
         {
+          "name": "analyse und anreicherung großer datensätze",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
           "name": "clean code",
           "count": 1,
           "pct": 14.3
@@ -1059,7 +1064,7 @@
           "pct": 14.3
         },
         {
-          "name": "analyse und anreicherung großer datensätze",
+          "name": "statistical and quantitative analysis",
           "count": 1,
           "pct": 14.3
         },
@@ -1069,7 +1074,27 @@
           "pct": 14.3
         },
         {
-          "name": "statistical and quantitative analysis",
+          "name": "problem-solve",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "process optimization",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "loyalty",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "customer-first mindset",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "p&l ownership",
           "count": 1,
           "pct": 14.3
         },
@@ -1084,42 +1109,7 @@
           "pct": 14.3
         },
         {
-          "name": "grow",
-          "count": 1,
-          "pct": 14.3
-        },
-        {
-          "name": "customer-first mindset",
-          "count": 1,
-          "pct": 14.3
-        },
-        {
-          "name": "adapt",
-          "count": 1,
-          "pct": 14.3
-        },
-        {
-          "name": "relationship-building",
-          "count": 1,
-          "pct": 14.3
-        },
-        {
-          "name": "process optimization",
-          "count": 1,
-          "pct": 14.3
-        },
-        {
-          "name": "designing operational processes",
-          "count": 1,
-          "pct": 14.3
-        },
-        {
-          "name": "problem-solve",
-          "count": 1,
-          "pct": 14.3
-        },
-        {
-          "name": "p&l ownership",
+          "name": "collaboration",
           "count": 1,
           "pct": 14.3
         },
@@ -1129,12 +1119,22 @@
           "pct": 14.3
         },
         {
-          "name": "analytical",
+          "name": "retention",
           "count": 1,
           "pct": 14.3
         },
         {
-          "name": "loyalty",
+          "name": "customer satisfaction",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "grow",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "development",
           "count": 1,
           "pct": 14.3
         }
@@ -1146,12 +1146,12 @@
           "pct": 57.1
         },
         {
-          "name": "aws",
+          "name": "azure",
           "count": 2,
           "pct": 28.6
         },
         {
-          "name": "azure",
+          "name": "aws",
           "count": 2,
           "pct": 28.6
         },
@@ -1161,12 +1161,12 @@
           "pct": 28.6
         },
         {
-          "name": "kotlin",
+          "name": "google",
           "count": 1,
           "pct": 14.3
         },
         {
-          "name": "cloud-plattformen",
+          "name": "kotlin",
           "count": 1,
           "pct": 14.3
         },
@@ -1176,12 +1176,12 @@
           "pct": 14.3
         },
         {
-          "name": "tensorflow",
+          "name": "cloud-plattformen",
           "count": 1,
           "pct": 14.3
         },
         {
-          "name": "google",
+          "name": "tensorflow",
           "count": 1,
           "pct": 14.3
         },
@@ -1191,7 +1191,7 @@
           "pct": 14.3
         },
         {
-          "name": "looker",
+          "name": "power bi",
           "count": 1,
           "pct": 14.3
         },
@@ -1201,7 +1201,12 @@
           "pct": 14.3
         },
         {
-          "name": "power bi",
+          "name": "looker",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "node.js",
           "count": 1,
           "pct": 14.3
         },
@@ -1212,11 +1217,6 @@
         },
         {
           "name": "shopify",
-          "count": 1,
-          "pct": 14.3
-        },
-        {
-          "name": "node.js",
           "count": 1,
           "pct": 14.3
         }
@@ -1240,10 +1240,10 @@
     "advanced analytics",
     "automatisierung von etl-prozessen",
     "ci/cd",
-    "computer science",
     "datenanalyse",
     "datenverarbeitung",
     "devops",
+    "event‑driven architecture",
     "genai",
     "generative ai",
     "large language models",
@@ -1261,22 +1261,22 @@
     "testing"
   ],
   "senior_only_skills": [
-    "adapt",
     "agile software development",
     "algorithms",
     "analyse und anreicherung großer datensätze",
-    "analytical",
     "analytics",
     "big data-technologien",
     "business acumen",
     "causal inference",
     "clean code",
-    "cloud platforms",
+    "collaboration",
     "cpu and gpu architecture fundamentals",
+    "customer satisfaction",
     "customer-first mindset",
+    "data governance frameworks",
     "data management",
     "demand forecasting",
-    "designing operational processes",
+    "development",
     "grow",
     "linear algebra",
     "llm",
@@ -1293,7 +1293,7 @@
     "problem-solve",
     "process optimization",
     "recommender systems",
-    "relationship-building",
+    "retention",
     "statistical and quantitative analysis"
   ]
 }
