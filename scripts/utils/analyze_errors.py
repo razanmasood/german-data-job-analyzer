@@ -13,7 +13,7 @@ import torch
 from datasets import DatasetDict
 from transformers import AutoModelForTokenClassification, AutoTokenizer
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 DATASET_PATH = PROJECT_ROOT / "data" / "processed" / "ner_dataset"
 MODEL_PATH = PROJECT_ROOT / "models" / "ner" / "best"
 REPORT_PATH = PROJECT_ROOT / "docs" / "error_analysis.md"
@@ -272,7 +272,7 @@ def main():
 
     Loads the fine-tuned model, runs predictions on the held-out test split,
     categorizes span-level errors (missed, wrong type, boundary), and saves
-    a full report to data/analyzed/ner_error_report.txt.
+    a full report to docs/error_analysis.md.
     """
     print("NER Error Analysis")
     print("=" * 50)

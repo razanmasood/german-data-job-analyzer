@@ -23,7 +23,7 @@ MODEL_PATH = Path("models/ner/best")
 LABEL_MAP_PATH = Path("data/processed/ner_dataset/label_map.json")
 JOBS_PATH = Path("data/processed/jobs_with_requirements.json")
 INFERENCE_OUTPUT = Path("data/processed/inference_results.json")
-ANALYZED_OUTPUT = Path("data/analyzed/results.json")
+ANALYZED_OUTPUT = Path("data/analysis/results.json")
 
 
 def load_resources():

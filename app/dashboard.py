@@ -13,7 +13,7 @@ import streamlit as st
 from dotenv import load_dotenv
 
 DATA_DIR           = pathlib.Path(__file__).parent.parent / "data"
-RESULTS_PATH       = DATA_DIR / "analyzed" / "langextract_results.json"
+RESULTS_PATH       = DATA_DIR / "analysis" / "langextract_results.json"
 EXP_LEVEL_PATH     = DATA_DIR / "processed" / "experience_level_analysis.json"
 LANG_COMPARE_PATH  = DATA_DIR / "processed" / "language_comparison.json"
 SENIORITY_PATH     = DATA_DIR / "processed" / "seniority_analysis.json"

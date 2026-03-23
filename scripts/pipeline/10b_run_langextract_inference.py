@@ -12,13 +12,13 @@ Saves per-job results and aggregated statistics in the same format as
 10_run_inference.py so the LangExtract dashboard can reuse the same chart logic.
 
 Usage:
-    python scripts/10b_run_langextract_inference.py               # full run
-    python scripts/10b_run_langextract_inference.py --retry-nulls # re-run empty results
+    python scripts/pipeline/10b_run_langextract_inference.py               # full run
+    python scripts/pipeline/10b_run_langextract_inference.py --retry-nulls # re-run empty results
 
 Input:  data/processed/jobs_with_requirements.json
         .env  (LANGEXTRACT_API_KEY)
 Output: data/processed/langextract_inference_results.json
-        data/analyzed/langextract_results.json
+        data/analysis/langextract_results.json
 """
 
 import argparse
@@ -40,10 +40,10 @@ from tqdm import tqdm
 # Paths and configuration
 # ---------------------------------------------------------------------------
 
-REPO_ROOT         = Path(__file__).resolve().parents[1]
+REPO_ROOT         = Path(__file__).resolve().parents[2]
 JOBS_PATH         = REPO_ROOT / "data" / "processed" / "jobs_with_requirements.json"
 INFERENCE_OUTPUT  = REPO_ROOT / "data" / "processed" / "langextract_inference_results.json"
-ANALYZED_OUTPUT   = REPO_ROOT / "data" / "analyzed" / "langextract_results.json"
+ANALYZED_OUTPUT   = REPO_ROOT / "data" / "analysis" / "langextract_results.json"
 CHECKPOINT_PATH   = REPO_ROOT / "data" / "processed" / "langextract_inference_checkpoint.json"
 
 LANGEXTRACT_MODEL  = "gemini-2.5-flash-lite"
