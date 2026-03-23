@@ -1,0 +1,1020 @@
+{
+  "top_pairs_by_co_count": [
+    {
+      "tool": "python",
+      "skill": "mlops",
+      "co_count": 159,
+      "jaccard": 0.1763
+    },
+    {
+      "tool": "python",
+      "skill": "deep learning",
+      "co_count": 135,
+      "jaccard": 0.1475
+    },
+    {
+      "tool": "pytorch",
+      "skill": "mlops",
+      "co_count": 110,
+      "jaccard": 0.2902
+    },
+    {
+      "tool": "python",
+      "skill": "llms",
+      "co_count": 106,
+      "jaccard": 0.1173
+    },
+    {
+      "tool": "pytorch",
+      "skill": "deep learning",
+      "co_count": 103,
+      "jaccard": 0.2747
+    },
+    {
+      "tool": "aws",
+      "skill": "mlops",
+      "co_count": 103,
+      "jaccard": 0.2869
+    },
+    {
+      "tool": "tensorflow",
+      "skill": "mlops",
+      "co_count": 94,
+      "jaccard": 0.3013
+    },
+    {
+      "tool": "azure",
+      "skill": "mlops",
+      "co_count": 93,
+      "jaccard": 0.2971
+    },
+    {
+      "tool": "python",
+      "skill": "ci/cd",
+      "co_count": 87,
+      "jaccard": 0.0966
+    },
+    {
+      "tool": "tensorflow",
+      "skill": "deep learning",
+      "co_count": 79,
+      "jaccard": 0.25
+    },
+    {
+      "tool": "gcp",
+      "skill": "mlops",
+      "co_count": 76,
+      "jaccard": 0.2912
+    },
+    {
+      "tool": "python",
+      "skill": "rag",
+      "co_count": 71,
+      "jaccard": 0.0799
+    },
+    {
+      "tool": "aws",
+      "skill": "ci/cd",
+      "co_count": 67,
+      "jaccard": 0.2081
+    },
+    {
+      "tool": "python",
+      "skill": "nlp",
+      "co_count": 66,
+      "jaccard": 0.073
+    },
+    {
+      "tool": "python",
+      "skill": "computer vision",
+      "co_count": 66,
+      "jaccard": 0.0734
+    },
+    {
+      "tool": "python",
+      "skill": "genai",
+      "co_count": 64,
+      "jaccard": 0.072
+    },
+    {
+      "tool": "python",
+      "skill": "prompt engineering",
+      "co_count": 61,
+      "jaccard": 0.0684
+    },
+    {
+      "tool": "docker",
+      "skill": "mlops",
+      "co_count": 59,
+      "jaccard": 0.2193
+    },
+    {
+      "tool": "sql",
+      "skill": "mlops",
+      "co_count": 58,
+      "jaccard": 0.1211
+    },
+    {
+      "tool": "python",
+      "skill": "generative ai",
+      "co_count": 58,
+      "jaccard": 0.0644
+    },
+    {
+      "tool": "scikit-learn",
+      "skill": "mlops",
+      "co_count": 58,
+      "jaccard": 0.2172
+    },
+    {
+      "tool": "python",
+      "skill": "datenanalyse",
+      "co_count": 57,
+      "jaccard": 0.063
+    },
+    {
+      "tool": "kubernetes",
+      "skill": "mlops",
+      "co_count": 56,
+      "jaccard": 0.2424
+    },
+    {
+      "tool": "python",
+      "skill": "monitoring",
+      "co_count": 55,
+      "jaccard": 0.0617
+    },
+    {
+      "tool": "docker",
+      "skill": "ci/cd",
+      "co_count": 53,
+      "jaccard": 0.2624
+    },
+    {
+      "tool": "python",
+      "skill": "statistics",
+      "co_count": 52,
+      "jaccard": 0.0584
+    },
+    {
+      "tool": "python",
+      "skill": "software engineering",
+      "co_count": 52,
+      "jaccard": 0.0584
+    },
+    {
+      "tool": "pytorch",
+      "skill": "computer vision",
+      "co_count": 52,
+      "jaccard": 0.1525
+    },
+    {
+      "tool": "pytorch",
+      "skill": "nlp",
+      "co_count": 48,
+      "jaccard": 0.1371
+    },
+    {
+      "tool": "python",
+      "skill": "reinforcement learning",
+      "co_count": 47,
+      "jaccard": 0.0527
+    },
+    {
+      "tool": "azure",
+      "skill": "ci/cd",
+      "co_count": 46,
+      "jaccard": 0.1603
+    },
+    {
+      "tool": "python",
+      "skill": "devops",
+      "co_count": 45,
+      "jaccard": 0.0504
+    },
+    {
+      "tool": "pytorch",
+      "skill": "ci/cd",
+      "co_count": 45,
+      "jaccard": 0.1213
+    },
+    {
+      "tool": "mlflow",
+      "skill": "mlops",
+      "co_count": 42,
+      "jaccard": 0.1842
+    },
+    {
+      "tool": "aws",
+      "skill": "nlp",
+      "co_count": 41,
+      "jaccard": 0.1242
+    },
+    {
+      "tool": "aws",
+      "skill": "deep learning",
+      "co_count": 41,
+      "jaccard": 0.1
+    },
+    {
+      "tool": "azure",
+      "skill": "genai",
+      "co_count": 41,
+      "jaccard": 0.1595
+    },
+    {
+      "tool": "pytorch",
+      "skill": "llms",
+      "co_count": 41,
+      "jaccard": 0.1033
+    },
+    {
+      "tool": "aws",
+      "skill": "genai",
+      "co_count": 40,
+      "jaccard": 0.1274
+    },
+    {
+      "tool": "langchain",
+      "skill": "prompt engineering",
+      "co_count": 40,
+      "jaccard": 0.3846
+    },
+    {
+      "tool": "python",
+      "skill": "large language models",
+      "co_count": 39,
+      "jaccard": 0.044
+    },
+    {
+      "tool": "tensorflow",
+      "skill": "ci/cd",
+      "co_count": 38,
+      "jaccard": 0.1288
+    },
+    {
+      "tool": "tensorflow",
+      "skill": "nlp",
+      "co_count": 38,
+      "jaccard": 0.1372
+    },
+    {
+      "tool": "python",
+      "skill": "evaluation",
+      "co_count": 37,
+      "jaccard": 0.0416
+    },
+    {
+      "tool": "sql",
+      "skill": "datenanalyse",
+      "co_count": 37,
+      "jaccard": 0.0923
+    },
+    {
+      "tool": "kubernetes",
+      "skill": "ci/cd",
+      "co_count": 37,
+      "jaccard": 0.209
+    },
+    {
+      "tool": "azure",
+      "skill": "deep learning",
+      "co_count": 36,
+      "jaccard": 0.1003
+    },
+    {
+      "tool": "aws",
+      "skill": "llms",
+      "co_count": 36,
+      "jaccard": 0.096
+    },
+    {
+      "tool": "gcp",
+      "skill": "ci/cd",
+      "co_count": 36,
+      "jaccard": 0.1579
+    },
+    {
+      "tool": "tensorflow",
+      "skill": "llms",
+      "co_count": 36,
+      "jaccard": 0.1129
+    }
+  ],
+  "by_tool": {
+    "pytorch": [
+      {
+        "skill": "mlops",
+        "co_count": 110,
+        "jaccard": 0.2902
+      },
+      {
+        "skill": "deep learning",
+        "co_count": 103,
+        "jaccard": 0.2747
+      },
+      {
+        "skill": "computer vision",
+        "co_count": 52,
+        "jaccard": 0.1525
+      },
+      {
+        "skill": "nlp",
+        "co_count": 48,
+        "jaccard": 0.1371
+      },
+      {
+        "skill": "ci/cd",
+        "co_count": 45,
+        "jaccard": 0.1213
+      }
+    ],
+    "kubernetes": [
+      {
+        "skill": "mlops",
+        "co_count": 56,
+        "jaccard": 0.2424
+      },
+      {
+        "skill": "ci/cd",
+        "co_count": 37,
+        "jaccard": 0.209
+      },
+      {
+        "skill": "llms",
+        "co_count": 25,
+        "jaccard": 0.1185
+      },
+      {
+        "skill": "deep learning",
+        "co_count": 25,
+        "jaccard": 0.0996
+      },
+      {
+        "skill": "monitoring",
+        "co_count": 15,
+        "jaccard": 0.0949
+      }
+    ],
+    "sql": [
+      {
+        "skill": "mlops",
+        "co_count": 58,
+        "jaccard": 0.1211
+      },
+      {
+        "skill": "datenanalyse",
+        "co_count": 37,
+        "jaccard": 0.0923
+      },
+      {
+        "skill": "llms",
+        "co_count": 35,
+        "jaccard": 0.0776
+      },
+      {
+        "skill": "datenmodellierung",
+        "co_count": 28,
+        "jaccard": 0.0755
+      },
+      {
+        "skill": "cloud-plattformen",
+        "co_count": 27,
+        "jaccard": 0.074
+      }
+    ],
+    "gcp": [
+      {
+        "skill": "mlops",
+        "co_count": 76,
+        "jaccard": 0.2912
+      },
+      {
+        "skill": "ci/cd",
+        "co_count": 36,
+        "jaccard": 0.1579
+      },
+      {
+        "skill": "nlp",
+        "co_count": 32,
+        "jaccard": 0.1495
+      },
+      {
+        "skill": "prompt engineering",
+        "co_count": 27,
+        "jaccard": 0.1337
+      },
+      {
+        "skill": "genai",
+        "co_count": 24,
+        "jaccard": 0.1171
+      }
+    ],
+    "docker": [
+      {
+        "skill": "ci/cd",
+        "co_count": 53,
+        "jaccard": 0.2624
+      },
+      {
+        "skill": "mlops",
+        "co_count": 59,
+        "jaccard": 0.2193
+      },
+      {
+        "skill": "evaluation",
+        "co_count": 21,
+        "jaccard": 0.1214
+      },
+      {
+        "skill": "deep learning",
+        "co_count": 33,
+        "jaccard": 0.1162
+      },
+      {
+        "skill": "llms",
+        "co_count": 27,
+        "jaccard": 0.108
+      }
+    ],
+    "python": [
+      {
+        "skill": "mlops",
+        "co_count": 159,
+        "jaccard": 0.1763
+      },
+      {
+        "skill": "deep learning",
+        "co_count": 135,
+        "jaccard": 0.1475
+      },
+      {
+        "skill": "llms",
+        "co_count": 106,
+        "jaccard": 0.1173
+      },
+      {
+        "skill": "ci/cd",
+        "co_count": 87,
+        "jaccard": 0.0966
+      },
+      {
+        "skill": "rag",
+        "co_count": 71,
+        "jaccard": 0.0799
+      }
+    ],
+    "azure": [
+      {
+        "skill": "mlops",
+        "co_count": 93,
+        "jaccard": 0.2971
+      },
+      {
+        "skill": "ci/cd",
+        "co_count": 46,
+        "jaccard": 0.1603
+      },
+      {
+        "skill": "genai",
+        "co_count": 41,
+        "jaccard": 0.1595
+      },
+      {
+        "skill": "rag",
+        "co_count": 33,
+        "jaccard": 0.1213
+      },
+      {
+        "skill": "generative ai",
+        "co_count": 31,
+        "jaccard": 0.1136
+      }
+    ],
+    "aws": [
+      {
+        "skill": "mlops",
+        "co_count": 103,
+        "jaccard": 0.2869
+      },
+      {
+        "skill": "ci/cd",
+        "co_count": 67,
+        "jaccard": 0.2081
+      },
+      {
+        "skill": "genai",
+        "co_count": 40,
+        "jaccard": 0.1274
+      },
+      {
+        "skill": "nlp",
+        "co_count": 41,
+        "jaccard": 0.1242
+      },
+      {
+        "skill": "generative ai",
+        "co_count": 35,
+        "jaccard": 0.1077
+      }
+    ],
+    "mlflow": [
+      {
+        "skill": "mlops",
+        "co_count": 42,
+        "jaccard": 0.1842
+      },
+      {
+        "skill": "llms",
+        "co_count": 30,
+        "jaccard": 0.1587
+      },
+      {
+        "skill": "erstellung, bereitstellung und pflege von ml-modellen in der produktion",
+        "co_count": 15,
+        "jaccard": 0.1579
+      },
+      {
+        "skill": "genai",
+        "co_count": 22,
+        "jaccard": 0.1571
+      },
+      {
+        "skill": "großen datenmengen",
+        "co_count": 15,
+        "jaccard": 0.1562
+      }
+    ],
+    "airflow": [
+      {
+        "skill": "mlops",
+        "co_count": 25,
+        "jaccard": 0.1196
+      },
+      {
+        "skill": "deep learning",
+        "co_count": 16,
+        "jaccard": 0.0773
+      }
+    ],
+    "spark": [
+      {
+        "skill": "nlp",
+        "co_count": 16,
+        "jaccard": 0.1067
+      },
+      {
+        "skill": "mlops",
+        "co_count": 24,
+        "jaccard": 0.103
+      },
+      {
+        "skill": "deep learning",
+        "co_count": 18,
+        "jaccard": 0.0789
+      }
+    ],
+    "r": [
+      {
+        "skill": "genai",
+        "co_count": 28,
+        "jaccard": 0.1718
+      },
+      {
+        "skill": "statistical modeling",
+        "co_count": 22,
+        "jaccard": 0.1571
+      },
+      {
+        "skill": "rag",
+        "co_count": 25,
+        "jaccard": 0.1445
+      },
+      {
+        "skill": "datenanalyse",
+        "co_count": 23,
+        "jaccard": 0.1299
+      },
+      {
+        "skill": "ai / ml models",
+        "co_count": 16,
+        "jaccard": 0.129
+      }
+    ],
+    "git": [
+      {
+        "skill": "ci/cd",
+        "co_count": 15,
+        "jaccard": 0.0872
+      },
+      {
+        "skill": "deep learning",
+        "co_count": 17,
+        "jaccard": 0.0733
+      },
+      {
+        "skill": "mlops",
+        "co_count": 15,
+        "jaccard": 0.0612
+      }
+    ],
+    "scikit-learn": [
+      {
+        "skill": "mlops",
+        "co_count": 58,
+        "jaccard": 0.2172
+      },
+      {
+        "skill": "statistics",
+        "co_count": 19,
+        "jaccard": 0.1011
+      },
+      {
+        "skill": "big data",
+        "co_count": 15,
+        "jaccard": 0.0888
+      },
+      {
+        "skill": "prompt engineering",
+        "co_count": 17,
+        "jaccard": 0.085
+      },
+      {
+        "skill": "deep learning",
+        "co_count": 24,
+        "jaccard": 0.0828
+      }
+    ],
+    "pandas": [
+      {
+        "skill": "llms",
+        "co_count": 29,
+        "jaccard": 0.1324
+      },
+      {
+        "skill": "rag",
+        "co_count": 22,
+        "jaccard": 0.125
+      },
+      {
+        "skill": "mlops",
+        "co_count": 33,
+        "jaccard": 0.1241
+      },
+      {
+        "skill": "statistics",
+        "co_count": 16,
+        "jaccard": 0.097
+      },
+      {
+        "skill": "deep learning",
+        "co_count": 17,
+        "jaccard": 0.0627
+      }
+    ],
+    "numpy": [
+      {
+        "skill": "rag",
+        "co_count": 19,
+        "jaccard": 0.1338
+      },
+      {
+        "skill": "statistics",
+        "co_count": 16,
+        "jaccard": 0.125
+      },
+      {
+        "skill": "mlops",
+        "co_count": 27,
+        "jaccard": 0.1149
+      },
+      {
+        "skill": "llms",
+        "co_count": 17,
+        "jaccard": 0.0876
+      }
+    ],
+    "tensorflow": [
+      {
+        "skill": "mlops",
+        "co_count": 94,
+        "jaccard": 0.3013
+      },
+      {
+        "skill": "deep learning",
+        "co_count": 79,
+        "jaccard": 0.25
+      },
+      {
+        "skill": "nlp",
+        "co_count": 38,
+        "jaccard": 0.1372
+      },
+      {
+        "skill": "ci/cd",
+        "co_count": 38,
+        "jaccard": 0.1288
+      },
+      {
+        "skill": "llms",
+        "co_count": 36,
+        "jaccard": 0.1129
+      }
+    ],
+    "flask": [
+      {
+        "skill": "ci/cd",
+        "co_count": 15,
+        "jaccard": 0.124
+      }
+    ],
+    "fastapi": [
+      {
+        "skill": "ci/cd",
+        "co_count": 18,
+        "jaccard": 0.1268
+      },
+      {
+        "skill": "mlops",
+        "co_count": 15,
+        "jaccard": 0.0688
+      }
+    ],
+    "langchain": [
+      {
+        "skill": "prompt engineering",
+        "co_count": 40,
+        "jaccard": 0.3846
+      },
+      {
+        "skill": "rag",
+        "co_count": 26,
+        "jaccard": 0.208
+      },
+      {
+        "skill": "genai",
+        "co_count": 24,
+        "jaccard": 0.2
+      },
+      {
+        "skill": "llms",
+        "co_count": 32,
+        "jaccard": 0.1893
+      },
+      {
+        "skill": "large language models",
+        "co_count": 18,
+        "jaccard": 0.1818
+      }
+    ],
+    "hugging face": [
+      {
+        "skill": "mlops",
+        "co_count": 16,
+        "jaccard": 0.0825
+      }
+    ],
+    "vector databases": [
+      {
+        "skill": "mlops",
+        "co_count": 19,
+        "jaccard": 0.1038
+      }
+    ],
+    "java": [
+      {
+        "skill": "devops",
+        "co_count": 16,
+        "jaccard": 0.1322
+      },
+      {
+        "skill": "deep learning",
+        "co_count": 29,
+        "jaccard": 0.1312
+      },
+      {
+        "skill": "monitoring",
+        "co_count": 17,
+        "jaccard": 0.1308
+      },
+      {
+        "skill": "software engineering",
+        "co_count": 16,
+        "jaccard": 0.127
+      },
+      {
+        "skill": "mlops",
+        "co_count": 23,
+        "jaccard": 0.0966
+      }
+    ],
+    "jax": [
+      {
+        "skill": "deep learning",
+        "co_count": 22,
+        "jaccard": 0.1243
+      }
+    ],
+    "grafana": [
+      {
+        "skill": "monitoring",
+        "co_count": 17,
+        "jaccard": 0.2099
+      },
+      {
+        "skill": "ci/cd",
+        "co_count": 16,
+        "jaccard": 0.1301
+      }
+    ],
+    "power bi": [
+      {
+        "skill": "datenanalyse",
+        "co_count": 15,
+        "jaccard": 0.1293
+      }
+    ],
+    "keras": [
+      {
+        "skill": "deep learning",
+        "co_count": 15,
+        "jaccard": 0.0877
+      }
+    ],
+    "kubeflow": [
+      {
+        "skill": "erstellung, bereitstellung und pflege von ml-modellen in der produktion",
+        "co_count": 15,
+        "jaccard": 0.2586
+      },
+      {
+        "skill": "großen datenmengen",
+        "co_count": 15,
+        "jaccard": 0.2542
+      },
+      {
+        "skill": "infrastructure as code",
+        "co_count": 17,
+        "jaccard": 0.2297
+      },
+      {
+        "skill": "mlops",
+        "co_count": 27,
+        "jaccard": 0.1311
+      }
+    ],
+    "terraform": [
+      {
+        "skill": "infrastructure as code",
+        "co_count": 31,
+        "jaccard": 0.4697
+      },
+      {
+        "skill": "erstellung, bereitstellung und pflege von ml-modellen in der produktion",
+        "co_count": 15,
+        "jaccard": 0.2344
+      },
+      {
+        "skill": "großen datenmengen",
+        "co_count": 15,
+        "jaccard": 0.2308
+      },
+      {
+        "skill": "monitoring",
+        "co_count": 20,
+        "jaccard": 0.1905
+      },
+      {
+        "skill": "ci/cd",
+        "co_count": 23,
+        "jaccard": 0.1608
+      }
+    ],
+    "langgraph": [
+      {
+        "skill": "prompt engineering",
+        "co_count": 16,
+        "jaccard": 0.2078
+      }
+    ],
+    "snowflake": [
+      {
+        "skill": "data & ai",
+        "co_count": 19,
+        "jaccard": 0.3725
+      },
+      {
+        "skill": "cloud-plattformen",
+        "co_count": 18,
+        "jaccard": 0.2903
+      }
+    ],
+    "data lakehouse": [
+      {
+        "skill": "data & analytics architekturen",
+        "co_count": 19,
+        "jaccard": 1.0
+      }
+    ],
+    "data warehouse": [
+      {
+        "skill": "data & analytics architekturen",
+        "co_count": 19,
+        "jaccard": 0.8636
+      }
+    ],
+    "data lake": [
+      {
+        "skill": "data & analytics architekturen",
+        "co_count": 19,
+        "jaccard": 0.8261
+      }
+    ],
+    "github actions": [
+      {
+        "skill": "ci/cd",
+        "co_count": 21,
+        "jaccard": 0.2
+      }
+    ],
+    "typescript": [
+      {
+        "skill": "ci/cd",
+        "co_count": 17,
+        "jaccard": 0.1278
+      }
+    ],
+    "react": [
+      {
+        "skill": "ci/cd",
+        "co_count": 16,
+        "jaccard": 0.124
+      }
+    ],
+    "c++": [
+      {
+        "skill": "robotics",
+        "co_count": 15,
+        "jaccard": 0.1724
+      },
+      {
+        "skill": "computer vision",
+        "co_count": 21,
+        "jaccard": 0.1567
+      },
+      {
+        "skill": "deep learning",
+        "co_count": 25,
+        "jaccard": 0.1163
+      }
+    ],
+    "c/c++": [
+      {
+        "skill": "deep learning",
+        "co_count": 20,
+        "jaccard": 0.1075
+      }
+    ],
+    "prometheus": [
+      {
+        "skill": "ci/cd",
+        "co_count": 15,
+        "jaccard": 0.1351
+      }
+    ],
+    "arm": [
+      {
+        "skill": "erstellung, bereitstellung und pflege von ml-modellen in der produktion",
+        "co_count": 15,
+        "jaccard": 1.0
+      },
+      {
+        "skill": "großen datenmengen",
+        "co_count": 15,
+        "jaccard": 0.9375
+      },
+      {
+        "skill": "infrastructure as code",
+        "co_count": 15,
+        "jaccard": 0.4545
+      }
+    ],
+    "cloud": [
+      {
+        "skill": "ki-technologien",
+        "co_count": 18,
+        "jaccard": 0.3913
+      },
+      {
+        "skill": "data",
+        "co_count": 18,
+        "jaccard": 0.36
+      },
+      {
+        "skill": "analytics",
+        "co_count": 18,
+        "jaccard": 0.2308
+      }
+    ]
+  }
+}

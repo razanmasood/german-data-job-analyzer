@@ -15,6 +15,7 @@ RESULTS_PATH       = DATA_DIR / "analyzed" / "langextract_results.json"
 EXP_LEVEL_PATH     = DATA_DIR / "processed" / "experience_level_analysis.json"
 LANG_COMPARE_PATH  = DATA_DIR / "processed" / "language_comparison.json"
 SENIORITY_PATH     = DATA_DIR / "processed" / "seniority_analysis.json"
+CODEP_PATH         = DATA_DIR / "processed" / "tool_skill_codependency.json"
 
 # ---------------------------------------------------------------------------
 # LangExtract prompt + examples  (same as 10b_run_langextract_inference.py)
@@ -72,7 +73,9 @@ def load_data():
         exp_analysis = json.load(f)
     with open(SENIORITY_PATH) as f:
         seniority_analysis = json.load(f)
-    return results, exp_analysis, seniority_analysis
+    with open(CODEP_PATH) as f:
+        codep = json.load(f)
+    return results, exp_analysis, seniority_analysis, codep
 
 
 @st.cache_data
@@ -174,7 +177,7 @@ if not RESULTS_PATH.exists():
 # Sidebar
 # ---------------------------------------------------------------------------
 
-results, exp_analysis, seniority_analysis = load_data()
+results, exp_analysis, seniority_analysis, codep = load_data()
 
 exp_levels = list(results["skills_by_experience_level"].keys())
 selected_level = st.sidebar.selectbox(
@@ -263,7 +266,7 @@ st.divider()
 # Tabs
 # ---------------------------------------------------------------------------
 
-tab_overview, tab_lang, tab_gap = st.tabs(["Overview", "Language Comparison", "Skill Gap by Seniority"])
+tab_overview, tab_lang, tab_gap, tab_codep = st.tabs(["Overview", "Language Comparison", "Skill Gap by Seniority", "Tool-Skill Co-dependency"])
 
 # ===========================================================================
 # Tab: Overview  (all original sections)
@@ -704,3 +707,59 @@ with tab_gap:
             st.dataframe({"Skill": senior_only}, use_container_width=True, hide_index=True)
         else:
             st.write("None found.")
+
+# ===========================================================================
+# Tab: Tool-Skill Co-dependency
+# ===========================================================================
+
+with tab_codep:
+
+    # -----------------------------------------------------------------------
+    # Section 1: Top Tool-Skill Pairs
+    # -----------------------------------------------------------------------
+
+    st.subheader("Top Tool-Skill Pairs")
+    st.caption("Pairs ranked by how often both appear in the same job posting")
+
+    top20 = codep["top_pairs_by_co_count"][:20]
+    pair_labels = [f"{p['tool']} + {p['skill']}" for p in reversed(top20)]
+    pair_counts = [p["co_count"] for p in reversed(top20)]
+
+    fig_pairs = make_bar(
+        pair_labels, pair_counts,
+        theme["bar"], theme["text"],
+        x_title="Jobs where both appear",
+        height=560,
+        horizontal=True,
+    )
+    fig_pairs.update_layout(yaxis={"autorange": True, "tickfont": {"color": theme["text"]}})
+    st.plotly_chart(fig_pairs, use_container_width=True)
+
+    st.divider()
+
+    # -----------------------------------------------------------------------
+    # Section 2: Explore by Tool
+    # -----------------------------------------------------------------------
+
+    st.subheader("Explore by Tool")
+    st.caption("Jaccard score measures how often this skill appears *only* alongside this tool.")
+
+    tool_list = sorted(codep["by_tool"].keys())
+    selected_tool = st.selectbox("Select a tool", options=tool_list, key="codep_tool_select")
+
+    companions = codep["by_tool"][selected_tool]
+    if companions:
+        comp_labels  = [c["skill"]   for c in reversed(companions)]
+        comp_jaccard = [c["jaccard"] for c in reversed(companions)]
+
+        fig_comp = make_bar(
+            comp_labels, comp_jaccard,
+            theme["accent"], theme["text"],
+            x_title="Jaccard score (how exclusively they appear together)",
+            height=300,
+            horizontal=True,
+        )
+        fig_comp.update_layout(yaxis={"autorange": True, "tickfont": {"color": theme["text"]}})
+        st.plotly_chart(fig_comp, use_container_width=True)
+    else:
+        st.write("No companions found for this tool.")
