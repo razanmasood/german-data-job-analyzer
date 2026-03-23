@@ -1,0 +1,2264 @@
+{
+  "skills": [
+    {
+      "name": "mlops",
+      "count": 175,
+      "frequency": 14.11,
+      "exclusivity": 85.89,
+      "category": "commodity"
+    },
+    {
+      "name": "deep learning",
+      "count": 164,
+      "frequency": 13.23,
+      "exclusivity": 86.77,
+      "category": "commodity"
+    },
+    {
+      "name": "llms",
+      "count": 124,
+      "frequency": 10.0,
+      "exclusivity": 90.0,
+      "category": "commodity"
+    },
+    {
+      "name": "ci/cd",
+      "count": 102,
+      "frequency": 8.23,
+      "exclusivity": 91.77,
+      "category": "mid-range"
+    },
+    {
+      "name": "nlp",
+      "count": 84,
+      "frequency": 6.77,
+      "exclusivity": 93.23,
+      "category": "mid-range"
+    },
+    {
+      "name": "computer vision",
+      "count": 79,
+      "frequency": 6.37,
+      "exclusivity": 93.63,
+      "category": "mid-range"
+    },
+    {
+      "name": "datenanalyse",
+      "count": 76,
+      "frequency": 6.13,
+      "exclusivity": 93.87,
+      "category": "mid-range"
+    },
+    {
+      "name": "rag",
+      "count": 74,
+      "frequency": 5.97,
+      "exclusivity": 94.03,
+      "category": "mid-range"
+    },
+    {
+      "name": "generative ai",
+      "count": 73,
+      "frequency": 5.89,
+      "exclusivity": 94.11,
+      "category": "mid-range"
+    },
+    {
+      "name": "genai",
+      "count": 67,
+      "frequency": 5.4,
+      "exclusivity": 94.6,
+      "category": "mid-range"
+    },
+    {
+      "name": "prompt engineering",
+      "count": 67,
+      "frequency": 5.4,
+      "exclusivity": 94.6,
+      "category": "mid-range"
+    },
+    {
+      "name": "analytics",
+      "count": 62,
+      "frequency": 5.0,
+      "exclusivity": 95.0,
+      "category": "mid-range"
+    },
+    {
+      "name": "monitoring",
+      "count": 61,
+      "frequency": 4.92,
+      "exclusivity": 95.08,
+      "category": "mid-range"
+    },
+    {
+      "name": "statistics",
+      "count": 57,
+      "frequency": 4.6,
+      "exclusivity": 95.4,
+      "category": "mid-range"
+    },
+    {
+      "name": "software engineering",
+      "count": 56,
+      "frequency": 4.52,
+      "exclusivity": 95.48,
+      "category": "mid-range"
+    },
+    {
+      "name": "reinforcement learning",
+      "count": 52,
+      "frequency": 4.19,
+      "exclusivity": 95.81,
+      "category": "mid-range"
+    },
+    {
+      "name": "devops",
+      "count": 51,
+      "frequency": 4.11,
+      "exclusivity": 95.89,
+      "category": "mid-range"
+    },
+    {
+      "name": "evaluation",
+      "count": 41,
+      "frequency": 3.31,
+      "exclusivity": 96.69,
+      "category": "mid-range"
+    },
+    {
+      "name": "large language models",
+      "count": 40,
+      "frequency": 3.23,
+      "exclusivity": 96.77,
+      "category": "mid-range"
+    },
+    {
+      "name": "natural language processing",
+      "count": 39,
+      "frequency": 3.15,
+      "exclusivity": 96.85,
+      "category": "mid-range"
+    },
+    {
+      "name": "statistical modeling",
+      "count": 38,
+      "frequency": 3.06,
+      "exclusivity": 96.94,
+      "category": "mid-range"
+    },
+    {
+      "name": "datenmodellierung",
+      "count": 37,
+      "frequency": 2.98,
+      "exclusivity": 97.02,
+      "category": "mid-range"
+    },
+    {
+      "name": "big data",
+      "count": 34,
+      "frequency": 2.74,
+      "exclusivity": 97.26,
+      "category": "mid-range"
+    },
+    {
+      "name": "data",
+      "count": 34,
+      "frequency": 2.74,
+      "exclusivity": 97.26,
+      "category": "mid-range"
+    },
+    {
+      "name": "software development",
+      "count": 34,
+      "frequency": 2.74,
+      "exclusivity": 97.26,
+      "category": "mid-range"
+    },
+    {
+      "name": "infrastructure as code",
+      "count": 33,
+      "frequency": 2.66,
+      "exclusivity": 97.34,
+      "category": "mid-range"
+    },
+    {
+      "name": "data pipelines",
+      "count": 32,
+      "frequency": 2.58,
+      "exclusivity": 97.42,
+      "category": "mid-range"
+    },
+    {
+      "name": "deployment",
+      "count": 32,
+      "frequency": 2.58,
+      "exclusivity": 97.42,
+      "category": "mid-range"
+    },
+    {
+      "name": "cloud-plattformen",
+      "count": 30,
+      "frequency": 2.42,
+      "exclusivity": 97.58,
+      "category": "mid-range"
+    },
+    {
+      "name": "softwareentwicklung",
+      "count": 30,
+      "frequency": 2.42,
+      "exclusivity": 97.58,
+      "category": "mid-range"
+    },
+    {
+      "name": "ki-technologien",
+      "count": 30,
+      "frequency": 2.42,
+      "exclusivity": 97.58,
+      "category": "mid-range"
+    },
+    {
+      "name": "ml models",
+      "count": 28,
+      "frequency": 2.26,
+      "exclusivity": 97.74,
+      "category": "mid-range"
+    },
+    {
+      "name": "a/b testing",
+      "count": 27,
+      "frequency": 2.18,
+      "exclusivity": 97.82,
+      "category": "mid-range"
+    },
+    {
+      "name": "machine learning algorithms",
+      "count": 27,
+      "frequency": 2.18,
+      "exclusivity": 97.82,
+      "category": "mid-range"
+    },
+    {
+      "name": "statistik",
+      "count": 27,
+      "frequency": 2.18,
+      "exclusivity": 97.82,
+      "category": "mid-range"
+    },
+    {
+      "name": "cloud-technologien",
+      "count": 26,
+      "frequency": 2.1,
+      "exclusivity": 97.9,
+      "category": "mid-range"
+    },
+    {
+      "name": "robotics",
+      "count": 26,
+      "frequency": 2.1,
+      "exclusivity": 97.9,
+      "category": "mid-range"
+    },
+    {
+      "name": "ai/ml",
+      "count": 25,
+      "frequency": 2.02,
+      "exclusivity": 97.98,
+      "category": "mid-range"
+    },
+    {
+      "name": "testing",
+      "count": 23,
+      "frequency": 1.85,
+      "exclusivity": 98.15,
+      "category": "niche"
+    },
+    {
+      "name": "etl",
+      "count": 23,
+      "frequency": 1.85,
+      "exclusivity": 98.15,
+      "category": "niche"
+    },
+    {
+      "name": "algorithms",
+      "count": 23,
+      "frequency": 1.85,
+      "exclusivity": 98.15,
+      "category": "niche"
+    },
+    {
+      "name": "containerization",
+      "count": 23,
+      "frequency": 1.85,
+      "exclusivity": 98.15,
+      "category": "niche"
+    },
+    {
+      "name": "datenbanken",
+      "count": 22,
+      "frequency": 1.77,
+      "exclusivity": 98.23,
+      "category": "niche"
+    },
+    {
+      "name": "foundation models",
+      "count": 22,
+      "frequency": 1.77,
+      "exclusivity": 98.23,
+      "category": "niche"
+    },
+    {
+      "name": "llm",
+      "count": 22,
+      "frequency": 1.77,
+      "exclusivity": 98.23,
+      "category": "niche"
+    },
+    {
+      "name": "data modeling",
+      "count": 21,
+      "frequency": 1.69,
+      "exclusivity": 98.31,
+      "category": "niche"
+    },
+    {
+      "name": "mathematics",
+      "count": 21,
+      "frequency": 1.69,
+      "exclusivity": 98.31,
+      "category": "niche"
+    },
+    {
+      "name": "sql",
+      "count": 20,
+      "frequency": 1.61,
+      "exclusivity": 98.39,
+      "category": "niche"
+    },
+    {
+      "name": "fine-tuning",
+      "count": 20,
+      "frequency": 1.61,
+      "exclusivity": 98.39,
+      "category": "niche"
+    },
+    {
+      "name": "api design",
+      "count": 20,
+      "frequency": 1.61,
+      "exclusivity": 98.39,
+      "category": "niche"
+    },
+    {
+      "name": "ml engineering",
+      "count": 20,
+      "frequency": 1.61,
+      "exclusivity": 98.39,
+      "category": "niche"
+    },
+    {
+      "name": "data & ai",
+      "count": 20,
+      "frequency": 1.61,
+      "exclusivity": 98.39,
+      "category": "niche"
+    },
+    {
+      "name": "etl-prozessen",
+      "count": 20,
+      "frequency": 1.61,
+      "exclusivity": 98.39,
+      "category": "niche"
+    },
+    {
+      "name": "training",
+      "count": 19,
+      "frequency": 1.53,
+      "exclusivity": 98.47,
+      "category": "niche"
+    },
+    {
+      "name": "distributed systems",
+      "count": 19,
+      "frequency": 1.53,
+      "exclusivity": 98.47,
+      "category": "niche"
+    },
+    {
+      "name": "data & analytics architekturen",
+      "count": 19,
+      "frequency": 1.53,
+      "exclusivity": 98.47,
+      "category": "niche"
+    },
+    {
+      "name": "feature engineering",
+      "count": 18,
+      "frequency": 1.45,
+      "exclusivity": 98.55,
+      "category": "niche"
+    },
+    {
+      "name": "model deployment",
+      "count": 18,
+      "frequency": 1.45,
+      "exclusivity": 98.55,
+      "category": "niche"
+    },
+    {
+      "name": "causal inference",
+      "count": 17,
+      "frequency": 1.37,
+      "exclusivity": 98.63,
+      "category": "niche"
+    },
+    {
+      "name": "experimentation",
+      "count": 17,
+      "frequency": 1.37,
+      "exclusivity": 98.63,
+      "category": "niche"
+    },
+    {
+      "name": "recommender systems",
+      "count": 17,
+      "frequency": 1.37,
+      "exclusivity": 98.63,
+      "category": "niche"
+    },
+    {
+      "name": "forecasting",
+      "count": 17,
+      "frequency": 1.37,
+      "exclusivity": 98.63,
+      "category": "niche"
+    },
+    {
+      "name": "optimization",
+      "count": 17,
+      "frequency": 1.37,
+      "exclusivity": 98.63,
+      "category": "niche"
+    },
+    {
+      "name": "ai governance",
+      "count": 17,
+      "frequency": 1.37,
+      "exclusivity": 98.63,
+      "category": "niche"
+    },
+    {
+      "name": "data processing",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "apis",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "großen datenmengen",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "agentic ai",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "advanced analytics",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "ai / ml models",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "datenvisualisierung",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "embeddings",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "datenarchitekturen",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "ml systems",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "distributed training",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "model evaluation",
+      "count": 15,
+      "frequency": 1.21,
+      "exclusivity": 98.79,
+      "category": "niche"
+    },
+    {
+      "name": "governance",
+      "count": 15,
+      "frequency": 1.21,
+      "exclusivity": 98.79,
+      "category": "niche"
+    },
+    {
+      "name": "analyse",
+      "count": 15,
+      "frequency": 1.21,
+      "exclusivity": 98.79,
+      "category": "niche"
+    },
+    {
+      "name": "statistical analysis",
+      "count": 15,
+      "frequency": 1.21,
+      "exclusivity": 98.79,
+      "category": "niche"
+    },
+    {
+      "name": "data management",
+      "count": 15,
+      "frequency": 1.21,
+      "exclusivity": 98.79,
+      "category": "niche"
+    },
+    {
+      "name": "erstellung, bereitstellung und pflege von ml-modellen in der produktion",
+      "count": 15,
+      "frequency": 1.21,
+      "exclusivity": 98.79,
+      "category": "niche"
+    },
+    {
+      "name": "data management & governance",
+      "count": 15,
+      "frequency": 1.21,
+      "exclusivity": 98.79,
+      "category": "niche"
+    },
+    {
+      "name": "machine-learning",
+      "count": 14,
+      "frequency": 1.13,
+      "exclusivity": 98.87,
+      "category": "niche"
+    },
+    {
+      "name": "automatisierung",
+      "count": 14,
+      "frequency": 1.13,
+      "exclusivity": 98.87,
+      "category": "niche"
+    },
+    {
+      "name": "cloud technologies",
+      "count": 14,
+      "frequency": 1.13,
+      "exclusivity": 98.87,
+      "category": "niche"
+    },
+    {
+      "name": "retrieval-augmented generation",
+      "count": 14,
+      "frequency": 1.13,
+      "exclusivity": 98.87,
+      "category": "niche"
+    },
+    {
+      "name": "statistical methods",
+      "count": 13,
+      "frequency": 1.05,
+      "exclusivity": 98.95,
+      "category": "niche"
+    },
+    {
+      "name": "ai systems",
+      "count": 13,
+      "frequency": 1.05,
+      "exclusivity": 98.95,
+      "category": "niche"
+    },
+    {
+      "name": "generativer ki",
+      "count": 13,
+      "frequency": 1.05,
+      "exclusivity": 98.95,
+      "category": "niche"
+    },
+    {
+      "name": "ai models",
+      "count": 13,
+      "frequency": 1.05,
+      "exclusivity": 98.95,
+      "category": "niche"
+    },
+    {
+      "name": "project management",
+      "count": 13,
+      "frequency": 1.05,
+      "exclusivity": 98.95,
+      "category": "niche"
+    },
+    {
+      "name": "engineering",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "predictive modeling",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "regression",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "datenpipelines",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "ranking",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "ai agents",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "dl",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "analyst",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "administrator",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "developer",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "automation",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "infrastructure-as-code",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "semantic search",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "observability",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "data warehousing",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "compliance",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "elt",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "model monitoring",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "security",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "data governance",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "ci/cd-pipelines",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "linear algebra",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "containerisierung",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "vector search",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "datapipelines",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "data & analytics",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "diffusion models",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "performance optimization",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "retrieval",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "anomaly detection",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "version control",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "information retrieval",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "agilen methoden",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "analytical skills",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "statistische modellierung",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "big data technologies",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "cloud",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "versionskontrolle",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "scrum",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "parallel computing",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "modeling",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "daten",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "data preparation",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "datenmodellierungen",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "künstlicher intelligenz",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "change management",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "async/event-driven patterns",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "content pipelines",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "owasp",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "anti-abuse patterns",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "analytics events",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "session/auth flows",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "schedulers",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "search stacks",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "queues",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "incidents",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "multi-env deployments",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "audit trails",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "retries",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "state management",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "ux",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "feature flags",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "rag patterns",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "idempotency",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "moderation workflows",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "review workflows",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "component architecture",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "db modeling",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "rbac",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "security basics",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    }
+  ],
+  "commodity": [
+    {
+      "name": "mlops",
+      "count": 175,
+      "frequency": 14.11,
+      "exclusivity": 85.89,
+      "category": "commodity"
+    },
+    {
+      "name": "deep learning",
+      "count": 164,
+      "frequency": 13.23,
+      "exclusivity": 86.77,
+      "category": "commodity"
+    },
+    {
+      "name": "llms",
+      "count": 124,
+      "frequency": 10.0,
+      "exclusivity": 90.0,
+      "category": "commodity"
+    }
+  ],
+  "niche": [
+    {
+      "name": "testing",
+      "count": 23,
+      "frequency": 1.85,
+      "exclusivity": 98.15,
+      "category": "niche"
+    },
+    {
+      "name": "etl",
+      "count": 23,
+      "frequency": 1.85,
+      "exclusivity": 98.15,
+      "category": "niche"
+    },
+    {
+      "name": "algorithms",
+      "count": 23,
+      "frequency": 1.85,
+      "exclusivity": 98.15,
+      "category": "niche"
+    },
+    {
+      "name": "containerization",
+      "count": 23,
+      "frequency": 1.85,
+      "exclusivity": 98.15,
+      "category": "niche"
+    },
+    {
+      "name": "datenbanken",
+      "count": 22,
+      "frequency": 1.77,
+      "exclusivity": 98.23,
+      "category": "niche"
+    },
+    {
+      "name": "foundation models",
+      "count": 22,
+      "frequency": 1.77,
+      "exclusivity": 98.23,
+      "category": "niche"
+    },
+    {
+      "name": "llm",
+      "count": 22,
+      "frequency": 1.77,
+      "exclusivity": 98.23,
+      "category": "niche"
+    },
+    {
+      "name": "data modeling",
+      "count": 21,
+      "frequency": 1.69,
+      "exclusivity": 98.31,
+      "category": "niche"
+    },
+    {
+      "name": "mathematics",
+      "count": 21,
+      "frequency": 1.69,
+      "exclusivity": 98.31,
+      "category": "niche"
+    },
+    {
+      "name": "sql",
+      "count": 20,
+      "frequency": 1.61,
+      "exclusivity": 98.39,
+      "category": "niche"
+    },
+    {
+      "name": "fine-tuning",
+      "count": 20,
+      "frequency": 1.61,
+      "exclusivity": 98.39,
+      "category": "niche"
+    },
+    {
+      "name": "api design",
+      "count": 20,
+      "frequency": 1.61,
+      "exclusivity": 98.39,
+      "category": "niche"
+    },
+    {
+      "name": "ml engineering",
+      "count": 20,
+      "frequency": 1.61,
+      "exclusivity": 98.39,
+      "category": "niche"
+    },
+    {
+      "name": "data & ai",
+      "count": 20,
+      "frequency": 1.61,
+      "exclusivity": 98.39,
+      "category": "niche"
+    },
+    {
+      "name": "etl-prozessen",
+      "count": 20,
+      "frequency": 1.61,
+      "exclusivity": 98.39,
+      "category": "niche"
+    },
+    {
+      "name": "training",
+      "count": 19,
+      "frequency": 1.53,
+      "exclusivity": 98.47,
+      "category": "niche"
+    },
+    {
+      "name": "distributed systems",
+      "count": 19,
+      "frequency": 1.53,
+      "exclusivity": 98.47,
+      "category": "niche"
+    },
+    {
+      "name": "data & analytics architekturen",
+      "count": 19,
+      "frequency": 1.53,
+      "exclusivity": 98.47,
+      "category": "niche"
+    },
+    {
+      "name": "feature engineering",
+      "count": 18,
+      "frequency": 1.45,
+      "exclusivity": 98.55,
+      "category": "niche"
+    },
+    {
+      "name": "model deployment",
+      "count": 18,
+      "frequency": 1.45,
+      "exclusivity": 98.55,
+      "category": "niche"
+    },
+    {
+      "name": "causal inference",
+      "count": 17,
+      "frequency": 1.37,
+      "exclusivity": 98.63,
+      "category": "niche"
+    },
+    {
+      "name": "experimentation",
+      "count": 17,
+      "frequency": 1.37,
+      "exclusivity": 98.63,
+      "category": "niche"
+    },
+    {
+      "name": "recommender systems",
+      "count": 17,
+      "frequency": 1.37,
+      "exclusivity": 98.63,
+      "category": "niche"
+    },
+    {
+      "name": "forecasting",
+      "count": 17,
+      "frequency": 1.37,
+      "exclusivity": 98.63,
+      "category": "niche"
+    },
+    {
+      "name": "optimization",
+      "count": 17,
+      "frequency": 1.37,
+      "exclusivity": 98.63,
+      "category": "niche"
+    },
+    {
+      "name": "ai governance",
+      "count": 17,
+      "frequency": 1.37,
+      "exclusivity": 98.63,
+      "category": "niche"
+    },
+    {
+      "name": "data processing",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "apis",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "großen datenmengen",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "agentic ai",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "advanced analytics",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "ai / ml models",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "datenvisualisierung",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "embeddings",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "datenarchitekturen",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "ml systems",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "distributed training",
+      "count": 16,
+      "frequency": 1.29,
+      "exclusivity": 98.71,
+      "category": "niche"
+    },
+    {
+      "name": "model evaluation",
+      "count": 15,
+      "frequency": 1.21,
+      "exclusivity": 98.79,
+      "category": "niche"
+    },
+    {
+      "name": "governance",
+      "count": 15,
+      "frequency": 1.21,
+      "exclusivity": 98.79,
+      "category": "niche"
+    },
+    {
+      "name": "analyse",
+      "count": 15,
+      "frequency": 1.21,
+      "exclusivity": 98.79,
+      "category": "niche"
+    },
+    {
+      "name": "statistical analysis",
+      "count": 15,
+      "frequency": 1.21,
+      "exclusivity": 98.79,
+      "category": "niche"
+    },
+    {
+      "name": "data management",
+      "count": 15,
+      "frequency": 1.21,
+      "exclusivity": 98.79,
+      "category": "niche"
+    },
+    {
+      "name": "erstellung, bereitstellung und pflege von ml-modellen in der produktion",
+      "count": 15,
+      "frequency": 1.21,
+      "exclusivity": 98.79,
+      "category": "niche"
+    },
+    {
+      "name": "data management & governance",
+      "count": 15,
+      "frequency": 1.21,
+      "exclusivity": 98.79,
+      "category": "niche"
+    },
+    {
+      "name": "machine-learning",
+      "count": 14,
+      "frequency": 1.13,
+      "exclusivity": 98.87,
+      "category": "niche"
+    },
+    {
+      "name": "automatisierung",
+      "count": 14,
+      "frequency": 1.13,
+      "exclusivity": 98.87,
+      "category": "niche"
+    },
+    {
+      "name": "cloud technologies",
+      "count": 14,
+      "frequency": 1.13,
+      "exclusivity": 98.87,
+      "category": "niche"
+    },
+    {
+      "name": "retrieval-augmented generation",
+      "count": 14,
+      "frequency": 1.13,
+      "exclusivity": 98.87,
+      "category": "niche"
+    },
+    {
+      "name": "statistical methods",
+      "count": 13,
+      "frequency": 1.05,
+      "exclusivity": 98.95,
+      "category": "niche"
+    },
+    {
+      "name": "ai systems",
+      "count": 13,
+      "frequency": 1.05,
+      "exclusivity": 98.95,
+      "category": "niche"
+    },
+    {
+      "name": "generativer ki",
+      "count": 13,
+      "frequency": 1.05,
+      "exclusivity": 98.95,
+      "category": "niche"
+    },
+    {
+      "name": "ai models",
+      "count": 13,
+      "frequency": 1.05,
+      "exclusivity": 98.95,
+      "category": "niche"
+    },
+    {
+      "name": "project management",
+      "count": 13,
+      "frequency": 1.05,
+      "exclusivity": 98.95,
+      "category": "niche"
+    },
+    {
+      "name": "engineering",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "predictive modeling",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "regression",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "datenpipelines",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "ranking",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "ai agents",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "dl",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "analyst",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "administrator",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "developer",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "automation",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "infrastructure-as-code",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "semantic search",
+      "count": 12,
+      "frequency": 0.97,
+      "exclusivity": 99.03,
+      "category": "niche"
+    },
+    {
+      "name": "observability",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "data warehousing",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "compliance",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "elt",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "model monitoring",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "security",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "data governance",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "ci/cd-pipelines",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "linear algebra",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "containerisierung",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "vector search",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "datapipelines",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "data & analytics",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "diffusion models",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "performance optimization",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "retrieval",
+      "count": 11,
+      "frequency": 0.89,
+      "exclusivity": 99.11,
+      "category": "niche"
+    },
+    {
+      "name": "anomaly detection",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "version control",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "information retrieval",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "agilen methoden",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "analytical skills",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "statistische modellierung",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "big data technologies",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "cloud",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "versionskontrolle",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "scrum",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "parallel computing",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "modeling",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "daten",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "data preparation",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "datenmodellierungen",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "künstlicher intelligenz",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "change management",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "async/event-driven patterns",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "content pipelines",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "owasp",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "anti-abuse patterns",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "analytics events",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "session/auth flows",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "schedulers",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "search stacks",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "queues",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "incidents",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "multi-env deployments",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "audit trails",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "retries",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "state management",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "ux",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "feature flags",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "rag patterns",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "idempotency",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "moderation workflows",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "review workflows",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "component architecture",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "db modeling",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "rbac",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    },
+    {
+      "name": "security basics",
+      "count": 10,
+      "frequency": 0.81,
+      "exclusivity": 99.19,
+      "category": "niche"
+    }
+  ],
+  "mid_range": [
+    {
+      "name": "ci/cd",
+      "count": 102,
+      "frequency": 8.23,
+      "exclusivity": 91.77,
+      "category": "mid-range"
+    },
+    {
+      "name": "nlp",
+      "count": 84,
+      "frequency": 6.77,
+      "exclusivity": 93.23,
+      "category": "mid-range"
+    },
+    {
+      "name": "computer vision",
+      "count": 79,
+      "frequency": 6.37,
+      "exclusivity": 93.63,
+      "category": "mid-range"
+    },
+    {
+      "name": "datenanalyse",
+      "count": 76,
+      "frequency": 6.13,
+      "exclusivity": 93.87,
+      "category": "mid-range"
+    },
+    {
+      "name": "rag",
+      "count": 74,
+      "frequency": 5.97,
+      "exclusivity": 94.03,
+      "category": "mid-range"
+    },
+    {
+      "name": "generative ai",
+      "count": 73,
+      "frequency": 5.89,
+      "exclusivity": 94.11,
+      "category": "mid-range"
+    },
+    {
+      "name": "genai",
+      "count": 67,
+      "frequency": 5.4,
+      "exclusivity": 94.6,
+      "category": "mid-range"
+    },
+    {
+      "name": "prompt engineering",
+      "count": 67,
+      "frequency": 5.4,
+      "exclusivity": 94.6,
+      "category": "mid-range"
+    },
+    {
+      "name": "analytics",
+      "count": 62,
+      "frequency": 5.0,
+      "exclusivity": 95.0,
+      "category": "mid-range"
+    },
+    {
+      "name": "monitoring",
+      "count": 61,
+      "frequency": 4.92,
+      "exclusivity": 95.08,
+      "category": "mid-range"
+    },
+    {
+      "name": "statistics",
+      "count": 57,
+      "frequency": 4.6,
+      "exclusivity": 95.4,
+      "category": "mid-range"
+    },
+    {
+      "name": "software engineering",
+      "count": 56,
+      "frequency": 4.52,
+      "exclusivity": 95.48,
+      "category": "mid-range"
+    },
+    {
+      "name": "reinforcement learning",
+      "count": 52,
+      "frequency": 4.19,
+      "exclusivity": 95.81,
+      "category": "mid-range"
+    },
+    {
+      "name": "devops",
+      "count": 51,
+      "frequency": 4.11,
+      "exclusivity": 95.89,
+      "category": "mid-range"
+    },
+    {
+      "name": "evaluation",
+      "count": 41,
+      "frequency": 3.31,
+      "exclusivity": 96.69,
+      "category": "mid-range"
+    },
+    {
+      "name": "large language models",
+      "count": 40,
+      "frequency": 3.23,
+      "exclusivity": 96.77,
+      "category": "mid-range"
+    },
+    {
+      "name": "natural language processing",
+      "count": 39,
+      "frequency": 3.15,
+      "exclusivity": 96.85,
+      "category": "mid-range"
+    },
+    {
+      "name": "statistical modeling",
+      "count": 38,
+      "frequency": 3.06,
+      "exclusivity": 96.94,
+      "category": "mid-range"
+    },
+    {
+      "name": "datenmodellierung",
+      "count": 37,
+      "frequency": 2.98,
+      "exclusivity": 97.02,
+      "category": "mid-range"
+    },
+    {
+      "name": "big data",
+      "count": 34,
+      "frequency": 2.74,
+      "exclusivity": 97.26,
+      "category": "mid-range"
+    },
+    {
+      "name": "data",
+      "count": 34,
+      "frequency": 2.74,
+      "exclusivity": 97.26,
+      "category": "mid-range"
+    },
+    {
+      "name": "software development",
+      "count": 34,
+      "frequency": 2.74,
+      "exclusivity": 97.26,
+      "category": "mid-range"
+    },
+    {
+      "name": "infrastructure as code",
+      "count": 33,
+      "frequency": 2.66,
+      "exclusivity": 97.34,
+      "category": "mid-range"
+    },
+    {
+      "name": "data pipelines",
+      "count": 32,
+      "frequency": 2.58,
+      "exclusivity": 97.42,
+      "category": "mid-range"
+    },
+    {
+      "name": "deployment",
+      "count": 32,
+      "frequency": 2.58,
+      "exclusivity": 97.42,
+      "category": "mid-range"
+    },
+    {
+      "name": "cloud-plattformen",
+      "count": 30,
+      "frequency": 2.42,
+      "exclusivity": 97.58,
+      "category": "mid-range"
+    },
+    {
+      "name": "softwareentwicklung",
+      "count": 30,
+      "frequency": 2.42,
+      "exclusivity": 97.58,
+      "category": "mid-range"
+    },
+    {
+      "name": "ki-technologien",
+      "count": 30,
+      "frequency": 2.42,
+      "exclusivity": 97.58,
+      "category": "mid-range"
+    },
+    {
+      "name": "ml models",
+      "count": 28,
+      "frequency": 2.26,
+      "exclusivity": 97.74,
+      "category": "mid-range"
+    },
+    {
+      "name": "a/b testing",
+      "count": 27,
+      "frequency": 2.18,
+      "exclusivity": 97.82,
+      "category": "mid-range"
+    },
+    {
+      "name": "machine learning algorithms",
+      "count": 27,
+      "frequency": 2.18,
+      "exclusivity": 97.82,
+      "category": "mid-range"
+    },
+    {
+      "name": "statistik",
+      "count": 27,
+      "frequency": 2.18,
+      "exclusivity": 97.82,
+      "category": "mid-range"
+    },
+    {
+      "name": "cloud-technologien",
+      "count": 26,
+      "frequency": 2.1,
+      "exclusivity": 97.9,
+      "category": "mid-range"
+    },
+    {
+      "name": "robotics",
+      "count": 26,
+      "frequency": 2.1,
+      "exclusivity": 97.9,
+      "category": "mid-range"
+    },
+    {
+      "name": "ai/ml",
+      "count": 25,
+      "frequency": 2.02,
+      "exclusivity": 97.98,
+      "category": "mid-range"
+    }
+  ]
+}

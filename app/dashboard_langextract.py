@@ -16,6 +16,7 @@ EXP_LEVEL_PATH     = DATA_DIR / "processed" / "experience_level_analysis.json"
 LANG_COMPARE_PATH  = DATA_DIR / "processed" / "language_comparison.json"
 SENIORITY_PATH     = DATA_DIR / "processed" / "seniority_analysis.json"
 CODEP_PATH         = DATA_DIR / "processed" / "tool_skill_codependency.json"
+EXCL_PATH          = DATA_DIR / "processed" / "skill_exclusivity.json"
 
 # ---------------------------------------------------------------------------
 # LangExtract prompt + examples  (same as 10b_run_langextract_inference.py)
@@ -75,7 +76,9 @@ def load_data():
         seniority_analysis = json.load(f)
     with open(CODEP_PATH) as f:
         codep = json.load(f)
-    return results, exp_analysis, seniority_analysis, codep
+    with open(EXCL_PATH) as f:
+        excl = json.load(f)
+    return results, exp_analysis, seniority_analysis, codep, excl
 
 
 @st.cache_data
@@ -177,7 +180,7 @@ if not RESULTS_PATH.exists():
 # Sidebar
 # ---------------------------------------------------------------------------
 
-results, exp_analysis, seniority_analysis, codep = load_data()
+results, exp_analysis, seniority_analysis, codep, excl = load_data()
 
 exp_levels = list(results["skills_by_experience_level"].keys())
 selected_level = st.sidebar.selectbox(
@@ -266,7 +269,7 @@ st.divider()
 # Tabs
 # ---------------------------------------------------------------------------
 
-tab_overview, tab_lang, tab_gap, tab_codep = st.tabs(["Overview", "Language Comparison", "Skill Gap by Seniority", "Tool-Skill Co-dependency"])
+tab_overview, tab_lang, tab_gap, tab_codep, tab_excl = st.tabs(["Overview", "Language Comparison", "Skill Gap by Seniority", "Tool-Skill Co-dependency", "Skill Exclusivity Index"])
 
 # ===========================================================================
 # Tab: Overview  (all original sections)
@@ -763,3 +766,104 @@ with tab_codep:
         st.plotly_chart(fig_comp, use_container_width=True)
     else:
         st.write("No companions found for this tool.")
+
+# ===========================================================================
+# Tab: Skill Exclusivity Index
+# ===========================================================================
+
+with tab_excl:
+
+    # -----------------------------------------------------------------------
+    # Section 1: Scatter plot
+    # -----------------------------------------------------------------------
+
+    st.subheader("Skill Exclusivity Index")
+    st.caption("Rare skills score high; ubiquitous skills score low.")
+
+    _COLOR_MAP = {
+        "commodity": theme["accent"],
+        "mid-range": theme["bar"],
+        "niche":     "#888888",
+    }
+
+    _skills = excl["skills"]
+
+    scatter_fig = go.Figure()
+    for cat, cat_label in [("commodity", "Commodity"), ("mid-range", "Mid-Range"), ("niche", "Niche")]:
+        pts = [s for s in _skills if s["category"] == cat]
+        scatter_fig.add_trace(go.Scatter(
+            x=[s["frequency"]   for s in pts],
+            y=[s["exclusivity"] for s in pts],
+            mode="markers",
+            name=cat_label,
+            marker={"color": _COLOR_MAP[cat], "size": 8, "opacity": 0.8},
+            text=[s["name"] for s in pts],
+            hovertemplate="<b>%{text}</b><br>Frequency: %{x:.1f}%<br>Exclusivity: %{y:.1f}<extra></extra>",
+        ))
+
+    # Boundary reference lines
+    y_range = [85, 101]
+    for x_val, label in [(2, "2% — niche boundary"), (10, "10% — commodity boundary")]:
+        scatter_fig.add_vline(
+            x=x_val,
+            line_dash="dash",
+            line_color="#aaaaaa",
+            line_width=1,
+            annotation_text=label,
+            annotation_position="top",
+            annotation_font={"color": theme["text"], "size": 11},
+        )
+
+    scatter_fig.update_layout(
+        height=480,
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        font={"color": theme["text"]},
+        xaxis={
+            "title": "Frequency (% of job postings)",
+            "tickfont": {"color": theme["text"]},
+            "gridcolor": "#333333" if dark_mode else "#dddddd",
+        },
+        yaxis={
+            "title": "Exclusivity score",
+            "tickfont": {"color": theme["text"]},
+            "gridcolor": "#333333" if dark_mode else "#dddddd",
+        },
+        legend={"font": {"color": theme["text"]}},
+        margin={"l": 10, "r": 10, "t": 20, "b": 10},
+    )
+    st.plotly_chart(scatter_fig, use_container_width=True)
+
+    st.divider()
+
+    # -----------------------------------------------------------------------
+    # Section 2: Category breakdown
+    # -----------------------------------------------------------------------
+
+    st.subheader("Category Breakdown")
+
+    col_com, col_mid, col_niche = st.columns(3)
+
+    with col_com:
+        st.markdown(f"**Commodity (≥10%)** — {len(excl['commodity'])} skills")
+        st.dataframe(
+            [{"Skill": s["name"], "Freq %": s["frequency"]} for s in excl["commodity"]],
+            use_container_width=True,
+            hide_index=True,
+        )
+
+    with col_mid:
+        st.markdown(f"**Mid-Range (2–10%)** — top 15 of {len(excl['mid_range'])}")
+        st.dataframe(
+            [{"Skill": s["name"], "Freq %": s["frequency"]} for s in excl["mid_range"][:15]],
+            use_container_width=True,
+            hide_index=True,
+        )
+
+    with col_niche:
+        st.markdown(f"**Niche (≤2%)** — top 15 of {len(excl['niche'])}")
+        st.dataframe(
+            [{"Skill": s["name"], "Freq %": s["frequency"]} for s in excl["niche"][:15]],
+            use_container_width=True,
+            hide_index=True,
+        )
