@@ -1,0 +1,628 @@
+{
+  "top_companies": [
+    {
+      "company": "MHP – A Porsche Company",
+      "count": 69
+    },
+    {
+      "company": "adesso SE",
+      "count": 41
+    },
+    {
+      "company": "Simon-Kucher",
+      "count": 24
+    },
+    {
+      "company": "BMW Group",
+      "count": 21
+    },
+    {
+      "company": "IBM",
+      "count": 20
+    },
+    {
+      "company": "Apple",
+      "count": 18
+    },
+    {
+      "company": "Delivery Hero",
+      "count": 15
+    },
+    {
+      "company": "NVIDIA",
+      "count": 15
+    },
+    {
+      "company": "Deloitte",
+      "count": 15
+    },
+    {
+      "company": "Helsing",
+      "count": 14
+    },
+    {
+      "company": "msg",
+      "count": 14
+    },
+    {
+      "company": "THRYVE",
+      "count": 13
+    },
+    {
+      "company": "Almedia",
+      "count": 12
+    },
+    {
+      "company": "Publicis Sapient",
+      "count": 11
+    },
+    {
+      "company": "Mindrift",
+      "count": 11
+    },
+    {
+      "company": "INFUSE",
+      "count": 10
+    },
+    {
+      "company": "Instaffo",
+      "count": 9
+    },
+    {
+      "company": "CGI",
+      "count": 8
+    },
+    {
+      "company": "Deutsche Telekom",
+      "count": 8
+    },
+    {
+      "company": "Technische Universität München (Technical University of Munich)",
+      "count": 7
+    }
+  ],
+  "skill_concentration": [
+    {
+      "name": "mlops",
+      "raw_count": 175,
+      "unique_companies": 84,
+      "top_company": "IBM",
+      "top_company_count": 16,
+      "concentration_pct": 9.1,
+      "concentrated": false
+    },
+    {
+      "name": "deep learning",
+      "raw_count": 164,
+      "unique_companies": 94,
+      "top_company": "IBM",
+      "top_company_count": 16,
+      "concentration_pct": 9.8,
+      "concentrated": false
+    },
+    {
+      "name": "llms",
+      "raw_count": 124,
+      "unique_companies": 72,
+      "top_company": "msg",
+      "top_company_count": 14,
+      "concentration_pct": 11.3,
+      "concentrated": false
+    },
+    {
+      "name": "ci/cd",
+      "raw_count": 102,
+      "unique_companies": 71,
+      "top_company": "IBM",
+      "top_company_count": 10,
+      "concentration_pct": 9.8,
+      "concentrated": false
+    },
+    {
+      "name": "nlp",
+      "raw_count": 84,
+      "unique_companies": 62,
+      "top_company": "Publicis Sapient",
+      "top_company_count": 6,
+      "concentration_pct": 7.1,
+      "concentrated": false
+    },
+    {
+      "name": "computer vision",
+      "raw_count": 79,
+      "unique_companies": 50,
+      "top_company": "Publicis Sapient",
+      "top_company_count": 6,
+      "concentration_pct": 7.6,
+      "concentrated": false
+    },
+    {
+      "name": "datenanalyse",
+      "raw_count": 76,
+      "unique_companies": 50,
+      "top_company": "MHP – A Porsche Company",
+      "top_company_count": 8,
+      "concentration_pct": 10.5,
+      "concentrated": false
+    },
+    {
+      "name": "rag",
+      "raw_count": 74,
+      "unique_companies": 30,
+      "top_company": "IBM",
+      "top_company_count": 14,
+      "concentration_pct": 18.9,
+      "concentrated": false
+    },
+    {
+      "name": "generative ai",
+      "raw_count": 73,
+      "unique_companies": 43,
+      "top_company": "MHP – A Porsche Company",
+      "top_company_count": 10,
+      "concentration_pct": 13.7,
+      "concentrated": false
+    },
+    {
+      "name": "genai",
+      "raw_count": 67,
+      "unique_companies": 31,
+      "top_company": "IBM",
+      "top_company_count": 17,
+      "concentration_pct": 25.4,
+      "concentrated": false
+    },
+    {
+      "name": "prompt engineering",
+      "raw_count": 67,
+      "unique_companies": 33,
+      "top_company": "msg",
+      "top_company_count": 14,
+      "concentration_pct": 20.9,
+      "concentrated": false
+    },
+    {
+      "name": "analytics",
+      "raw_count": 62,
+      "unique_companies": 24,
+      "top_company": "MHP – A Porsche Company",
+      "top_company_count": 19,
+      "concentration_pct": 30.6,
+      "concentrated": true
+    },
+    {
+      "name": "monitoring",
+      "raw_count": 61,
+      "unique_companies": 29,
+      "top_company": "IBM",
+      "top_company_count": 12,
+      "concentration_pct": 19.7,
+      "concentrated": false
+    },
+    {
+      "name": "statistics",
+      "raw_count": 57,
+      "unique_companies": 39,
+      "top_company": "Zühlke Group",
+      "top_company_count": 5,
+      "concentration_pct": 8.8,
+      "concentrated": false
+    },
+    {
+      "name": "software engineering",
+      "raw_count": 56,
+      "unique_companies": 37,
+      "top_company": "Helsing",
+      "top_company_count": 9,
+      "concentration_pct": 16.1,
+      "concentrated": false
+    },
+    {
+      "name": "reinforcement learning",
+      "raw_count": 52,
+      "unique_companies": 29,
+      "top_company": "Mercor",
+      "top_company_count": 7,
+      "concentration_pct": 13.5,
+      "concentrated": false
+    },
+    {
+      "name": "devops",
+      "raw_count": 51,
+      "unique_companies": 30,
+      "top_company": "IBM",
+      "top_company_count": 16,
+      "concentration_pct": 31.4,
+      "concentrated": true
+    },
+    {
+      "name": "evaluation",
+      "raw_count": 41,
+      "unique_companies": 19,
+      "top_company": "INFUSE",
+      "top_company_count": 10,
+      "concentration_pct": 24.4,
+      "concentrated": false
+    },
+    {
+      "name": "large language models",
+      "raw_count": 40,
+      "unique_companies": 26,
+      "top_company": "msg",
+      "top_company_count": 7,
+      "concentration_pct": 17.5,
+      "concentrated": false
+    },
+    {
+      "name": "natural language processing",
+      "raw_count": 39,
+      "unique_companies": 26,
+      "top_company": "NVIDIA",
+      "top_company_count": 6,
+      "concentration_pct": 15.4,
+      "concentrated": false
+    },
+    {
+      "name": "statistical modeling",
+      "raw_count": 38,
+      "unique_companies": 14,
+      "top_company": "IBM",
+      "top_company_count": 14,
+      "concentration_pct": 36.8,
+      "concentrated": true
+    },
+    {
+      "name": "datenmodellierung",
+      "raw_count": 37,
+      "unique_companies": 16,
+      "top_company": "MHP – A Porsche Company",
+      "top_company_count": 20,
+      "concentration_pct": 54.1,
+      "concentrated": true
+    },
+    {
+      "name": "big data",
+      "raw_count": 34,
+      "unique_companies": 12,
+      "top_company": "IBM",
+      "top_company_count": 17,
+      "concentration_pct": 50.0,
+      "concentrated": true
+    },
+    {
+      "name": "data",
+      "raw_count": 34,
+      "unique_companies": 11,
+      "top_company": "MHP – A Porsche Company",
+      "top_company_count": 19,
+      "concentration_pct": 55.9,
+      "concentrated": true
+    },
+    {
+      "name": "software development",
+      "raw_count": 34,
+      "unique_companies": 16,
+      "top_company": "NVIDIA",
+      "top_company_count": 6,
+      "concentration_pct": 17.6,
+      "concentrated": false
+    },
+    {
+      "name": "infrastructure as code",
+      "raw_count": 33,
+      "unique_companies": 9,
+      "top_company": "adesso SE",
+      "top_company_count": 15,
+      "concentration_pct": 45.5,
+      "concentrated": true
+    },
+    {
+      "name": "data pipelines",
+      "raw_count": 32,
+      "unique_companies": 29,
+      "top_company": "Strava",
+      "top_company_count": 2,
+      "concentration_pct": 6.2,
+      "concentrated": false
+    },
+    {
+      "name": "deployment",
+      "raw_count": 32,
+      "unique_companies": 17,
+      "top_company": "IBM",
+      "top_company_count": 8,
+      "concentration_pct": 25.0,
+      "concentrated": false
+    },
+    {
+      "name": "cloud-plattformen",
+      "raw_count": 30,
+      "unique_companies": 3,
+      "top_company": "MHP – A Porsche Company",
+      "top_company_count": 28,
+      "concentration_pct": 93.3,
+      "concentrated": true
+    },
+    {
+      "name": "softwareentwicklung",
+      "raw_count": 30,
+      "unique_companies": 25,
+      "top_company": "Simon-Kucher",
+      "top_company_count": 3,
+      "concentration_pct": 10.0,
+      "concentrated": false
+    }
+  ],
+  "tool_concentration": [
+    {
+      "name": "python",
+      "raw_count": 886,
+      "unique_companies": 459,
+      "top_company": "MHP – A Porsche Company",
+      "top_company_count": 40,
+      "concentration_pct": 4.5,
+      "concentrated": false
+    },
+    {
+      "name": "sql",
+      "raw_count": 362,
+      "unique_companies": 193,
+      "top_company": "MHP – A Porsche Company",
+      "top_company_count": 47,
+      "concentration_pct": 13.0,
+      "concentrated": false
+    },
+    {
+      "name": "pytorch",
+      "raw_count": 314,
+      "unique_companies": 187,
+      "top_company": "IBM",
+      "top_company_count": 16,
+      "concentration_pct": 5.1,
+      "concentrated": false
+    },
+    {
+      "name": "aws",
+      "raw_count": 287,
+      "unique_companies": 151,
+      "top_company": "msg",
+      "top_company_count": 14,
+      "concentration_pct": 4.9,
+      "concentrated": false
+    },
+    {
+      "name": "azure",
+      "raw_count": 231,
+      "unique_companies": 114,
+      "top_company": "IBM",
+      "top_company_count": 16,
+      "concentration_pct": 6.9,
+      "concentrated": false
+    },
+    {
+      "name": "tensorflow",
+      "raw_count": 231,
+      "unique_companies": 135,
+      "top_company": "IBM",
+      "top_company_count": 18,
+      "concentration_pct": 7.8,
+      "concentrated": false
+    },
+    {
+      "name": "gcp",
+      "raw_count": 162,
+      "unique_companies": 80,
+      "top_company": "msg",
+      "top_company_count": 14,
+      "concentration_pct": 8.6,
+      "concentrated": false
+    },
+    {
+      "name": "docker",
+      "raw_count": 153,
+      "unique_companies": 98,
+      "top_company": "INFUSE",
+      "top_company_count": 10,
+      "concentration_pct": 6.5,
+      "concentrated": false
+    },
+    {
+      "name": "scikit-learn",
+      "raw_count": 150,
+      "unique_companies": 102,
+      "top_company": "Eviden",
+      "top_company_count": 7,
+      "concentration_pct": 4.7,
+      "concentrated": false
+    },
+    {
+      "name": "r",
+      "raw_count": 124,
+      "unique_companies": 75,
+      "top_company": "IBM",
+      "top_company_count": 19,
+      "concentration_pct": 15.3,
+      "concentrated": false
+    },
+    {
+      "name": "pandas",
+      "raw_count": 124,
+      "unique_companies": 73,
+      "top_company": "Mindrift",
+      "top_company_count": 11,
+      "concentration_pct": 8.9,
+      "concentrated": false
+    },
+    {
+      "name": "kubernetes",
+      "raw_count": 112,
+      "unique_companies": 70,
+      "top_company": "Deloitte",
+      "top_company_count": 10,
+      "concentration_pct": 8.9,
+      "concentrated": false
+    },
+    {
+      "name": "mlflow",
+      "raw_count": 95,
+      "unique_companies": 50,
+      "top_company": "adesso SE",
+      "top_company_count": 15,
+      "concentration_pct": 15.8,
+      "concentrated": false
+    },
+    {
+      "name": "numpy",
+      "raw_count": 87,
+      "unique_companies": 44,
+      "top_company": "Mindrift",
+      "top_company_count": 11,
+      "concentration_pct": 12.6,
+      "concentrated": false
+    },
+    {
+      "name": "java",
+      "raw_count": 86,
+      "unique_companies": 52,
+      "top_company": "IBM",
+      "top_company_count": 12,
+      "concentration_pct": 14.0,
+      "concentrated": false
+    },
+    {
+      "name": "git",
+      "raw_count": 85,
+      "unique_companies": 60,
+      "top_company": "IBM",
+      "top_company_count": 8,
+      "concentration_pct": 9.4,
+      "concentrated": false
+    },
+    {
+      "name": "spark",
+      "raw_count": 82,
+      "unique_companies": 55,
+      "top_company": "Expleo Group",
+      "top_company_count": 5,
+      "concentration_pct": 6.1,
+      "concentrated": false
+    },
+    {
+      "name": "langchain",
+      "raw_count": 77,
+      "unique_companies": 45,
+      "top_company": "msg",
+      "top_company_count": 7,
+      "concentration_pct": 9.1,
+      "concentrated": false
+    },
+    {
+      "name": "c++",
+      "raw_count": 76,
+      "unique_companies": 49,
+      "top_company": "Helsing",
+      "top_company_count": 10,
+      "concentration_pct": 13.2,
+      "concentrated": false
+    },
+    {
+      "name": "tableau",
+      "raw_count": 66,
+      "unique_companies": 31,
+      "top_company": "Simon-Kucher",
+      "top_company_count": 18,
+      "concentration_pct": 27.3,
+      "concentrated": false
+    },
+    {
+      "name": "terraform",
+      "raw_count": 64,
+      "unique_companies": 32,
+      "top_company": "adesso SE",
+      "top_company_count": 15,
+      "concentration_pct": 23.4,
+      "concentrated": false
+    },
+    {
+      "name": "databricks",
+      "raw_count": 61,
+      "unique_companies": 37,
+      "top_company": "MHP – A Porsche Company",
+      "top_company_count": 10,
+      "concentration_pct": 16.4,
+      "concentrated": false
+    },
+    {
+      "name": "airflow",
+      "raw_count": 59,
+      "unique_companies": 38,
+      "top_company": "Mercor",
+      "top_company_count": 7,
+      "concentration_pct": 11.9,
+      "concentrated": false
+    },
+    {
+      "name": "fastapi",
+      "raw_count": 58,
+      "unique_companies": 35,
+      "top_company": "INFUSE",
+      "top_company_count": 10,
+      "concentration_pct": 17.2,
+      "concentrated": false
+    },
+    {
+      "name": "kubeflow",
+      "raw_count": 58,
+      "unique_companies": 27,
+      "top_company": "adesso SE",
+      "top_company_count": 15,
+      "concentration_pct": 25.9,
+      "concentrated": false
+    },
+    {
+      "name": "power bi",
+      "raw_count": 55,
+      "unique_companies": 34,
+      "top_company": "MHP – A Porsche Company",
+      "top_company_count": 10,
+      "concentration_pct": 18.2,
+      "concentrated": false
+    },
+    {
+      "name": "snowflake",
+      "raw_count": 50,
+      "unique_companies": 26,
+      "top_company": "MHP – A Porsche Company",
+      "top_company_count": 20,
+      "concentration_pct": 40.0,
+      "concentrated": true
+    },
+    {
+      "name": "pyspark",
+      "raw_count": 50,
+      "unique_companies": 22,
+      "top_company": "MHP – A Porsche Company",
+      "top_company_count": 10,
+      "concentration_pct": 20.0,
+      "concentrated": false
+    },
+    {
+      "name": "typescript",
+      "raw_count": 48,
+      "unique_companies": 30,
+      "top_company": "INFUSE",
+      "top_company_count": 10,
+      "concentration_pct": 20.8,
+      "concentrated": false
+    },
+    {
+      "name": "react",
+      "raw_count": 43,
+      "unique_companies": 28,
+      "top_company": "INFUSE",
+      "top_company_count": 10,
+      "concentration_pct": 23.3,
+      "concentrated": false
+    }
+  ]
+}

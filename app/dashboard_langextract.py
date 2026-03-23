@@ -5,6 +5,8 @@ import sys
 import textwrap
 from collections import Counter
 
+import pandas as pd
+
 import langextract as lx
 import plotly.graph_objects as go
 import streamlit as st
@@ -17,6 +19,7 @@ LANG_COMPARE_PATH  = DATA_DIR / "processed" / "language_comparison.json"
 SENIORITY_PATH     = DATA_DIR / "processed" / "seniority_analysis.json"
 CODEP_PATH         = DATA_DIR / "processed" / "tool_skill_codependency.json"
 EXCL_PATH          = DATA_DIR / "processed" / "skill_exclusivity.json"
+CONC_PATH          = DATA_DIR / "processed" / "company_concentration.json"
 
 # ---------------------------------------------------------------------------
 # LangExtract prompt + examples  (same as 10b_run_langextract_inference.py)
@@ -78,7 +81,9 @@ def load_data():
         codep = json.load(f)
     with open(EXCL_PATH) as f:
         excl = json.load(f)
-    return results, exp_analysis, seniority_analysis, codep, excl
+    with open(CONC_PATH) as f:
+        conc = json.load(f)
+    return results, exp_analysis, seniority_analysis, codep, excl, conc
 
 
 @st.cache_data
@@ -180,7 +185,7 @@ if not RESULTS_PATH.exists():
 # Sidebar
 # ---------------------------------------------------------------------------
 
-results, exp_analysis, seniority_analysis, codep, excl = load_data()
+results, exp_analysis, seniority_analysis, codep, excl, conc = load_data()
 
 exp_levels = list(results["skills_by_experience_level"].keys())
 selected_level = st.sidebar.selectbox(
@@ -269,7 +274,7 @@ st.divider()
 # Tabs
 # ---------------------------------------------------------------------------
 
-tab_overview, tab_lang, tab_gap, tab_codep, tab_excl = st.tabs(["Overview", "Language Comparison", "Skill Gap by Seniority", "Tool-Skill Co-dependency", "Skill Exclusivity Index"])
+tab_overview, tab_lang, tab_gap, tab_codep, tab_excl, tab_conc = st.tabs(["Overview", "Language Comparison", "Skill Gap by Seniority", "Tool-Skill Co-dependency", "Skill Exclusivity Index", "Company Concentration"])
 
 # ===========================================================================
 # Tab: Overview  (all original sections)
@@ -867,3 +872,72 @@ with tab_excl:
             use_container_width=True,
             hide_index=True,
         )
+
+# ===========================================================================
+# Tab: Company Concentration
+# ===========================================================================
+
+with tab_conc:
+
+    # -----------------------------------------------------------------------
+    # Section 1: Top 20 Companies by Posting Count
+    # -----------------------------------------------------------------------
+
+    st.subheader("Top 20 Companies by Posting Count")
+
+    top_companies = conc["top_companies"]
+    comp_names  = [c["company"] for c in reversed(top_companies)]
+    comp_counts = [c["count"]   for c in reversed(top_companies)]
+
+    fig_companies = make_bar(
+        comp_names, comp_counts,
+        theme["bar"], theme["text"],
+        x_title="Number of job postings",
+        height=560,
+        horizontal=True,
+    )
+    fig_companies.update_layout(yaxis={"autorange": True, "tickfont": {"color": theme["text"]}})
+    st.plotly_chart(fig_companies, use_container_width=True)
+
+    st.divider()
+
+    # -----------------------------------------------------------------------
+    # Section 2 & 3: Skill & Tool Concentration Tables
+    # -----------------------------------------------------------------------
+
+    st.warning(
+        "Skills or tools highlighted in red appear popular in aggregate but are heavily driven "
+        "by a single company's hiring templates. Interpret with caution."
+    )
+
+    def _conc_table(rows, accent_hex):
+        df = pd.DataFrame([
+            {
+                "Skill":       r["name"],
+                "Jobs":        r["raw_count"],
+                "Companies":   r["unique_companies"],
+                "Top Company": r["top_company"],
+                "Conc %":      round(r["concentration_pct"], 1),
+            }
+            for r in sorted(rows, key=lambda x: x["raw_count"], reverse=True)
+        ])
+
+        def _highlight(row):
+            bg = f"background-color: {accent_hex}40" if row["Conc %"] > 30 else ""
+            return [bg] * len(row)
+
+        st.dataframe(
+            df.style.apply(_highlight, axis=1).format({"Conc %": "{:.1f}"}),
+            use_container_width=True,
+            hide_index=True,
+        )
+
+    col_sc, col_tc = st.columns(2)
+
+    with col_sc:
+        st.markdown("**Skill Concentration**")
+        _conc_table(conc["skill_concentration"], theme["accent"])
+
+    with col_tc:
+        st.markdown("**Tool Concentration**")
+        _conc_table(conc["tool_concentration"], theme["accent"])
