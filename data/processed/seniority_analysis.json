@@ -1,0 +1,1299 @@
+{
+  "levels": {
+    "Internship": {
+      "total_jobs": 106,
+      "top_skills": [
+        {
+          "name": "deep learning",
+          "count": 15,
+          "pct": 14.2
+        },
+        {
+          "name": "computer vision",
+          "count": 10,
+          "pct": 9.4
+        },
+        {
+          "name": "software engineering",
+          "count": 9,
+          "pct": 8.5
+        },
+        {
+          "name": "natural language processing",
+          "count": 6,
+          "pct": 5.7
+        },
+        {
+          "name": "datenanalyse",
+          "count": 6,
+          "pct": 5.7
+        },
+        {
+          "name": "large language models",
+          "count": 5,
+          "pct": 4.7
+        },
+        {
+          "name": "softwareentwicklung",
+          "count": 5,
+          "pct": 4.7
+        },
+        {
+          "name": "software development",
+          "count": 4,
+          "pct": 3.8
+        },
+        {
+          "name": "prompt engineering",
+          "count": 4,
+          "pct": 3.8
+        },
+        {
+          "name": "rag",
+          "count": 4,
+          "pct": 3.8
+        },
+        {
+          "name": "statistics",
+          "count": 4,
+          "pct": 3.8
+        },
+        {
+          "name": "synthetic data generation",
+          "count": 4,
+          "pct": 3.8
+        },
+        {
+          "name": "llms",
+          "count": 4,
+          "pct": 3.8
+        },
+        {
+          "name": "devops",
+          "count": 3,
+          "pct": 2.8
+        },
+        {
+          "name": "advanced analytics",
+          "count": 3,
+          "pct": 2.8
+        },
+        {
+          "name": "computer science",
+          "count": 3,
+          "pct": 2.8
+        },
+        {
+          "name": "generative ai",
+          "count": 3,
+          "pct": 2.8
+        },
+        {
+          "name": "genai",
+          "count": 3,
+          "pct": 2.8
+        },
+        {
+          "name": "automatisierung von etl-prozessen",
+          "count": 3,
+          "pct": 2.8
+        },
+        {
+          "name": "datenverarbeitung",
+          "count": 3,
+          "pct": 2.8
+        }
+      ],
+      "top_tools": [
+        {
+          "name": "python",
+          "count": 89,
+          "pct": 84.0
+        },
+        {
+          "name": "pytorch",
+          "count": 35,
+          "pct": 33.0
+        },
+        {
+          "name": "sql",
+          "count": 18,
+          "pct": 17.0
+        },
+        {
+          "name": "scikit-learn",
+          "count": 16,
+          "pct": 15.1
+        },
+        {
+          "name": "pandas",
+          "count": 13,
+          "pct": 12.3
+        },
+        {
+          "name": "tensorflow",
+          "count": 13,
+          "pct": 12.3
+        },
+        {
+          "name": "aws",
+          "count": 10,
+          "pct": 9.4
+        },
+        {
+          "name": "git",
+          "count": 10,
+          "pct": 9.4
+        },
+        {
+          "name": "azure",
+          "count": 9,
+          "pct": 8.5
+        },
+        {
+          "name": "r",
+          "count": 8,
+          "pct": 7.5
+        },
+        {
+          "name": "langchain",
+          "count": 8,
+          "pct": 7.5
+        },
+        {
+          "name": "c++",
+          "count": 8,
+          "pct": 7.5
+        },
+        {
+          "name": "java",
+          "count": 6,
+          "pct": 5.7
+        },
+        {
+          "name": "numpy",
+          "count": 6,
+          "pct": 5.7
+        },
+        {
+          "name": "streamlit",
+          "count": 6,
+          "pct": 5.7
+        },
+        {
+          "name": "docker",
+          "count": 5,
+          "pct": 4.7
+        },
+        {
+          "name": "fastapi",
+          "count": 5,
+          "pct": 4.7
+        },
+        {
+          "name": "power bi",
+          "count": 4,
+          "pct": 3.8
+        },
+        {
+          "name": "databricks",
+          "count": 4,
+          "pct": 3.8
+        },
+        {
+          "name": "jax",
+          "count": 4,
+          "pct": 3.8
+        }
+      ]
+    },
+    "Entry level": {
+      "total_jobs": 263,
+      "top_skills": [
+        {
+          "name": "deep learning",
+          "count": 39,
+          "pct": 14.8
+        },
+        {
+          "name": "mlops",
+          "count": 29,
+          "pct": 11.0
+        },
+        {
+          "name": "llms",
+          "count": 26,
+          "pct": 9.9
+        },
+        {
+          "name": "nlp",
+          "count": 21,
+          "pct": 8.0
+        },
+        {
+          "name": "datenanalyse",
+          "count": 17,
+          "pct": 6.5
+        },
+        {
+          "name": "software engineering",
+          "count": 16,
+          "pct": 6.1
+        },
+        {
+          "name": "prompt engineering",
+          "count": 15,
+          "pct": 5.7
+        },
+        {
+          "name": "ci/cd",
+          "count": 14,
+          "pct": 5.3
+        },
+        {
+          "name": "computer vision",
+          "count": 14,
+          "pct": 5.3
+        },
+        {
+          "name": "monitoring",
+          "count": 14,
+          "pct": 5.3
+        },
+        {
+          "name": "statistics",
+          "count": 13,
+          "pct": 4.9
+        },
+        {
+          "name": "rag",
+          "count": 13,
+          "pct": 4.9
+        },
+        {
+          "name": "robotics",
+          "count": 12,
+          "pct": 4.6
+        },
+        {
+          "name": "generative ai",
+          "count": 11,
+          "pct": 4.2
+        },
+        {
+          "name": "testing",
+          "count": 11,
+          "pct": 4.2
+        },
+        {
+          "name": "reinforcement learning",
+          "count": 10,
+          "pct": 3.8
+        },
+        {
+          "name": "software development",
+          "count": 10,
+          "pct": 3.8
+        },
+        {
+          "name": "devops",
+          "count": 9,
+          "pct": 3.4
+        },
+        {
+          "name": "statistik",
+          "count": 9,
+          "pct": 3.4
+        },
+        {
+          "name": "softwareentwicklung",
+          "count": 9,
+          "pct": 3.4
+        }
+      ],
+      "top_tools": [
+        {
+          "name": "python",
+          "count": 169,
+          "pct": 64.3
+        },
+        {
+          "name": "sql",
+          "count": 84,
+          "pct": 31.9
+        },
+        {
+          "name": "pytorch",
+          "count": 72,
+          "pct": 27.4
+        },
+        {
+          "name": "tensorflow",
+          "count": 59,
+          "pct": 22.4
+        },
+        {
+          "name": "aws",
+          "count": 41,
+          "pct": 15.6
+        },
+        {
+          "name": "docker",
+          "count": 38,
+          "pct": 14.4
+        },
+        {
+          "name": "azure",
+          "count": 36,
+          "pct": 13.7
+        },
+        {
+          "name": "scikit-learn",
+          "count": 35,
+          "pct": 13.3
+        },
+        {
+          "name": "c++",
+          "count": 28,
+          "pct": 10.6
+        },
+        {
+          "name": "gcp",
+          "count": 27,
+          "pct": 10.3
+        },
+        {
+          "name": "r",
+          "count": 27,
+          "pct": 10.3
+        },
+        {
+          "name": "git",
+          "count": 26,
+          "pct": 9.9
+        },
+        {
+          "name": "kubernetes",
+          "count": 26,
+          "pct": 9.9
+        },
+        {
+          "name": "pandas",
+          "count": 25,
+          "pct": 9.5
+        },
+        {
+          "name": "java",
+          "count": 23,
+          "pct": 8.7
+        },
+        {
+          "name": "spark",
+          "count": 20,
+          "pct": 7.6
+        },
+        {
+          "name": "tableau",
+          "count": 18,
+          "pct": 6.8
+        },
+        {
+          "name": "rust",
+          "count": 18,
+          "pct": 6.8
+        },
+        {
+          "name": "power bi",
+          "count": 17,
+          "pct": 6.5
+        },
+        {
+          "name": "mlflow",
+          "count": 16,
+          "pct": 6.1
+        }
+      ]
+    },
+    "Associate": {
+      "total_jobs": 144,
+      "top_skills": [
+        {
+          "name": "mlops",
+          "count": 18,
+          "pct": 12.5
+        },
+        {
+          "name": "ci/cd",
+          "count": 15,
+          "pct": 10.4
+        },
+        {
+          "name": "nlp",
+          "count": 12,
+          "pct": 8.3
+        },
+        {
+          "name": "llms",
+          "count": 12,
+          "pct": 8.3
+        },
+        {
+          "name": "datenanalyse",
+          "count": 11,
+          "pct": 7.6
+        },
+        {
+          "name": "deep learning",
+          "count": 11,
+          "pct": 7.6
+        },
+        {
+          "name": "generative ai",
+          "count": 10,
+          "pct": 6.9
+        },
+        {
+          "name": "statistik",
+          "count": 9,
+          "pct": 6.2
+        },
+        {
+          "name": "prompt engineering",
+          "count": 9,
+          "pct": 6.2
+        },
+        {
+          "name": "datenmodellierung",
+          "count": 8,
+          "pct": 5.6
+        },
+        {
+          "name": "softwareentwicklung",
+          "count": 8,
+          "pct": 5.6
+        },
+        {
+          "name": "statistics",
+          "count": 7,
+          "pct": 4.9
+        },
+        {
+          "name": "rag",
+          "count": 7,
+          "pct": 4.9
+        },
+        {
+          "name": "computer vision",
+          "count": 5,
+          "pct": 3.5
+        },
+        {
+          "name": "genai",
+          "count": 5,
+          "pct": 3.5
+        },
+        {
+          "name": "ai/ml solutions",
+          "count": 5,
+          "pct": 3.5
+        },
+        {
+          "name": "software development",
+          "count": 5,
+          "pct": 3.5
+        },
+        {
+          "name": "a/b-test-methodik",
+          "count": 5,
+          "pct": 3.5
+        },
+        {
+          "name": "visualisierung",
+          "count": 4,
+          "pct": 2.8
+        },
+        {
+          "name": "observability",
+          "count": 4,
+          "pct": 2.8
+        }
+      ],
+      "top_tools": [
+        {
+          "name": "python",
+          "count": 109,
+          "pct": 75.7
+        },
+        {
+          "name": "sql",
+          "count": 48,
+          "pct": 33.3
+        },
+        {
+          "name": "pytorch",
+          "count": 37,
+          "pct": 25.7
+        },
+        {
+          "name": "aws",
+          "count": 34,
+          "pct": 23.6
+        },
+        {
+          "name": "tensorflow",
+          "count": 27,
+          "pct": 18.8
+        },
+        {
+          "name": "azure",
+          "count": 26,
+          "pct": 18.1
+        },
+        {
+          "name": "docker",
+          "count": 24,
+          "pct": 16.7
+        },
+        {
+          "name": "scikit-learn",
+          "count": 21,
+          "pct": 14.6
+        },
+        {
+          "name": "kubernetes",
+          "count": 20,
+          "pct": 13.9
+        },
+        {
+          "name": "gcp",
+          "count": 17,
+          "pct": 11.8
+        },
+        {
+          "name": "pandas",
+          "count": 16,
+          "pct": 11.1
+        },
+        {
+          "name": "java",
+          "count": 14,
+          "pct": 9.7
+        },
+        {
+          "name": "git",
+          "count": 13,
+          "pct": 9.0
+        },
+        {
+          "name": "numpy",
+          "count": 12,
+          "pct": 8.3
+        },
+        {
+          "name": "langchain",
+          "count": 12,
+          "pct": 8.3
+        },
+        {
+          "name": "r",
+          "count": 11,
+          "pct": 7.6
+        },
+        {
+          "name": "fastapi",
+          "count": 10,
+          "pct": 6.9
+        },
+        {
+          "name": "javascript",
+          "count": 9,
+          "pct": 6.2
+        },
+        {
+          "name": "mlflow",
+          "count": 8,
+          "pct": 5.6
+        },
+        {
+          "name": "dbt",
+          "count": 8,
+          "pct": 5.6
+        }
+      ]
+    },
+    "Mid-Senior level": {
+      "total_jobs": 624,
+      "top_skills": [
+        {
+          "name": "mlops",
+          "count": 110,
+          "pct": 17.6
+        },
+        {
+          "name": "deep learning",
+          "count": 76,
+          "pct": 12.2
+        },
+        {
+          "name": "llms",
+          "count": 71,
+          "pct": 11.4
+        },
+        {
+          "name": "ci/cd",
+          "count": 65,
+          "pct": 10.4
+        },
+        {
+          "name": "genai",
+          "count": 50,
+          "pct": 8.0
+        },
+        {
+          "name": "rag",
+          "count": 49,
+          "pct": 7.9
+        },
+        {
+          "name": "analytics",
+          "count": 48,
+          "pct": 7.7
+        },
+        {
+          "name": "nlp",
+          "count": 45,
+          "pct": 7.2
+        },
+        {
+          "name": "generative ai",
+          "count": 45,
+          "pct": 7.2
+        },
+        {
+          "name": "monitoring",
+          "count": 41,
+          "pct": 6.6
+        },
+        {
+          "name": "datenanalyse",
+          "count": 39,
+          "pct": 6.2
+        },
+        {
+          "name": "prompt engineering",
+          "count": 39,
+          "pct": 6.2
+        },
+        {
+          "name": "computer vision",
+          "count": 36,
+          "pct": 5.8
+        },
+        {
+          "name": "statistical modeling",
+          "count": 35,
+          "pct": 5.6
+        },
+        {
+          "name": "devops",
+          "count": 32,
+          "pct": 5.1
+        },
+        {
+          "name": "data",
+          "count": 30,
+          "pct": 4.8
+        },
+        {
+          "name": "cloud-plattformen",
+          "count": 29,
+          "pct": 4.6
+        },
+        {
+          "name": "infrastructure as code",
+          "count": 29,
+          "pct": 4.6
+        },
+        {
+          "name": "statistics",
+          "count": 27,
+          "pct": 4.3
+        },
+        {
+          "name": "big data",
+          "count": 26,
+          "pct": 4.2
+        }
+      ],
+      "top_tools": [
+        {
+          "name": "python",
+          "count": 453,
+          "pct": 72.6
+        },
+        {
+          "name": "sql",
+          "count": 191,
+          "pct": 30.6
+        },
+        {
+          "name": "aws",
+          "count": 187,
+          "pct": 30.0
+        },
+        {
+          "name": "azure",
+          "count": 150,
+          "pct": 24.0
+        },
+        {
+          "name": "pytorch",
+          "count": 143,
+          "pct": 22.9
+        },
+        {
+          "name": "tensorflow",
+          "count": 109,
+          "pct": 17.5
+        },
+        {
+          "name": "gcp",
+          "count": 104,
+          "pct": 16.7
+        },
+        {
+          "name": "docker",
+          "count": 74,
+          "pct": 11.9
+        },
+        {
+          "name": "scikit-learn",
+          "count": 72,
+          "pct": 11.5
+        },
+        {
+          "name": "r",
+          "count": 67,
+          "pct": 10.7
+        },
+        {
+          "name": "pandas",
+          "count": 65,
+          "pct": 10.4
+        },
+        {
+          "name": "mlflow",
+          "count": 60,
+          "pct": 9.6
+        },
+        {
+          "name": "kubernetes",
+          "count": 53,
+          "pct": 8.5
+        },
+        {
+          "name": "numpy",
+          "count": 50,
+          "pct": 8.0
+        },
+        {
+          "name": "spark",
+          "count": 48,
+          "pct": 7.7
+        },
+        {
+          "name": "terraform",
+          "count": 44,
+          "pct": 7.1
+        },
+        {
+          "name": "kubeflow",
+          "count": 43,
+          "pct": 6.9
+        },
+        {
+          "name": "langchain",
+          "count": 40,
+          "pct": 6.4
+        },
+        {
+          "name": "databricks",
+          "count": 39,
+          "pct": 6.2
+        },
+        {
+          "name": "tableau",
+          "count": 37,
+          "pct": 5.9
+        }
+      ]
+    },
+    "Director": {
+      "total_jobs": 24,
+      "top_skills": [
+        {
+          "name": "computer vision",
+          "count": 5,
+          "pct": 20.8
+        },
+        {
+          "name": "deep learning",
+          "count": 4,
+          "pct": 16.7
+        },
+        {
+          "name": "recommender systems",
+          "count": 4,
+          "pct": 16.7
+        },
+        {
+          "name": "llm",
+          "count": 4,
+          "pct": 16.7
+        },
+        {
+          "name": "analytics",
+          "count": 4,
+          "pct": 16.7
+        },
+        {
+          "name": "ml models",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "parallel computing",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "low-level performance optimizations",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "linear algebra",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "software development",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "natural language processing",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "cpu and gpu architecture fundamentals",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "parallelization",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "algorithms",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "performance optimization",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "parallel programming",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "data management",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "agile software development",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "mlops",
+          "count": 2,
+          "pct": 8.3
+        },
+        {
+          "name": "cloud platforms",
+          "count": 2,
+          "pct": 8.3
+        }
+      ],
+      "top_tools": [
+        {
+          "name": "python",
+          "count": 8,
+          "pct": 33.3
+        },
+        {
+          "name": "power bi",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "pytorch",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "tensorflow",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "c/c++",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "pthreads",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "openmp",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "mpi",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "openacc",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "cuda",
+          "count": 3,
+          "pct": 12.5
+        },
+        {
+          "name": "c++",
+          "count": 2,
+          "pct": 8.3
+        },
+        {
+          "name": "numpy",
+          "count": 2,
+          "pct": 8.3
+        },
+        {
+          "name": "pandas",
+          "count": 2,
+          "pct": 8.3
+        },
+        {
+          "name": "sql",
+          "count": 2,
+          "pct": 8.3
+        },
+        {
+          "name": "spark",
+          "count": 2,
+          "pct": 8.3
+        },
+        {
+          "name": "gemini",
+          "count": 2,
+          "pct": 8.3
+        },
+        {
+          "name": "gcp",
+          "count": 2,
+          "pct": 8.3
+        },
+        {
+          "name": "aws",
+          "count": 2,
+          "pct": 8.3
+        },
+        {
+          "name": "azure",
+          "count": 2,
+          "pct": 8.3
+        },
+        {
+          "name": "tableau",
+          "count": 2,
+          "pct": 8.3
+        }
+      ]
+    },
+    "Executive": {
+      "total_jobs": 7,
+      "top_skills": [
+        {
+          "name": "software engineering",
+          "count": 2,
+          "pct": 28.6
+        },
+        {
+          "name": "business acumen",
+          "count": 2,
+          "pct": 28.6
+        },
+        {
+          "name": "clean code",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "big data-technologien",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "analyse und anreicherung großer datensätze",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "causal inference",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "statistical and quantitative analysis",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "networking",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "matrix management",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "grow",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "customer-first mindset",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "adapt",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "relationship-building",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "process optimization",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "designing operational processes",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "problem-solve",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "p&l ownership",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "demand forecasting",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "analytical",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "loyalty",
+          "count": 1,
+          "pct": 14.3
+        }
+      ],
+      "top_tools": [
+        {
+          "name": "python",
+          "count": 4,
+          "pct": 57.1
+        },
+        {
+          "name": "aws",
+          "count": 2,
+          "pct": 28.6
+        },
+        {
+          "name": "azure",
+          "count": 2,
+          "pct": 28.6
+        },
+        {
+          "name": "sql",
+          "count": 2,
+          "pct": 28.6
+        },
+        {
+          "name": "kotlin",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "cloud-plattformen",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "pytorch",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "tensorflow",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "google",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "google cloud",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "looker",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "tableau",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "power bi",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "ai-tools",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "shopify",
+          "count": 1,
+          "pct": 14.3
+        },
+        {
+          "name": "node.js",
+          "count": 1,
+          "pct": 14.3
+        }
+      ]
+    }
+  },
+  "evergreen_skills": [
+    "computer vision",
+    "deep learning"
+  ],
+  "evergreen_tools": [
+    "aws",
+    "azure",
+    "pandas",
+    "python",
+    "pytorch",
+    "sql",
+    "tensorflow"
+  ],
+  "entry_only_skills": [
+    "advanced analytics",
+    "automatisierung von etl-prozessen",
+    "ci/cd",
+    "computer science",
+    "datenanalyse",
+    "datenverarbeitung",
+    "devops",
+    "genai",
+    "generative ai",
+    "large language models",
+    "llms",
+    "monitoring",
+    "nlp",
+    "prompt engineering",
+    "rag",
+    "reinforcement learning",
+    "robotics",
+    "softwareentwicklung",
+    "statistics",
+    "statistik",
+    "synthetic data generation",
+    "testing"
+  ],
+  "senior_only_skills": [
+    "adapt",
+    "agile software development",
+    "algorithms",
+    "analyse und anreicherung großer datensätze",
+    "analytical",
+    "analytics",
+    "big data-technologien",
+    "business acumen",
+    "causal inference",
+    "clean code",
+    "cloud platforms",
+    "cpu and gpu architecture fundamentals",
+    "customer-first mindset",
+    "data management",
+    "demand forecasting",
+    "designing operational processes",
+    "grow",
+    "linear algebra",
+    "llm",
+    "low-level performance optimizations",
+    "loyalty",
+    "matrix management",
+    "ml models",
+    "networking",
+    "p&l ownership",
+    "parallel computing",
+    "parallel programming",
+    "parallelization",
+    "performance optimization",
+    "problem-solve",
+    "process optimization",
+    "recommender systems",
+    "relationship-building",
+    "statistical and quantitative analysis"
+  ]
+}

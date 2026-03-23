@@ -14,6 +14,7 @@ DATA_DIR           = pathlib.Path(__file__).parent.parent / "data"
 RESULTS_PATH       = DATA_DIR / "analyzed" / "langextract_results.json"
 EXP_LEVEL_PATH     = DATA_DIR / "processed" / "experience_level_analysis.json"
 LANG_COMPARE_PATH  = DATA_DIR / "processed" / "language_comparison.json"
+SENIORITY_PATH     = DATA_DIR / "processed" / "seniority_analysis.json"
 
 # ---------------------------------------------------------------------------
 # LangExtract prompt + examples  (same as 10b_run_langextract_inference.py)
@@ -69,7 +70,9 @@ def load_data():
         results = json.load(f)
     with open(EXP_LEVEL_PATH) as f:
         exp_analysis = json.load(f)
-    return results, exp_analysis
+    with open(SENIORITY_PATH) as f:
+        seniority_analysis = json.load(f)
+    return results, exp_analysis, seniority_analysis
 
 
 @st.cache_data
@@ -171,7 +174,7 @@ if not RESULTS_PATH.exists():
 # Sidebar
 # ---------------------------------------------------------------------------
 
-results, exp_analysis = load_data()
+results, exp_analysis, seniority_analysis = load_data()
 
 exp_levels = list(results["skills_by_experience_level"].keys())
 selected_level = st.sidebar.selectbox(
@@ -182,7 +185,7 @@ st.sidebar.caption("Filter applies to Skills and Tools charts only")
 
 st.sidebar.divider()
 
-dark_mode = st.sidebar.toggle("🌙 Dark mode", value=False)
+dark_mode = st.sidebar.toggle("🌙 Dark mode", value=True)
 
 st.sidebar.divider()
 st.sidebar.caption("Extraction model: **gemini-2.5-flash-lite** via LangExtract (few-shot, no fine-tuning)")
@@ -260,7 +263,7 @@ st.divider()
 # Tabs
 # ---------------------------------------------------------------------------
 
-tab_overview, tab_lang = st.tabs(["Overview", "Language Comparison"])
+tab_overview, tab_lang, tab_gap = st.tabs(["Overview", "Language Comparison", "Skill Gap by Seniority"])
 
 # ===========================================================================
 # Tab: Overview  (all original sections)
@@ -557,3 +560,147 @@ with tab_lang:
         st.info("**Director roles** are the exception: only 42% mention German, the lowest of any level")
     with ins3:
         st.info("**Executive roles** show 71% German mention — but with only 7 postings, treat this with caution")
+
+# ===========================================================================
+# Tab: Skill Gap by Seniority
+# ===========================================================================
+
+with tab_gap:
+
+    sen_levels = seniority_analysis["levels"]
+    available_levels = [
+        lvl for lvl in ["Internship", "Entry level", "Associate", "Mid-Senior level", "Director"]
+        if lvl in sen_levels
+    ]
+
+    # -----------------------------------------------------------------------
+    # Section 1: Top Skills & Tools by Level
+    # -----------------------------------------------------------------------
+
+    st.subheader("Top Skills & Tools by Level")
+
+    selected_sen_level = st.selectbox(
+        "Experience level",
+        options=available_levels,
+        key="seniority_level_select",
+    )
+
+    level_data = sen_levels[selected_sen_level]
+    total_jobs = level_data["total_jobs"]
+    st.caption(f"{total_jobs:,} job postings at {selected_sen_level} level")
+
+    top_skills_10 = level_data["top_skills"][:10]
+    top_tools_10  = level_data["top_tools"][:10]
+
+    col_s, col_t = st.columns(2)
+
+    with col_s:
+        st.markdown("**Top 10 Skills**")
+        fig_skills = make_bar(
+            [r["name"] for r in reversed(top_skills_10)],
+            [r["pct"]  for r in reversed(top_skills_10)],
+            theme["bar"], theme["text"],
+            x_title="% of job postings",
+            height=380,
+            horizontal=True,
+        )
+        fig_skills.update_layout(yaxis={"autorange": True, "tickfont": {"color": theme["text"]}})
+        st.plotly_chart(fig_skills, use_container_width=True)
+
+    with col_t:
+        st.markdown("**Top 10 Tools**")
+        fig_tools = make_bar(
+            [r["name"] for r in reversed(top_tools_10)],
+            [r["pct"]  for r in reversed(top_tools_10)],
+            theme["accent"], theme["text"],
+            x_title="% of job postings",
+            height=380,
+            horizontal=True,
+        )
+        fig_tools.update_layout(yaxis={"autorange": True, "tickfont": {"color": theme["text"]}})
+        st.plotly_chart(fig_tools, use_container_width=True)
+
+    st.divider()
+
+    # -----------------------------------------------------------------------
+    # Section 2: Evergreen Skills & Tools
+    # -----------------------------------------------------------------------
+
+    st.subheader("Required at Every Seniority Level")
+    st.caption("Skills and tools in the top 20 for all qualifying experience levels (≥ 10 jobs)")
+
+    qualifying_levels = [lvl for lvl in available_levels if sen_levels[lvl]["total_jobs"] >= 10]
+
+    def _avg_pct(name, key):
+        pcts = []
+        for lvl in qualifying_levels:
+            for entry in sen_levels[lvl][key]:
+                if entry["name"] == name:
+                    pcts.append(entry["pct"])
+                    break
+        return sum(pcts) / len(pcts) if pcts else 0
+
+    eg_skills_pct = sorted(
+        [{"name": s, "pct": _avg_pct(s, "top_skills")} for s in seniority_analysis["evergreen_skills"]],
+        key=lambda x: x["pct"],
+    )
+    eg_tools_pct = sorted(
+        [{"name": t, "pct": _avg_pct(t, "top_tools")} for t in seniority_analysis["evergreen_tools"]],
+        key=lambda x: x["pct"],
+    )
+
+    col_eg_s, col_eg_t = st.columns(2)
+
+    with col_eg_s:
+        st.markdown("**Evergreen Skills**")
+        fig_eg_s = make_bar(
+            [r["name"] for r in eg_skills_pct],
+            [r["pct"]  for r in eg_skills_pct],
+            theme["bar"], theme["text"],
+            x_title="avg % of job postings",
+            height=300,
+            horizontal=True,
+        )
+        fig_eg_s.update_layout(yaxis={"autorange": True, "tickfont": {"color": theme["text"]}})
+        st.plotly_chart(fig_eg_s, use_container_width=True)
+
+    with col_eg_t:
+        st.markdown("**Evergreen Tools**")
+        fig_eg_t = make_bar(
+            [r["name"] for r in eg_tools_pct],
+            [r["pct"]  for r in eg_tools_pct],
+            theme["accent"], theme["text"],
+            x_title="avg % of job postings",
+            height=300,
+            horizontal=True,
+        )
+        fig_eg_t.update_layout(yaxis={"autorange": True, "tickfont": {"color": theme["text"]}})
+        st.plotly_chart(fig_eg_t, use_container_width=True)
+
+    st.divider()
+
+    # -----------------------------------------------------------------------
+    # Section 3: Entry vs Senior Contrast
+    # -----------------------------------------------------------------------
+
+    st.subheader("Entry vs Senior Contrast")
+
+    col_entry, col_senior = st.columns(2)
+
+    with col_entry:
+        st.markdown("**Entry / Internship Only**")
+        st.caption("In top 20 for Internship or Entry level — not for Director or Executive")
+        entry_only = seniority_analysis["entry_only_skills"]
+        if entry_only:
+            st.dataframe({"Skill": entry_only}, use_container_width=True, hide_index=True)
+        else:
+            st.write("None found.")
+
+    with col_senior:
+        st.markdown("**Director Only**")
+        st.caption("In top 20 for Director or Executive — not for Internship or Entry level")
+        senior_only = seniority_analysis["senior_only_skills"]
+        if senior_only:
+            st.dataframe({"Skill": senior_only}, use_container_width=True, hide_index=True)
+        else:
+            st.write("None found.")

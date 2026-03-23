@@ -70,7 +70,7 @@ st.sidebar.caption("Filter applies to Skills and Tools charts only")
 
 st.sidebar.divider()
 
-dark_mode = st.sidebar.toggle("🌙 Dark mode", value=False)
+dark_mode = st.sidebar.toggle("🌙 Dark mode", value=True)
 
 # ── Theme ─────────────────────────────────────────────────────────────────────
 
