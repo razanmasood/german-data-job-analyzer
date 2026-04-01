@@ -159,6 +159,25 @@ Fine-tuning on 105 domain-specific examples outperforms zero-shot by 3x. GLiNER'
 | Skill Exclusivity Index | Frequency vs exclusivity scatter plot, commodity/mid-range/niche skill breakdown |
 | Company Concentration | Top hiring companies, concentration analysis flagging skills driven by single-company templates |
 
+<table>
+  <tr>
+    <td align="center"><b>Language Comparison</b></td>
+    <td align="center"><b>Skill Gap by Seniority</b></td>
+  </tr>
+  <tr>
+    <td><img src="dashboard_screenshots/screenshot_language_comparison.png" alt="Language Comparison tab" /></td>
+    <td><img src="dashboard_screenshots/screenshot_skill_gap_seniority.png" alt="Skill Gap by Seniority tab" /></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Tool-Skill Co-dependency</b></td>
+    <td align="center"><b>Skill Exclusivity Index</b></td>
+  </tr>
+  <tr>
+    <td><img src="dashboard_screenshots/screenshot_tool_skill_codependency.png" alt="Tool-Skill Co-dependency tab" /></td>
+    <td><img src="dashboard_screenshots/screenshot_skill_exclusivity.png" alt="Skill Exclusivity Index tab" /></td>
+  </tr>
+</table>
+
 ---
 
 ## 🚀 How to Run
